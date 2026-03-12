@@ -91,7 +91,7 @@
 
 | Status | Boon | Penalty (if Disabled) |
 |--------|------|----------------------|
-| Active | One free "Fresh Recruits" requisition per phase | Cannot reinforce destroyed units |
+| Active | Free "Fresh Recruits" Requisition | Cannot reinforce destroyed units |
 
 ---
 

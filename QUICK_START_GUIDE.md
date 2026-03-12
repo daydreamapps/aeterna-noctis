@@ -47,7 +47,7 @@ Each alliance controls certain planets. Your Home World grants you a **Boon** - 
 | Ferrum IX | Remove Battle Scars for 0 RP | Vehicles/Monsters gain no XP |
 | Veridian Reach | +1 to Out of Action tests | -1 to Advance/Charge |
 | Sanctum Malakor | +1 Starting CP | No Faction Stratagems |
-| Aethelgard | Free "Fresh Recruits" per phase | No unit reinforcement |
+| Aethelgard | Free "Fresh Recruits" Requisition | No unit reinforcement |
 | Void-Spire 7 | +1 SAP per Hulk victory | No Artificer Relics |
 
 ### Step 4: Register on Administratum
