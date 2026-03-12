@@ -39,8 +39,9 @@ Select units for your starting roster. This campaign uses an **escalation format
 Start with a 1000pt roster. You'll expand as the campaign progresses.
 
 ### Army Limitations (House Rules)
-- **Phase 1:** No Epic Characters, no units over 300pts
-- **Phase 2:** No Epic Characters over 200pts, no units over 400pts
+- **Phase 1:** No Epic Characters, no units over 300pts, max 1 Crucible of Champions character
+- **Phase 2:** No Epic Characters over 200pts, no units over 400pts, max 2 Crucible of Champions characters (different base)
+- **Phase 3:** Max 2 Crucible of Champions characters (different base)
 - **All Phases:** Maximum 2 copies of any unit (same datasheet name)
 
 ### Step 3: Claim a Home World
