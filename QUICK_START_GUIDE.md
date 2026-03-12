@@ -32,11 +32,11 @@ Select units for your starting roster. This campaign uses an **escalation format
 
 | Phase | Battle Size | Points |
 |-------|-------------|--------|
-| Phase 1 | Combat Patrol / Breach | 500 pts |
-| Phase 2 | Incursion / Interdiction | 1000 pts |
-| Phase 3 | Strike Force / Hulk | 2000 pts |
+| Phase 1 | Incursion | 1000 pts |
+| Phase 2 | Strike Force | 1500 pts |
+| Phase 3 | Strike Force | 2000 pts |
 
-Start with a 500pt roster. You'll expand as the campaign progresses.
+Start with a 1000pt roster. You'll expand as the campaign progresses.
 
 ### Step 3: Claim a Home World
 Each alliance controls certain planets. Your Home World grants you a **Boon** - but it can be raided and disabled by enemies.
@@ -61,12 +61,12 @@ Each alliance controls certain planets. Your Home World grants you a **Boon** - 
 ## The Three Battle Types
 
 ### The Breach (Phase 0 Skirmishes)
-- **Size:** 500 pts
+- **Size:** 1000 pts
 - **Purpose:** Earn Intel Points for your alliance
 - **Stakes:** Low - good for learning and warming up
 
 ### The Interdiction (Raids)
-- **Size:** 500-1000 pts
+- **Size:** 1000-1500 pts
 - **Rules:** Lair of the Tyrant (Maelstrom)
 - **Purpose:** Raid enemy Home Worlds to disable their Boons, or steal RP
 - **Warning:** Raiding means you skip the Hulk battle that round
