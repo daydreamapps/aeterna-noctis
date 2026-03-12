@@ -38,6 +38,11 @@ Select units for your starting roster. This campaign uses an **escalation format
 
 Start with a 1000pt roster. You'll expand as the campaign progresses.
 
+### Army Limitations (House Rules)
+- **Phase 1:** No Epic Characters, no units over 300pts
+- **Phase 2:** No Epic Characters over 200pts, no units over 400pts
+- **All Phases:** Maximum 2 copies of any unit (same datasheet name)
+
 ### Step 3: Claim a Home World
 Each alliance controls certain planets. Your Home World grants you a **Boon** - but it can be raided and disabled by enemies.
 
@@ -84,19 +89,20 @@ Each alliance controls certain planets. Your Home World grants you a **Boon** - 
 ### Requisition Points (RP)
 - **Start with:** 5 RP
 - **Gain:** 1 RP after each battle
+- **Maximum:** 10 RP
 
 | Requisition | Cost | Effect |
 |-------------|------|--------|
-| Fresh Recruits | 1 RP | Add a new unit to your roster |
-| Increase Supply Limit | 1 RP | +100 pts to your Supply Limit |
-| Repair and Recuperate | 1 RP | Remove one Battle Scar |
+| Fresh Recruits | 1-4 RP | Add models to an existing unit (up to datasheet max) |
+| Increase Supply Limit | 1 RP | +100 pts to your Supply Limit (house rule) |
+| Repair and Recuperate | 1-5 RP | Remove one Battle Scar (1 + 1 per Battle Honour) |
 | Rearm and Resupply | 1 RP | Change a unit's wargear |
 
 ### Experience Points (XP)
 Units earn XP each battle:
-- Destroyed an enemy unit: **+1 XP**
-- Performed an action: **+1 XP**
-- Marked for Greatness (1 unit per battle, your choice): **+3 XP**
+- **Battle Experience:** +1 XP for participating in a battle
+- **Dealers of Death:** +1 XP per 3 enemy units destroyed
+- **Marked for Greatness** (1 unit per battle, your choice): **+3 XP**
 
 ### Ranks and Battle Honours
 As units gain XP, they rank up and earn upgrades:
@@ -106,13 +112,15 @@ As units gain XP, they rank up and earn upgrades:
 | 0-5 | Battle-ready | 0 |
 | 6-15 | Blooded | 1 |
 | 16-30 | Battle-hardened | 2 |
-| 31-50 | Heroic | 3 |
-| 51+ | Legendary | 4 |
+| 31-50 | Heroic* | 3 |
+| 51+ | Legendary* | 4 |
+
+*Heroic and Legendary ranks are CHARACTER units only. Non-CHARACTER units max at Battle-hardened (2 Honours).*
 
 ### Battle Scars
-When a unit is destroyed, roll D6. On a **1**, it gains a Battle Scar (a permanent penalty). Remove scars by spending 1 RP or using Ferrum IX's boon.
+When a unit is destroyed, roll D6 (Out of Action test). On a **1**, choose: lose a Battle Honour OR gain a Battle Scar. Remove scars by spending RP (Repair and Recuperate) or using Ferrum IX's boon.
 
-**Danger:** Units with more Scars than Honours are **Out of Action** until healed.
+**Danger:** Units with 3 Battle Scars and no Battle Honours are **removed permanently** from your Order of Battle.
 
 ---
 
@@ -183,6 +191,7 @@ After each game, report the following to the campaign organiser:
 
 ## Useful Links
 
+- **Rules Reference:** [Complete Rules](rules/index.html)
 - **Campaign Tracker:** [Administratum](https://administratum.goonhammer.com/campaigns/019ccdaf-2230-78be-ae32-5440e44659b7)
 - **Crusade Rules:** [Wahapedia](https://wahapedia.ru/wh40k10ed/the-rules/crusade/)
 - **Goonhammer Guides:** [Crusade 101](https://www.goonhammer.com/getting-started-crusade/)

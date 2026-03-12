@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeterna Noctis - Complete Rules Reference</title>
+    <style>
+        :root {
+            --bg-dark: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-highlight: #0f3460;
+            --accent: #e94560;
+            --accent-gold: #d4af37;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --border: #2a2a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-gold);
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        h2 {
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin: 40px 0 20px 0;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            color: var(--accent-gold);
+            margin: 25px 0 15px 0;
+            font-size: 1.2em;
+        }
+
+        h4 {
+            color: var(--text);
+            margin: 20px 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .card.highlight {
+            border-color: var(--accent);
+            background: var(--bg-highlight);
+        }
+
+        .card.house-rule {
+            border-color: var(--accent-gold);
+            border-width: 2px;
+        }
+
+        .house-rule-tag {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-highlight);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .warning {
+            background: rgba(233, 69, 96, 0.2);
+            border: 1px solid var(--accent);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .warning::before {
+            content: "Important: ";
+            font-weight: bold;
+        }
+
+        .note {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--accent-gold);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-gold);
+            border-radius: 5px;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            padding: 5px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .toc li:last-child {
+            border-bottom: none;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .scar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .scar-card h4 {
+            color: var(--accent);
+            margin: 0 0 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            body { padding: 10px; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">&larr; Back to Quick Start Guide</a>
+
+        <header>
+            <h1>Aeterna Noctis</h1>
+            <p class="subtitle">Complete Rules Reference</p>
+        </header>
+
+        <nav class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#house-rules">House Rules</a></li>
+                <li><a href="#requisitions">Requisition Points</a></li>
+                <li><a href="#experience">Experience Points</a></li>
+                <li><a href="#ranks">Ranks & Battle Honours</a></li>
+                <li><a href="#honours-types">Battle Honours Categories</a></li>
+                <li><a href="#scars">Battle Scars</a></li>
+                <li><a href="#out-of-action">Out of Action Tests</a></li>
+                <li><a href="#crusade-points">Crusade Points</a></li>
+                <li><a href="#nachmund">Nachmund Campaign Rules</a></li>
+            </ul>
+        </nav>
+
+        <!-- House Rules Section -->
+        <section id="house-rules">
+            <h2>House Rules <span class="house-rule-tag">Campaign Specific</span></h2>
+            <div class="card house-rule">
+                <h3>Army Limitations by Phase</h3>
+                <table>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Restrictions</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 1</strong></td>
+                        <td>No Epic Characters, no units over 300pts</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 2</strong></td>
+                        <td>No Epic Characters over 200pts, no units over 400pts</td>
+                    </tr>
+                    <tr>
+                        <td><strong>All Phases</strong></td>
+                        <td>Maximum 2 copies of any unit (same datasheet name)</td>
+                    </tr>
+                </table>
+
+                <h3>Supply Limit Increase</h3>
+                <p>The <strong>Increase Supply Limit</strong> requisition grants <strong>+100 pts</strong> per use (standard rules give +200 pts).</p>
+            </div>
+        </section>
+
+        <!-- Requisitions Section -->
+        <section id="requisitions">
+            <h2>Requisition Points (RP)</h2>
+            <div class="card">
+                <p><strong>Starting RP:</strong> 5</p>
+                <p><strong>Gain:</strong> 1 RP after each battle</p>
+                <p><strong>Maximum:</strong> 10 RP (cannot exceed this)</p>
+            </div>
+
+            <h3>All Requisitions</h3>
+            <table>
+                <tr>
+                    <th>Requisition</th>
+                    <th>Cost</th>
+                    <th>Effect</th>
+                </tr>
+                <tr>
+                    <td><strong>Increase Supply Limit</strong></td>
+                    <td>1 RP</td>
+                    <td>+100 pts to your Supply Limit <span class="house-rule-tag">House Rule</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Renowned Heroes</strong></td>
+                    <td>1-3 RP</td>
+                    <td>Give an Enhancement to a CHARACTER. Cost varies by Enhancement type.</td>
+                </tr>
+                <tr>
+                    <td><strong>Legendary Veterans</strong></td>
+                    <td>3 RP</td>
+                    <td>Instantly rank up a unit to Blooded (if Battle-ready) and give them a Battle Honour.</td>
+                </tr>
+                <tr>
+                    <td><strong>Rearm and Resupply</strong></td>
+                    <td>1 RP</td>
+                    <td>Change a unit's wargear options.</td>
+                </tr>
+                <tr>
+                    <td><strong>Repair and Recuperate</strong></td>
+                    <td>1-5 RP</td>
+                    <td>Remove one Battle Scar. Cost = 1 RP + 1 RP per Battle Honour the unit has.</td>
+                </tr>
+                <tr>
+                    <td><strong>Fresh Recruits</strong></td>
+                    <td>1-4 RP</td>
+                    <td>Add models to an existing unit (up to datasheet maximum). Cost scales with unit size.</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <strong>Renowned Heroes Cost:</strong> 1 RP for basic Enhancements, 2 RP for more powerful ones, 3 RP for the most impactful.
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience Points (XP)</h2>
+            <div class="card">
+                <h3>Earning XP</h3>
+                <table>
+                    <tr>
+                        <th>Source</th>
+                        <th>XP Earned</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Battle Experience</strong></td>
+                        <td>+1 XP</td>
+                        <td>Gained by every unit that participates in a battle</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dealers of Death</strong></td>
+                        <td>+1 XP per 3 units destroyed</td>
+                        <td>The unit must destroy 3 enemy units to earn 1 XP</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marked for Greatness</strong></td>
+                        <td>+3 XP</td>
+                        <td>You may mark one unit per battle (your choice)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agenda Objectives</strong></td>
+                        <td>Varies</td>
+                        <td>Additional XP from completing Agenda objectives</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Ranks Section -->
+        <section id="ranks">
+            <h2>Ranks & Battle Honours</h2>
+            <table>
+                <tr>
+                    <th>XP Required</th>
+                    <th>Rank</th>
+                    <th>Battle Honours</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>0-5</td>
+                    <td><strong>Battle-ready</strong></td>
+                    <td>0</td>
+                    <td>Starting rank</td>
+                </tr>
+                <tr>
+                    <td>6-15</td>
+                    <td><strong>Blooded</strong></td>
+                    <td>1</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>16-30</td>
+                    <td><strong>Battle-hardened</strong></td>
+                    <td>2</td>
+                    <td>Maximum rank for non-CHARACTER units</td>
+                </tr>
+                <tr>
+                    <td>31-50</td>
+                    <td><strong>Heroic</strong></td>
+                    <td>3</td>
+                    <td>CHARACTER units only</td>
+                </tr>
+                <tr>
+                    <td>51+</td>
+                    <td><strong>Legendary</strong></td>
+                    <td>4</td>
+                    <td>CHARACTER units only</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                Non-CHARACTER units cannot advance beyond Battle-hardened rank and cannot have more than 2 Battle Honours.
+            </div>
+        </section>
+
+        <!-- Battle Honours Categories -->
+        <section id="honours-types">
+            <h2>Battle Honours Categories</h2>
+
+            <h3>Battle Traits</h3>
+            <div class="card">
+                <p>Special abilities that improve your unit's capabilities. Each faction has unique Battle Traits tables. Roll or select when earning a Battle Honour.</p>
+            </div>
+
+            <h3>Weapon Modifications</h3>
+            <div class="card">
+                <p>Upgrades to a unit's weapons. Select one weapon and one modification:</p>
+                <table>
+                    <tr>
+                        <th>Modification</th>
+                        <th>Effect</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Heirloom</strong></td>
+                        <td>+1 to hit rolls</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Masterwork</strong></td>
+                        <td>+1 Strength</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Deadly</strong></td>
+                        <td>+1 Damage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Precision</strong></td>
+                        <td>+1 AP</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Accurate</strong></td>
+                        <td>Re-roll one hit roll per phase</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Devastating</strong></td>
+                        <td>Re-roll one wound roll per phase</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Crusade Relics</h3>
+            <div class="card">
+                <p>Powerful artifacts that can only be given to CHARACTER units. Three tiers exist:</p>
+                <table>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Requirement</th>
+                        <th>Power Level</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Artificer Relic</strong></td>
+                        <td>Any CHARACTER</td>
+                        <td>Basic relics</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Antiquity Relic</strong></td>
+                        <td>Heroic rank or higher</td>
+                        <td>Powerful relics</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Legendary Relic</strong></td>
+                        <td>Legendary rank</td>
+                        <td>Most powerful relics</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 15px;"><em>Note: You can only have one of each specific relic in your Order of Battle.</em></p>
+            </div>
+        </section>
+
+        <!-- Battle Scars Section -->
+        <section id="scars">
+            <h2>Battle Scars</h2>
+            <p>When a unit fails an Out of Action test, it may gain a Battle Scar. Roll D6 or choose:</p>
+
+            <div class="grid-2">
+                <div class="scar-card">
+                    <h4>1. Crippling Damage</h4>
+                    <p>-1 to this unit's Move characteristic.</p>
+                </div>
+                <div class="scar-card">
+                    <h4>2. Battle-weary</h4>
+                    <p>-1 to this unit's Objective Control characteristic (minimum 0).</p>
+                </div>
+                <div class="scar-card">
+                    <h4>3. Fatigued</h4>
+                    <p>-1 to Advance and Charge rolls for this unit.</p>
+                </div>
+                <div class="scar-card">
+                    <h4>4. Disgraced</h4>
+                    <p>-1 to this unit's Leadership characteristic.</p>
+                </div>
+                <div class="scar-card">
+                    <h4>5. Mark of Shame</h4>
+                    <p>This unit cannot be given any Crusade Relics.</p>
+                </div>
+                <div class="scar-card">
+                    <h4>6. Deep Scars</h4>
+                    <p>This unit cannot be Marked for Greatness.</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                Units with 3 Battle Scars and no Battle Honours are <strong>removed permanently</strong> from your Order of Battle.
+            </div>
+        </section>
+
+        <!-- Out of Action Section -->
+        <section id="out-of-action">
+            <h2>Out of Action Tests</h2>
+            <div class="card highlight">
+                <h3>When to Test</h3>
+                <p>After a battle, roll a D6 for each unit that was destroyed during the game.</p>
+
+                <h3>Test Result</h3>
+                <ul>
+                    <li><strong>Roll 2-6:</strong> The unit recovers without issue.</li>
+                    <li><strong>Roll 1:</strong> The unit suffers consequences. Choose one:
+                        <ul>
+                            <li>Lose one Battle Honour (if the unit has any), OR</li>
+                            <li>Gain one Battle Scar</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Modifiers</h3>
+                <ul>
+                    <li><strong>Veridian Reach Boon:</strong> +1 to Out of Action tests</li>
+                    <li><strong>Ferrum IX Boon:</strong> Remove Battle Scars for 0 RP</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Crusade Points Section -->
+        <section id="crusade-points">
+            <h2>Crusade Points</h2>
+            <div class="card">
+                <p>Crusade Points represent a unit's overall power level. Used for balancing and some campaign mechanics.</p>
+
+                <h3>Calculating Crusade Points</h3>
+                <table>
+                    <tr>
+                        <th>Source</th>
+                        <th>Points</th>
+                    </tr>
+                    <tr>
+                        <td>Per Battle Honour</td>
+                        <td>+1 CP</td>
+                    </tr>
+                    <tr>
+                        <td>Per Battle Scar</td>
+                        <td>-1 CP</td>
+                    </tr>
+                    <tr>
+                        <td>Per Crusade Relic</td>
+                        <td>+1 CP</td>
+                    </tr>
+                </table>
+
+                <p style="margin-top: 15px;"><strong>Total Army Crusade Points</strong> = Sum of all units' Crusade Points</p>
+            </div>
+        </section>
+
+        <!-- Nachmund Campaign Rules -->
+        <section id="nachmund">
+            <h2>Nachmund Campaign Rules</h2>
+            <p>These rules govern battles fought on the Space Hulk <em>Aeterna Noctis</em>.</p>
+
+            <h3>Battle Points</h3>
+            <div class="card">
+                <p>Earned after each Hulk battle based on result and battle size:</p>
+                <table>
+                    <tr>
+                        <th>Battle Size</th>
+                        <th>Victory</th>
+                        <th>Draw</th>
+                        <th>Defeat</th>
+                    </tr>
+                    <tr>
+                        <td>Incursion (1000 pts)</td>
+                        <td>3 BP</td>
+                        <td>1 BP</td>
+                        <td>0 BP</td>
+                    </tr>
+                    <tr>
+                        <td>Strike Force (1500-2000 pts)</td>
+                        <td>5 BP</td>
+                        <td>2 BP</td>
+                        <td>0 BP</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Strategic Asset Points (SAP)</h3>
+            <div class="card">
+                <p>SAP determine control of Strategic Sites on the Hulk.</p>
+                <ul>
+                    <li><strong>Earn SAP:</strong> 1 SAP per Hulk victory (2 SAP with Void-Spire 7 Boon)</li>
+                    <li><strong>Spend SAP:</strong> Invest in a Strategic Site to increase your alliance's control</li>
+                </ul>
+            </div>
+
+            <h3>Control Levels</h3>
+            <div class="card">
+                <p>Each Strategic Site has a Control Level (0-5+) for each alliance:</p>
+                <table>
+                    <tr>
+                        <th>Control Level</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>No presence</td>
+                    </tr>
+                    <tr>
+                        <td>1-2</td>
+                        <td>Contested</td>
+                    </tr>
+                    <tr>
+                        <td>3-4</td>
+                        <td>Controlled</td>
+                    </tr>
+                    <tr>
+                        <td>5+</td>
+                        <td>Dominated</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 15px;">The alliance with the highest Control Level at a site gains its bonus.</p>
+            </div>
+
+            <h3>Strategic Sites</h3>
+            <table>
+                <tr>
+                    <th>Site</th>
+                    <th>Bonus for Controlling Alliance</th>
+                </tr>
+                <tr>
+                    <td><strong>The Bridge</strong></td>
+                    <td>+1 CP at start of each battle</td>
+                </tr>
+                <tr>
+                    <td><strong>The Spires</strong></td>
+                    <td>Re-roll one hit roll per battle</td>
+                </tr>
+                <tr>
+                    <td><strong>The Relay</strong></td>
+                    <td>+1 to Reserves rolls</td>
+                </tr>
+                <tr>
+                    <td><strong>The Hangar</strong></td>
+                    <td>One unit gains Scout 6" per battle</td>
+                </tr>
+            </table>
+
+            <h3>Campaign Victory Points (CVP)</h3>
+            <div class="card">
+                <p>CVP determine the overall campaign winner.</p>
+                <ul>
+                    <li><strong>End of Phase:</strong> Alliance with most Battle Points earns bonus CVP</li>
+                    <li><strong>Strategic Site Control:</strong> Controlling sites earns CVP</li>
+                    <li><strong>Home World Raids:</strong> Successfully disabling enemy Boons earns CVP</li>
+                </ul>
+            </div>
+
+            <h3>Phase Rewards</h3>
+            <div class="card">
+                <p>At the end of each campaign phase:</p>
+                <ul>
+                    <li>Alliance with most Battle Points: +3 CVP</li>
+                    <li>Per Strategic Site controlled (Level 3+): +1 CVP</li>
+                    <li>Per Strategic Site dominated (Level 5+): +2 CVP</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p><a href="../index.html">&larr; Return to Quick Start Guide</a></p>
+            <p style="margin-top: 20px; font-size: 0.9em;">The Malakor Sector's fate is in your hands.</p>
+        </footer>
+    </div>
+</body>
+</html>
