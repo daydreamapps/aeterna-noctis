@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UPDATE: Player name and faction -->
+    <title>Player Name - Faction | Aeterna Noctis</title>
+    <style>
+        :root {
+            --bg-dark: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-highlight: #0f3460;
+            --accent: #e94560;
+            --accent-gold: #d4af37;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --border: #2a2a4a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent); /* Change color per alliance */
+        }
+
+        .player-info h1 {
+            font-size: 2em;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .player-info .faction {
+            font-size: 1.2em;
+            color: var(--accent-gold);
+        }
+
+        .player-info .alliance {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .guardians { background: #1e5128; }
+        .despoilers { background: #7b2d26; }
+        .marauders { background: #4a3728; }
+
+        .player-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 15px 25px;
+            background: var(--bg-highlight);
+            border-radius: 8px;
+        }
+
+        .stat-box .value {
+            font-size: 2em;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .stat-box .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        h2 {
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin: 40px 0 20px 0;
+            font-size: 1.4em;
+        }
+
+        .external-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-highlight);
+            color: var(--accent-gold);
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border: 1px solid var(--border);
+            margin: 10px 10px 10px 0;
+            transition: all 0.3s;
+        }
+
+        .external-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .unit-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .unit-card:hover { border-color: var(--accent-gold); }
+
+        .unit-name {
+            font-size: 1.1em;
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+        }
+
+        .unit-type {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .unit-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            font-size: 0.85em;
+        }
+
+        .unit-meta span {
+            background: var(--bg-highlight);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .xp { color: #4ade80; }
+        .rank { color: var(--accent-gold); }
+        .honours { color: #60a5fa; }
+        .scars { color: var(--accent); }
+
+        .unit-links a {
+            color: var(--accent-gold);
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+
+        .unit-links a:hover { text-decoration: underline; }
+
+        .battle-history {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .battle-history table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .battle-history th,
+        .battle-history td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .battle-history th {
+            background: var(--bg-highlight);
+            color: var(--accent-gold);
+            font-size: 0.85em;
+            text-transform: uppercase;
+        }
+
+        .win { color: #4ade80; }
+        .loss { color: var(--accent); }
+        .draw { color: var(--accent-gold); }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        footer a { color: var(--accent-gold); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        .template-note {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px dashed var(--accent-gold);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 0.85em;
+        }
+
+        .template-note code {
+            background: var(--bg-highlight);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Player Rosters</a>
+
+        <!-- ============================================
+             PLAYER HEADER - Update all fields below
+             ============================================ -->
+        <header>
+            <div class="player-info">
+                <h1>Player Name</h1>
+                <div class="faction">Army Name — Faction</div>
+                <span class="alliance guardians">The Guardians</span>
+                <!-- Change class to: guardians, despoilers, or marauders -->
+            </div>
+            <div class="player-stats">
+                <div class="stat-box">
+                    <div class="value">0</div>
+                    <div class="label">Wins</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">0</div>
+                    <div class="label">Losses</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">0</div>
+                    <div class="label">Draws</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">5</div>
+                    <div class="label">RP</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================
+             ARMY LIST LINKS - Add external list URLs
+             ============================================ -->
+        <section>
+            <h2>Army List</h2>
+            <div class="template-note">
+                Add links to the player's army list on New Recruit, Rosterizer, or other list builders.
+            </div>
+            <a href="#" class="external-link" target="_blank">
+                View on New Recruit ↗
+            </a>
+            <a href="#" class="external-link" target="_blank">
+                View on Rosterizer ↗
+            </a>
+        </section>
+
+        <!-- ============================================
+             ORDER OF BATTLE - Add unit cards
+             ============================================ -->
+        <section>
+            <h2>Order of Battle</h2>
+            <div class="template-note">
+                Add each unit from the player's Order of Battle. Link datacards to Wahapedia.
+            </div>
+            <div class="unit-grid">
+
+                <!-- UNIT CARD TEMPLATE (copy for each unit) -->
+                <div class="unit-card">
+                    <div class="unit-name">Unit Name</div>
+                    <div class="unit-type">Battlefield Role • Points</div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/FACTION/UNIT" target="_blank">View Datacard ↗</a>
+                    </div>
+                </div>
+
+                <!-- Example filled unit card -->
+                <!--
+                <div class="unit-card">
+                    <div class="unit-name">Captain Valdris</div>
+                    <div class="unit-type">Character • 100pts</div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 12</span>
+                        <span class="rank">Blooded</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 1</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/Captain" target="_blank">View Datacard ↗</a>
+                    </div>
+                </div>
+                -->
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             BATTLE HISTORY - Add game records
+             ============================================ -->
+        <section>
+            <h2>Battle History</h2>
+            <div class="battle-history">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Phase</th>
+                            <th>Opponent</th>
+                            <th>Mission</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- BATTLE ROW TEMPLATE -->
+                        <!--
+                        <tr>
+                            <td>2025-01-15</td>
+                            <td>Hulk</td>
+                            <td>Opponent Name (Faction)</td>
+                            <td>Mission Name</td>
+                            <td class="win">Victory 85-60</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: var(--text-muted); font-style: italic;">
+                                No battles recorded yet
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p><a href="index.html">← Player Rosters</a> · <a href="../index.html">Quick Start Guide</a></p>
+        </footer>
+    </div>
+</body>
+</html>
