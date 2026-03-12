@@ -133,6 +133,20 @@ Use this checklist:
 
 ---
 
+## The Two-Week Cycle
+
+Each campaign round follows a two-week cycle:
+
+| Stage | What Happens |
+|-------|--------------|
+| **1. Strategy** | Alliance leaders decide strategic objectives and assign battles to players |
+| **2. Skirmish** | Attackers and defenders are assigned for Breach and Interdiction missions |
+| **3. Schedule** | Players agree battle times with their opponents |
+| **4. Battle** | Battles take place and results are updated in Administratum |
+| **5. Briefing** | Conflict briefing is published summarising the round's events |
+
+---
+
 ## Campaign Special Rules
 
 ### The Sun Timer
