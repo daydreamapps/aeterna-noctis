@@ -30,11 +30,13 @@ Coordinate with the campaign organiser to join one of the three alliances.
 ### Step 2: Build Your Order of Battle
 Select units for your starting roster. This campaign uses an **escalation format**:
 
-| Phase | Battle Size | Points |
-|-------|-------------|--------|
+| Phase | Battle Size | Starting Points |
+|-------|-------------|-----------------|
 | Phase 1 | Incursion | 1000 pts |
 | Phase 2 | Strike Force | 1500 pts |
 | Phase 3 | Strike Force | 2000 pts |
+
+**Progressive Escalation:** Points increase by +100 pts every 2 weeks within each phase.
 
 Start with a 1000pt roster. You'll expand as the campaign progresses.
 
