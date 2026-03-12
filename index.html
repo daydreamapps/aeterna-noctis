@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aeterna Noctis - Player Quick Start Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #1a1a2e;
-            --bg-card: #16213e;
-            --bg-highlight: #0f3460;
-            --accent: #e94560;
-            --accent-gold: #d4af37;
-            --text: #eaeaea;
-            --text-muted: #a0a0a0;
-            --border: #2a2a4a;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1612;
+            --bg-highlight: #241a14;
+            --accent: #8b0000;
+            --accent-bright: #c41e3a;
+            --accent-gold: #c9a227;
+            --accent-bronze: #8b6914;
+            --text: #e8dcc4;
+            --text-muted: #9a8b7a;
+            --bone: #d4c4a8;
+            --border: #3d3225;
+            --shadow-red: rgba(139, 0, 0, 0.4);
+            --shadow-gold: rgba(201, 162, 39, 0.3);
         }
 
         * {
@@ -23,109 +31,250 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Crimson Text', Georgia, serif;
             background: var(--bg-dark);
+            background-image:
+                radial-gradient(ellipse at top, #1a0a0a 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, #0a0a1a 0%, transparent 50%);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
             padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
+            position: relative;
         }
 
+        /* Imperial Aquila Header */
         header {
             text-align: center;
-            padding: 40px 20px;
-            border-bottom: 2px solid var(--accent);
+            padding: 50px 20px 40px;
             margin-bottom: 40px;
+            position: relative;
+            border-bottom: none;
+        }
+
+        header::before {
+            content: '🦅';
+            display: block;
+            font-size: 3em;
+            margin-bottom: 15px;
+            filter: sepia(1) hue-rotate(-10deg) saturate(2);
+            opacity: 0.8;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                var(--accent-gold) 20%,
+                var(--accent-gold) 50%,
+                var(--accent-gold) 80%,
+                transparent 100%);
         }
 
         h1 {
-            font-size: 2.5em;
-            color: var(--accent);
+            font-family: 'Cinzel', serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            color: var(--accent-bright);
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 8px;
             margin-bottom: 10px;
+            text-shadow:
+                0 0 10px var(--shadow-red),
+                0 0 30px var(--shadow-red),
+                2px 2px 0 #000,
+                -1px -1px 0 #000;
         }
 
         .subtitle {
+            font-family: 'Cinzel', serif;
             color: var(--accent-gold);
-            font-style: italic;
-            font-size: 1.2em;
+            font-style: normal;
+            font-size: 1.1em;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--shadow-gold);
         }
 
         h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            border-left: none;
+            padding-left: 0;
+            margin: 50px 0 25px 0;
+            font-size: 1.6em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--shadow-gold);
+            position: relative;
+            text-align: center;
+        }
+
+        h2::before, h2::after {
+            content: '✧';
             color: var(--accent);
-            border-left: 4px solid var(--accent);
-            padding-left: 15px;
-            margin: 40px 0 20px 0;
-            font-size: 1.5em;
+            margin: 0 15px;
+            font-size: 0.7em;
+            vertical-align: middle;
         }
 
         h3 {
-            color: var(--accent-gold);
-            margin: 25px 0 15px 0;
-            font-size: 1.2em;
+            font-family: 'Cinzel', serif;
+            color: var(--bone);
+            margin: 30px 0 15px 0;
+            font-size: 1.15em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
         }
 
         .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            border-radius: 0;
             padding: 25px;
             margin: 20px 0;
+            position: relative;
+            box-shadow:
+                inset 0 0 30px rgba(0,0,0,0.5),
+                0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        /* Corner decorations for cards */
+        .card::before, .card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: var(--accent-gold);
+            border-style: solid;
+        }
+
+        .card::before {
+            top: -2px;
+            left: -2px;
+            border-width: 2px 0 0 2px;
+        }
+
+        .card::after {
+            bottom: -2px;
+            right: -2px;
+            border-width: 0 2px 2px 0;
         }
 
         .card.highlight {
             border-color: var(--accent);
-            background: var(--bg-highlight);
+            background: linear-gradient(145deg, var(--bg-highlight) 0%, #1a100d 100%);
+            box-shadow:
+                inset 0 0 30px rgba(0,0,0,0.5),
+                0 0 20px var(--shadow-red),
+                0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .card.highlight::before, .card.highlight::after {
+            border-color: var(--accent);
         }
 
         .narrative {
             font-style: italic;
             color: var(--text-muted);
-            border-left: 3px solid var(--accent-gold);
-            padding-left: 20px;
+            border-left: 3px solid var(--accent-bronze);
+            padding: 15px 20px;
             margin: 20px 0;
+            background: rgba(0,0,0,0.3);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
         }
 
         th, td {
-            padding: 12px;
+            padding: 14px 12px;
             text-align: left;
             border: 1px solid var(--border);
         }
 
         th {
-            background: var(--bg-highlight);
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
             color: var(--accent-gold);
             text-transform: uppercase;
-            font-size: 0.85em;
-            letter-spacing: 1px;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
         }
 
         tr:nth-child(even) {
-            background: rgba(255,255,255,0.03);
+            background: rgba(0,0,0,0.2);
+        }
+
+        tr:hover {
+            background: rgba(139, 0, 0, 0.1);
         }
 
         .alliance {
             display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin: 5px;
+            padding: 8px 20px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 8px;
+            border: 2px solid;
+            position: relative;
         }
 
-        .guardians { background: #1e5128; }
-        .despoilers { background: #7b2d26; }
-        .marauders { background: #4a3728; }
+        .guardians {
+            background: linear-gradient(180deg, #1e5128 0%, #0d2810 100%);
+            border-color: #4a9956;
+            color: #a0d4a8;
+            box-shadow: 0 0 15px rgba(74, 153, 86, 0.3);
+        }
+
+        .despoilers {
+            background: linear-gradient(180deg, #7b2d26 0%, #3d1510 100%);
+            border-color: #c44a40;
+            color: #e8a8a0;
+            box-shadow: 0 0 15px rgba(196, 74, 64, 0.3);
+        }
+
+        .marauders {
+            background: linear-gradient(180deg, #5a4728 0%, #2d2010 100%);
+            border-color: #8b7355;
+            color: #d4c4a0;
+            box-shadow: 0 0 15px rgba(139, 115, 85, 0.3);
+        }
 
         .steps {
             counter-reset: step-counter;
@@ -134,11 +283,11 @@
 
         .steps li {
             counter-increment: step-counter;
-            padding: 15px 15px 15px 60px;
+            padding: 18px 20px 18px 70px;
             position: relative;
-            margin: 10px 0;
-            background: var(--bg-card);
-            border-radius: 5px;
+            margin: 15px 0;
+            background: linear-gradient(90deg, var(--bg-card) 0%, transparent 100%);
+            border-left: 3px solid var(--accent);
         }
 
         .steps li::before {
@@ -147,26 +296,28 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
             background: var(--accent);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+            color: var(--bone);
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 0 10px var(--shadow-red);
         }
 
         .checklist {
             list-style: none;
-            background: var(--bg-card);
-            padding: 20px 30px;
-            border-radius: 8px;
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            padding: 25px 30px;
+            border: 2px solid var(--border);
         }
 
         .checklist li {
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px solid var(--border);
         }
 
@@ -175,8 +326,9 @@
         }
 
         .checklist li::before {
-            content: "☐ ";
+            content: "⬡ ";
             color: var(--accent);
+            font-size: 0.8em;
         }
 
         .battle-type {
@@ -187,63 +339,97 @@
         }
 
         .battle-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            padding: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .battle-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--shadow-red);
+            transform: translateY(-2px);
         }
 
         .battle-card h4 {
-            color: var(--accent);
-            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+            color: var(--accent-bright);
+            margin-bottom: 12px;
             font-size: 1.1em;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .battle-card .size {
+            font-family: 'Cinzel', serif;
             color: var(--accent-gold);
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 0.95em;
         }
 
+        /* Warning styled as hazard stripes */
         .warning {
-            background: rgba(233, 69, 96, 0.2);
-            border: 1px solid var(--accent);
-            padding: 15px;
-            border-radius: 5px;
+            background:
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(139, 0, 0, 0.15) 10px,
+                    rgba(139, 0, 0, 0.15) 20px
+                ),
+                linear-gradient(180deg, rgba(30,15,10,0.9) 0%, rgba(20,10,5,0.9) 100%);
+            border: 2px solid var(--accent);
+            padding: 15px 20px;
             margin: 15px 0;
+            position: relative;
         }
 
         .warning::before {
-            content: "⚠ ";
+            content: "⚠ ATTENTION: ";
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: var(--accent-bright);
+            letter-spacing: 1px;
         }
 
         a {
             color: var(--accent-gold);
             text-decoration: none;
+            transition: all 0.2s;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: var(--bone);
+            text-shadow: 0 0 10px var(--shadow-gold);
         }
 
         .links {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            margin: 20px 0;
+            margin: 25px 0;
+            justify-content: center;
         }
 
         .links a {
-            background: var(--bg-highlight);
-            padding: 12px 25px;
-            border-radius: 5px;
-            border: 1px solid var(--accent-gold);
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            background: linear-gradient(180deg, var(--bg-highlight) 0%, var(--bg-card) 100%);
+            padding: 14px 28px;
+            border: 2px solid var(--accent-gold);
             transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
         }
 
         .links a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            text-decoration: none;
+            background: linear-gradient(180deg, var(--accent) 0%, #5a0000 100%);
+            border-color: var(--accent-bright);
+            box-shadow: 0 0 20px var(--shadow-red);
+            transform: translateY(-2px);
+            text-shadow: none;
         }
 
         .xp-track {
@@ -256,11 +442,17 @@
 
         .rank {
             text-align: center;
-            padding: 15px;
-            background: var(--bg-card);
-            border-radius: 8px;
+            padding: 18px 15px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, #0d0a08 100%);
+            border: 1px solid var(--border);
             flex: 1;
             min-width: 120px;
+            transition: all 0.3s;
+        }
+
+        .rank:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 15px var(--shadow-gold);
         }
 
         .rank .xp {
@@ -269,27 +461,78 @@
         }
 
         .rank .name {
+            font-family: 'Cinzel', serif;
             color: var(--accent-gold);
-            font-weight: bold;
-            margin: 5px 0;
+            font-weight: 700;
+            margin: 8px 0;
+            font-size: 0.95em;
         }
 
         .rank .honours {
             font-size: 0.9em;
+            color: var(--bone);
         }
 
         footer {
             text-align: center;
             margin-top: 60px;
-            padding: 30px;
-            border-top: 1px solid var(--border);
+            padding: 40px 30px;
+            border-top: 2px solid var(--border);
             color: var(--text-muted);
+            position: relative;
+        }
+
+        footer::before {
+            content: '☠';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-dark);
+            padding: 0 20px;
+            font-size: 1.5em;
+            color: var(--accent);
+        }
+
+        footer p {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            font-size: 0.95em;
+        }
+
+        /* Section dividers */
+        section {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%);
+        }
+
+        section:last-of-type::after {
+            display: none;
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 1.8em; }
+            h1 {
+                font-size: 1.8em;
+                letter-spacing: 4px;
+            }
+            h2::before, h2::after {
+                display: none;
+            }
             .battle-type { grid-template-columns: 1fr; }
             body { padding: 10px; }
+            header::before {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
