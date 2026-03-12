@@ -64,7 +64,7 @@ Each alliance controls certain planets. Your Home World grants you a **Boon** - 
 
 ---
 
-## The Three Battle Types
+## Battle Types
 
 ### The Breach (Phase 0 Skirmishes)
 - **Size:** 1000 pts
@@ -82,6 +82,13 @@ Each alliance controls certain planets. Your Home World grants you a **Boon** - 
 - **Rules:** Nachmund Gauntlet (modified)
 - **Purpose:** Control Strategic Sites, earn Campaign Victory Points (CVP)
 - **Sites:** The Bridge, The Spires, The Relay, The Hangar
+
+### Skirmish (Planetary Battles)
+- **Size:** 1000 pts
+- **Rules:** Maelstrom
+- **Purpose:** Fight near planets to gain control or strengthen defences
+- **Rewards:** Victor increases planetary control for their faction. If they already hold the planet, its defence increases instead. Earn Notoriety Points.
+- **Open Play:** Can be played with any force (including non-Crusade armies) and with players outside the campaign. XP is only earned if both players are in the Crusade.
 
 ---
 
