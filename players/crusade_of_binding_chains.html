@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Crusade of Binding Chains - Black Templars | Aeterna Noctis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1612;
+            --bg-highlight: #241a14;
+            --accent: #8b0000;
+            --accent-bright: #c41e3a;
+            --accent-gold: #c9a227;
+            --accent-bronze: #8b6914;
+            --text: #e8dcc4;
+            --text-muted: #9a8b7a;
+            --bone: #d4c4a8;
+            --border: #3d3225;
+            --shadow-red: rgba(139, 0, 0, 0.4);
+            --shadow-gold: rgba(201, 162, 39, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            background-image:
+                radial-gradient(ellipse at top, #1a0a0a 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, #0a0a1a 0%, transparent 50%);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; position: relative; }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(180deg, var(--accent) 0%, #5a0000 100%);
+            border-color: var(--accent-bright);
+            box-shadow: 0 0 15px var(--shadow-red);
+            color: var(--bone);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 35px;
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent);
+            box-shadow:
+                inset 0 0 30px rgba(0,0,0,0.5),
+                0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .player-info h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            text-shadow:
+                0 0 10px var(--shadow-red),
+                2px 2px 0 #000;
+        }
+
+        .player-info .faction {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        .player-info .motto {
+            margin-top: 12px;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1em;
+        }
+
+        .player-info .alliance {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            margin-top: 15px;
+            padding: 8px 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 2px solid;
+        }
+
+        .unaligned {
+            background: linear-gradient(180deg, #3d3225 0%, #1a1612 100%);
+            border-color: #5a4a3a;
+            color: #9a8b7a;
+        }
+        .guardians {
+            background: linear-gradient(180deg, #1e5128 0%, #0d2810 100%);
+            border-color: #4a9956;
+            color: #a0d4a8;
+        }
+        .despoilers {
+            background: linear-gradient(180deg, #7b2d26 0%, #3d1510 100%);
+            border-color: #c44a40;
+            color: #e8a8a0;
+        }
+        .marauders {
+            background: linear-gradient(180deg, #5a4728 0%, #2d2010 100%);
+            border-color: #8b7355;
+            color: #d4c4a0;
+        }
+
+        .player-stats {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 18px 25px;
+            background: linear-gradient(180deg, var(--bg-highlight) 0%, #1a1210 100%);
+            border: 2px solid var(--border);
+        }
+
+        .stat-box .value {
+            font-family: 'Cinzel', serif;
+            font-size: 2em;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .stat-box .label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            border-left: none;
+            padding-left: 0;
+            margin: 50px 0 25px 0;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--shadow-gold);
+        }
+
+        h2::before {
+            content: '\2720';
+            margin-right: 15px;
+            color: var(--accent);
+            font-size: 0.9em;
+        }
+
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .unit-card {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            padding: 25px;
+            transition: all 0.3s;
+        }
+
+        .unit-card:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 15px var(--shadow-gold);
+            transform: translateY(-2px);
+        }
+
+        .unit-card.character {
+            border-left: 4px solid var(--accent-bright);
+        }
+
+        .unit-card.battleline {
+            border-left: 4px solid #4a9956;
+        }
+
+        .unit-card.vehicle {
+            border-left: 4px solid #60a5fa;
+        }
+
+        .unit-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15em;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .unit-type {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .unit-narrative {
+            font-size: 0.9em;
+            color: var(--text);
+            margin-bottom: 15px;
+            padding: 12px;
+            background: rgba(0,0,0,0.3);
+            border-left: 2px solid var(--accent-bronze);
+        }
+
+        .unit-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            font-size: 0.85em;
+        }
+
+        .unit-meta span {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, var(--bg-highlight) 0%, #1a1210 100%);
+            padding: 5px 10px;
+            border: 1px solid var(--border);
+            font-size: 0.9em;
+        }
+
+        .xp { color: #4ade80; }
+        .rank { color: var(--accent-gold); }
+        .honours { color: #60a5fa; }
+        .scars { color: var(--accent-bright); }
+        .points { color: var(--bone); }
+
+        .unit-links a {
+            color: var(--accent-gold);
+            font-size: 0.9em;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .unit-links a:hover {
+            color: var(--bone);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .summary-table {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .summary-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .summary-table th,
+        .summary-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-table th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .summary-table tr:hover {
+            background: rgba(139, 0, 0, 0.1);
+        }
+
+        .summary-table tfoot td {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: var(--accent-gold);
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+        }
+
+        .battle-history {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .battle-history table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .battle-history th,
+        .battle-history td {
+            padding: 14px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .battle-history th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .battle-history tr:hover {
+            background: rgba(139, 0, 0, 0.1);
+        }
+
+        .win { color: #4ade80; font-weight: bold; }
+        .loss { color: var(--accent-bright); font-weight: bold; }
+        .draw { color: var(--accent-gold); font-weight: bold; }
+
+        .crusade-log {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            padding: 25px;
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--text-muted);
+            border-left: 4px solid var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 30px;
+            border-top: 2px solid var(--border);
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        footer::before {
+            content: '\2720';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-dark);
+            padding: 0 20px;
+            font-size: 1.5em;
+            color: var(--accent);
+        }
+
+        footer a {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--bone);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+            .player-info h1 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">Back to Player Rosters</a>
+
+        <header>
+            <div class="player-info">
+                <h1>The Crusade of Binding Chains</h1>
+                <div class="faction">Black Templars - Bastion Task Force</div>
+                <div class="motto">"We are bound to duty. We are bound to war. We are bound to victory—or to death in His name."</div>
+                <span class="alliance unaligned">Alliance TBD</span>
+            </div>
+            <div class="player-stats">
+                <div class="stat-box">
+                    <div class="value">0</div>
+                    <div class="label">Wins</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">0</div>
+                    <div class="label">Losses</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">0</div>
+                    <div class="label">Draws</div>
+                </div>
+                <div class="stat-box">
+                    <div class="value">5</div>
+                    <div class="label">RP</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- HIGH COMMAND -->
+        <section>
+            <h2>High Command</h2>
+            <div class="unit-grid">
+
+                <div class="unit-card character">
+                    <div class="unit-name">High Marshal Aldric Grimvow</div>
+                    <div class="unit-type">Marshal | 80 pts</div>
+                    <div class="unit-narrative">
+                        <strong>"The Chains of Duty"</strong><br>
+                        Aldric earned his epithet after the Siege of Kallos Tertius, where he refused evacuation despite seventeen confirmed wounds. He ordered his armour's joints welded shut so he could not be carried from the field.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/black-templars/Marshal" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+                <div class="unit-card character">
+                    <div class="unit-name">Captain Hektor the Unbroken</div>
+                    <div class="unit-type">Captain in Gravis Armour | 90 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Gravis-Clad Warden of the Vanguard</strong><br>
+                        Three times Hektor has been declared dead. Three times his hearts have started beating again. The Neophytes whisper that the Emperor simply refuses to let him die.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/Captain-in-Gravis-Armour" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+                <div class="unit-card character">
+                    <div class="unit-name">The Emperor's Champion</div>
+                    <div class="unit-type">Emperor's Champion (Anointed) | 100 pts</div>
+                    <div class="unit-narrative">
+                        <strong>The Anointed Blade</strong><br>
+                        He was Brother-Initiate Caden once. Now he is simply the vessel. His eyes changed—one black as the void, one burning gold. The Black Sword speaks for him.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/black-templars/Emperors-Champion" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+                <div class="unit-card character">
+                    <div class="unit-name">Apothecary Mordecai Sternhand</div>
+                    <div class="unit-type">Apothecary | 50 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Keeper of the Sacred Vitae</strong><br>
+                        Mordecai has served four Marshals and extracted gene-seed from over two thousand fallen brothers. His left hand is a bionic replacement—lost reaching into a dying brother's chest as Tyranid bio-acid consumed his gauntlet.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/Apothecary" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BATTLELINE -->
+        <section>
+            <h2>Battleline</h2>
+            <div class="unit-grid">
+
+                <div class="unit-card battleline">
+                    <div class="unit-name">The Breakers of Dawn</div>
+                    <div class="unit-type">Assault Intercessor Squad (5) | 75 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Led by Sword Brother Konrad Ashwrath</strong><br>
+                        Their single purpose: be the first through the breach. Konrad keeps a tally of every door, wall, and enemy line they have broken. The count stands at one hundred and forty-three.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/Assault-Intercessor-Squad" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+                <div class="unit-card battleline">
+                    <div class="unit-name">The Anvil Eternal</div>
+                    <div class="unit-type">Crusader Squad (10) | 150 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Led by Initiate-Sergeant Baldur Ironjaw</strong><br>
+                        The Neophytes call themselves "The Untempered"—raw iron waiting to be forged. Baldur tells them: <em>"Watch. Learn. Survive. Then we talk."</em>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/black-templars/Crusader-Squad" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+                <div class="unit-card battleline">
+                    <div class="unit-name">The Pyre of Heretics</div>
+                    <div class="unit-type">Crusader Squad (10) | 150 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Led by Initiate-Sergeant Volker Brandtfist</strong><br>
+                        Volker demands his squad recite the Canticle of Hatred with every charge, their voices drowning out even bolter fire. The Neophytes learn fury before caution.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/black-templars/Crusader-Squad" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+                <div class="unit-card battleline">
+                    <div class="unit-name">The Silent Judgement</div>
+                    <div class="unit-type">Intercessor Squad (5) | 80 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Led by Brother-Initiate Erasmus Coldgrave</strong><br>
+                        They speak little, even among themselves. Erasmus believes every word spent talking is a prayer left unsaid. Their kill-markings are etched in silver—precise, orderly, absolute.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/Intercessor-Squad" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VEHICLES -->
+        <section>
+            <h2>Fire Support & Transport</h2>
+            <div class="unit-grid">
+
+                <div class="unit-card vehicle">
+                    <div class="unit-name">Wrath Incarnate</div>
+                    <div class="unit-type">Storm Speeder Thunderstrike | 135 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Piloted by Brother-Initiate Tybalt Swiftbane</strong><br>
+                        Tybalt was a failed Ravenwing aspirant before the Black Templars claimed him. The <em>Wrath Incarnate</em> has destroyed three enemy armour columns and one Daemon Engine the Techmarines refuse to discuss.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/Storm-Speeder-Thunderstrike" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+                <div class="unit-card vehicle">
+                    <div class="unit-name">The Pilgrim's Burden</div>
+                    <div class="unit-type">Impulsor | 85 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Commanded by Brother-Initiate Gereon Vaultkeeper</strong><br>
+                        Gereon treats the vehicle like a mobile chapel, burning incense in the crew compartment and inscribing litanies into the hull. The machine spirit has never once failed to start.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/Impulsor" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ORDER OF BATTLE SUMMARY -->
+        <section>
+            <h2>Order of Battle Summary</h2>
+            <div class="summary-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th>Points</th>
+                            <th>Rank</th>
+                            <th>XP</th>
+                            <th>Honours</th>
+                            <th>Scars</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Marshal Aldric Grimvow</td>
+                            <td>80</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Captain Hektor the Unbroken</td>
+                            <td>90</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>The Emperor's Champion</td>
+                            <td>100</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Apothecary Mordecai Sternhand</td>
+                            <td>50</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>The Breakers of Dawn</td>
+                            <td>75</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>The Anvil Eternal</td>
+                            <td>150</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>The Pyre of Heretics</td>
+                            <td>150</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>The Silent Judgement</td>
+                            <td>80</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td><em>Wrath Incarnate</em></td>
+                            <td>135</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td><em>The Pilgrim's Burden</em></td>
+                            <td>85</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>TOTAL</td>
+                            <td>995 pts</td>
+                            <td colspan="4"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- BATTLE HISTORY -->
+        <section>
+            <h2>Battle History</h2>
+            <div class="battle-history">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Battle Type</th>
+                            <th>Opponent</th>
+                            <th>Result</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: var(--text-muted); font-style: italic;">
+                                No battles recorded yet
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CRUSADE LOG -->
+        <section>
+            <h2>Crusade Log</h2>
+            <div class="crusade-log">
+                The Crusade of Binding Chains has entered the Malakor Sector. The chains are forged. The vows are spoken. Let the Emperor's enemies tremble.
+            </div>
+        </section>
+
+        <footer>
+            <p><a href="index.html">Player Rosters</a> | <a href="../index.html">Quick Start Guide</a></p>
+        </footer>
+    </div>
+</body>
+</html>
