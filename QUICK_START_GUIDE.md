@@ -44,7 +44,8 @@ Start with a 1000pt roster. You'll expand as the campaign progresses.
 - **Phase 1:** No Epic Characters, no units over 300pts, max 1 Crucible of Champions character
 - **Phase 2:** No Epic Characters over 200pts, no units over 400pts, max 2 Crucible of Champions characters (different base)
 - **Phase 3:** Max 2 Crucible of Champions characters (different base)
-- **All Phases:** Maximum 2 copies of any unit (same datasheet name)
+- **All Phases:** Maximum 2 copies of any unit (same datasheet name), excluding Battleline units
+- **Battle Honours:** When a unit gains a Battle Honour, roll randomly to determine which upgrade it receives. The first Battle Honour a unit earns may be chosen by the player instead.
 
 ### Step 3: Claim a Home World
 Each alliance controls certain planets. Your Home World grants you a **Boon** - but it can be raided and disabled by enemies.
