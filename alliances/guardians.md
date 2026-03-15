@@ -11,7 +11,7 @@
 
 | Player | Faction | Army Name | Home World |
 |--------|---------|-----------|------------|
-| - | - | - | - |
+| Samuel | Black Templars | The Crusade of Binding Chains | Aethelgard |
 
 ## Requisition Pool
 *Shared RP from raids and bonuses:* 0

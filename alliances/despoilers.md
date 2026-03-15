@@ -11,7 +11,7 @@
 
 | Player | Faction | Army Name | Home World |
 |--------|---------|-----------|------------|
-| - | - | - | - |
+| Kris | Death Guard | The Sons of Decay | TBD |
 
 ## Requisition Pool
 *Shared RP from raids and bonuses:* 0

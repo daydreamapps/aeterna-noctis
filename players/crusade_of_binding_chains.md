@@ -4,17 +4,17 @@
 
 **Faction:** Adeptus Astartes — Black Templars
 **Detachment:** Bastion Task Force
-**Alliance:** TBD
-**Home World:** TBD
-**Supply Limit:** 1000 pts
-**Requisition Points:** 5
+**Alliance:** The Guardians
+**Home World:** Aethelgard
+**Supply Limit:** 1200 pts
+**Requisition Points:** 2
 
 ---
 
 ## High Command
 
 ### High Marshal Aldric Grimvow
-**Marshal** | 80 pts | Battle-ready (0 XP)
+**Marshal** | 80 pts | Battle-ready (1 XP)
 *Wargear:* Plasma Pistol
 
 > *"The Chains of Duty"*
@@ -24,7 +24,7 @@
 ---
 
 ### Captain Hektor the Unbroken
-**Captain in Gravis Armour** | 90 pts | Battle-ready (0 XP)
+**Captain in Gravis Armour** | 90 pts | Battle-ready (1 XP)
 *Wargear:* Boltstorm Gauntlet, Power Fist, Relic Chainsword
 *Enhancements:* Artificer Armour
 
@@ -35,16 +35,18 @@
 ---
 
 ### The Emperor's Champion
-**Emperor's Champion (Anointed)** | 100 pts | Battle-ready (0 XP)
+**Emperor's Champion (Anointed)** | 100 pts | **KILLED IN ACTION**
 
-> *The Anointed Blade*
+> *The Anointed Blade — Fallen at Aethelgard*
 >
 > He was Brother-Initiate Caden once. Now he is simply the vessel. When the visions came aboard the strike cruiser *Sigismund's Wrath*, he spoke the words of the Litany of Divine Guidance for nine hours without pause. When he finally fell silent, his eyes had changed—one black as the void, one burning gold. He does not speak of his former life. He does not need to. The Black Sword speaks for him.
+>
+> **FINAL TESTAMENT:** At Aethelgard, the Anointed Blade faced the Lord of Poxes Das Boot in single combat. Though the daemon-plague clawed at his soul, he drove the Black Sword through the traitor's secondary heart. Both fell. The litany was complete. The Crusade now awaits the visions that will reveal his successor.
 
 ---
 
 ### Apothecary Mordecai Sternhand
-**Apothecary** | 50 pts | Battle-ready (0 XP)
+**Apothecary** | 50 pts | Battle-ready (1 XP)
 
 > *Keeper of the Sacred Vitae*
 >
@@ -55,7 +57,7 @@
 ## Battleline
 
 ### The Breakers of Dawn
-**Assault Intercessor Squad (5)** | 75 pts | Battle-ready (0 XP)
+**Assault Intercessor Squad (5)** | 75 pts | Battle-ready (1 XP)
 *Led by Sword Brother Konrad Ashwrath*
 
 > *Sword-Brothers of the First Strike*
@@ -65,7 +67,7 @@
 ---
 
 ### The Anvil Eternal
-**Crusader Squad (10)** | 150 pts | Battle-ready (0 XP)
+**Crusader Squad (10)** | 150 pts | Battle-ready (1 XP)
 *Led by Initiate-Sergeant Baldur Ironjaw*
 
 > *First Fighting Company, Veteran Initiates with Neophyte Charges*
@@ -75,7 +77,7 @@
 ---
 
 ### The Pyre of Heretics
-**Crusader Squad (10)** | 150 pts | Battle-ready (0 XP)
+**Crusader Squad (10)** | 150 pts | Battle-ready (1 XP)
 *Led by Initiate-Sergeant Volker Brandtfist*
 
 > *Second Fighting Company, Zealots of the Eternal Crusade*
@@ -85,7 +87,7 @@
 ---
 
 ### The Silent Judgement
-**Intercessor Squad (5)** | 80 pts | Battle-ready (0 XP)
+**Intercessor Squad (5)** | 80 pts | Battle-ready (1 XP)
 *Led by Brother-Initiate Erasmus Coldgrave*
 
 > *Marksmen of the Marshal's Retinue*
@@ -97,7 +99,7 @@
 ## Fire Support
 
 ### *Wrath Incarnate*
-**Storm Speeder Thunderstrike** | 135 pts | Battle-ready (0 XP)
+**Storm Speeder Thunderstrike** | 135 pts | Battle-ready (1 XP)
 *Piloted by Brother-Initiate Tybalt Swiftbane*
 
 > Tybalt was a failed aspirant for the Ravenwing before the Black Templars claimed him during a joint action. His skill with fast attack craft borders on prescient. The *Wrath Incarnate* has destroyed three enemy armour columns and one Daemon Engine that the Techmarines still refuse to discuss. Tybalt has decorated the speeder's hull with crusade seals and purity scripts until it resembles a flying reliquary.
@@ -107,7 +109,7 @@
 ## Dedicated Transports
 
 ### *The Pilgrim's Burden*
-**Impulsor** | 85 pts | Battle-ready (0 XP)
+**Impulsor** | 85 pts | Battle-ready (1 XP)
 *Commanded by Brother-Initiate Gereon Vaultkeeper*
 *Wargear:* Shield Dome, Multi-melta, 2x Storm Bolters
 
@@ -119,17 +121,17 @@
 
 | Unit | Points | Rank | XP | Battle Honours | Battle Scars |
 |------|--------|------|-----|----------------|--------------|
-| Marshal Aldric Grimvow | 80 | Battle-ready | 0 | — | — |
-| Captain Hektor the Unbroken | 90 | Battle-ready | 0 | — | — |
-| The Emperor's Champion | 100 | Battle-ready | 0 | — | — |
-| Apothecary Mordecai Sternhand | 50 | Battle-ready | 0 | — | — |
-| The Breakers of Dawn | 75 | Battle-ready | 0 | — | — |
-| The Anvil Eternal | 150 | Battle-ready | 0 | — | — |
-| The Pyre of Heretics | 150 | Battle-ready | 0 | — | — |
-| The Silent Judgement | 80 | Battle-ready | 0 | — | — |
-| *Wrath Incarnate* | 135 | Battle-ready | 0 | — | — |
-| *The Pilgrim's Burden* | 85 | Battle-ready | 0 | — | — |
-| **TOTAL** | **995** | | | | |
+| Marshal Aldric Grimvow | 80 | Battle-ready | 1 | — | — |
+| Captain Hektor the Unbroken | 90 | Battle-ready | 1 | Enhancement (1 RP) | — |
+| The Emperor's Champion | 100 | **KIA** | — | — | Fell at Aethelgard |
+| Apothecary Mordecai Sternhand | 50 | Battle-ready | 1 | — | — |
+| The Breakers of Dawn | 75 | Battle-ready | 1 | — | — |
+| The Anvil Eternal | 150 | Battle-ready | 1 | — | — |
+| The Pyre of Heretics | 150 | Battle-ready | 1 | — | — |
+| The Silent Judgement | 80 | Battle-ready | 1 | — | — |
+| *Wrath Incarnate* | 135 | Battle-ready | 1 | — | — |
+| *The Pilgrim's Burden* | 85 | Battle-ready | 1 | — | — |
+| **TOTAL** | **995 / 1200** | | | | |
 
 ---
 
@@ -137,10 +139,13 @@
 
 | Date | Battle Type | Opponent | Result | Notes |
 |------|-------------|----------|--------|-------|
-| — | — | — | — | — |
+| 814.M42 | Planetary Defence | Sons of Decay (Death Guard) | **VICTORY** (88-28) | Defence of Aethelgard. Emperor's Champion fell in single combat. |
 
 ---
 
 ## Crusade Log
 
 *The Crusade of Binding Chains has entered the Malakor Sector. The chains are forged. The vows are spoken. Let the Emperor's enemies tremble.*
+
+**814.M42 — The Defence of Aethelgard**
+The Sons of Decay launched a surprise assault on the Knight World of Aethelgard. The Crusade of Binding Chains met them upon the ramparts of Fortress Ironhollow and annihilated the traitor force to the last plague-bearer. The Emperor's Champion fell in single combat against the enemy Lord of Poxes—a sacrifice that bought victory. The Knight Houses have sworn fealty. Aethelgard's defences are reinforced. In the Chapel of Eternal Vigil, the brothers kneel and pray for the visions that will reveal the next Champion.
