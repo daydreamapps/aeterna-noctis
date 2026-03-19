@@ -11,7 +11,7 @@
 
 | Player | Faction | Army Name | Home World |
 |--------|---------|-----------|------------|
-| - | - | - | - |
+| TBD | Necrons | Rattle Me Bones | TBD |
 
 ## Requisition Pool
 *Shared RP from raids and bonuses:* 0
