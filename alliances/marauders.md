@@ -13,6 +13,7 @@
 |--------|---------|-----------|------------|
 | TBD | Necrons | Rattle Me Bones | TBD |
 | TBD | Aeldari | Bahzhakhain Süirel | TBD |
+| TBD | League of Votann | The Trans-Eternians Alliance | TBD |
 
 ## Requisition Pool
 *Shared RP from raids and bonuses:* 0
