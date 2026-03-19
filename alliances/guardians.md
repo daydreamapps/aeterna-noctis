@@ -12,6 +12,7 @@
 | Player | Faction | Army Name | Home World |
 |--------|---------|-----------|------------|
 | Samuel | Black Templars | The Crusade of Binding Chains | Aethelgard |
+| TBD | Dark Angels | The Judgement of Aldurukh | TBD |
 
 ## Requisition Pool
 *Shared RP from raids and bonuses:* 0
