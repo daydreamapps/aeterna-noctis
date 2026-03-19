@@ -585,7 +585,7 @@
             <ol class="steps">
                 <li><strong>Choose Your Alliance</strong> — Coordinate with the campaign organiser to join one of the three factions.</li>
                 <li><strong>Build Your Order of Battle</strong> — Start with a 1000pt roster. You'll expand as the campaign progresses.</li>
-                <li><strong>Claim a Home World</strong> — Your Home World grants you a Boon, but enemies can raid and disable it.</li>
+                <li><strong>Fight for Planetary Control</strong> — Your alliance's control percentage determines boon uses per phase.</li>
                 <li><strong>Register on Administratum</strong> — Join the campaign tracker and add your army.</li>
             </ol>
 
@@ -627,44 +627,66 @@
         </section>
 
         <section>
-            <h2>Home World Boons</h2>
+            <h2>Planetary Control</h2>
+            <p style="margin-bottom: 20px;">Your alliance's control percentage determines how many boon uses you receive each phase.</p>
+
+            <h3>Control Thresholds</h3>
+            <table>
+                <tr>
+                    <th>Control %</th>
+                    <th>Uses per Phase</th>
+                </tr>
+                <tr>
+                    <td>&lt;30%</td>
+                    <td>0 uses</td>
+                </tr>
+                <tr>
+                    <td>30-59%</td>
+                    <td>1 use</td>
+                </tr>
+                <tr>
+                    <td>60%+</td>
+                    <td>2 uses</td>
+                </tr>
+            </table>
+
+            <h3>Planet Boons (per use)</h3>
             <table>
                 <tr>
                     <th>World</th>
                     <th>Boon</th>
-                    <th>Penalty if Disabled</th>
                 </tr>
                 <tr>
                     <td><strong>Ocularis Prime</strong></td>
-                    <td>Swap Agendas after seeing opponent's</td>
-                    <td>No Surgical Deep Strikes</td>
+                    <td>Swap one Agenda after seeing opponent's choice</td>
                 </tr>
                 <tr>
                     <td><strong>Ferrum IX</strong></td>
-                    <td>Remove Battle Scars for 0 RP</td>
-                    <td>Vehicles/Monsters gain no XP</td>
+                    <td>Remove one Battle Scar for 0 RP</td>
                 </tr>
                 <tr>
                     <td><strong>Veridian Reach</strong></td>
-                    <td>+1 to Out of Action tests</td>
-                    <td>-1 to Advance/Charge</td>
+                    <td>+1 to Out of Action tests for one battle</td>
                 </tr>
                 <tr>
                     <td><strong>Sanctum Malakor</strong></td>
-                    <td>+1 Starting CP</td>
-                    <td>No Faction Stratagems</td>
+                    <td>+1 Starting CP for one battle</td>
                 </tr>
                 <tr>
                     <td><strong>Aethelgard</strong></td>
                     <td>Free "Fresh Recruits" Requisition</td>
-                    <td>No unit reinforcement</td>
                 </tr>
                 <tr>
                     <td><strong>Void-Spire 7</strong></td>
-                    <td>+1 SAP per Hulk victory</td>
-                    <td>No Artificer Relics</td>
+                    <td>+1 SAP from your next Hulk victory</td>
                 </tr>
             </table>
+
+            <div class="card" style="margin-top: 20px;">
+                <p><strong>Phase-locked:</strong> Uses calculated at phase start, expire at phase end</p>
+                <p><strong>Warmaster allocation:</strong> Alliance leader decides which members use each boon</p>
+                <p><strong>Raid rewards:</strong> Drop enemy below 60% or 30% threshold to earn +1 RP</p>
+            </div>
         </section>
 
         <section>
@@ -678,7 +700,8 @@
                 <div class="battle-card">
                     <h4>The Interdiction</h4>
                     <p class="size">1000-1500 pts</p>
-                    <p>Raid enemy Home Worlds to disable Boons or steal RP. Uses Maelstrom rules.</p>
+                    <p>Raid enemy planets to reduce their control percentage. Uses Maelstrom rules.</p>
+                    <p style="color: var(--accent-gold); font-size: 0.9em; margin: 10px 0;">Drop enemy below threshold (60% or 30%) to earn +1 RP.</p>
                     <p class="warning">Raiding means you skip the Hulk battle that round.</p>
                 </div>
                 <div class="battle-card">
