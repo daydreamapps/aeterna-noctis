@@ -1,17 +1,10 @@
 # Aethelgard
 
 **Type:** Knight World
-**Owner:** The Crusade of Binding Chains (Black Templars)
-**Alliance:** The Guardians
-**Home World Of:** The Crusade of Binding Chains
-**Boon Status:** Active
-**Defence Status:** REINFORCED
+**Home World Of:** The Crusade of Binding Chains (Black Templars)
 
-## Boon
+## Boon (per use)
 Free "Fresh Recruits" Requisition.
-
-## Penalty (when Disabled)
-Cannot reinforce destroyed units.
 
 ## Current Status
 Following the decisive defeat of the Sons of Decay, the Knight Houses of Aethelgard have pledged their support to the Black Templars. Fortress Ironhollow has been reinforced with additional defence batteries and a permanent garrison of Crusader squads patrols the primary void-landing sites.

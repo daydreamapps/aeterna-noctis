@@ -1,14 +1,9 @@
 # Ferrum IX
 
 **Type:** Forge World
-**Owner:** Unclaimed
-**Boon Status:** Active
 
-## Boon
-Remove Battle Scars for 0 RP.
-
-## Penalty (when Disabled)
-Vehicles and Monsters gain no XP.
+## Boon (per use)
+Remove one Battle Scar for 0 RP.
 
 ## Raid History
 

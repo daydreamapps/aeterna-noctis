@@ -1,14 +1,9 @@
 # Void-Spire 7
 
 **Type:** Orbital Dock
-**Owner:** Unclaimed
-**Boon Status:** Active
 
-## Boon
-+1 Strategic Asset Point per Hulk victory.
-
-## Penalty (when Disabled)
-Cannot equip Artificer Relics.
+## Boon (per use)
++1 SAP from your next Hulk victory.
 
 ## Raid History
 

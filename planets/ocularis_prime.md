@@ -1,14 +1,9 @@
 # Ocularis Prime
 
 **Type:** Shrine World
-**Owner:** Unclaimed
-**Boon Status:** Active
 
-## Boon
-Swap Agendas after seeing opponent's choice.
-
-## Penalty (when Disabled)
-No Surgical Deep Strikes.
+## Boon (per use)
+Swap one Agenda after seeing opponent's choice.
 
 ## Raid History
 

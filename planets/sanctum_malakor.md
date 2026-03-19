@@ -1,14 +1,9 @@
 # Sanctum Malakor
 
 **Type:** Cardinal World
-**Owner:** Unclaimed
-**Boon Status:** Active
 
-## Boon
-+1 Starting Command Point.
-
-## Penalty (when Disabled)
-Cannot use Faction-specific Stratagems.
+## Boon (per use)
++1 Starting CP for one battle.
 
 ## Raid History
 

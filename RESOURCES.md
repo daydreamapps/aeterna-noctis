@@ -35,75 +35,75 @@
 
 ## The Anchored Worlds
 
+### Planetary Control System
+
+Planetary control is tracked via Administratum's location system. Each alliance's control percentage determines how many boon uses they receive per phase.
+
+| Control % | Uses Available |
+|-----------|----------------|
+| <30% | 0 uses |
+| 30-59% | 1 use per phase |
+| 60%+ | 2 uses per phase |
+
+**Key Rules:**
+- **Phase-locked:** Control % is calculated at phase start; uses are fixed for the entire phase
+- **No rollover:** Unused boons expire at phase end
+- **Warmaster allocation:** Alliance leader decides which members get to use each boon
+- **Raid rewards:** If a successful raid drops the defender below a threshold (60% or 30%), the raider gains +1 RP
+
+---
+
 ### Ocularis Prime (Shrine World)
 **Type:** Ecclesiastical Stronghold
-**Controlling Interest:** TBD
 
 *The blinded eyes of ten thousand statues stare outward from Ocularis Prime, a world devoted to the Emperor's divine vision. Its monasteries house seers and astropaths whose talents are now turned to reading the Hulk's trajectory.*
 
-| Status | Boon | Penalty (if Disabled) |
-|--------|------|----------------------|
-| Active | Swap Agendas after seeing opponent's choice | No Surgical Deep Strikes |
+**Boon (per use):** Swap one Agenda after seeing opponent's choice
 
 ---
 
 ### Ferrum IX (Forge World)
 **Type:** Adeptus Mechanicus Forge
-**Controlling Interest:** TBD
 
 *The furnaces of Ferrum IX have never cooled in ten millennia. Its Tech-Priests offer repair services to any who can pay—or threaten convincingly enough.*
 
-| Status | Boon | Penalty (if Disabled) |
-|--------|------|----------------------|
-| Active | Remove Battle Scars for 0 RP | Vehicles and Monsters gain no XP |
+**Boon (per use):** Remove one Battle Scar for 0 RP
 
 ---
 
 ### Veridian Reach (Agri-World)
 **Type:** Agricultural Breadbasket
-**Controlling Interest:** TBD
 
 *Endless fields of gene-engineered crops feed the sector. The hardy population has survived Ork raids, Tyranid splinters, and Imperial tithes—they will survive this too.*
 
-| Status | Boon | Penalty (if Disabled) |
-|--------|------|----------------------|
-| Active | +1 to Out of Action tests | -1 to Advance and Charge rolls |
+**Boon (per use):** +1 to Out of Action tests for one battle
 
 ---
 
 ### Sanctum Malakor (Cardinal World)
 **Type:** Ecclesiarchy Seat of Power
-**Controlling Interest:** TBD
 
 *The spiritual heart of the sector, Sanctum Malakor's cathedrals reach into the clouds. Cardinal Voss III has declared the Hulk's arrival a test of faith—or perhaps divine punishment.*
 
-| Status | Boon | Penalty (if Disabled) |
-|--------|------|----------------------|
-| Active | +1 Starting Command Point | Cannot use Faction-specific Stratagems |
+**Boon (per use):** +1 Starting CP for one battle
 
 ---
 
 ### Aethelgard (Knight World)
 **Type:** Questoris Knight Household
-**Controlling Interest:** TBD
 
 *House Aethelgar has walked these lands since the Great Crusade. Their Thrones Mechanicum remember older wars, and their pilots are eager to add new glories to their banners.*
 
-| Status | Boon | Penalty (if Disabled) |
-|--------|------|----------------------|
-| Active | Free "Fresh Recruits" Requisition | Cannot reinforce destroyed units |
+**Boon (per use):** Free "Fresh Recruits" Requisition
 
 ---
 
 ### Void-Spire 7 (Orbital Dock)
 **Type:** Deep Space Station
-**Controlling Interest:** TBD
 
 *More a city than a station, Void-Spire 7 processes the sector's trade. Its docking clamps are strong enough to anchor to the Hulk itself—if anyone is bold enough to try.*
 
-| Status | Boon | Penalty (if Disabled) |
-|--------|------|----------------------|
-| Active | +1 Strategic Asset Point per Hulk victory | Cannot equip Artificer Relics |
+**Boon (per use):** +1 SAP from your next Hulk victory
 
 ---
 

@@ -47,17 +47,32 @@ Start with a 1000pt roster. You'll expand as the campaign progresses.
 - **All Phases:** Maximum 2 copies of any unit (same datasheet name), excluding Battleline units
 - **Battle Honours:** When a unit gains a Battle Honour, roll randomly to determine which upgrade it receives. The first Battle Honour a unit earns may be chosen by the player instead.
 
-### Step 3: Claim a Home World
-Each alliance controls certain planets. Your Home World grants you a **Boon** - but it can be raided and disabled by enemies.
+### Step 3: Planetary Control
+Each alliance fights for control of the six Anchored Worlds. Your alliance's **control percentage** determines how many boon uses you receive each phase.
 
-| World | Boon | Penalty if Disabled |
-|-------|------|---------------------|
-| Ocularis Prime | Swap Agendas after seeing opponent's | No Surgical Deep Strikes |
-| Ferrum IX | Remove Battle Scars for 0 RP | Vehicles/Monsters gain no XP |
-| Veridian Reach | +1 to Out of Action tests | -1 to Advance/Charge |
-| Sanctum Malakor | +1 Starting CP | No Faction Stratagems |
-| Aethelgard | Free "Fresh Recruits" Requisition | No unit reinforcement |
-| Void-Spire 7 | +1 SAP per Hulk victory | No Artificer Relics |
+#### Control Thresholds
+
+| Control % | Uses per Phase |
+|-----------|----------------|
+| <30% | 0 uses |
+| 30-59% | 1 use |
+| 60%+ | 2 uses |
+
+#### Planet Boons (per use)
+
+| World | Boon |
+|-------|------|
+| Ocularis Prime | Swap one Agenda after seeing opponent's choice |
+| Ferrum IX | Remove one Battle Scar for 0 RP |
+| Veridian Reach | +1 to Out of Action tests for one battle |
+| Sanctum Malakor | +1 Starting CP for one battle |
+| Aethelgard | Free "Fresh Recruits" Requisition |
+| Void-Spire 7 | +1 SAP from your next Hulk victory |
+
+**Important:**
+- Uses are **phase-locked** - calculated at phase start and expire at phase end
+- Your **Warmaster** decides which alliance members get to use each boon
+- Raid enemy planets to reduce their control (drop them below 60% or 30% to earn +1 RP)
 
 ### Step 4: Register on Administratum
 1. Go to: https://administratum.goonhammer.com
@@ -77,7 +92,8 @@ Each alliance controls certain planets. Your Home World grants you a **Boon** - 
 ### The Interdiction (Raids)
 - **Size:** 1000-1500 pts
 - **Rules:** Lair of the Tyrant (Maelstrom)
-- **Purpose:** Raid enemy Home Worlds to disable their Boons, or steal RP
+- **Purpose:** Raid enemy planets to reduce their control percentage
+- **Reward:** If you drop the defender below a threshold (60% or 30%), gain +1 RP
 - **Warning:** Raiding means you skip the Hulk battle that round
 
 ### The Hulk (Main Battles)
