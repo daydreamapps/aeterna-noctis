@@ -65,18 +65,7 @@ The Death Guard assault force was annihilated to the last plague-bearer. Not a s
 
 ## Campaign Effects
 
-- **Aethelgard:** Now defended by the Crusade of Binding Chains. Defences reinforced.
+- **Aethelgard:** The Guardians gain planetary control. Defences reinforced.
+- **The Crusade of Binding Chains:** +1 RP (victory bonus). Surviving units gain 1 XP each.
 - **The Emperor's Champion:** KILLED IN ACTION. Awaiting new Champion selection.
-- **The Sons of Decay:** Total losses. All units wiped out.
-
----
-
-## XP Awards
-
-### The Crusade of Binding Chains
-*Marked for Death agenda: +3 XP to units that destroyed marked targets*
-*Survivors gain standard XP*
-
-### The Sons of Decay
-*All units destroyed—no XP gained*
-*Casualty recovery rolls required*
+- **The Sons of Decay:** No RP gained. All units destroyed—no XP earned. Casualty recovery rolls required.
