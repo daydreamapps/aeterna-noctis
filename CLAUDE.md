@@ -81,7 +81,7 @@ Your primary goal is to process "Battle Reports" submitted by players and update
 2. **Update XP/RP:** Log casualties and veterancy for the specific units mentioned.
 3. **Nachmund Updates:** If a Hulk battle, adjust **Battle Points** and **Strategic Asset Points (SAP)** for the respective Strategic Site.
 4. **Maelstrom Updates:** If a Raid, adjust planetary control percentages in Administratum. If the raid drops the defender below a threshold (60% or 30%), award the raider +1 RP.
-5. **Generate Narrative:** Write a 1-paragraph "Vox-Intercept" style update for the Discord `#chronicles` channel.
+5. **Generate Narrative:** Write a "Vox-Intercept" style update for the Discord `#chronicles` channel. **The VOX-INTERCEPT section must be under 2000 characters.**
 
 ### Custom Prompt Templates (Slash Commands)
 
