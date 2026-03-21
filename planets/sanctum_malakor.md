@@ -9,4 +9,4 @@
 
 | Date | Attacker | Defender | Result |
 |------|----------|----------|--------|
-| - | - | - | - |
+| 815.M42 | Sons of Decay (Death Guard) | Bahzhakhain Süirel (Aeldari) | **ATTACKER VICTORY** (65-21) |
