@@ -62,22 +62,42 @@
             position: relative;
         }
 
-        /* Imperial Aquila Header */
-        header {
-            text-align: center;
-            padding: 50px 20px 40px;
-            margin-bottom: 40px;
+        /* Banner */
+        .banner {
+            width: 100%;
+            max-height: 300px;
+            overflow: hidden;
+            margin-bottom: 0;
             position: relative;
+            border: 2px solid var(--border);
             border-bottom: none;
         }
 
-        header::before {
-            content: '🦅';
+        .banner img {
+            width: 100%;
+            height: auto;
             display: block;
-            font-size: 3em;
-            margin-bottom: 15px;
-            filter: sepia(1) hue-rotate(-10deg) saturate(2);
-            opacity: 0.8;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, transparent, var(--bg-dark));
+        }
+
+        /* Imperial Aquila Header */
+        header {
+            text-align: center;
+            padding: 30px 20px 40px;
+            margin-bottom: 40px;
+            position: relative;
+            border-bottom: none;
         }
 
         header::after {
@@ -538,6 +558,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="banner">
+            <img src="images/aeterna_noctis_banner.jpg" alt="The Space Hulk Aeterna Noctis emerging from the warp">
+        </div>
         <header>
             <h1>Aeterna Noctis</h1>
             <p class="subtitle">Player Quick Start Guide</p>
