@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle 002: Heralds of Vengeance - Aeterna Noctis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1612;
+            --bg-highlight: #241a14;
+            --accent: #8b0000;
+            --accent-bright: #c41e3a;
+            --accent-gold: #c9a227;
+            --accent-bronze: #8b6914;
+            --text: #e8dcc4;
+            --text-muted: #9a8b7a;
+            --bone: #d4c4a8;
+            --border: #3d3225;
+            --shadow-red: rgba(139, 0, 0, 0.4);
+            --shadow-gold: rgba(201, 162, 39, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            background-image:
+                radial-gradient(ellipse at top, #1a0a0a 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, #0a0a1a 0%, transparent 50%);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        header::before {
+            content: '⚔';
+            display: block;
+            font-size: 3em;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                var(--accent-gold) 20%,
+                var(--accent-gold) 50%,
+                var(--accent-gold) 80%,
+                transparent 100%);
+        }
+
+        .mission-number {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9em;
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+            text-shadow:
+                0 0 10px var(--shadow-red),
+                0 0 30px var(--shadow-red),
+                2px 2px 0 #000;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            color: var(--text-muted);
+            font-size: 1em;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin: 40px 0 20px 0;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--shadow-gold);
+            position: relative;
+        }
+
+        h2::before {
+            content: '◆';
+            margin-right: 12px;
+            color: var(--accent);
+            font-size: 0.8em;
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--bone);
+            margin: 25px 0 12px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow:
+                inset 0 0 30px rgba(0,0,0,0.5),
+                0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .card::before, .card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: var(--accent-gold);
+            border-style: solid;
+        }
+
+        .card::before {
+            top: -2px;
+            left: -2px;
+            border-width: 2px 0 0 2px;
+        }
+
+        .card::after {
+            bottom: -2px;
+            right: -2px;
+            border-width: 0 2px 2px 0;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .overview-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .overview-item:last-child {
+            border-bottom: none;
+        }
+
+        .overview-label {
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        .overview-value {
+            font-weight: 600;
+            color: var(--bone);
+        }
+
+        /* Deployment Map */
+        .deployment-map {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--accent-bronze);
+            padding: 30px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .deployment-map img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid var(--border);
+        }
+
+        /* Scoring Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
+        }
+
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
+        }
+
+        tr:nth-child(even) {
+            background: rgba(0,0,0,0.2);
+        }
+
+        .scoring-timing {
+            color: var(--text-muted);
+            font-size: 0.85em;
+            font-style: italic;
+        }
+
+        .vp-value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3em;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .note {
+            background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
+            border: 2px solid var(--accent-bronze);
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .note::before {
+            content: '⚙ ';
+            color: var(--accent-gold);
+        }
+
+        .warning {
+            background: linear-gradient(145deg, rgba(139, 0, 0, 0.15) 0%, rgba(100, 0, 0, 0.1) 100%);
+            border: 2px solid var(--accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .warning::before {
+            content: '⚠ ';
+            color: var(--accent-bright);
+        }
+
+        .agenda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .agenda-card {
+            background: linear-gradient(145deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+            border: 1px solid var(--border);
+            padding: 12px;
+            font-size: 0.9em;
+        }
+
+        .agenda-card h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 0.9em;
+            margin: 0 0 6px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .agenda-card p {
+            font-size: 0.85em;
+            margin: 0 0 6px 0;
+            line-height: 1.5;
+        }
+
+        .agenda-card .xp-reward {
+            color: var(--accent-bright);
+            font-weight: 600;
+            font-size: 0.85em;
+        }
+
+        .agenda-card .sap-bonus {
+            color: var(--accent-gold);
+            font-size: 0.8em;
+            font-style: italic;
+        }
+
+        .collapsible-header {
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 10px;
+        }
+
+        .collapsible-header:hover {
+            color: var(--accent-gold);
+        }
+
+        .collapsible-header::after {
+            content: '▼';
+            font-size: 0.7em;
+            transition: transform 0.2s;
+        }
+
+        .collapsible-header.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .collapsible-content.collapsed {
+            max-height: 0 !important;
+        }
+
+        .role-tag {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7em;
+            padding: 2px 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .role-tag.defender {
+            background: #2d5a4a;
+            color: var(--text);
+        }
+
+        .role-tag.attacker {
+            background: #8b3030;
+            color: var(--text);
+        }
+
+        .role-tag.death-guard {
+            background: #4a5a3a;
+            color: var(--text);
+        }
+
+        .role-tag.necrons {
+            background: #3a4a4a;
+            color: #7fdbca;
+        }
+
+        /* Battle Briefing / Vox Transmission */
+        .battle-briefing {
+            margin-bottom: 40px;
+        }
+
+        .vox-transmission {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #0d0a08 100%);
+            border: 2px solid var(--accent);
+            padding: 25px;
+            position: relative;
+            box-shadow:
+                inset 0 0 40px rgba(139, 0, 0, 0.2),
+                0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .vox-transmission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                var(--accent) 20%,
+                var(--accent-bright) 50%,
+                var(--accent) 80%,
+                transparent 100%);
+        }
+
+        .vox-header {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75em;
+            color: var(--accent-bright);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .vox-header span {
+            display: block;
+            margin: 3px 0;
+        }
+
+        .vox-priority {
+            color: var(--accent-gold);
+        }
+
+        .vox-body {
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--bone);
+        }
+
+        .vox-body p {
+            margin-bottom: 15px;
+        }
+
+        .vox-body p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .vox-combatants {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 15px;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .vox-combatant {
+            text-align: center;
+        }
+
+        .vox-combatant-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .vox-combatant-alliance {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        .vox-combatant.despoilers .vox-combatant-name {
+            color: #c44a40;
+        }
+
+        .vox-combatant.marauders .vox-combatant-name {
+            color: var(--accent-gold);
+        }
+
+        .vox-versus {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2em;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .vox-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+            font-size: 0.85em;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .vox-footer em {
+            color: var(--bone);
+        }
+
+        .report-section {
+            margin-top: 15px;
+        }
+
+        .report-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .report-item:last-child {
+            border-bottom: none;
+        }
+
+        .report-label {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            min-width: 140px;
+            font-size: 0.9em;
+        }
+
+        .report-desc {
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--bone);
+            margin: 20px 0 10px 0;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: var(--bone);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(180deg, var(--accent) 0%, #5a0000 100%);
+            border-color: var(--accent-bright);
+            box-shadow: 0 0 15px var(--shadow-red);
+        }
+
+        .source-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(180deg, var(--bg-highlight) 0%, #1a100d 100%);
+            border: 2px solid var(--accent);
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .source-link:hover {
+            background: linear-gradient(180deg, var(--accent) 0%, #5a0000 100%);
+            box-shadow: 0 0 20px var(--shadow-red);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            border-top: 2px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        footer::before {
+            content: '☠';
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 3px; }
+            .overview-grid { grid-template-columns: 1fr; }
+            .vox-combatants { grid-template-columns: 1fr; text-align: center; }
+            .vox-versus { padding: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Battle Logs</a>
+
+        <header>
+            <p class="mission-number">Hulk Battle 002</p>
+            <h1>Heralds of Vengeance</h1>
+            <p class="subtitle">Nachmund Gauntlet Mission</p>
+        </header>
+
+        <!-- Battle Briefing -->
+        <section class="battle-briefing">
+            <div class="vox-transmission">
+                <div class="vox-header">
+                    <span class="vox-priority">++ Priority: Amber ++</span>
+                    <span>++ Source: Sensorium Array Kappa-12 ++</span>
+                    <span>++ Clearance: Tactical Command ++</span>
+                </div>
+                <div class="vox-body">
+                    <p>Warning—anomalous energy signatures detected in Sector Kappa-12. Readings consistent with mass teleport beacon calibration AND necrodermis reanimation protocols. Two hostile forces converge on the same junction.</p>
+                    <p><strong>The Sons of Decay</strong> have returned. Das Boot, the Lord of Poxes who fell at Aethelgard, walks again—Grandfather Nurgle's gifts are not so easily refused. His plague-touched warriors seek to establish strike beacons for a devastating orbital bombardment that will spread Nurgle's blessings across the Hulk.</p>
+                    <p>But something older stirs in the darkness. The <strong>Tekhsarun Awakening</strong> has begun. Necron warriors, dormant for sixty million years, have risen from their tomb-crypts within the Hulk's ancient superstructure. Their Overlord calculates that these corridors belong to the Dynasty—and the living are merely trespassers to be removed.</p>
+                    <p>Both forces race to guide strike beacons into enemy territory. Whoever triangulates their targeting solution first will unleash devastation upon their foes.</p>
+                </div>
+                <div class="vox-combatants">
+                    <div class="vox-combatant despoilers">
+                        <div class="vox-combatant-name">The Sons of Decay</div>
+                        <div class="vox-combatant-alliance">Death Guard — Despoilers</div>
+                    </div>
+                    <div class="vox-versus">VS</div>
+                    <div class="vox-combatant marauders">
+                        <div class="vox-combatant-name">Tekhsarun Awakening</div>
+                        <div class="vox-combatant-alliance">Necrons — Marauders</div>
+                    </div>
+                </div>
+                <div class="vox-footer">
+                    <em>"The dead do not rest in this place. They merely wait."</em><br>
+                    — Thought for the Day
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Overview -->
+        <section>
+            <h2>Mission Overview</h2>
+            <div class="card">
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <span class="overview-label">Board Size</span>
+                        <span class="overview-value">60" x 44"</span>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-label">Objectives</span>
+                        <span class="overview-value">3 Total</span>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-label">Deployment</span>
+                        <span class="overview-value">Diagonal</span>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-label">Victor Bonus</span>
+                        <span class="overview-value">+1 RP, +1 SAP</span>
+                    </div>
+                </div>
+                <div class="note" style="margin-top: 20px;">
+                    <strong>Mission Concept:</strong> Ominous threats stand ready to be unleashed—mass teleport strikes, fleet bombardment, or malevolent ritual super weapons. These war-changing assets must be guided by hand, requiring bold warriors to serve as their heralds.
+                </div>
+            </div>
+        </section>
+
+        <!-- Deployment Map -->
+        <section>
+            <h2>Deployment Zones</h2>
+            <div class="deployment-map">
+                <img src="https://wahapedia.ru/wh40k10ed/img/maps/ng/HeraldsOfVengeance.png" alt="Heralds of Vengeance Deployment Map - 60x44 inch board with diagonal deployment zones and 3 objectives">
+            </div>
+            <div class="card">
+                <h3>Objective Placement</h3>
+                <ul>
+                    <li><strong>1 objective</strong> in the centre of the battlefield</li>
+                    <li><strong>2 objectives</strong> placed 20" from centre, 8" from deployment zone edges (as shown)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Mission Rules -->
+        <section>
+            <h2>Mission Rules</h2>
+            <div class="card">
+                <h3>Guide Strike Beacon (Action)</h3>
+                <table>
+                    <tr>
+                        <th style="width: 120px;">Starts</th>
+                        <td>Your Shooting phase</td>
+                    </tr>
+                    <tr>
+                        <th>Units</th>
+                        <td>One or more units from your Crusade army, each within range of a <strong>different</strong> objective marker that you control</td>
+                    </tr>
+                    <tr>
+                        <th>Completes</th>
+                        <td>End of your turn</td>
+                    </tr>
+                </table>
+                <div class="warning" style="margin-top: 15px;">
+                    <strong>If Completed:</strong> For each unit that completes this Action, you can move the objective marker that unit is within range of <strong>up to 6"</strong>. The objective marker cannot end that move on top of any other objective marker or model.
+                </div>
+            </div>
+        </section>
+
+        <!-- Scoring -->
+        <section>
+            <h2>Scoring</h2>
+
+            <h3>Progressive Objective: Strike Triangulation Achieved</h3>
+            <div class="card">
+                <p class="scoring-timing">From Round 2 onwards, at the end of your turn:</p>
+                <table>
+                    <tr>
+                        <th>Objective Position</th>
+                        <th>VP</th>
+                    </tr>
+                    <tr>
+                        <td>Wholly within opponent's deployment zone</td>
+                        <td class="vp-value">3 VP</td>
+                    </tr>
+                    <tr>
+                        <td>Wholly within 6" of opponent's deployment zone</td>
+                        <td class="vp-value">2 VP</td>
+                    </tr>
+                    <tr>
+                        <td>Wholly within 12" of opponent's deployment zone</td>
+                        <td class="vp-value">1 VP</td>
+                    </tr>
+                </table>
+                <div class="note">
+                    <strong>Note:</strong> These VP values are scored <strong>per objective marker</strong> in that position. VP values are <strong>not cumulative</strong>—each objective scores based on its closest qualifying position only.
+                </div>
+            </div>
+        </section>
+
+        <!-- Army Setup -->
+        <section>
+            <h2>Army Setup: Tactical Reserves</h2>
+            <div class="card">
+                <p>Nachmund Gauntlet uses <strong>Tactical Reserves</strong> — your army is split into waves that arrive throughout the battle.</p>
+
+                <h3>Incursion (1000pts) Wave Configuration</h3>
+                <table>
+                    <tr>
+                        <th>Wave</th>
+                        <th>Points Limit</th>
+                        <th>Arrives</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary Wave</strong></td>
+                        <td>Up to 400 pts</td>
+                        <td>Deployment (start of battle)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reinforcement Wave 1</strong></td>
+                        <td>Up to 300 pts</td>
+                        <td>Start of Battle Round 2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reinforcement Wave 2</strong></td>
+                        <td>Up to 300 pts</td>
+                        <td>Start of Battle Round 3</td>
+                    </tr>
+                </table>
+
+                <div class="warning">
+                    Your total army can exceed 1000pts — the wave limits are separate. Plan your Order of Battle accordingly.
+                </div>
+
+                <h3>Building Your Waves</h3>
+                <ul>
+                    <li>Assign each unit to a wave <strong>before the battle</strong></li>
+                    <li>Reinforcement waves arrive from your battlefield edge (or via Deep Strike if the unit has that ability)</li>
+                    <li>You choose which reinforcement wave arrives at the start of each round</li>
+                </ul>
+
+                <div class="note">
+                    <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Tactical-Reserves" target="_blank">Full Tactical Reserves rules on Wahapedia</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agendas -->
+        <section>
+            <h2>Agenda Selection</h2>
+            <div class="card">
+                <p>Before the battle, select <strong>2 Agendas</strong> for your army. Units can earn XP by completing Agenda objectives.</p>
+
+                <h3>Option 1: Nachmund Agendas</h3>
+                <p class="scoring-timing">Role-specific agendas. Choose based on whether you are Attacker or Defender.</p>
+
+                <div class="collapsible-header" onclick="toggleCollapse(this)">
+                    <span>Defender Agendas (3)</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="agenda-grid">
+                        <div class="agenda-card">
+                            <h4>Activate Defence Perimeter</h4>
+                            <p><strong>Action:</strong> INFANTRY/MOUNTED in your deployment zone performs "Activate Shield Node" (Shooting phase). Completes end of opponent's next turn.</p>
+                            <p class="xp-reward">+1 XP per node</p>
+                            <p class="sap-bonus">+1 SAP if 4+ nodes</p>
+                        </div>
+                        <div class="agenda-card">
+                            <h4>Repel the Foe</h4>
+                            <p>Destroy enemy Reinforcement wave units.</p>
+                            <p class="xp-reward">+1 XP per kill (max 3 XP/unit)</p>
+                            <p class="sap-bonus">+1 SAP if entire wave wiped</p>
+                        </div>
+                        <div class="agenda-card">
+                            <h4>Defiant to the End</h4>
+                            <p>Select up to 3 units at battle start.</p>
+                            <p class="xp-reward">+2 XP if survives, +1 XP if above half</p>
+                            <p class="sap-bonus">+1 SAP if any at Starting Strength</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header" onclick="toggleCollapse(this)">
+                    <span>Attacker Agendas (3)</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="agenda-grid">
+                        <div class="agenda-card">
+                            <h4>Symbolic Objectives</h4>
+                            <p>Opponent selects 2 objectives. Control them, select up to 3 units within range at end.</p>
+                            <p class="xp-reward">+2 XP per selected unit</p>
+                            <p class="sap-bonus">+1 SAP if control all selected</p>
+                        </div>
+                        <div class="agenda-card">
+                            <h4>Prime Macro-Ordnance</h4>
+                            <p><strong>Action:</strong> INFANTRY/MOUNTED in enemy deployment zone performs "Prime Planetquake Bomb" (Shooting phase).</p>
+                            <p class="xp-reward">+2 XP per completion (max 3 XP/unit)</p>
+                            <p class="sap-bonus">+1 SAP if completed 2+ times</p>
+                        </div>
+                        <div class="agenda-card">
+                            <h4>Raze and Ruin</h4>
+                            <p>Destroy enemies near objectives.</p>
+                            <p class="xp-reward">+1 XP per kill (+2 XP if enemy zone). Max 3 XP/unit</p>
+                            <p class="sap-bonus">+1 SAP if control all enemy objectives</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Option 2: Faction-Specific Agendas</h3>
+
+                <div class="collapsible-header" onclick="toggleCollapse(this)">
+                    <span>Death Guard — The Sons of Decay (6)</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="agenda-grid">
+                        <div class="agenda-card">
+                            <span class="role-tag death-guard">Death Guard</span>
+                            <h4>Spread the Sickness</h4>
+                            <p>Keep track of Contagion Range infections. At end of battle, each unit that infected 3+ enemy units scores.</p>
+                            <p class="xp-reward">+2 XP per qualifying unit</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag death-guard">Death Guard</span>
+                            <h4>Grandfather's Blessing</h4>
+                            <p>DEATH GUARD units that fail Out of Action tests but stay on the table (via Disgustingly Resilient or similar).</p>
+                            <p class="xp-reward">+1 XP per "saved" model</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag death-guard">Death Guard</span>
+                            <h4>The Tally</h4>
+                            <p>Destroy enemy units in melee combat.</p>
+                            <p class="xp-reward">+1 XP per melee kill (max 3 XP/unit)</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag death-guard">Death Guard</span>
+                            <h4>Despoil the Land</h4>
+                            <p><strong>Action:</strong> INFANTRY performs "Despoil" action while within range of an objective in No Man's Land.</p>
+                            <p class="xp-reward">+1 XP per completion</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag death-guard">Death Guard</span>
+                            <h4>Reaper's Tally</h4>
+                            <p>BUBONIC ASTARTES CHARACTER destroys enemy models in melee. Track kill count.</p>
+                            <p class="xp-reward">+1 XP per 3 models destroyed</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag death-guard">Death Guard</span>
+                            <h4>Blessed Endurance</h4>
+                            <p>At end of battle, DEATH GUARD units that are below half-strength but still on the battlefield score.</p>
+                            <p class="xp-reward">+2 XP per qualifying unit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible-header" onclick="toggleCollapse(this)">
+                    <span>Necrons — Tekhsarun Awakening (6)</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="agenda-grid">
+                        <div class="agenda-card">
+                            <span class="role-tag necrons">Necrons</span>
+                            <h4>Dust and Ashes</h4>
+                            <p>At end of battle, units wholly within 9" of a non-friendly battlefield edge score.</p>
+                            <p class="xp-reward">+2 XP per qualifying unit</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag necrons">Necrons</span>
+                            <h4>Reclaim the Galaxy</h4>
+                            <p>Control objective markers at end of battle.</p>
+                            <p class="xp-reward">+1 XP per unit controlling an objective (+2 XP if in enemy territory)</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag necrons">Necrons</span>
+                            <h4>Code of Combat</h4>
+                            <p>NECRONS CHARACTER destroys an enemy CHARACTER in melee.</p>
+                            <p class="xp-reward">+3 XP for the killing CHARACTER</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag necrons">Necrons</span>
+                            <h4>Purge the Vermin</h4>
+                            <p>Destroy enemy units. At end of battle, if no enemy units remain on battlefield.</p>
+                            <p class="xp-reward">+2 XP per NECRONS unit on battlefield</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag necrons">Necrons</span>
+                            <h4>Eternal Protectors</h4>
+                            <p>Select a NECRONS CHARACTER. If that CHARACTER is on the battlefield at end of battle and has destroyed at least one enemy unit.</p>
+                            <p class="xp-reward">+3 XP for that CHARACTER</p>
+                        </div>
+                        <div class="agenda-card">
+                            <span class="role-tag necrons">Necrons</span>
+                            <h4>Ancient Machineries</h4>
+                            <p><strong>Action:</strong> CRYPTEK performs "Activate Tomb Systems" in your deployment zone.</p>
+                            <p class="xp-reward">+2 XP per completion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Post-Battle Reporting -->
+        <section>
+            <h2>Post-Battle Reporting</h2>
+            <div class="card">
+                <p>After the battle, report the following to your Game Master:</p>
+
+                <div class="report-section">
+                    <div class="report-item">
+                        <span class="report-label">Final Score</span>
+                        <span class="report-desc">Your VP total and your opponent's VP total</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">Kills</span>
+                        <span class="report-desc">Which of your units destroyed which enemy units (for "Dealers of Death" XP: +1 XP per 3 units destroyed)</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">Casualties</span>
+                        <span class="report-desc">Which of your units were destroyed (they must make Out of Action tests)</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">XP Earned</span>
+                        <span class="report-desc">Per unit: +1 XP (participation) + Agenda XP + Dealers of Death + Marked for Greatness (if applicable)</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">Notable Moments</span>
+                        <span class="report-desc">2-3 memorable events for the battle report (heroic last stands, dramatic kills, lucky/unlucky dice, etc.)</span>
+                    </div>
+                </div>
+
+                <h3>Quick XP Reference</h3>
+                <table>
+                    <tr>
+                        <th>Source</th>
+                        <th>XP</th>
+                    </tr>
+                    <tr>
+                        <td>Participated in battle</td>
+                        <td>+1 XP</td>
+                    </tr>
+                    <tr>
+                        <td>Destroyed 3 enemy units</td>
+                        <td>+1 XP</td>
+                    </tr>
+                    <tr>
+                        <td>Marked for Greatness</td>
+                        <td>+3 XP</td>
+                    </tr>
+                    <tr>
+                        <td>Agenda completion</td>
+                        <td>Varies (see above)</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Source Link -->
+        <section style="text-align: center; margin-top: 40px;">
+            <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Heralds-of-Vengeance" target="_blank" class="source-link">
+                View Full Mission Rules on Wahapedia &rarr;
+            </a>
+        </section>
+
+        <footer>
+            <p>The Hulk awaits. The Emperor protects.</p>
+        </footer>
+    </div>
+    <script>
+        function toggleCollapse(header) {
+            header.classList.toggle('collapsed');
+            const content = header.nextElementSibling;
+            if (content.classList.contains('collapsed')) {
+                content.classList.remove('collapsed');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                setTimeout(() => {
+                    content.classList.add('collapsed');
+                }, 10);
+            }
+        }
+
+        // Initialize all collapsible content with proper max-height
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.collapsible-content').forEach(content => {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            });
+        });
+    </script>
+</body>
+</html>
