@@ -68,6 +68,23 @@ Claude, maintain the campaign status using the following file patterns:
 * `./planets/[planet_name].md`: Planet information, boon description, and raid history.
 * `./hulk/strategic_sites.md`: Current control level (Nachmund rules) for the Bridge, Spires, Relay, and Hangar.
 * `./chronicles/[phase_name]/[battle_id].md`: Narrative battle reports and post-game updates.
+* `./battles/[battle_id]_[mission_name].html`: Player-facing battle briefing pages.
+
+### Battle Page Template Structure
+
+Use `./battles/_template.html` as the starting point for new battle pages. Each battle page includes:
+
+1. **Mission Overview** - Board size, objectives, deployment type
+2. **Deployment Zones** - Map image from Wahapedia (e.g., `https://wahapedia.ru/wh40k10ed/img/maps/ng/[MissionName].png`)
+3. **Objective Placement** - Setup rules for markers
+4. **Scoring** - Progressive and End Game objectives with VP values
+5. **Army Setup: Tactical Reserves** - Wave configuration table (Incursion: Primary 400pts, Reinforcements 300pts each)
+6. **Agenda Selection** - Two options:
+   - Option 1: Nachmund Agendas (Attacker/Defender specific, collapsible sections)
+   - Option 2: Faction-Specific Agendas (customise per player)
+7. **Post-Battle Reporting** - Checklist: Score, Kills, Casualties, XP Earned, Notable Moments
+
+Players select **2 Agendas** per battle. Link to Wahapedia source at bottom.
 
 ## 🤖 INSTRUCTIONS FOR CLAUDE CODE
 
