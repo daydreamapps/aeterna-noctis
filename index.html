@@ -38,8 +38,83 @@
                 radial-gradient(ellipse at bottom, #0a0a1a 0%, transparent 50%);
             color: var(--text);
             line-height: 1.7;
-            padding: 20px;
+            padding: 70px 20px 20px 20px;
             min-height: 100vh;
+        }
+
+        /* Top Toolbar */
+        .toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, #0d0a08 0%, #1a1210 100%);
+            border-bottom: 2px solid var(--border);
+            padding: 0 20px;
+            z-index: 999;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+
+        .toolbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        .toolbar-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .toolbar-brand:hover {
+            color: var(--accent-gold);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .toolbar-links {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .toolbar-links a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75em;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 8px 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .toolbar-links a:hover {
+            color: var(--accent-gold);
+            border-color: var(--border);
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        .toolbar-links a.external::after {
+            content: ' ↗';
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
+        .toolbar-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border);
+            margin: 0 5px;
         }
 
         /* Noise texture overlay */
@@ -540,6 +615,19 @@
             display: none;
         }
 
+        @media (max-width: 768px) {
+            .toolbar-links a {
+                font-size: 0.65em;
+                padding: 6px 8px;
+            }
+            .toolbar-links a.hide-mobile {
+                display: none;
+            }
+            .toolbar-divider {
+                display: none;
+            }
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.8em;
@@ -549,14 +637,31 @@
                 display: none;
             }
             .battle-type { grid-template-columns: 1fr; }
-            body { padding: 10px; }
+            body { padding: 60px 10px 10px 10px; }
             header::before {
                 font-size: 2em;
+            }
+            .toolbar-brand {
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
+    <nav class="toolbar">
+        <div class="toolbar-inner">
+            <a href="index.html" class="toolbar-brand">Aeterna Noctis</a>
+            <div class="toolbar-links">
+                <a href="battles/index.html">Battles</a>
+                <a href="rules/index.html">Rules</a>
+                <a href="players/index.html">Rosters</a>
+                <span class="toolbar-divider"></span>
+                <a href="https://administratum.goonhammer.com/campaigns/019ccdaf-2230-78be-ae32-5440e44659b7" target="_blank" class="external">Tracker</a>
+                <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/" target="_blank" class="external hide-mobile">Wahapedia</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="banner">
             <img src="images/aeterna_noctis_banner.jpg" alt="The Space Hulk Aeterna Noctis emerging from the warp">
@@ -835,18 +940,6 @@
                 <li>Update Administratum</li>
                 <li>Report results to campaign organiser</li>
             </ul>
-        </section>
-
-        <section>
-            <h2>Useful Links</h2>
-            <div class="links">
-                <a href="battles/index.html">Battle Logs</a>
-                <a href="rules/index.html">Rules Reference</a>
-                <a href="players/index.html">Player Rosters</a>
-                <a href="https://administratum.goonhammer.com/campaigns/019ccdaf-2230-78be-ae32-5440e44659b7" target="_blank">Campaign Tracker</a>
-                <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/" target="_blank">Crusade Rules</a>
-                <a href="https://www.goonhammer.com/getting-started-crusade/" target="_blank">Goonhammer Guide</a>
-            </div>
         </section>
 
         <footer>
