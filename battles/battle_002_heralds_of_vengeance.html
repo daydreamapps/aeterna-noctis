@@ -951,151 +951,44 @@
 
         <!-- Agendas -->
         <section>
-            <h2>Agenda Selection</h2>
+            <h2>Selected Agendas</h2>
             <div class="card">
-                <p>Before the battle, select <strong>2 Agendas</strong> for your army. Units can earn XP by completing Agenda objectives.</p>
-
-                <h3>Option 1: Nachmund Agendas</h3>
-                <p class="scoring-timing">Role-specific agendas. Choose based on whether you are Attacker or Defender.</p>
-
                 <div class="collapsible-header" onclick="toggleCollapse(this)">
-                    <span>Defender Agendas (3)</span>
+                    <span>Death Guard — The Sons of Decay (Attacker)</span>
                 </div>
                 <div class="collapsible-content">
                     <div class="agenda-grid">
                         <div class="agenda-card">
-                            <h4>Activate Defence Perimeter</h4>
-                            <p><strong>Action:</strong> INFANTRY/MOUNTED in your deployment zone performs "Activate Shield Node" (Shooting phase). Completes end of opponent's next turn.</p>
-                            <p class="xp-reward">+1 XP per node</p>
-                            <p class="sap-bonus">+1 SAP if 4+ nodes</p>
-                        </div>
-                        <div class="agenda-card">
-                            <h4>Repel the Foe</h4>
-                            <p>Destroy enemy Reinforcement wave units.</p>
-                            <p class="xp-reward">+1 XP per kill (max 3 XP/unit)</p>
-                            <p class="sap-bonus">+1 SAP if entire wave wiped</p>
-                        </div>
-                        <div class="agenda-card">
-                            <h4>Defiant to the End</h4>
-                            <p>Select up to 3 units at battle start.</p>
-                            <p class="xp-reward">+2 XP if survives, +1 XP if above half</p>
-                            <p class="sap-bonus">+1 SAP if any at Starting Strength</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="collapsible-header" onclick="toggleCollapse(this)">
-                    <span>Attacker Agendas (3)</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="agenda-grid">
-                        <div class="agenda-card">
+                            <span class="role-tag nachmund">Agenda 1</span>
                             <h4>Symbolic Objectives</h4>
                             <p>Opponent selects 2 objectives. Control them, select up to 3 units within range at end.</p>
-                            <p class="xp-reward">+2 XP per selected unit</p>
-                            <p class="sap-bonus">+1 SAP if control all selected</p>
+                            <p class="xp-reward">+2 XP per selected unit. +1 SAP if control all selected.</p>
                         </div>
                         <div class="agenda-card">
-                            <h4>Prime Macro-Ordnance</h4>
-                            <p><strong>Action:</strong> INFANTRY/MOUNTED in enemy deployment zone performs "Prime Planetquake Bomb" (Shooting phase).</p>
-                            <p class="xp-reward">+2 XP per completion (max 3 XP/unit)</p>
-                            <p class="sap-bonus">+1 SAP if completed 2+ times</p>
-                        </div>
-                        <div class="agenda-card">
-                            <h4>Raze and Ruin</h4>
-                            <p>Destroy enemies near objectives.</p>
-                            <p class="xp-reward">+1 XP per kill (+2 XP if enemy zone). Max 3 XP/unit</p>
-                            <p class="sap-bonus">+1 SAP if control all enemy objectives</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h3>Option 2: Faction-Specific Agendas</h3>
-
-                <div class="collapsible-header" onclick="toggleCollapse(this)">
-                    <span>Death Guard — The Sons of Decay (6)</span>
-                </div>
-                <div class="collapsible-content">
-                    <div class="agenda-grid">
-                        <div class="agenda-card">
-                            <span class="role-tag death-guard">Death Guard</span>
+                            <span class="role-tag death-guard">Agenda 2</span>
                             <h4>Spread the Sickness</h4>
                             <p>Keep track of Contagion Range infections. At end of battle, each unit that infected 3+ enemy units scores.</p>
                             <p class="xp-reward">+2 XP per qualifying unit</p>
                         </div>
-                        <div class="agenda-card">
-                            <span class="role-tag death-guard">Death Guard</span>
-                            <h4>Grandfather's Blessing</h4>
-                            <p>DEATH GUARD units that fail Out of Action tests but stay on the table (via Disgustingly Resilient or similar).</p>
-                            <p class="xp-reward">+1 XP per "saved" model</p>
-                        </div>
-                        <div class="agenda-card">
-                            <span class="role-tag death-guard">Death Guard</span>
-                            <h4>The Tally</h4>
-                            <p>Destroy enemy units in melee combat.</p>
-                            <p class="xp-reward">+1 XP per melee kill (max 3 XP/unit)</p>
-                        </div>
-                        <div class="agenda-card">
-                            <span class="role-tag death-guard">Death Guard</span>
-                            <h4>Despoil the Land</h4>
-                            <p><strong>Action:</strong> INFANTRY performs "Despoil" action while within range of an objective in No Man's Land.</p>
-                            <p class="xp-reward">+1 XP per completion</p>
-                        </div>
-                        <div class="agenda-card">
-                            <span class="role-tag death-guard">Death Guard</span>
-                            <h4>Reaper's Tally</h4>
-                            <p>BUBONIC ASTARTES CHARACTER destroys enemy models in melee. Track kill count.</p>
-                            <p class="xp-reward">+1 XP per 3 models destroyed</p>
-                        </div>
-                        <div class="agenda-card">
-                            <span class="role-tag death-guard">Death Guard</span>
-                            <h4>Blessed Endurance</h4>
-                            <p>At end of battle, DEATH GUARD units that are below half-strength but still on the battlefield score.</p>
-                            <p class="xp-reward">+2 XP per qualifying unit</p>
-                        </div>
                     </div>
                 </div>
 
                 <div class="collapsible-header" onclick="toggleCollapse(this)">
-                    <span>Necrons — Tekhsarun Awakening (6)</span>
+                    <span>Necrons — Tekhsarun Awakening (Defender)</span>
                 </div>
                 <div class="collapsible-content">
                     <div class="agenda-grid">
                         <div class="agenda-card">
-                            <span class="role-tag necrons">Necrons</span>
-                            <h4>Dust and Ashes</h4>
-                            <p>At end of battle, units wholly within 9" of a non-friendly battlefield edge score.</p>
-                            <p class="xp-reward">+2 XP per qualifying unit</p>
+                            <span class="role-tag necrons">Agenda 1</span>
+                            <h4>Immortal Servitude</h4>
+                            <p>Track wounds recovered via Reanimation Protocols. For every 12 wounds recovered, your WARLORD gains 1 XP. If you recover 12+ wounds, you can select a Reanimation System to activate (allocate 1 Awakening point).</p>
+                            <p class="xp-reward">+1 XP per 12 wounds recovered (max 3 XP for Warlord)</p>
                         </div>
                         <div class="agenda-card">
-                            <span class="role-tag necrons">Necrons</span>
-                            <h4>Reclaim the Galaxy</h4>
-                            <p>Control objective markers at end of battle.</p>
-                            <p class="xp-reward">+1 XP per unit controlling an objective (+2 XP if in enemy territory)</p>
-                        </div>
-                        <div class="agenda-card">
-                            <span class="role-tag necrons">Necrons</span>
-                            <h4>Code of Combat</h4>
-                            <p>NECRONS CHARACTER destroys an enemy CHARACTER in melee.</p>
-                            <p class="xp-reward">+3 XP for the killing CHARACTER</p>
-                        </div>
-                        <div class="agenda-card">
-                            <span class="role-tag necrons">Necrons</span>
-                            <h4>Purge the Vermin</h4>
-                            <p>Destroy enemy units. At end of battle, if no enemy units remain on battlefield.</p>
-                            <p class="xp-reward">+2 XP per NECRONS unit on battlefield</p>
-                        </div>
-                        <div class="agenda-card">
-                            <span class="role-tag necrons">Necrons</span>
-                            <h4>Eternal Protectors</h4>
-                            <p>Select a NECRONS CHARACTER. If that CHARACTER is on the battlefield at end of battle and has destroyed at least one enemy unit.</p>
-                            <p class="xp-reward">+3 XP for that CHARACTER</p>
-                        </div>
-                        <div class="agenda-card">
-                            <span class="role-tag necrons">Necrons</span>
-                            <h4>Ancient Machineries</h4>
-                            <p><strong>Action:</strong> CRYPTEK performs "Activate Tomb Systems" in your deployment zone.</p>
-                            <p class="xp-reward">+2 XP per completion</p>
+                            <span class="role-tag nachmund">Agenda 2</span>
+                            <h4>Defiant to the End</h4>
+                            <p>Select up to 3 units at battle start. At end of battle: +2 XP if unit survives, +1 XP if not Below Half-strength.</p>
+                            <p class="xp-reward">+2/+3 XP per unit. +1 SAP if any at Starting Strength.</p>
                         </div>
                     </div>
                 </div>
