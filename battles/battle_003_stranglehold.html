@@ -704,6 +704,52 @@
             color: var(--accent);
         }
 
+        /* Battle Report Styles */
+        .result-card {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .result-card.despoilers-victory {
+            border: 2px solid #c44a40;
+            background: linear-gradient(180deg, rgba(196, 74, 64, 0.2) 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .result-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .result-label {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #c44a40;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .result-score {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .battle-report h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+
+        .battle-report h4 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+        }
+
         @media (max-width: 768px) {
             .toolbar-links a {
                 font-size: 0.65em;
@@ -780,6 +826,180 @@
                     <em>"Faith is the fortress of the righteous. Doubt is the weapon of the damned."</em><br>
                     — Thought for the Day
                 </div>
+            </div>
+        </section>
+
+        <!-- Battle Report -->
+        <section class="battle-report">
+            <h2>Battle Report</h2>
+
+            <div class="card result-card despoilers-victory">
+                <div class="result-header">
+                    <span class="result-label">DESPOILERS VICTORY</span>
+                    <span class="result-score">10 — 7</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>++ VOX-INTERCEPT: AFTER ACTION REPORT ++</h3>
+                <div class="vox-body" style="border-left: 3px solid var(--accent); padding-left: 15px; margin: 15px 0;">
+                    <p>The chokepoint at Lambda-3 has fallen to the Ruinous Powers. High Marshal Grimvow is down—struck by the Venomcrawler's bile-cannons as his warriors attempted to secure the central junction. The Pilgrim's Burden limped from the field on a single functioning tread, its machine spirit scarred by the ordeal.</p>
+                    <p>Yet the Templars did not break. <strong>The Pyre of Heretics</strong> became the blade of the Emperor's wrath—Initiate-Sergeant Volker Brandtfist led his dwindling squad through four enemy units before the Predator's guns finally silenced them. The Neophytes learned fury before caution. They learned it well.</p>
+                    <p>The enemy's Venomcrawler and Predator proved decisive, their firepower strangling every Imperial advance. The Chaos warbands now control the staging posts. The Guardians must find another route.</p>
+                    <p><em>The Chapel of Eternal Vigil has chosen. Brother-Initiate Caden's sacrifice at Aethelgard has been answered—a new Emperor's Champion rises, blessed with the Epitome of Piety and marked as an Inspirational Fighter.</em></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Casualties & Battle Scars</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th>Status</th>
+                            <th>Battle Scar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3" style="background: rgba(74, 158, 74, 0.2); font-weight: bold;">Black Templars</td>
+                        </tr>
+                        <tr>
+                            <td>High Marshal Aldric Grimvow</td>
+                            <td class="loss">DESTROYED</td>
+                            <td style="color: var(--accent-bright);">FATIGUED — -1 OC, no Charge bonus</td>
+                        </tr>
+                        <tr>
+                            <td>The Pilgrim's Burden</td>
+                            <td class="loss">DESTROYED</td>
+                            <td style="color: var(--accent-bright);">MARK OF SHAME — Cannot attach, no auras, cannot be MFG</td>
+                        </tr>
+                        <tr>
+                            <td>The Anvil Eternal</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>The Righteous Fall</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>The Silent Judgement</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>The Pyre of Heretics</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Apothecary Mordecai Sternhand</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="background: rgba(196, 74, 64, 0.2); font-weight: bold;">Chaos Space Marines</td>
+                        </tr>
+                        <tr>
+                            <td>Rhino</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Cultists</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Legionaries (w. Lord)</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Chaos Lord</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Raptors</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Bikers</td>
+                            <td class="loss">DESTROYED</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Marked for Greatness</h3>
+                <div class="unit-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px;">
+                    <div style="background: rgba(74, 158, 74, 0.15); border: 1px solid #4a9956; padding: 15px;">
+                        <strong style="color: #4a9956;">Black Templars</strong><br>
+                        The Pyre of Heretics (+3 XP)
+                    </div>
+                    <div style="background: rgba(196, 74, 64, 0.15); border: 1px solid #c44a40; padding: 15px;">
+                        <strong style="color: #c44a40;">CSM (Victor Bonus)</strong><br>
+                        Venomcrawler (+3 XP)<br>
+                        Predator (+3 XP)
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Experience Summary</h3>
+                <h4 style="color: #4a9956; margin-top: 15px;">Black Templars</h4>
+                <table>
+                    <thead>
+                        <tr><th>Unit</th><th>Before</th><th>+Part</th><th>+Kills</th><th>+Agenda</th><th>+MFG</th><th>After</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>High Marshal Grimvow</td><td>1</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>2</strong></td></tr>
+                        <tr><td>Apothecary Mordecai</td><td>1</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>2</strong></td></tr>
+                        <tr><td>Captain Hektor</td><td>1</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>2</strong></td></tr>
+                        <tr><td>The Breakers of Dawn</td><td>1</td><td>1</td><td>—</td><td>3 (Rec)</td><td>—</td><td><strong>5</strong></td></tr>
+                        <tr><td>The Anvil Eternal</td><td>1</td><td>1</td><td>—</td><td>1 (FHE)</td><td>—</td><td><strong>3</strong></td></tr>
+                        <tr style="background: rgba(201, 162, 39, 0.15);"><td>The Pyre of Heretics</td><td>1</td><td>1</td><td>1</td><td>3 (FHE)</td><td>3</td><td><strong>9</strong></td></tr>
+                        <tr><td>The Pilgrim's Burden</td><td>1</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>2</strong></td></tr>
+                        <tr><td>The Silent Judgement</td><td>1</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>2</strong></td></tr>
+                        <tr><td>The Righteous Fall</td><td>0</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>1</strong></td></tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 10px; color: var(--text-muted);"><strong>Crusade Goals:</strong> Honour 0 → 3, Relic Parts 0 → 1</p>
+
+                <h4 style="color: #c44a40; margin-top: 25px;">Chaos Space Marines</h4>
+                <table>
+                    <thead>
+                        <tr><th>Unit</th><th>Before</th><th>+Part</th><th>+Kills</th><th>+Agenda</th><th>+MFG</th><th>After</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Terminator Lord</td><td>0</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>1</strong></td></tr>
+                        <tr><td>Chaos Lord</td><td>0</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>1</strong></td></tr>
+                        <tr><td>Master of Executions</td><td>0</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>1</strong></td></tr>
+                        <tr><td>Legionaries (1st)</td><td>0</td><td>1</td><td>—</td><td>1 (BR)</td><td>—</td><td><strong>2</strong></td></tr>
+                        <tr><td>Legionaries (2nd)</td><td>0</td><td>1</td><td>—</td><td>3 (BR)</td><td>—</td><td><strong>4</strong></td></tr>
+                        <tr><td>Raptors</td><td>0</td><td>1</td><td>—</td><td>6 (BR+SDS)</td><td>—</td><td><strong>7</strong></td></tr>
+                        <tr><td>Cultists</td><td>0</td><td>1</td><td>—</td><td>3 (SDS)</td><td>—</td><td><strong>4</strong></td></tr>
+                        <tr><td>Bikers</td><td>0</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>1</strong></td></tr>
+                        <tr style="background: rgba(201, 162, 39, 0.15);"><td>Venomcrawler</td><td>0</td><td>1</td><td>—</td><td>—</td><td>3</td><td><strong>4</strong></td></tr>
+                        <tr style="background: rgba(201, 162, 39, 0.15);"><td>Predator</td><td>0</td><td>1</td><td>1</td><td>—</td><td>3</td><td><strong>5</strong></td></tr>
+                        <tr><td>Rhino</td><td>0</td><td>1</td><td>—</td><td>—</td><td>—</td><td><strong>1</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>New Emperor's Champion</h3>
+                <p>The visions have come. A new Champion rises from the Chapel of Eternal Vigil:</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>EPITOME OF PIETY</strong> — Feel No Pain 6+ (4+ vs Psychic/Mortal Wounds)</li>
+                    <li><strong>INSPIRATIONAL FIGHTER</strong> — If the Champion kills a CHARACTER, all units within 6" gain +1 Attack until end of phase</li>
+                </ul>
             </div>
         </section>
 
