@@ -21,15 +21,16 @@ Then provide the battle notes including:
 ## What This Command Does
 
 ### 1. Adds Battle Report Section
-Inserts after the Battle Briefing:
+Replaces the pre-battle briefing with:
 - Victory banner with final score
-- VOX-INTERCEPT narrative summary (under 2000 chars)
+- VOX-INTERCEPT after action report (full vox-transmission format with header)
 - Casualties & Battle Scars table
 - Marked for Greatness summary
 - Any special outcomes (new champions, etc.)
 
 ### 2. Removes Pre-Planning Sections
 Removes sections only useful before the battle:
+- **Battle Briefing** (pre-battle narrative - replaced by after action report)
 - Experience Summary (detailed XP breakdown)
 - Mission Overview
 - Deployment Zones
@@ -38,16 +39,34 @@ Removes sections only useful before the battle:
 
 ### 3. Keeps Reference Sections
 Preserves sections useful for historical record:
-- Battle Briefing (narrative context)
 - Mission Rules
 - Scoring rules
 - Selected Agendas
 - Source Link
 
-## Narrative Guidelines
+## VOX-INTERCEPT Format
 
-The VOX-INTERCEPT narrative should:
-- Be under 2000 characters (per CLAUDE.md rules)
+The after action report uses the full `vox-transmission` format with header:
+
+```html
+<div class="vox-transmission">
+    <div class="vox-header">
+        <span class="vox-priority">++ Priority: [Amber/Crimson] ++</span>
+        <span>++ Source: [Location] Sensorium ++</span>
+        <span>++ Timestamp: [Date].M42 ++</span>
+    </div>
+    <div class="vox-body">
+        [Narrative paragraphs...]
+    </div>
+    <div class="vox-footer">
+        <em>"[Thought for the day quote]"</em><br>
+        — Thought for the Day
+    </div>
+</div>
+```
+
+### Narrative Guidelines
+- Under 2000 characters (per CLAUDE.md rules)
 - Highlight heroic moments and dramatic kills
 - Reference units by their crusade names
 - Include any battle scars earned and their narrative impact
@@ -68,10 +87,20 @@ The VOX-INTERCEPT narrative should:
         </div>
     </div>
 
-    <div class="card">
-        <h3>++ VOX-INTERCEPT: AFTER ACTION REPORT ++</h3>
+    <div class="vox-transmission">
+        <div class="vox-header">
+            <span class="vox-priority">++ Priority: Amber ++</span>
+            <span>++ Source: Sector [X] Sensorium ++</span>
+            <span>++ Timestamp: 814.M42 ++</span>
+        </div>
         <div class="vox-body">
-            [Narrative paragraphs...]
+            <p>[Opening - battle outcome and key casualties]</p>
+            <p>[Heroic moments - units that distinguished themselves]</p>
+            <p>[Closing - campaign implications]</p>
+        </div>
+        <div class="vox-footer">
+            <em>"[Thematic quote]"</em><br>
+            — Thought for the Day
         </div>
     </div>
 
