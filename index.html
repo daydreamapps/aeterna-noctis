@@ -238,6 +238,27 @@
             vertical-align: middle;
         }
 
+        h2 a.section-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h2 a.section-link:hover {
+            color: var(--accent-gold);
+        }
+
+        h2 a.section-link::after {
+            content: ' 🔗';
+            font-size: 0.5em;
+            opacity: 0;
+            transition: opacity 0.2s;
+            vertical-align: middle;
+        }
+
+        h2 a.section-link:hover::after {
+            opacity: 0.6;
+        }
+
         h3 {
             font-family: 'Cinzel', serif;
             color: var(--bone);
@@ -671,15 +692,15 @@
             <p class="subtitle">Player Quick Start Guide</p>
         </header>
 
-        <section>
-            <h2>What is Crusade?</h2>
+        <section id="what-is-crusade">
+            <h2><a href="#what-is-crusade" class="section-link">What is Crusade?</a></h2>
             <div class="card">
                 <p>Crusade is a narrative campaign where your army grows over time. Units gain experience, earn <strong>Battle Honours</strong> (upgrades), and sometimes suffer <strong>Battle Scars</strong> (penalties). Your victories matter, your losses have consequences, and your heroes can become legends.</p>
             </div>
         </section>
 
-        <section>
-            <h2>The Story So Far</h2>
+        <section id="story">
+            <h2><a href="#story" class="section-link">The Story So Far</a></h2>
             <p class="narrative">The Space Hulk <em>Aeterna Noctis</em> has entered the Malakor Sector. Its massive warp-wake has anchored six worlds, dragging them toward the system's sun. Three alliances now fight for control...</p>
 
             <div style="text-align: center; margin: 30px 0;">
@@ -708,8 +729,8 @@
             </table>
         </section>
 
-        <section>
-            <h2>Getting Started</h2>
+        <section id="getting-started">
+            <h2><a href="#getting-started" class="section-link">Getting Started</a></h2>
             <ol class="steps">
                 <li><strong>Choose Your Alliance</strong> — Coordinate with the campaign organiser to join one of the three factions.</li>
                 <li><strong>Build Your Order of Battle</strong> — Start with a 1000pt roster. You'll expand as the campaign progresses.</li>
@@ -754,8 +775,8 @@
             </div>
         </section>
 
-        <section>
-            <h2>Planetary Control</h2>
+        <section id="planetary-control">
+            <h2><a href="#planetary-control" class="section-link">Planetary Control</a></h2>
             <p style="margin-bottom: 20px;">Your alliance's control percentage determines how many boon uses you receive each phase.</p>
 
             <h3>Control Thresholds</h3>
@@ -817,8 +838,8 @@
             </div>
         </section>
 
-        <section>
-            <h2>Battle Types</h2>
+        <section id="battle-types">
+            <h2><a href="#battle-types" class="section-link">Battle Types</a></h2>
             <div class="battle-type">
                 <div class="battle-card">
                     <h4>The Breach</h4>
@@ -846,8 +867,8 @@
             </div>
         </section>
 
-        <section>
-            <h2>Strategic Sites</h2>
+        <section id="strategic-sites">
+            <h2><a href="#strategic-sites" class="section-link">Strategic Sites</a></h2>
             <p style="margin-bottom: 20px; text-align: center;">Control of these locations on the <em>Aeterna Noctis</em> grants powerful bonuses to your alliance.</p>
 
             <div class="battle-type">
@@ -921,8 +942,8 @@
             </table>
         </section>
 
-        <section>
-            <h2>Crusade Mechanics</h2>
+        <section id="crusade-mechanics">
+            <h2><a href="#crusade-mechanics" class="section-link">Crusade Mechanics</a></h2>
 
             <h3>Requisition Points (RP)</h3>
             <div class="card">
@@ -1003,8 +1024,8 @@
             </div>
         </section>
 
-        <section>
-            <h2>After Each Battle</h2>
+        <section id="after-battle">
+            <h2><a href="#after-battle" class="section-link">After Each Battle</a></h2>
             <ul class="checklist">
                 <li>Gain 1 RP</li>
                 <li>Award XP to participating units</li>
