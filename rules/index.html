@@ -221,6 +221,27 @@
             font-size: 0.9em;
         }
 
+        h2 a.section-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h2 a.section-link:hover {
+            color: var(--accent-gold);
+        }
+
+        h2 a.section-link::after {
+            content: ' 🔗';
+            font-size: 0.5em;
+            opacity: 0;
+            transition: opacity 0.2s;
+            vertical-align: middle;
+        }
+
+        h2 a.section-link:hover::after {
+            opacity: 0.6;
+        }
+
         h3 {
             font-family: 'Cinzel', serif;
             color: var(--bone);
@@ -643,7 +664,7 @@
 
         <!-- House Rules Section -->
         <section id="house-rules">
-            <h2>House Rules <span class="house-rule-tag">Campaign Specific</span></h2>
+            <h2><a href="#house-rules" class="section-link">House Rules</a> <span class="house-rule-tag">Campaign Specific</span></h2>
             <div class="card house-rule">
                 <h3>Army Limitations by Phase</h3>
                 <table>
@@ -680,7 +701,7 @@
 
         <!-- Requisitions Section -->
         <section id="requisitions">
-            <h2>Requisition Points (RP)</h2>
+            <h2><a href="#requisitions" class="section-link">Requisition Points (RP)</a></h2>
             <div class="card">
                 <p><strong>Starting RP:</strong> 5</p>
                 <p><strong>Gain:</strong> 1 RP after each battle</p>
@@ -733,7 +754,7 @@
 
         <!-- Experience Section -->
         <section id="experience">
-            <h2>Experience Points (XP)</h2>
+            <h2><a href="#experience" class="section-link">Experience Points (XP)</a></h2>
             <div class="card">
                 <h3>Earning XP</h3>
                 <table>
@@ -768,7 +789,7 @@
 
         <!-- Ranks Section -->
         <section id="ranks">
-            <h2>Ranks & Battle Honours</h2>
+            <h2><a href="#ranks" class="section-link">Ranks & Battle Honours</a></h2>
             <table>
                 <tr>
                     <th>XP Required</th>
@@ -815,7 +836,7 @@
 
         <!-- Battle Honours Categories -->
         <section id="honours-types">
-            <h2>Battle Honours Categories</h2>
+            <h2><a href="#honours-types" class="section-link">Battle Honours Categories</a></h2>
 
             <h3>Battle Traits</h3>
             <div class="card">
@@ -888,7 +909,7 @@
 
         <!-- Battle Scars Section -->
         <section id="scars">
-            <h2>Battle Scars</h2>
+            <h2><a href="#scars" class="section-link">Battle Scars</a></h2>
             <p>When a unit fails an Out of Action test, it may gain a Battle Scar. Roll D6 or choose:</p>
 
             <div class="grid-2">
@@ -925,7 +946,7 @@
 
         <!-- Out of Action Section -->
         <section id="out-of-action">
-            <h2>Out of Action Tests</h2>
+            <h2><a href="#out-of-action" class="section-link">Out of Action Tests</a></h2>
             <div class="card highlight">
                 <h3>When to Test</h3>
                 <p>After a battle, roll a D6 for each unit that was destroyed during the game.</p>
@@ -951,7 +972,7 @@
 
         <!-- Crusade Points Section -->
         <section id="crusade-points">
-            <h2>Crusade Points</h2>
+            <h2><a href="#crusade-points" class="section-link">Crusade Points</a></h2>
             <div class="card">
                 <p>Crusade Points represent a unit's overall power level. Used for balancing and some campaign mechanics.</p>
 
@@ -981,7 +1002,7 @@
 
         <!-- Skirmish Rules -->
         <section id="skirmish">
-            <h2>Skirmish Rules</h2>
+            <h2><a href="#skirmish" class="section-link">Skirmish Rules</a></h2>
             <p>Skirmish battles take place on or near the planets of the Malakor Sector.</p>
 
             <div class="card">
@@ -1025,7 +1046,7 @@
 
         <!-- Nachmund Campaign Rules -->
         <section id="nachmund">
-            <h2>Nachmund Campaign Rules</h2>
+            <h2><a href="#nachmund" class="section-link">Nachmund Campaign Rules</a></h2>
             <p>These rules govern battles fought on the Space Hulk <em>Aeterna Noctis</em>.</p>
 
             <h3>Battle Points</h3>

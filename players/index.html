@@ -233,6 +233,27 @@
             margin: 0 15px;
         }
 
+        h2 a.section-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h2 a.section-link:hover {
+            color: var(--accent-gold);
+        }
+
+        h2 a.section-link::after {
+            content: ' 🔗';
+            font-size: 0.5em;
+            opacity: 0;
+            transition: opacity 0.2s;
+            vertical-align: middle;
+        }
+
+        h2 a.section-link:hover::after {
+            opacity: 0.6;
+        }
+
         .alliance-section { margin-bottom: 50px; }
 
         .player-grid {
@@ -452,8 +473,8 @@
         </div>
 
         <!-- THE GUARDIANS -->
-        <section class="alliance-section">
-            <h2>The Guardians</h2>
+        <section id="guardians" class="alliance-section">
+            <h2><a href="#guardians" class="section-link">The Guardians</a></h2>
             <div class="player-grid">
 
                 <div class="player-card guardians">
@@ -486,8 +507,8 @@
         </section>
 
         <!-- THE DESPOILERS -->
-        <section class="alliance-section">
-            <h2>The Despoilers</h2>
+        <section id="despoilers" class="alliance-section">
+            <h2><a href="#despoilers" class="section-link">The Despoilers</a></h2>
             <div class="player-grid">
 
                 <div class="player-card despoilers">
@@ -507,8 +528,8 @@
         </section>
 
         <!-- THE MARAUDERS -->
-        <section class="alliance-section">
-            <h2>The Marauders</h2>
+        <section id="marauders" class="alliance-section">
+            <h2><a href="#marauders" class="section-link">The Marauders</a></h2>
             <div class="player-grid">
 
                 <div class="player-card marauders">

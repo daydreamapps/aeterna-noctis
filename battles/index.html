@@ -215,6 +215,27 @@
             vertical-align: middle;
         }
 
+        h2 a.section-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h2 a.section-link:hover {
+            color: var(--accent-gold);
+        }
+
+        h2 a.section-link::after {
+            content: ' 🔗';
+            font-size: 0.5em;
+            opacity: 0;
+            transition: opacity 0.2s;
+            vertical-align: middle;
+        }
+
+        h2 a.section-link:hover::after {
+            opacity: 0.6;
+        }
+
         .back-link {
             display: inline-block;
             font-family: 'Cinzel', serif;
@@ -586,8 +607,8 @@
         </header>
 
         <!-- Upcoming Battles -->
-        <section>
-            <h2>Upcoming Battles</h2>
+        <section id="upcoming">
+            <h2><a href="#upcoming" class="section-link">Upcoming Battles</a></h2>
             <p class="section-intro">Conflicts yet to be resolved. The Emperor watches.</p>
 
             <div class="battle-entry upcoming">
@@ -619,8 +640,8 @@
         </section>
 
         <!-- Completed Battles -->
-        <section>
-            <h2>Completed Battles</h2>
+        <section id="completed">
+            <h2><a href="#completed" class="section-link">Completed Battles</a></h2>
             <p class="section-intro">The fallen are remembered. The victors are honoured.</p>
 
             <div class="battle-entry">
