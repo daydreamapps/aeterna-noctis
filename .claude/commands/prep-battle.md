@@ -1,115 +1,91 @@
 # Prepare Battle
 
-Sets up a battle page with pre-battle information once players have made their selections.
+Creates a new battle page with mission briefing and pre-battle information.
 
 ## Input Required
-Provide the battle number and pre-battle selections. Example:
+Provide the battle details. Example:
 ```
-/prep-battle 002
+/prep-battle Battle 4, Front-line Warfare, Black Templars vs Aeldari, March 31 2026
 ```
 
-Then provide:
+Include:
+- Battle number
+- Mission name (from Nachmund Gauntlet)
+- Combatants (Army Name, Faction, Alliance)
 - Attacker and Defender assignments
-- Selected agendas for each player (2 per player, plus any bonus agendas)
-- Any special setup notes
+- Real-world date
 
 ## What This Command Does
 
-### 1. Sets Attacker/Defender Roles
-Updates the combatants section to show which player is Attacker vs Defender:
-```html
-<div class="vox-combatant-role">Attacker</div>
-<div class="vox-combatant-role">Defender</div>
-```
-
-### 2. Updates Agendas Section
-- Removes "Option 1/Option 2" structure
-- Changes header from "Agenda Selection" to "Selected Agendas"
-- Removes unselected agendas, keeping only chosen ones
-- Labels agendas as "Agenda 1", "Agenda 2", "Bonus Agenda" etc.
-- Adds role indicator (Attacker/Defender) to each faction header
-- Looks up and includes rules text for each selected agenda
-
-### 3. Agenda Sources
-When looking up agenda rules, check:
-1. **Faction-specific agendas** - From faction Crusade rules on Wahapedia
-2. **Nachmund Gauntlet agendas** - Generic mission agendas (Cut Off the Head, Drive Deep, Search Drop Site, Strike and Purge, Strategic Dominance)
-3. **Defender agendas** - Activate Defence Perimeter, Repel the Foe, Defiant to the End
-4. **Attacker agendas** - Symbolic Objectives, Prime Macro-Ordnance, Raze and Ruin
-
-### 4. Keeps Pre-Battle Sections
-Preserves sections needed before battle:
-- Battle Briefing (pre-battle narrative)
-- Mission Overview
-- Deployment Zones
-- Mission Rules
-- Scoring
-- Army Setup: Tactical Reserves
+### 1. Creates Battle Page
+Uses the template structure from existing battles to create a new HTML page with:
+- Toolbar navigation
+- Header with battle number, narrative title, and mission name
+- Battle briefing (Vox Transmission narrative)
+- Mission overview, deployment map, objective placement
+- Scoring rules
+- Army Setup (Tactical Reserves)
+- Agenda Selection
 - Post-Battle Reporting
 
-## Example Output Structure
-
+### 2. Sets Combatants and Roles
+Updates the vox-combatants section with Attacker/Defender roles:
 ```html
-<!-- Agendas -->
-<section>
-    <h2>Selected Agendas</h2>
-    <div class="card">
-        <div class="collapsible-header" onclick="toggleCollapse(this)">
-            <span>[Faction] — [Army Name] (Attacker)</span>
-        </div>
-        <div class="collapsible-content">
-            <div class="agenda-grid">
-                <div class="agenda-card">
-                    <span class="role-tag [faction]">Agenda 1</span>
-                    <h4>[Agenda Name]</h4>
-                    <p>[Agenda rules text]</p>
-                    <p class="xp-reward">[XP rewards]</p>
-                </div>
-                <div class="agenda-card">
-                    <span class="role-tag nachmund">Agenda 2</span>
-                    <h4>[Agenda Name]</h4>
-                    <p>[Agenda rules text]</p>
-                    <p class="xp-reward">[XP rewards]</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="collapsible-header" onclick="toggleCollapse(this)">
-            <span>[Faction] — [Army Name] (Defender)</span>
-        </div>
-        <div class="collapsible-content">
-            [Similar structure for defender's agendas]
-        </div>
-    </div>
-</section>
+<div class="vox-combatant guardians">
+    <div class="vox-combatant-name">Army Name</div>
+    <div class="vox-combatant-alliance">Faction — Alliance</div>
+    <div class="vox-combatant-role">Attacker</div>
+</div>
 ```
 
-## Role Tag Classes
-- `.role-tag.[faction]` - Faction-specific agenda (e.g., `.role-tag.death-guard`, `.role-tag.necrons`)
-- `.role-tag.nachmund` - Generic Nachmund Gauntlet agenda
-- `.role-tag.attacker` - Attacker-specific role agenda
-- `.role-tag.defender` - Defender-specific role agenda
+### 3. Agenda Selection Structure
+**IMPORTANT:** Do NOT include detailed agenda rules inline. Always link to Wahapedia instead to avoid inaccuracies.
 
-## Common Faction Agenda Sources
+Structure for each agenda section:
+```html
+<div class="collapsible-header" onclick="toggleCollapse(this)">
+    <span>Attacker Agendas — [Army Name]</span>
+</div>
+<div class="collapsible-content">
+    <p class="scoring-timing">Select from Nachmund Gauntlet Attacker agendas:</p>
+    <div class="note" style="margin-top: 15px;">
+        <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">View Nachmund Gauntlet Agendas on Wahapedia</a>
+    </div>
+</div>
+```
 
-### Death Guard
-- Spread the Sickness, Despoil, Grandfather's Blessing, Plague Harvest
+### 4. Agenda Sources (Link Only)
+Always link to the source - never write out agenda rules:
 
-### Necrons
-- Awaken the Sleepers, The Reanimation Protocols, Ancient Vengeance, Code of Combat
+- **Nachmund Gauntlet Agendas:** `https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas`
+- **Faction Agendas:** `https://wahapedia.ru/wh40k10ed/factions/[faction-slug]/#Crusade-Rules`
 
-### Dark Angels
-- Dark Rumour, Encircle the Foe, The Deathwing Cometh, Mental Interrogation
+Faction slugs:
+- `black-templars`, `dark-angels`, `space-marines`
+- `death-guard`, `chaos-space-marines`
+- `necrons`, `aeldari`, `leagues-of-votann`
 
-### Leagues of Votann
-- Prospecting, No Effort Wasted, Ancestral Revelation, Priority Acquisition
+### 5. Updates Battles Index
+Add the new battle to `battles/index.html` in the Upcoming Battles section.
 
-### Space Marines (Generic)
-- Angels of Death, Know No Fear, Armoured Assault, Quest of Atonement
+### 6. File Naming Convention
+Use narrative titles for battle files:
+- `battle_001_breach_of_sector_theta_9.html`
+- `battle_002_heralds_of_vengeance.html`
+- `battle_004_the_black_tide_rises.html`
 
-### Black Templars
-- Fulfil Your Vows, Reconsecration, First-Hand Experience, Oaths of Crusade (bonus)
+## Battle Briefing Narrative
+Write a Vox Transmission style briefing that:
+- Sets the scene for the conflict
+- References previous campaign events where relevant
+- Establishes stakes and motivation for both sides
+- Uses 40K gothic tone and terminology
+- Includes a thematic quote in the footer
 
-### Chaos Space Marines
-- Champions of Chaos, The Long War, Blood for the Blood God, Dark Pacts
-- Claim and Despoil, Blasphemous Ritual, Path to Glory
+## Checklist
+- [ ] Create battle HTML file with narrative title
+- [ ] Add vox transmission briefing
+- [ ] Set correct mission rules and scoring from Wahapedia
+- [ ] Link agendas to Wahapedia (do NOT write agenda rules inline)
+- [ ] Update battles/index.html
+- [ ] Commit and push changes
