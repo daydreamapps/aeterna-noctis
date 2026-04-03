@@ -55,15 +55,14 @@ Structure for each agenda section:
 ```
 
 ### 4. Agenda Sources (Link Only)
-Always link to the source - never write out agenda rules:
+Always link to the source - never write out agenda rules.
 
-- **Nachmund Gauntlet Agendas:** `https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas`
-- **Faction Agendas:** `https://wahapedia.ru/wh40k10ed/factions/[faction-slug]/#Crusade-Rules`
+**IMPORTANT:** Look up faction URLs from `data/factions.json` to ensure correct links. Some factions (like Black Templars, Dark Angels) have URLs under their parent faction (Space Marines).
 
-Faction slugs:
-- `black-templars`, `dark-angels`, `space-marines`
-- `death-guard`, `chaos-space-marines`
-- `necrons`, `aeldari`, `leagues-of-votann`
+- **Nachmund Gauntlet Agendas:** See `nachmund_agendas_url` in `data/factions.json`
+- **Faction Agendas:** See `agendas_url` for each faction in `data/factions.json`
+
+Use `/set-agendas` to add selected agendas after players have chosen them.
 
 ### 5. Updates Battles Index
 Add the new battle to `battles/index.html` in the Upcoming Battles section.
