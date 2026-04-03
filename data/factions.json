@@ -18,36 +18,36 @@
       "name": "Death Guard",
       "parent_faction": null,
       "alliance": "despoilers",
-      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/death-guard/#Agendas",
-      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/death-guard/#Crusade-Rules"
+      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/death-guard#Agendas",
+      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/death-guard#Crusade-Rules"
     },
     "chaos-space-marines": {
       "name": "Chaos Space Marines",
       "parent_faction": null,
       "alliance": "despoilers",
-      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/chaos-space-marines/#Agendas",
-      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/chaos-space-marines/#Crusade-Rules"
+      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/chaos-space-marines#Agendas",
+      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/chaos-space-marines#Crusade-Rules"
     },
     "necrons": {
       "name": "Necrons",
       "parent_faction": null,
       "alliance": "marauders",
-      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/necrons/#Agendas",
-      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/necrons/#Crusade-Rules"
+      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/necrons#Agendas",
+      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/necrons#Crusade-Rules"
     },
     "aeldari": {
       "name": "Aeldari",
       "parent_faction": null,
       "alliance": "marauders",
-      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/aeldari/#Agendas",
-      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/aeldari/#Crusade-Rules"
+      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/aeldari#Agendas",
+      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/aeldari#Crusade-Rules"
     },
     "leagues-of-votann": {
       "name": "Leagues of Votann",
       "parent_faction": null,
       "alliance": "marauders",
-      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/leagues-of-votann/#Agendas",
-      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/leagues-of-votann/#Crusade-Rules"
+      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/leagues-of-votann#Agendas",
+      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/leagues-of-votann#Crusade-Rules"
     }
   },
   "nachmund_agendas_url": "https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas"
