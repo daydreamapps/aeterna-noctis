@@ -1,0 +1,75 @@
+{
+  "planets": {
+    "ocularis-prime": {
+      "name": "Ocularis Prime",
+      "type": "Hive World",
+      "boon": "Swap one Agenda after seeing opponent's choice",
+      "home_world_of": null,
+      "control": {
+        "guardians": 0,
+        "despoilers": 0,
+        "marauders": 0
+      }
+    },
+    "ferrum-ix": {
+      "name": "Ferrum IX",
+      "type": "Forge World",
+      "boon": "Remove one Battle Scar for 0 RP",
+      "home_world_of": null,
+      "control": {
+        "guardians": 0,
+        "despoilers": 0,
+        "marauders": 0
+      }
+    },
+    "veridian-reach": {
+      "name": "Veridian Reach",
+      "type": "Agri World",
+      "boon": "+1 to Out of Action tests for one battle",
+      "home_world_of": null,
+      "control": {
+        "guardians": 0,
+        "despoilers": 0,
+        "marauders": 0
+      }
+    },
+    "sanctum-malakor": {
+      "name": "Sanctum Malakor",
+      "type": "Shrine World",
+      "boon": "+1 Starting CP for one battle",
+      "home_world_of": null,
+      "control": {
+        "guardians": 0,
+        "despoilers": 0,
+        "marauders": 0
+      }
+    },
+    "aethelgard": {
+      "name": "Aethelgard",
+      "type": "Knight World",
+      "boon": "Free 'Fresh Recruits' Requisition",
+      "home_world_of": "black-templars",
+      "control": {
+        "guardians": 100,
+        "despoilers": 0,
+        "marauders": 0
+      }
+    },
+    "void-spire-7": {
+      "name": "Void-Spire 7",
+      "type": "Space Station",
+      "boon": "+1 SAP from your next Hulk victory",
+      "home_world_of": null,
+      "control": {
+        "guardians": 0,
+        "despoilers": 0,
+        "marauders": 0
+      }
+    }
+  },
+  "control_thresholds": {
+    "0": { "min": 0, "max": 29, "uses": 0 },
+    "1": { "min": 30, "max": 59, "uses": 1 },
+    "2": { "min": 60, "max": 100, "uses": 2 }
+  }
+}

@@ -2,89 +2,91 @@
 
 Creates a new battle page with mission briefing and pre-battle information.
 
-## Input Required
-Provide the battle details. Example:
+## Model
+Use **sonnet** for this skill — requires narrative generation and HTML templating.
+
+## Input Schema
 ```
-/prep-battle Battle 4, Front-line Warfare, Black Templars vs Aeldari, March 31 2026
+/prep-battle <battle_number>, <mission_name>, <attacker> vs <defender>, <date>
 ```
 
-Include:
-- Battle number
-- Mission name (from Nachmund Gauntlet)
-- Combatants (Army Name, Faction, Alliance)
-- Attacker and Defender assignments
-- Real-world date
+| Field | Type | Required | Example |
+|-------|------|----------|---------|
+| battle_number | integer | yes | `7` |
+| mission_name | string | yes | `Strategic Strike` |
+| attacker | faction slug | yes | `black-templars` |
+| defender | faction slug | yes | `aeldari` |
+| date | YYYY-MM-DD | no | `2026-04-15` |
+
+### Validation
+- `battle_number` must not already exist in `data/battles.json`
+- `attacker` and `defender` must exist in `data/factions.json`
+- `mission_name` should be a valid Nachmund Gauntlet mission
+
+## Data Files to Read
+1. `data/factions.json` — Get faction names and agenda URLs
+2. `data/alliances.json` — Get army names and alliance affiliations
+3. `data/battles.json` — Verify battle number is new, get next M42 date
 
 ## What This Command Does
 
 ### 1. Creates Battle Page
-Uses the template structure from existing battles to create a new HTML page with:
+Uses template structure to create HTML with:
 - Toolbar navigation
-- Header with battle number, narrative title, and mission name
-- Battle briefing (Vox Transmission narrative)
-- Mission overview, deployment map, objective placement
-- Scoring rules
-- Army Setup (Tactical Reserves)
-- Agenda Selection
-- Post-Battle Reporting
+- Header with battle number, narrative title, mission name
+- Pre-battle VOX transmission narrative
+- Mission overview, deployment map
+- Scoring rules (from Wahapedia)
+- Tactical Reserves setup
+- Agenda selection (links only, no inline rules)
+- Post-battle reporting checklist
 
-### 2. Sets Combatants and Roles
-Updates the vox-combatants section with Attacker/Defender roles:
-```html
-<div class="vox-combatant guardians">
-    <div class="vox-combatant-name">Army Name</div>
-    <div class="vox-combatant-alliance">Faction — Alliance</div>
-    <div class="vox-combatant-role">Attacker</div>
-</div>
+### 2. Updates Data Files
+Add entry to `data/battles.json`:
+```json
+{
+  "007": {
+    "title": "[Narrative Title]",
+    "mission": "Strategic Strike",
+    "type": "hulk",
+    "file": "battle_007_[slug].html",
+    "status": "pending",
+    "combatants": {
+      "attacker": "black-templars",
+      "defender": "aeldari"
+    }
+  }
+}
 ```
 
-### 3. Agenda Selection Structure
-**IMPORTANT:** Do NOT include detailed agenda rules inline. Always link to Wahapedia instead to avoid inaccuracies.
+### 3. Updates Battles Index
+Add to `battles/index.html` in Upcoming Battles section.
 
-Structure for each agenda section:
+## Agenda Links
+**IMPORTANT:** Look up URLs from `data/factions.json`. Never hardcode URLs.
+
 ```html
-<div class="collapsible-header" onclick="toggleCollapse(this)">
-    <span>Attacker Agendas — [Army Name]</span>
-</div>
-<div class="collapsible-content">
-    <p class="scoring-timing">Select from Nachmund Gauntlet Attacker agendas:</p>
-    <div class="note" style="margin-top: 15px;">
-        <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">View Nachmund Gauntlet Agendas on Wahapedia</a>
-    </div>
-</div>
+<a href="[faction.agendas_url]" target="_blank">[faction.name] Agendas</a>
 ```
 
-### 4. Agenda Sources (Link Only)
-Always link to the source - never write out agenda rules.
+## Narrative Guidelines
+- Generate a thematic title (e.g., "Wrath Unchained", "The Black Tide Rises")
+- Write VOX transmission that sets the scene
+- Use gothic 40K tone
+- Reference previous campaign events where relevant
 
-**IMPORTANT:** Look up faction URLs from `data/factions.json` to ensure correct links. Some factions (like Black Templars, Dark Angels) have URLs under their parent faction (Space Marines).
-
-- **Nachmund Gauntlet Agendas:** See `nachmund_agendas_url` in `data/factions.json`
-- **Faction Agendas:** See `agendas_url` for each faction in `data/factions.json`
-
-Use `/set-agendas` to add selected agendas after players have chosen them.
-
-### 5. Updates Battles Index
-Add the new battle to `battles/index.html` in the Upcoming Battles section.
-
-### 6. File Naming Convention
-Use narrative titles for battle files:
-- `battle_001_breach_of_sector_theta_9.html`
-- `battle_002_heralds_of_vengeance.html`
-- `battle_004_the_black_tide_rises.html`
-
-## Battle Briefing Narrative
-Write a Vox Transmission style briefing that:
-- Sets the scene for the conflict
-- References previous campaign events where relevant
-- Establishes stakes and motivation for both sides
-- Uses 40K gothic tone and terminology
-- Includes a thematic quote in the footer
+## File Naming
+`battle_[NNN]_[title_slug].html`
+- Title slug: lowercase, hyphens for spaces
+- Example: `battle_007_the_emperors_wrath.html`
 
 ## Checklist
-- [ ] Create battle HTML file with narrative title
-- [ ] Add vox transmission briefing
-- [ ] Set correct mission rules and scoring from Wahapedia
-- [ ] Link agendas to Wahapedia (do NOT write agenda rules inline)
-- [ ] Update battles/index.html
-- [ ] Commit and push changes
+- [ ] Validate input against schema
+- [ ] Read faction data from `data/factions.json`
+- [ ] Read alliance data from `data/alliances.json`
+- [ ] Create HTML file with narrative title
+- [ ] Add VOX transmission briefing
+- [ ] Link agendas to Wahapedia (use data file URLs)
+- [ ] Update `data/battles.json`
+- [ ] Update `battles/index.html`
+- [ ] Update `.claude/memory.md` with new pending battle

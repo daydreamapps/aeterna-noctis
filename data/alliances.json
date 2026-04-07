@@ -1,0 +1,79 @@
+{
+  "alliances": {
+    "guardians": {
+      "name": "The Guardians",
+      "tagline": "Those who seek to save the sector—or claim its protection for themselves.",
+      "color": "#4a9956",
+      "cvp": 0,
+      "sap": 0,
+      "warmaster": null,
+      "requisition_pool": 0,
+      "members": [
+        {
+          "player": "Samuel",
+          "faction": "black-templars",
+          "army_name": "The Crusade of Binding Chains",
+          "home_world": "aethelgard"
+        },
+        {
+          "player": null,
+          "faction": "dark-angels",
+          "army_name": "The Judgement of Aldurukh",
+          "home_world": null
+        }
+      ]
+    },
+    "despoilers": {
+      "name": "The Despoilers",
+      "tagline": "Those who would see the sector burn, if only to warm themselves by the flames.",
+      "color": "#9b4d96",
+      "cvp": 0,
+      "sap": 0,
+      "warmaster": null,
+      "requisition_pool": 0,
+      "members": [
+        {
+          "player": "Kris",
+          "faction": "death-guard",
+          "army_name": "The Sons of Decay",
+          "home_world": null
+        },
+        {
+          "player": null,
+          "faction": "chaos-space-marines",
+          "army_name": "The Killing Stone",
+          "home_world": null
+        }
+      ]
+    },
+    "marauders": {
+      "name": "The Marauders",
+      "tagline": "Those who care nothing for worlds or hulks—only plunder.",
+      "color": "#c9a227",
+      "cvp": 0,
+      "sap": 0,
+      "warmaster": null,
+      "requisition_pool": 0,
+      "members": [
+        {
+          "player": null,
+          "faction": "necrons",
+          "army_name": "Rattle Me Bones",
+          "home_world": null
+        },
+        {
+          "player": null,
+          "faction": "aeldari",
+          "army_name": "Bahzhakhain Süirel",
+          "home_world": null
+        },
+        {
+          "player": null,
+          "faction": "leagues-of-votann",
+          "army_name": "The Trans-Eternians Alliance",
+          "home_world": null
+        }
+      ]
+    }
+  }
+}

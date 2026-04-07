@@ -1,0 +1,104 @@
+{
+  "current_phase": 1,
+  "m42_date": 819,
+  "battles": {
+    "001": {
+      "title": "Breach of Sector Theta-9",
+      "mission": "Unknown",
+      "type": "hulk",
+      "file": "battle_001_breach_of_sector_theta_9.html",
+      "status": "completed",
+      "date_m42": null,
+      "date_real": null,
+      "combatants": {
+        "attacker": null,
+        "defender": null
+      },
+      "result": null
+    },
+    "002": {
+      "title": "Heralds of Vengeance",
+      "mission": "Heralds of Vengeance",
+      "type": "hulk",
+      "file": "battle_002_heralds_of_vengeance.html",
+      "status": "completed",
+      "date_m42": null,
+      "date_real": null,
+      "combatants": {
+        "attacker": null,
+        "defender": null
+      },
+      "result": null
+    },
+    "003": {
+      "title": "Chokepoint at Lambda-3",
+      "mission": "Stranglehold",
+      "type": "hulk",
+      "file": "battle_003_chokepoint_at_lambda_3.html",
+      "status": "completed",
+      "date_m42": 816,
+      "date_real": "2026-03-25",
+      "combatants": {
+        "attacker": "black-templars",
+        "defender": "chaos-space-marines"
+      },
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": null, "defender": null }
+      }
+    },
+    "004": {
+      "title": "The Black Tide Rises",
+      "mission": "Front-line Warfare",
+      "type": "hulk",
+      "file": "battle_004_the_black_tide_rises.html",
+      "status": "completed",
+      "date_m42": 819,
+      "date_real": "2026-03-31",
+      "combatants": {
+        "attacker": "black-templars",
+        "defender": "aeldari"
+      },
+      "result": {
+        "victor": "guardians",
+        "score": { "attacker": 10, "defender": 0 }
+      }
+    },
+    "005": {
+      "title": "The Skeins Unravel",
+      "mission": "Heralds of Vengeance",
+      "type": "hulk",
+      "file": "battle_005_heralds_of_vengeance.html",
+      "status": "pending",
+      "date_m42": null,
+      "date_real": null,
+      "combatants": {
+        "attacker": "chaos-space-marines",
+        "defender": "aeldari"
+      },
+      "result": null
+    },
+    "006": {
+      "title": "Wrath Unchained",
+      "mission": "Strategic Strike",
+      "type": "hulk",
+      "file": "battle_006_wrath_unchained.html",
+      "status": "pending",
+      "date_m42": null,
+      "date_real": null,
+      "combatants": {
+        "attacker": "black-templars",
+        "defender": "chaos-space-marines"
+      },
+      "agendas": {
+        "black-templars": [
+          "First Hand Experience",
+          "Fulfil Your Vows (Accept Any Challenge, No Matter the Odds)",
+          "Oaths of Crusade"
+        ],
+        "chaos-space-marines": null
+      },
+      "result": null
+    }
+  }
+}

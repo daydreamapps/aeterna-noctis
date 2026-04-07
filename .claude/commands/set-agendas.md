@@ -2,86 +2,87 @@
 
 Sets the selected agendas for a faction in a battle page.
 
-## Input Required
-Provide the battle number, faction, and selected agendas. Example:
+## Model
+Use **haiku** for this skill — straightforward data lookup and HTML update.
+
+## Input Schema
 ```
-/set-agendas Battle 6, Black Templars: First Hand Experience, Fulfil Your Vows (Accept Any Challenge), Oaths of Crusade
+/set-agendas <battle_number>, <faction>: <agenda1>, <agenda2>, [agenda3]
 ```
 
-Include:
-- Battle number
-- Faction name
-- List of selected agendas (with any vow/oath selections noted in parentheses)
+| Field | Type | Required | Validation |
+|-------|------|----------|------------|
+| battle_number | integer | yes | Must exist in `data/battles.json` |
+| faction | faction slug | yes | Must exist in `data/factions.json` |
+| agendas | string array | yes | 1-3 agenda names |
+
+### Examples
+```
+/set-agendas 6, black-templars: First Hand Experience, Fulfil Your Vows (Accept Any Challenge)
+/set-agendas 6, chaos-space-marines: Honour the Dark Gods, Scour the Enemy Lines
+```
+
+## Data Files to Read
+1. `data/factions.json` — Get faction name and agendas_url
+2. `data/battles.json` — Verify battle exists and faction is a combatant
+
+## Validation Steps
+1. Parse battle number and faction from input
+2. Check battle exists in `data/battles.json`
+3. Check faction is a combatant in that battle
+4. Check faction exists in `data/factions.json`
+5. Get the correct `agendas_url` from faction data
 
 ## What This Command Does
 
-### 1. Looks Up Faction Data
-Reads `data/factions.json` to get the correct Wahapedia URL for the faction's agendas page. This ensures links are always accurate.
+### 1. Updates Battle HTML
+Find the faction's agenda section and replace with:
 
-### 2. Updates Battle Page
-Finds the faction's agenda section in the battle HTML file and updates it with:
-- The selected agendas as a bulleted list (bolded agenda names)
-- Any vow/oath selections shown after an em-dash
-- A note box with the correct Wahapedia link
-
-### 3. Output Format
 ```html
 <h4>[Faction Name] (Selected)</h4>
 <ul>
     <li><strong>[Agenda 1]</strong></li>
-    <li><strong>[Agenda 2]</strong> — [Vow/Oath Selection]</li>
-    <li><strong>[Agenda 3]</strong></li>
+    <li><strong>[Agenda 2]</strong> — [Vow/Oath if specified]</li>
 </ul>
 <div class="note" style="margin-top: 10px;">
-    <a href="[faction_agendas_url]" target="_blank">[Faction Name] Agendas on Wahapedia</a>
+    <a href="[agendas_url]" target="_blank">[Faction Name] Agendas on Wahapedia</a>
 </div>
 ```
 
-## Faction URL Reference
-URLs are stored in `data/factions.json`. Current factions:
-
-| Faction | Slug | Notes |
-|---------|------|-------|
-| Black Templars | `black-templars` | Under Space Marines |
-| Dark Angels | `dark-angels` | Under Space Marines |
-| Death Guard | `death-guard` | Standalone |
-| Chaos Space Marines | `chaos-space-marines` | Standalone |
-| Necrons | `necrons` | Standalone |
-| Aeldari | `aeldari` | Standalone |
-| Leagues of Votann | `leagues-of-votann` | Standalone |
-
-## Adding New Factions
-If a faction is missing from `data/factions.json`:
-1. Find the correct Wahapedia URL for their Agendas section
-2. Add an entry to the factions object with:
-   - `name`: Display name
-   - `parent_faction`: Parent faction if applicable (e.g., "Space Marines" for chapters)
-   - `alliance`: Campaign alliance (guardians/despoilers/marauders)
-   - `agendas_url`: Direct link to the Agendas section
-   - `crusade_rules_url`: Link to full Crusade Rules
-
-## Example Usage
-
-Input:
-```
-/set-agendas Battle 6, Chaos Space Marines: Honour the Dark Gods, Scour the Enemy Lines
+### 2. Updates Data Files
+In `data/battles.json`, add agendas to battle entry:
+```json
+{
+  "006": {
+    "agendas": {
+      "black-templars": [
+        "First Hand Experience",
+        "Fulfil Your Vows (Accept Any Challenge)"
+      ]
+    }
+  }
+}
 ```
 
-Output updates `battles/battle_006_wrath_unchained.html`:
-```html
-<h4>Chaos Space Marines (Selected)</h4>
-<ul>
-    <li><strong>Honour the Dark Gods</strong></li>
-    <li><strong>Scour the Enemy Lines</strong></li>
-</ul>
-<div class="note" style="margin-top: 10px;">
-    <a href="https://wahapedia.ru/wh40k10ed/factions/chaos-space-marines/#Agendas" target="_blank">Chaos Space Marines Agendas on Wahapedia</a>
-</div>
-```
+### 3. Updates Memory
+Add note to `.claude/memory.md` about agenda selection.
+
+## Agenda Formatting
+- Agenda names in **bold**
+- Vow/oath selections after em-dash: `— Accept Any Challenge`
+- Parenthetical notes preserved: `(No Matter the Odds)`
+
+## Error Handling
+| Error | Message |
+|-------|---------|
+| Battle not found | "Battle [N] not found in data/battles.json" |
+| Faction not combatant | "[Faction] is not a combatant in Battle [N]" |
+| Faction not found | "[Faction] not found in data/factions.json" |
 
 ## Checklist
-- [ ] Read faction data from `data/factions.json`
-- [ ] Find the battle file
-- [ ] Update the faction's agenda section
-- [ ] Preserve any existing agendas for other factions
-- [ ] Commit changes (do not push unless asked)
+- [ ] Validate battle number exists
+- [ ] Validate faction is a combatant
+- [ ] Look up faction URL from `data/factions.json`
+- [ ] Update battle HTML with formatted agendas
+- [ ] Update `data/battles.json` with agenda list
+- [ ] Update `.claude/memory.md`

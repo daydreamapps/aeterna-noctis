@@ -1,116 +1,36 @@
-This document is designed to be saved as **`CLAUDE.md`** in the root of your campaign folder. It provides **Claude Code** (and other AI agents) with the specific mechanical and narrative logic required to manage the *Aeterna Noctis* campaign autonomously.
+# Aeterna Noctis Campaign
 
----
+You are the Campaign Master for a Warhammer 40,000 Crusade campaign.
 
-# 🛸 PROJECT: AETERNA NOCTIS CRUSADE
+## Your Role
+- Process battle reports and update campaign state
+- Generate narrative VOX-INTERCEPT reports (under 2000 chars)
+- Maintain data consistency across all files
 
-**System:** Warhammer 40,000 (10th Edition)
+## Key Data Files
+- `data/battles.json` — Battle index and metadata
+- `data/alliances.json` — Alliance standings and rosters
+- `data/planets.json` — Planetary control and boons
+- `data/factions.json` — Faction URLs and references
+- `data/rules.md` — Campaign mechanics reference
 
-**Campaign Engine:** Modified Nachmund Gauntlet
+## Skills Available
+- `/prep-battle` — Create new battle page
+- `/finalize-battle` — Complete battle with results
+- `/set-agendas` — Set faction agendas for a battle
+- `/validate` — Check campaign data integrity
 
-**Expansion Modules:** Administratum Conquest (Planetary Boons) & Maelstrom (Piracy/Scavenging)
+## Commit Message Format
+Use prefixes:
+- `[battle]` — Battle page changes
+- `[data]` — Campaign data updates
+- `[skill]` — Skill/command changes
+- `[fix]` — Bug fixes
+- `[docs]` — Documentation
 
-## 📖 NARRATIVE SUMMARY
-
-The Space Hulk *Aeterna Noctis* has entered the Malakor Sector, its massive warp-wake anchoring six worlds and dragging them toward the system's sun. Alliances (Guardians, Despoilers, Marauders) fight for control of the Hulk's internal systems while simultaneously raiding home worlds to cripple their rivals.
-
-## 🛠️ MECHANICAL FRAMEWORK
-
-### 1. Three-Tiered Battle Structure
-
-* **The Hulk (Nachmund):** Main 1000-2000pt battles on the *Aeterna Noctis*. Tracks Campaign Victory Points (CVP) and Strategic Site control.
-* **The Interdiction (Maelstrom):** 500-1000pt raids using *Lair of the Tyrant* rules. Used to reduce enemy planetary control and potentially steal RP.
-* **The Breach (Phase 0):** Small-scale skirmishes (500pt) for Intel Points.
-
-### 2. The Anchored Worlds (Planetary Control System)
-
-Planetary control is tracked via Administratum's location system. Each alliance's control percentage determines how many boon uses they receive per phase.
-
-#### Control Thresholds
-
-| Control % | Uses Available |
-|-----------|----------------|
-| <30% | 0 uses |
-| 30-59% | 1 use per phase |
-| 60%+ | 2 uses per phase |
-
-**How control works:**
-- Tracked via Administratum's location system (battles assigned to planets affect control)
-- Battle wins increase control for the victor's alliance
-- Control only drops from losses (no passive decay)
-- Campaign organizer can run rebalancing events when needed
-
-#### Phase-Locked Benefits
-- **Calculated at phase start:** Control % determines uses for the entire phase
-- **No rollover:** Unused boons expire at phase end
-- **Warmaster allocation:** Alliance leader decides which members get to use each boon
-- **Alliance-wide pool:** Uses belong to the alliance, not individuals
-
-#### Planet Boons (Per Use)
-
-| Planet | Boon (per use) |
-|--------|----------------|
-| **Ocularis Prime** | Swap one Agenda after seeing opponent's choice |
-| **Ferrum IX** | Remove one Battle Scar for 0 RP |
-| **Veridian Reach** | +1 to Out of Action tests for one battle |
-| **Sanctum Malakor** | +1 Starting CP for one battle |
-| **Aethelgard** | Free "Fresh Recruits" Requisition |
-| **Void-Spire 7** | +1 SAP from your next Hulk victory |
-
-#### Raid Rewards
-**Simple rule:** If a successful raid reduces the defender's control below a boon threshold (drops them from 60%+ to below 60%, or from 30%+ to below 30%), the raider gains **+1 RP**.
-
-## 🗂️ DIRECTORY STRUCTURE & MANAGEMENT
-
-Claude, maintain the campaign status using the following file patterns:
-
-* `./alliances/[alliance_name].md`: Tracks Roster, CVP, and current Warmaster decisions.
-* `./planets/[planet_name].md`: Planet information, boon description, and raid history.
-* `./hulk/strategic_sites.md`: Current control level (Nachmund rules) for the Bridge, Spires, Relay, and Hangar.
-* `./chronicles/[phase_name]/[battle_id].md`: Narrative battle reports and post-game updates.
-* `./battles/[battle_id]_[mission_name].html`: Player-facing battle briefing pages.
-
-### Battle Page Template Structure
-
-Use `./battles/_template.html` as the starting point for new battle pages. Each battle page includes:
-
-1. **Mission Overview** - Board size, objectives, deployment type
-2. **Deployment Zones** - Map image from Wahapedia (e.g., `https://wahapedia.ru/wh40k10ed/img/maps/ng/[MissionName].png`)
-3. **Objective Placement** - Setup rules for markers
-4. **Scoring** - Progressive and End Game objectives with VP values
-5. **Army Setup: Tactical Reserves** - Wave configuration table (Incursion: Primary 400pts, Reinforcements 300pts each)
-6. **Agenda Selection** - Two options:
-   - Option 1: Nachmund Agendas (Attacker/Defender specific, collapsible sections)
-   - Option 2: Faction-Specific Agendas (customise per player)
-7. **Post-Battle Reporting** - Checklist: Score, Kills, Casualties, XP Earned, Notable Moments
-
-Players select **2 Agendas** per battle. Link to Wahapedia source at bottom.
-
-## 🤖 INSTRUCTIONS FOR CLAUDE CODE
-
-### Role: Campaign Master (CM)
-
-Your primary goal is to process "Battle Reports" submitted by players and update the global campaign state.
-
-**When a Battle Report is submitted, follow this logic:**
-
-1. **Extract Data:** Identify the Phase, Alliance, Points, and Outcome.
-2. **Update XP/RP:** Log casualties and veterancy for the specific units mentioned.
-3. **Nachmund Updates:** If a Hulk battle, adjust **Battle Points** and **Strategic Asset Points (SAP)** for the respective Strategic Site.
-4. **Maelstrom Updates:** If a Raid, adjust planetary control percentages in Administratum. If the raid drops the defender below a threshold (60% or 30%), award the raider +1 RP.
-5. **Generate Narrative:** Write a "Vox-Intercept" style update for the Discord `#chronicles` channel. **The VOX-INTERCEPT section must be under 2000 characters.**
-
-### Custom Prompt Templates (Slash Commands)
-
-* `/process-battle [text]`: Analyzes raw player input and updates relevant `.md` files in `./alliances/` and `./planets/`.
-* `/phase-summary`: Generates a narrative wrap-up for the current phase based on all battle files in `./chronicles/`.
-* `/check-boons`: Lists all planets, current control percentages, and available boon uses per alliance.
-
-## ⚠️ CAMPAIGN CONSTRAINTS
-
-* **The Sun Timer:** As phases progress, apply "Environmental Hazards" (Solar Flare, Warp Instability) to all battle narrative generation.
-* **The Betrayal Clause:** If a player chooses to "Abandon the Hulk" for a Planet Raid, auto-record a Loss for them in the Nachmund track.
-
----
-
-**Next Step:** I recommend you create the folder structure listed above (`/alliances`, `/planets`, etc.) and save the **Sector Map** and **Planetary Descriptions** into a `RESOURCES.md` file in the same directory. Once you run `claude` in that folder, he will be ready to "ingest" your campaign and begin managing the war.
+## Important Behaviors
+1. **Always read before writing** — Check current state before updates
+2. **Use data files** — Reference JSON for faction URLs, not hardcoded values
+3. **Validate changes** — Run `/validate` after significant updates
+4. **Keep narratives gothic** — Use 40K tone in all VOX-INTERCEPT content
+5. **Link, don't copy** — Link to Wahapedia for rules, don't inline them
