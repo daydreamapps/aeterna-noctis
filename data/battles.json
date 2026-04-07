@@ -1,6 +1,6 @@
 {
   "current_phase": 1,
-  "m42_date": 820,
+  "m42_date": 821,
   "battles": {
     "001": {
       "title": "Breach of Sector Theta-9",
@@ -86,9 +86,9 @@
       "mission": "Strategic Strike",
       "type": "hulk",
       "file": "battle_006_wrath_unchained.html",
-      "status": "pending",
-      "date_m42": null,
-      "date_real": null,
+      "status": "completed",
+      "date_m42": 821,
+      "date_real": "2026-04-03",
       "combatants": {
         "attacker": "black-templars",
         "defender": "chaos-space-marines"
@@ -99,9 +99,15 @@
           "Fulfil Your Vows (Accept Any Challenge, No Matter the Odds)",
           "Oaths of Crusade"
         ],
-        "chaos-space-marines": null
+        "chaos-space-marines": [
+          "Drive Deep",
+          "Blasphemous Ritual"
+        ]
       },
-      "result": null
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 12, "defender": 14 }
+      }
     }
   }
 }

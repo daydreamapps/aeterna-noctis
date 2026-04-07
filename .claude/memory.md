@@ -4,23 +4,19 @@ Persistent notes for session continuity.
 
 ## Current State
 - **Phase:** 1
-- **M42 Date:** 820 (after Battle 005)
+- **M42 Date:** 821 (after Battle 006)
 - **Last Updated:** 2026-04-07
 
 ## Pending Battles
-| Battle | Combatants | Status |
-|--------|------------|--------|
-| 006 | Black Templars vs CSM | Agendas: BT selected, CSM pending |
+No battles currently scheduled.
 
 ## Recent Actions
+- 2026-04-07: Battle 006 finalized - Despoilers Victory 14-12 (The Killing Stone over Crusade of Binding Chains)
 - 2026-04-07: Battle 005 finalized - Despoilers Victory 5-4 (The Killing Stone over Bahzhakhain Süirel)
-- 2026-04-07: Battle 006 combatants confirmed (Black Templars vs Chaos Space Marines)
-- 2026-04-07: Black Templars agendas set for Battle 006
-- 2026-04-07: Created /set-agendas skill
-- 2026-04-07: Verified and fixed faction agenda URLs
+- 2026-04-07: Implemented Anthropic best practices (structured data, skills optimization, memory)
 
 ## Outstanding Items
-- [ ] CSM agendas for Battle 006 not yet selected
+- [ ] No pending battles - awaiting next matchup
 
 ## Player Notes
 - Samuel plays Black Templars (Crusade of Binding Chains)
