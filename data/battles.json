@@ -1,6 +1,6 @@
 {
   "current_phase": 1,
-  "m42_date": 819,
+  "m42_date": 820,
   "battles": {
     "001": {
       "title": "Breach of Sector Theta-9",
@@ -68,15 +68,18 @@
       "title": "The Skeins Unravel",
       "mission": "Heralds of Vengeance",
       "type": "hulk",
-      "file": "battle_005_heralds_of_vengeance.html",
-      "status": "pending",
-      "date_m42": null,
-      "date_real": null,
+      "file": "battle_005_the_skeins_unravel.html",
+      "status": "completed",
+      "date_m42": 820,
+      "date_real": "2026-04-01",
       "combatants": {
         "attacker": "chaos-space-marines",
         "defender": "aeldari"
       },
-      "result": null
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 5, "defender": 4 }
+      }
     },
     "006": {
       "title": "Wrath Unchained",
