@@ -171,8 +171,8 @@
       "date_m42": null,
       "date_real": null,
       "combatants": {
-        "attacker": null,
-        "defender": null
+        "attacker": "necrons",
+        "defender": "chaos-space-marines"
       },
       "agendas": null,
       "result": null
