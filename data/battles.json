@@ -1,6 +1,6 @@
 {
   "current_phase": 1,
-  "m42_date": 821,
+  "m42_date": 823,
   "battles": {
     "001": {
       "title": "Breach of Sector Theta-9",
@@ -108,6 +108,104 @@
         "victor": "despoilers",
         "score": { "attacker": 12, "defender": 14 }
       }
+    },
+    "007": {
+      "title": "The Withered Path",
+      "mission": "Supply Raid",
+      "type": "hulk",
+      "file": "battle_007_the_withered_path.html",
+      "status": "in_progress",
+      "date_m42": 822,
+      "date_real": "2026-04-07",
+      "combatants": {
+        "attacker": "aeldari",
+        "defender": "death-guard"
+      },
+      "agendas": {
+        "aeldari": [
+          "Fulcrum of Fate",
+          "Few in Number"
+        ],
+        "death-guard": [
+          "Sow the Seeds of Corruption",
+          "Vile Research"
+        ]
+      },
+      "result": null
+    },
+    "008": {
+      "title": "It's Snow Way to Die",
+      "mission": "Heralds of Vengeance",
+      "type": "hulk",
+      "file": "battle_008_its_snow_way_to_die.html",
+      "status": "completed",
+      "date_m42": 823,
+      "date_real": "2026-04-07",
+      "combatants": {
+        "attacker": "black-templars",
+        "defender": "necrons"
+      },
+      "agendas": {
+        "black-templars": [
+          "Reconsecration",
+          "First-Hand Experience",
+          "Oaths of Crusade"
+        ],
+        "necrons": [
+          "Immortal Servitude",
+          "Repel the Foe",
+          "Supremacy Through Annihilation"
+        ]
+      },
+      "result": {
+        "victor": "marauders",
+        "score": { "attacker": 8, "defender": 12 }
+      }
+    },
+    "009": {
+      "title": "The Narrowing Dark",
+      "mission": "Stranglehold",
+      "type": "hulk",
+      "file": "battle_009_the_narrowing_dark.html",
+      "status": "pending",
+      "date_m42": null,
+      "date_real": null,
+      "combatants": {
+        "attacker": null,
+        "defender": null
+      },
+      "agendas": null,
+      "result": null
+    },
+    "010": {
+      "title": "Tide of Iron",
+      "mission": "Front-line Warfare",
+      "type": "hulk",
+      "file": "battle_010_tide_of_iron.html",
+      "status": "pending",
+      "date_m42": null,
+      "date_real": null,
+      "combatants": {
+        "attacker": null,
+        "defender": null
+      },
+      "agendas": null,
+      "result": null
+    },
+    "011": {
+      "title": "Echoes of Command",
+      "mission": "Strategic Strike",
+      "type": "hulk",
+      "file": "battle_011_echoes_of_command.html",
+      "status": "pending",
+      "date_m42": null,
+      "date_real": null,
+      "combatants": {
+        "attacker": null,
+        "defender": null
+      },
+      "agendas": null,
+      "result": null
     }
   }
 }
