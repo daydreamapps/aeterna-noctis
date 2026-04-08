@@ -48,6 +48,13 @@
       "alliance": "marauders",
       "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/leagues-of-votann#Agendas",
       "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/leagues-of-votann#Crusade-Rules"
+    },
+    "adeptus-mechanicus": {
+      "name": "Adeptus Mechanicus",
+      "parent_faction": null,
+      "alliance": "guardians",
+      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus#Agendas",
+      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus#Crusade-Rules"
     }
   },
   "nachmund_agendas_url": "https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas"

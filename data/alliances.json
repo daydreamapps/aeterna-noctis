@@ -20,6 +20,12 @@
           "faction": "dark-angels",
           "army_name": "The Judgement of Aldurukh",
           "home_world": null
+        },
+        {
+          "player": "Samuel",
+          "faction": "adeptus-mechanicus",
+          "army_name": "The Bottomless Bucket",
+          "home_world": null
         }
       ]
     },
