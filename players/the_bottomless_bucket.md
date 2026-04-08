@@ -66,6 +66,25 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 
 ---
 
+### Skatros Pepprix
+**Sydonian Skatros** | 50 pts | Battle-ready (1 XP)
+*Wargear:* Radium Jezzail
+
+> *The Secret Ingredient*
+>
+> Pepprix speaks to no one. She communicates only through data-bursts and kill-confirmations. The Skatros platform she occupies was recovered from the outer rad-wastes of Kentarchus Minoris, where she had spent forty years alone, hunting mutant mega-fauna with preternatural patience. Her targeting mantra is simple: *"One shot. One seasoning."* The rangers believe she carries a fragment of the Eleventh Mystery—the Secret Herb—in her ammunition feed. Pepprix neither confirms nor denies. She simply waits for the perfect shot.
+
+---
+
+### Enginseer Gravalox
+**Tech-Priest Enginseer** | 55 pts | Battle-ready (1 XP)
+
+> *The Grease-Anointer*
+>
+> Every expedition needs a priest who keeps the machines fed. Gravalox tends to the sacred lubricants, the fuel-lines, and the data-wafer preservation systems. His robes are perpetually stained despite his best efforts—he lacks the Coating Herb's secrets—but his ministrations keep the Kastelans marching and the Ironstriders striding. He carries a flask of "the good oil" blessed by Kentarchus Minoris's highest magi. The Skitarii swear it smells faintly of rendered protein.
+
+---
+
 ## Battleline
 
 ### The Original Recipe
@@ -134,19 +153,33 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 
 ---
 
+## Dedicated Transports
+
+### *The Drive-Thru*
+**Skorpius Dunerider** | 85 pts | Battle-ready (1 XP)
+
+> *Swift Delivery Guaranteed*
+>
+> Named for an ancient Kentarchus logistical designation, *The Drive-Thru* ferries Skitarii to the front lines with mechanical efficiency. Its hull bears the expedition's sacred motto—*"The Bucket Provides"*—in burnished copper lettering. The vehicle's machine spirit has developed a peculiar quirk: it accelerates noticeably when carrying a full complement of passengers, as if eager to deliver its cargo. Enginseer Gravalox attributes this to optimal fuel-load ratios. The rangers whisper it simply enjoys the work.
+
+---
+
 ## Order of Battle Summary
 
 | Unit | Points | Rank | XP | Battle Honours | Battle Scars |
 |------|--------|------|-----|----------------|--------------|
 | Crispian Secundus (Datasmith) | 60 | Battle-ready | 1 | — | — |
 | Strider-Alpha Gallux | 95 | Battle-ready | 1 | — | — |
+| Skatros Pepprix | 50 | Battle-ready | 1 | — | — |
+| Enginseer Gravalox | 55 | Battle-ready | 1 | — | — |
 | The Original Recipe | 85 | Battle-ready | 1 | — | — |
 | The Extra Crispy | 85 | Battle-ready | 1 | — | — |
 | The Drumsticks | 170 | Battle-ready | 1 | — | — |
 | The Wings | 130 | Battle-ready | 1 | — | — |
 | The Wafer Pair | 180 | Battle-ready | 1 | — | — |
 | The Crunchy Ones | 180 | Battle-ready | 1 | — | — |
-| **TOTAL** | **985 / 1200** | | | | |
+| *The Drive-Thru* | 85 | Battle-ready | 1 | — | — |
+| **TOTAL** | **1175 / 1200** | | | | |
 
 ---
 
