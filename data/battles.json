@@ -186,8 +186,8 @@
       "date_m42": null,
       "date_real": null,
       "combatants": {
-        "attacker": null,
-        "defender": null
+        "attacker": "adeptus-mechanicus",
+        "defender": "death-guard"
       },
       "agendas": null,
       "result": null
