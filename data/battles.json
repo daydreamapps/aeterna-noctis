@@ -183,7 +183,7 @@
       "type": "hulk",
       "file": "battle_010_tide_of_iron.html",
       "status": "pending",
-      "date_m42": null,
+      "date_m42": 824,
       "date_real": null,
       "combatants": {
         "attacker": "adeptus-mechanicus",
