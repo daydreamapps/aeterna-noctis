@@ -182,15 +182,27 @@
       "mission": "Front-line Warfare",
       "type": "hulk",
       "file": "battle_010_tide_of_iron.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 824,
-      "date_real": null,
+      "date_real": "2026-04-10",
       "combatants": {
         "attacker": "adeptus-mechanicus",
         "defender": "death-guard"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "adeptus-mechanicus": [
+          "Tech Scavengers",
+          "Search Drop Site"
+        ],
+        "death-guard": [
+          "Sow the Seeds of Corruption",
+          "Vile Research"
+        ]
+      },
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 7, "defender": 11 }
+      }
     },
     "011": {
       "title": "Echoes of Command",
