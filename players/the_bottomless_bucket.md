@@ -125,6 +125,16 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 
 ---
 
+### The Spicy Ones
+**Skitarii Vanguard (10)** | 90 pts | Battle-ready (1 XP)
+*Led by Vanguard Alpha Scovilus Prime*
+
+> *Weapons-Grade Flavour*
+>
+> The Spicy Ones run hot—hotter than any other unit in the expedition. Their radium carbines have been overtuned to deliver maximum rad-saturation, and their bodies have been modified to channel the excess radiation rather than suppress it. Standing near them for extended periods causes servo-motors to stutter, optic-lenses to blur, and flesh to blister. Scovilus Prime considers this a feature, not a flaw. *"If they can't handle the heat,"* he intones before every engagement, *"they shouldn't have entered the Bucket."*
+
+---
+
 ## Walkers — The Striding Flock
 
 ### The Drumsticks
@@ -205,13 +215,14 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | Menuvox Prime (Technoarcheologist) | 45 | Battle-ready | 1 | — | — |
 | The Original Recipe | 85 | Battle-ready | 1 | — | — |
 | The Extra Crispy | 85 | Battle-ready | 1 | — | — |
+| The Spicy Ones | 90 | Battle-ready | 1 | — | — |
 | The Drumsticks | 170 | Battle-ready | 1 | — | — |
 | The Wings | 130 | Battle-ready | 1 | — | — |
 | The Wafer Pair | 180 | Battle-ready | 1 | — | — |
 | The Crunchy Ones | 180 | Battle-ready | 1 | — | — |
 | *The Drive-Thru* | 85 | Battle-ready | 1 | — | — |
 | The Batter Boys | 60 | Battle-ready | 1 | — | — |
-| **TOTAL** | **1340 / 1400** | | | | |
+| **TOTAL** | **1430 / 1400** | | | | |
 
 ---
 
