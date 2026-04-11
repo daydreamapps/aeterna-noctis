@@ -94,6 +94,15 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 
 ---
 
+### Technoarcheologist Menuvox Prime
+**Technoarcheologist** | 45 pts | Battle-ready (1 XP)
+
+> *The Menu Reader*
+>
+> Ancient menus hold ancient truths. Menuvox Prime can interpret degraded data-inscriptions that would baffle lesser adepts—the faded labels on corroded ammunition crates, the worn serial numbers on salvaged components, the half-erased maintenance logs of vehicles dead for millennia. He reads the battlefield's leftovers like a sacred text. The Skitarii call him "the Menu Reader" because he once recovered a complete tactical protocol from the grease-stains on an abandoned ration container. He claims the oil-patterns formed readable binary. No one has successfully disputed this.
+
+---
+
 ## Battleline
 
 ### The Original Recipe
@@ -193,6 +202,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | Strider-Alpha Gallux | 95 | Battle-ready | 1 | — | — |
 | Skatros Pepprix | 50 | Battle-ready | 1 | — | — |
 | Enginseer Gravalox | 55 | Battle-ready | 1 | — | — |
+| Menuvox Prime (Technoarcheologist) | 45 | Battle-ready | 1 | — | — |
 | The Original Recipe | 85 | Battle-ready | 1 | — | — |
 | The Extra Crispy | 85 | Battle-ready | 1 | — | — |
 | The Drumsticks | 170 | Battle-ready | 1 | — | — |
@@ -201,7 +211,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | The Crunchy Ones | 180 | Battle-ready | 1 | — | — |
 | *The Drive-Thru* | 85 | Battle-ready | 1 | — | — |
 | The Batter Boys | 60 | Battle-ready | 1 | — | — |
-| **TOTAL** | **1295 / 1400** | | | | |
+| **TOTAL** | **1340 / 1400** | | | | |
 
 ---
 
