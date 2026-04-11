@@ -173,6 +173,17 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 
 ---
 
+## Auxilia
+
+### The Batter Boys
+**Servitor Battleclade** | 60 pts | Battle-ready (1 XP)
+
+> *Coating Application Specialists*
+>
+> These servitors once assisted Datasmith Battreus in the sacred double-dipping rituals—applying protective coating compounds to Kastelan armour plates in precise, overlapping layers. Their muscle-memory remains even after full lobotomization, and they have been repurposed for combat operations where their rhythmic, repetitive striking motions prove devastatingly effective. *Dip. Coat. Strike. Repeat.* The Batter Boys do not think. They simply apply pressure until the task is complete.
+
+---
+
 ## Order of Battle Summary
 
 | Unit | Points | Rank | XP | Battle Honours | Battle Scars |
@@ -189,7 +200,8 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | The Wafer Pair | 180 | Battle-ready | 1 | — | — |
 | The Crunchy Ones | 180 | Battle-ready | 1 | — | — |
 | *The Drive-Thru* | 85 | Battle-ready | 1 | — | — |
-| **TOTAL** | **1235 / 1400** | | | | |
+| The Batter Boys | 60 | Battle-ready | 1 | — | — |
+| **TOTAL** | **1295 / 1400** | | | | |
 
 ---
 
