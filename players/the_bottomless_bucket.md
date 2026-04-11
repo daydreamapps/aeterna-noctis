@@ -7,7 +7,7 @@
 **Alliance:** The Guardians
 **Forge World:** Kentarchus Minoris ("Ken-Tar")
 **Flagship:** *The Colonel's Bounty*
-**Supply Limit:** 1200 pts
+**Supply Limit:** 1400 pts
 **Requisition Points:** 0
 
 ---
@@ -54,6 +54,15 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 > *Keeper of the Sacred Timer*
 >
 > Crispian Secundus's internal chronometers are calibrated to eleven decimal places. She knows the exact moment to strike—the precise microsecond when enemy shields cycle, when plasma coils reach optimal temperature, when the Kastelan battle-protocols must shift. Her mentor-engrams contain fragments of the Sixth Mystery, the Temporal Herb, and she has spent two centuries perfecting its application. The Skitarii call her "The Timer." She finds the designation efficient.
+
+---
+
+### Datasmith Battreus Coating-Prime
+**Cybernetica Datasmith** | 60 pts | Battle-ready (1 XP)
+
+> *The Crumb-Lord*
+>
+> Battreus oversees the armour integrity protocols of the Kastelan robots—specifically, the sacred application of protective layering. Where Crispian Secundus calculates *when* to strike, Battreus ensures the Kastelans can *endure* the retaliation. His mentor-engrams contain fragments of the Fifth and Eighth Mysteries—the Coating Herb and the Crunch Herb—allowing him to optimize ablative plating through a process the forge world calls "double-dipping." The Crunchy Ones are his particular obsession. He has rewelded their carapaces so many times that the original chassis is barely visible beneath layers of sacred armour-crust.
 
 ---
 
@@ -169,6 +178,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | Unit | Points | Rank | XP | Battle Honours | Battle Scars |
 |------|--------|------|-----|----------------|--------------|
 | Crispian Secundus (Datasmith) | 60 | Battle-ready | 1 | — | — |
+| Battreus Coating-Prime (Datasmith) | 60 | Battle-ready | 1 | — | — |
 | Strider-Alpha Gallux | 95 | Battle-ready | 1 | — | — |
 | Skatros Pepprix | 50 | Battle-ready | 1 | — | — |
 | Enginseer Gravalox | 55 | Battle-ready | 1 | — | — |
@@ -179,7 +189,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | The Wafer Pair | 180 | Battle-ready | 1 | — | — |
 | The Crunchy Ones | 180 | Battle-ready | 1 | — | — |
 | *The Drive-Thru* | 85 | Battle-ready | 1 | — | — |
-| **TOTAL** | **1175 / 1200** | | | | |
+| **TOTAL** | **1235 / 1400** | | | | |
 
 ---
 
