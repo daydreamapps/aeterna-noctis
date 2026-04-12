@@ -213,10 +213,16 @@
       "date_m42": 825,
       "date_real": "2026-04-12",
       "combatants": {
-        "attacker": "adeptus-mechanicus",
-        "defender": "death-guard"
+        "attacker": "death-guard",
+        "defender": "adeptus-mechanicus"
       },
-      "agendas": null,
+      "agendas": {
+        "adeptus-mechanicus": [
+          "Tech Scavengers",
+          "Search Drop Site"
+        ],
+        "death-guard": null
+      },
       "result": null
     }
   }
