@@ -205,16 +205,16 @@
       }
     },
     "011": {
-      "title": "Echoes of Command",
-      "mission": "Strategic Strike",
+      "title": "Spoils of Decay",
+      "mission": "Supply Raid 3",
       "type": "hulk",
-      "file": "battle_011_echoes_of_command.html",
+      "file": "battle_011_spoils_of_decay.html",
       "status": "pending",
-      "date_m42": null,
-      "date_real": null,
+      "date_m42": 825,
+      "date_real": "2026-04-12",
       "combatants": {
-        "attacker": null,
-        "defender": null
+        "attacker": "adeptus-mechanicus",
+        "defender": "death-guard"
       },
       "agendas": null,
       "result": null

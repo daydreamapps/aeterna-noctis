@@ -7,7 +7,7 @@
 **Alliance:** The Guardians
 **Forge World:** Kentarchus Minoris ("Ken-Tar")
 **Flagship:** *The Colonel's Bounty*
-**Supply Limit:** 1400 pts
+**Supply Limit:** 1600 pts
 **Requisition Points:** 0
 
 ---
@@ -222,7 +222,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | The Crunchy Ones | 180 | Battle-ready | 1 | — | — |
 | *The Drive-Thru* | 85 | Battle-ready | 1 | — | — |
 | The Batter Boys | 60 | Battle-ready | 1 | — | — |
-| **TOTAL** | **1430 / 1400** | | | | |
+| **TOTAL** | **1430 / 1600** | | | | |
 
 ---
 

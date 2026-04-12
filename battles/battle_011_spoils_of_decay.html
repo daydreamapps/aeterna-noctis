@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battle 011: Echoes of Command - Aeterna Noctis</title>
+    <title>Battle 011: Spoils of Decay - Aeterna Noctis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -212,8 +212,10 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 5px;
-            color: var(--text-muted);
         }
+
+        .combatant-alliance.guardians { color: #4a9956; }
+        .combatant-alliance.despoilers { color: #9b4d96; }
 
         .combatant-name {
             font-family: 'Cinzel', serif;
@@ -224,8 +226,6 @@
         }
 
         .combatant-faction { color: var(--text-muted); font-size: 0.9em; }
-
-        .combatant.pending .combatant-name { color: var(--accent-gold); font-style: italic; }
 
         .versus {
             font-family: 'Cinzel', serif;
@@ -301,13 +301,23 @@
 
         .warning::before { content: '⚠ '; color: var(--accent-bright); }
 
-        .agenda-placeholder {
+        .agenda-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .agenda-box {
             background: linear-gradient(145deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
-            border: 2px dashed var(--border);
-            padding: 30px;
-            text-align: center;
-            color: var(--text-muted);
-            font-style: italic;
+            border: 2px solid var(--border);
+            padding: 20px;
+        }
+
+        .agenda-box h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-size: 1em;
         }
 
         ul { margin-left: 25px; margin-bottom: 15px; }
@@ -370,6 +380,7 @@
             .overview-grid { grid-template-columns: 1fr; }
             .matchup { grid-template-columns: 1fr; text-align: center; }
             .versus { padding: 10px 0; }
+            .agenda-section { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -379,40 +390,41 @@
 
         <header>
             <p class="mission-number">Hulk Battle 011</p>
-            <h1>Echoes of Command</h1>
-            <p class="subtitle">Strategic Strike — Nachmund Gauntlet</p>
+            <h1>Spoils of Decay</h1>
+            <p class="subtitle"><a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Supply-Raid-3" target="_blank">Supply Raid 3</a> — Nachmund Gauntlet</p>
         </header>
 
         <!-- VOX Transmission -->
         <div class="vox-transmission">
             <div class="vox-header">
-                <span class="vox-priority">++ Priority: Amber ++</span>
+                <span class="vox-priority">++ Priority: Crimson ++</span>
                 <span>++ Source: Aeterna Noctis Sensorium ++</span>
-                <span>++ Timestamp: [PENDING].M42 ++</span>
+                <span>++ Timestamp: 825.M42 ++</span>
             </div>
             <div class="vox-body">
-                <p>PRIORITY INTERCEPT: The Hulk's ancient command nexus has been located in Sector Tau-7. Cogitator banks dating to the Dark Age of Technology still flicker with half-remembered protocols—whoever claims this sanctum may yet bend the Aeterna Noctis to their will.</p>
-                <p>Both forces are converging on the nexus with all available strength. This is not a battle of attrition but of decisive strikes—surgical precision against the enemy's heart while defending your own strategic assets.</p>
-                <p>The echoes of ten thousand years of commands still resonate through these halls. Today, new orders will be given.</p>
+                <p>PRIORITY INTERCEPT: Orbital defence collapse in Sector Epsilon-7 has exposed a rich stockpile of vital equipment—munitions, fuel reserves, and archeotech components left unguarded in the chaos. Multiple forces converging on location.</p>
+                <p>The Bottomless Bucket expedition has identified potential STC fragments among the cache—data-wafers bearing markings consistent with Kentarchus Minoris manufacture patterns. The Eleven Mysteries may yet yield another secret.</p>
+                <p>But the Sons of Decay are already there. Their plague-touched hands reach for the same spoils, and where Nurgle's children tread, nothing remains untainted. The supplies themselves are time-limited—corrupted caches will be rendered worthless. Speed is essential. Contamination is inevitable.</p>
+                <p>This is a scramble for tainted treasure. The victor claims the spoils. The defeated claims only rot.</p>
             </div>
             <div class="vox-footer">
-                <em>"Command is not taken. It is seized—from the cold, dead hands of those who held it before."</em><br>
+                <em>"In the grim darkness of the far future, even victory has a half-life."</em><br>
                 — Thought for the Day
             </div>
         </div>
 
         <!-- Matchup -->
         <div class="matchup">
-            <div class="combatant pending">
-                <div class="combatant-alliance">Attacker</div>
-                <div class="combatant-name">[Awaiting Assignment]</div>
-                <div class="combatant-faction">TBD</div>
+            <div class="combatant">
+                <div class="combatant-alliance guardians">The Guardians — Attacker</div>
+                <div class="combatant-name">The Bottomless Bucket</div>
+                <div class="combatant-faction">Adeptus Mechanicus</div>
             </div>
             <div class="versus">VS</div>
-            <div class="combatant pending">
-                <div class="combatant-alliance">Defender</div>
-                <div class="combatant-name">[Awaiting Assignment]</div>
-                <div class="combatant-faction">TBD</div>
+            <div class="combatant">
+                <div class="combatant-alliance despoilers">The Despoilers — Defender</div>
+                <div class="combatant-name">The Sons of Decay</div>
+                <div class="combatant-faction">Death Guard</div>
             </div>
         </div>
 
@@ -423,7 +435,7 @@
                 <div class="overview-grid">
                     <div class="overview-item">
                         <span class="overview-label">Mission</span>
-                        <span class="overview-value"><a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Strategic-Strike" target="_blank">Strategic Strike</a></span>
+                        <span class="overview-value"><a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Supply-Raid-3" target="_blank">Supply Raid 3</a></span>
                     </div>
                     <div class="overview-item">
                         <span class="overview-label">Board Size</span>
@@ -431,85 +443,82 @@
                     </div>
                     <div class="overview-item">
                         <span class="overview-label">Objectives</span>
-                        <span class="overview-value">4 Total</span>
+                        <span class="overview-value">5 in No Man's Land</span>
                     </div>
                     <div class="overview-item">
-                        <span class="overview-label">Deployment</span>
-                        <span class="overview-value">Dawn of War</span>
+                        <span class="overview-label">Date</span>
+                        <span class="overview-value">12th April 2026</span>
                     </div>
                     <div class="overview-item">
-                        <span class="overview-label">Centre Exclusion</span>
-                        <span class="overview-value">None</span>
+                        <span class="overview-label">Victor Bonus</span>
+                        <span class="overview-value">+250 pts Supply Limit</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Deployment Map -->
+        <!-- Mission Rule: Drop Zone Depleted -->
         <section>
-            <h2>Deployment Zones</h2>
-            <div class="deployment-map">
-                <img src="https://wahapedia.ru/wh40k10ed/img/maps/ng/StrategicStrike.png" alt="Strategic Strike Deployment Map - 60x44 inch board with Dawn of War deployment">
-            </div>
-        </section>
-
-        <!-- Objective Placement -->
-        <section>
-            <h2>Objective Placement</h2>
+            <h2>Mission Rule: Drop Zone Depleted</h2>
             <div class="card">
-                <p><strong>Setup:</strong> Place objectives as shown on the deployment map.</p>
-                <h3>Placement Rules</h3>
-                <ul>
-                    <li><strong>2 objectives</strong> in No Man's Land, along the centre line</li>
-                    <li><strong>1 objective</strong> in each deployment zone (2 total)</li>
-                </ul>
-                <div class="note">
-                    Deployment zone objectives represent each force's strategic command post.
+                <p>At the start of the first battle round, the players randomly select three different objective markers in No Man's Land:</p>
+                <table>
+                    <tr>
+                        <th>Selection</th>
+                        <th>Designation</th>
+                        <th>Removed At</th>
+                    </tr>
+                    <tr>
+                        <td>1st selected</td>
+                        <td><strong>Alpha</strong> objective</td>
+                        <td>Start of Battle Round 3</td>
+                    </tr>
+                    <tr>
+                        <td>2nd selected</td>
+                        <td><strong>Beta</strong> objective</td>
+                        <td>Start of Battle Round 4</td>
+                    </tr>
+                    <tr>
+                        <td>3rd selected</td>
+                        <td><strong>Gamma</strong> objective</td>
+                        <td>Start of Battle Round 5</td>
+                    </tr>
+                </table>
+                <div class="warning">
+                    Objectives disappear as the battle progresses! Plan your movement carefully—a held objective may vanish before you score it.
                 </div>
             </div>
         </section>
 
         <!-- Scoring -->
         <section>
-            <h2>Scoring</h2>
-
-            <h3>Progressive Objective: Strategic Control</h3>
+            <h2>Scoring: Secure Supplies</h2>
             <div class="card">
-                <p class="scoring-timing">From Round 2 onwards, at the end of your Command phase:</p>
+                <p><strong>Progressive Objective</strong> — The more supplies that can be extracted safely from this site, the greater a success you will be credited with.</p>
+
+                <p class="scoring-timing">From the second battle round onwards, at the end of the Command phase, the player whose turn it is scores VP as follows:</p>
+
                 <table>
                     <tr>
-                        <th>Condition</th>
-                        <th>VP</th>
+                        <th>Battle Round</th>
+                        <th>VP per Objective Controlled</th>
                     </tr>
                     <tr>
-                        <td>Control 1+ objectives in No Man's Land</td>
+                        <td>Rounds 2 & 3</td>
+                        <td class="vp-value">1 VP</td>
+                    </tr>
+                    <tr>
+                        <td>Round 4</td>
                         <td class="vp-value">2 VP</td>
                     </tr>
                     <tr>
-                        <td>Control both objectives in No Man's Land</td>
-                        <td class="vp-value">2 VP</td>
+                        <td>Round 5</td>
+                        <td class="vp-value">4 VP</td>
                     </tr>
                 </table>
+
                 <div class="note">
-                    <strong>Round 5 Exception:</strong> The player with the second turn scores at the end of their turn instead of their Command phase.
-                </div>
-            </div>
-
-            <h3>End Game Objective: Decapitation Strike</h3>
-            <div class="card">
-                <p class="scoring-timing">At the end of the battle:</p>
-                <table>
-                    <tr>
-                        <th>Condition</th>
-                        <th>VP</th>
-                    </tr>
-                    <tr>
-                        <td>Control the objective in your opponent's deployment zone</td>
-                        <td class="vp-value">5 VP</td>
-                    </tr>
-                </table>
-                <div class="warning">
-                    Losing your own deployment zone objective grants your opponent significant end-game VP. Defend it accordingly.
+                    <strong>Round 5 Exception:</strong> The player who has the second turn scores VP at the end of the turn instead of at the end of their Command phase.
                 </div>
             </div>
         </section>
@@ -556,24 +565,34 @@
 
         <!-- Agendas -->
         <section>
-            <h2>Selected Agendas</h2>
+            <h2>Agendas</h2>
             <div class="card">
-                <div class="agenda-placeholder">
-                    Agendas will be assigned once combatants are confirmed.<br>
-                    Each player selects <strong>2 Agendas</strong> before battle.
+                <p>Each player selects <strong>2 Agendas</strong> before the battle.</p>
+                <div class="agenda-section">
+                    <div class="agenda-box">
+                        <h4>Adeptus Mechanicus</h4>
+                        <p><a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus#Agendas" target="_blank">View Adeptus Mechanicus Agendas &rarr;</a></p>
+                    </div>
+                    <div class="agenda-box">
+                        <h4>Death Guard</h4>
+                        <p><a href="https://wahapedia.ru/wh40k10ed/factions/death-guard#Agendas" target="_blank">View Death Guard Agendas &rarr;</a></p>
+                    </div>
+                </div>
+                <div style="margin-top: 15px;">
+                    <p><a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Nachmund Gauntlet Universal Agendas &rarr;</a></p>
                 </div>
             </div>
         </section>
 
         <!-- Source Link -->
         <section style="text-align: center; margin-top: 40px;">
-            <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Strategic-Strike" target="_blank" class="source-link">
+            <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Supply-Raid-3" target="_blank" class="source-link">
                 View Full Mission Rules on Wahapedia &rarr;
             </a>
         </section>
 
         <footer>
-            <p>The Hulk awaits. The Emperor protects.</p>
+            <p>The Bucket provides. The Bucket demands.</p>
         </footer>
     </div>
 </body>
