@@ -209,7 +209,7 @@
       "mission": "Supply Raid 3",
       "type": "hulk",
       "file": "battle_011_spoils_of_decay.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 825,
       "date_real": "2026-04-12",
       "combatants": {
@@ -221,9 +221,15 @@
           "Tech Scavengers",
           "Search Drop Site"
         ],
-        "death-guard": null
+        "death-guard": [
+          "Viral Harvest",
+          "Vile Research"
+        ]
       },
-      "result": null
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 10, "defender": 8 }
+      }
     }
   }
 }
