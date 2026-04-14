@@ -233,6 +233,21 @@
         "victor": "despoilers",
         "score": { "attacker": 10, "defender": 8 }
       }
+    },
+    "012": {
+      "title": "Echoes of the Silenced",
+      "mission": "Purge After Inload 4",
+      "type": "hulk",
+      "file": "battle_012_echoes_of_the_silenced.html",
+      "status": "pending",
+      "date_m42": 826,
+      "date_real": null,
+      "combatants": {
+        "attacker": "leagues-of-votann",
+        "defender": "necrons"
+      },
+      "agendas": null,
+      "result": null
     }
   }
 }
