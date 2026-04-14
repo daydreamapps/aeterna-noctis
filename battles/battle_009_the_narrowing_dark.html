@@ -365,11 +365,81 @@
 
         footer::before { content: '☠'; display: block; margin-bottom: 15px; font-size: 1.5em; color: var(--accent); }
 
+        .victory-banner {
+            text-align: center;
+            padding: 30px;
+            margin: 25px 0;
+            border: 3px solid;
+        }
+
+        .victory-banner.draw {
+            background: linear-gradient(145deg, rgba(100, 100, 100, 0.2) 0%, rgba(60, 60, 60, 0.3) 100%);
+            border-color: var(--text-muted);
+        }
+
+        .victory-banner h2 {
+            margin: 0 0 10px 0;
+            color: var(--text-muted);
+        }
+
+        .victory-banner h2::before { display: none; }
+
+        .final-score {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--bone);
+            margin: 15px 0;
+        }
+
+        .casualties-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .casualty-list {
+            background: linear-gradient(145deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+            border: 2px solid var(--border);
+            padding: 20px;
+        }
+
+        .casualty-list h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .casualty-list ul { margin-left: 20px; }
+
+        .marked-for-greatness { color: var(--accent-gold); font-weight: bold; }
+        .battle-scar { color: var(--accent-bright); }
+
+        .agenda-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .agenda-box {
+            background: linear-gradient(145deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+            border: 2px solid var(--border);
+            padding: 20px;
+        }
+
+        .agenda-box h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; letter-spacing: 3px; }
             .overview-grid { grid-template-columns: 1fr; }
             .matchup { grid-template-columns: 1fr; text-align: center; }
             .versus { padding: 10px 0; }
+            .casualties-grid { grid-template-columns: 1fr; }
+            .agenda-section { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -383,36 +453,44 @@
             <p class="subtitle">Stranglehold — Nachmund Gauntlet</p>
         </header>
 
-        <!-- VOX Transmission -->
-        <div class="vox-transmission">
-            <div class="vox-header">
-                <span class="vox-priority">++ Priority: Amber ++</span>
-                <span>++ Source: Aeterna Noctis Sensorium ++</span>
-                <span>++ Timestamp: [PENDING].M42 ++</span>
-            </div>
-            <div class="vox-body">
-                <p>TACTICAL ALERT: Corridor Sigma-9 represents a critical chokepoint within the Hulk's internal architecture. Whoever controls this junction controls access to three adjacent sectors—and the strategic assets within.</p>
-                <p>The corridor's narrowing geometry favours defenders, but offers attackers the opportunity to overwhelm fixed positions through concentrated force. Atmospheric processors have failed in this section; combatants should expect degraded visibility and compromised communication.</p>
-                <p>All units are advised: there is no retreat through the Narrowing Dark. Only victory—or oblivion.</p>
-            </div>
-            <div class="vox-footer">
-                <em>"In the throat of the beast, the bold may yet choke their prey."</em><br>
-                — Thought for the Day
-            </div>
+        <!-- Draw Banner -->
+        <div class="victory-banner draw">
+            <h2>Stalemate</h2>
+            <div class="final-score">6 — 6</div>
+            <p>Neither force could claim the Narrowing Dark</p>
         </div>
 
         <!-- Matchup -->
         <div class="matchup">
             <div class="combatant">
-                <div class="combatant-alliance" style="color: #c9a227;">Marauders</div>
+                <div class="combatant-alliance" style="color: #c9a227;">Marauders — Attacker</div>
                 <div class="combatant-name">Tekhsarun Awakening</div>
                 <div class="combatant-faction">Necrons</div>
             </div>
-            <div class="versus">VS</div>
+            <div class="versus">6 — 6</div>
             <div class="combatant">
-                <div class="combatant-alliance" style="color: #9b4d96;">Despoilers</div>
+                <div class="combatant-alliance" style="color: #9b4d96;">Despoilers — Defender</div>
                 <div class="combatant-name">The Killing Stone</div>
                 <div class="combatant-faction">Chaos Space Marines</div>
+            </div>
+        </div>
+
+        <!-- VOX After-Action Report -->
+        <div class="vox-transmission">
+            <div class="vox-header">
+                <span class="vox-priority">++ Priority: Amber ++</span>
+                <span>++ Source: Aeterna Noctis Sensorium ++</span>
+                <span>++ Timestamp: 825.M42 ++</span>
+            </div>
+            <div class="vox-body">
+                <p>AFTER-ACTION REPORT: Corridor Sigma-9 remains contested. The Tekhsarun Awakening and The Killing Stone have fought to mutual exhaustion—neither force capable of claiming decisive control of the critical chokepoint.</p>
+                <p>The Necron Lokhust Lord distinguished itself in the carnage, earning recognition among the Awakening's command protocols. The Chaos Raptors proved equally formidable, their sustained aerial assault marking them for future advancement within the warband's hierarchy.</p>
+                <p>Casualties were catastrophic on both sides. The Necrons lost six units to destruction; the Chaos Marines lost seven. Both forces withdrew to regroup, leaving Corridor Sigma-9 choked with the detritus of mechanized and daemonic war. The Master of Executions claimed four kills. The Flayed Ones matched him in butchery.</p>
+                <p>The Narrowing Dark remains unconquered. Both alliances must commit fresh forces—or abandon the junction entirely.</p>
+            </div>
+            <div class="vox-footer">
+                <em>"A draw is merely a battle postponed. The debt of blood remains unpaid."</em><br>
+                — Thought for the Day
             </div>
         </div>
 
@@ -560,13 +638,77 @@
             </div>
         </section>
 
-        <!-- Agendas -->
+        <!-- Casualties & Battle Scars -->
         <section>
-            <h2>Selected Agendas</h2>
+            <h2>Casualties & Honours</h2>
             <div class="card">
-                <div class="agenda-placeholder">
-                    Agendas will be assigned once combatants are confirmed.<br>
-                    Each player selects <strong>2 Agendas</strong> before battle.
+                <div class="casualties-grid">
+                    <div class="casualty-list">
+                        <h4>Necrons Destroyed</h4>
+                        <ul>
+                            <li>Canoptek Wraiths</li>
+                            <li>Deathmarks (2 units)</li>
+                            <li>Immortals</li>
+                            <li>Lokhust Destroyers</li>
+                            <li>Skorpekh Lord</li>
+                        </ul>
+                        <h4 style="margin-top: 20px;">Battle Scars</h4>
+                        <ul>
+                            <li class="battle-scar">Hexmark Destroyer</li>
+                            <li class="battle-scar">Skorpekh Destroyers</li>
+                        </ul>
+                        <h4 style="margin-top: 20px;">Marked for Greatness</h4>
+                        <ul>
+                            <li class="marked-for-greatness">★ Lokhust Lord</li>
+                        </ul>
+                    </div>
+                    <div class="casualty-list">
+                        <h4>Chaos Space Marines Destroyed</h4>
+                        <ul>
+                            <li>Accursed Cultists</li>
+                            <li>Chaos Bikers</li>
+                            <li>Chaos Lord in Terminator Armour</li>
+                            <li>Chaos Rhino</li>
+                            <li>Dark Commune</li>
+                            <li>Legionaries (1 unit)</li>
+                        </ul>
+                        <h4 style="margin-top: 20px;">Battle Scars</h4>
+                        <ul>
+                            <li class="battle-scar">Chaos Lord</li>
+                            <li class="battle-scar">Legionaries</li>
+                        </ul>
+                        <h4 style="margin-top: 20px;">Marked for Greatness</h4>
+                        <ul>
+                            <li class="marked-for-greatness">★ Raptors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kill Tallies -->
+        <section>
+            <h2>Kill Tallies</h2>
+            <div class="card">
+                <div class="casualties-grid">
+                    <div class="casualty-list">
+                        <h4>Necrons</h4>
+                        <ul>
+                            <li><strong>Flayed Ones — 4 kills</strong></li>
+                            <li>Lokhust Lord — 1 kill</li>
+                            <li>Plasmancer — 1 kill</li>
+                        </ul>
+                    </div>
+                    <div class="casualty-list">
+                        <h4>Chaos Space Marines</h4>
+                        <ul>
+                            <li><strong>Master of Executions — 4 kills</strong></li>
+                            <li>Venomcrawler — 2 kills</li>
+                            <li>Chaos Lord in Terminator Armour — 1 kill</li>
+                            <li>Chaos Predator Annihilator — 1 kill</li>
+                            <li>Legionaries — 2 kills (1 each)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

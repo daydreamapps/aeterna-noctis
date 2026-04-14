@@ -167,15 +167,18 @@
       "mission": "Stranglehold",
       "type": "hulk",
       "file": "battle_009_the_narrowing_dark.html",
-      "status": "pending",
-      "date_m42": null,
-      "date_real": null,
+      "status": "completed",
+      "date_m42": 825,
+      "date_real": "2026-04-12",
       "combatants": {
         "attacker": "necrons",
         "defender": "chaos-space-marines"
       },
       "agendas": null,
-      "result": null
+      "result": {
+        "victor": "draw",
+        "score": { "attacker": 6, "defender": 6 }
+      }
     },
     "010": {
       "title": "Tide of Iron",
