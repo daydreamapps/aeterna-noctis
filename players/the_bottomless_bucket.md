@@ -147,13 +147,13 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 
 ---
 
-### The Wings
+### The Hot Wings
 **Sydonian Dragoons (2)** | 130 pts | Battle-ready (1 XP)
 *Designated: Port Wing, Starboard Wing*
 
 > *The Flankers*
 >
-> Speed is the essence of the Wings. These Dragoons circle the battlefield's edge, their taser lances crackling with barely-contained energy, waiting for the perfect moment to sweep in and strike. They embody the Sixth Mystery—the Temporal Herb—striking at the exact instant when enemy formations begin to turn. By then, it is too late. The Wings have already arrived.
+> Speed is the essence of the Wings. These Dragoons circle the battlefield's edge, their taser lances crackling with barely-contained energy, waiting for the perfect moment to sweep in and strike. They embody the Sixth Mystery—the Temporal Herb—striking at the exact instant when enemy formations begin to turn. By then, it is too late. The Hot Wings have already arrived.
 
 ---
 
@@ -217,7 +217,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | The Extra Crispy | 85 | Battle-ready | 1 | — | — |
 | The Spicy Ones | 90 | Battle-ready | 1 | — | — |
 | The Drumsticks | 170 | Battle-ready | 1 | — | — |
-| The Wings | 130 | Battle-ready | 1 | — | — |
+| The Hot Wings | 130 | Battle-ready | 1 | — | — |
 | The Wafer Pair | 180 | Battle-ready | 1 | — | — |
 | The Crunchy Ones | 180 | Battle-ready | 1 | — | — |
 | *The Drive-Thru* | 85 | Battle-ready | 1 | — | — |
