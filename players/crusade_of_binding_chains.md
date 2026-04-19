@@ -6,7 +6,7 @@
 **Detachment:** Bastion Task Force
 **Alliance:** The Guardians
 **Home World:** Aethelgard
-**Supply Limit:** 1200 pts
+**Supply Limit:** 1400 pts
 **Requisition Points:** 2
 
 ---
@@ -106,6 +106,24 @@
 
 ---
 
+## Fast Attack
+
+### The Burning Brand
+**Inceptor Squad (3)** | 115 pts | Battle-ready (0 XP)
+*Led by Brother-Initiate Soren Flameheart*
+
+> Their yellow helms and shoulder guards mark them as bearers of the Sigil Incendius—warriors who have sworn to be the first to strike, the blazing tip of the crusade's spear. The colours evoke fire from the heavens, and enemies who see them descending know that no mercy follows. Soren speaks the Litany of Divine Descent during every drop, his voice crackling through the vox as plasma trails light the sky behind him.
+
+---
+
+### *Zealot's Pursuit*
+**Invader ATV** | 70 pts | Battle-ready (0 XP)
+*Piloted by Brother-Initiate Corvus Relentless*
+
+> Speed is faith made manifest. Corvus believes that hesitation is heresy, and has modified the engine beyond Mechanicus-approved tolerances to ensure no quarry escapes. Tech-priests disapprove; the Marshal does not. The kill-tally etched into the hull grows with each engagement, and Corvus has sworn that no enemy who flees the Emperor's judgement will live to regret it.
+
+---
+
 ## Dedicated Transports
 
 ### *The Pilgrim's Burden*
@@ -130,8 +148,10 @@
 | The Pyre of Heretics | 150 | Battle-ready | 1 | — | — |
 | The Silent Judgement | 80 | Battle-ready | 1 | — | — |
 | *Wrath Incarnate* | 135 | Battle-ready | 1 | — | — |
+| The Burning Brand | 115 | Battle-ready | 0 | — | — |
+| *Zealot's Pursuit* | 70 | Battle-ready | 0 | — | — |
 | *The Pilgrim's Burden* | 85 | Battle-ready | 1 | — | — |
-| **TOTAL** | **995 / 1200** | | | | |
+| **TOTAL** | **1180 / 1400** | | | | |
 
 ---
 
