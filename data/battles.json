@@ -248,6 +248,21 @@
       },
       "agendas": null,
       "result": null
+    },
+    "013": {
+      "title": "No Ground Given",
+      "mission": "Stranglehold 2",
+      "type": "hulk",
+      "file": "battle_013_no_ground_given.html",
+      "status": "pending",
+      "date_m42": 827,
+      "date_real": null,
+      "combatants": {
+        "attacker": "black-templars",
+        "defender": "chaos-space-marines"
+      },
+      "agendas": null,
+      "result": null
     }
   }
 }
