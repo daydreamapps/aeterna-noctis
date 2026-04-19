@@ -254,15 +254,24 @@
       "mission": "Stranglehold 2",
       "type": "hulk",
       "file": "battle_013_no_ground_given.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 827,
-      "date_real": null,
+      "date_real": "2026-04-19",
       "combatants": {
         "attacker": "black-templars",
         "defender": "chaos-space-marines"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "black-templars": [
+          "Reconsecration",
+          "First-Hand Experience"
+        ],
+        "chaos-space-marines": []
+      },
+      "result": {
+        "victor": "guardians",
+        "score": { "attacker": 8, "defender": 4 }
+      }
     },
     "014": {
       "title": "The Rot Eternal",
