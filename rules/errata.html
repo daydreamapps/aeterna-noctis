@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errata & Clarifications - Aeterna Noctis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1612;
+            --bg-highlight: #241a14;
+            --accent: #8b0000;
+            --accent-bright: #c41e3a;
+            --accent-gold: #c9a227;
+            --accent-bronze: #8b6914;
+            --text: #e8dcc4;
+            --text-muted: #9a8b7a;
+            --bone: #d4c4a8;
+            --border: #3d3225;
+            --shadow-red: rgba(139, 0, 0, 0.4);
+            --shadow-gold: rgba(201, 162, 39, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            background-image:
+                radial-gradient(ellipse at top, #1a0a0a 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, #0a0a1a 0%, transparent 50%);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 70px 20px 20px 20px;
+            min-height: 100vh;
+        }
+
+        /* Top Toolbar */
+        .toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, #0d0a08 0%, #1a1210 100%);
+            border-bottom: 2px solid var(--border);
+            padding: 0 20px;
+            z-index: 999;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+
+        .toolbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        .toolbar-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .toolbar-brand:hover {
+            color: var(--accent-gold);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .toolbar-links {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .toolbar-links a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75em;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 8px 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .toolbar-links a:hover {
+            color: var(--accent-gold);
+            border-color: var(--border);
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        .toolbar-links a.active {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .toolbar-links a.external::after {
+            content: ' ↗';
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
+        .toolbar-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border);
+            margin: 0 5px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; position: relative; }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        header::before {
+            content: '📜';
+            display: block;
+            font-size: 3em;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 20%, var(--accent-gold) 50%, var(--accent-gold) 80%, transparent 100%);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--shadow-red), 0 0 30px var(--shadow-red), 2px 2px 0 #000;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 1.1em;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin: 50px 0 25px 0;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--shadow-gold);
+        }
+
+        h2::before {
+            content: '⚙';
+            margin-right: 15px;
+            color: var(--accent);
+            font-size: 0.9em;
+        }
+
+        h2 a.section-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h2 a.section-link:hover { color: var(--accent-gold); }
+
+        h2 a.section-link::after {
+            content: ' 🔗';
+            font-size: 0.5em;
+            opacity: 0;
+            transition: opacity 0.2s;
+            vertical-align: middle;
+        }
+
+        h2 a.section-link:hover::after { opacity: 0.6; }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--bone);
+            margin: 30px 0 15px 0;
+            font-size: 1.15em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .card::before, .card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: var(--accent-gold);
+            border-style: solid;
+        }
+
+        .card::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+        .card::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+        .errata-entry {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--accent-bronze);
+            padding: 25px;
+            margin: 25px 0;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .errata-entry::before, .errata-entry::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: var(--accent-gold);
+            border-style: solid;
+        }
+
+        .errata-entry::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+        .errata-entry::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+        .errata-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .errata-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        .errata-date {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .errata-tag {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7em;
+            padding: 3px 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 8px;
+        }
+
+        .errata-tag.clarification {
+            background: linear-gradient(180deg, #1e4a5a 0%, #0d2830 100%);
+            border: 1px solid #4a9aaa;
+            color: #a0d4e8;
+        }
+
+        .errata-tag.ruling {
+            background: linear-gradient(180deg, #5a4a1e 0%, #302810 100%);
+            border: 1px solid #aa9a4a;
+            color: #e8d4a0;
+        }
+
+        .errata-tag.faq {
+            background: linear-gradient(180deg, #4a1e5a 0%, #280d30 100%);
+            border: 1px solid #9a4aaa;
+            color: #d4a0e8;
+        }
+
+        .errata-content p {
+            margin-bottom: 12px;
+        }
+
+        .errata-content ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .errata-content li {
+            margin: 10px 0;
+        }
+
+        .errata-content li::marker {
+            color: var(--accent);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
+        }
+
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
+        }
+
+        tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+        tr:hover { background: rgba(139, 0, 0, 0.1); }
+
+        .note {
+            background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
+            border: 2px solid var(--accent-bronze);
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .note::before {
+            content: '⚙ ';
+            color: var(--accent-gold);
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: var(--bone);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .toc {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--accent-bronze);
+            padding: 30px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .toc::before, .toc::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-color: var(--accent-gold);
+            border-style: solid;
+        }
+
+        .toc::before { top: -2px; left: -2px; border-width: 3px 0 0 3px; }
+        .toc::after { bottom: -2px; right: -2px; border-width: 0 3px 3px 0; }
+
+        .toc h3 {
+            font-family: 'Cinzel', serif;
+            margin-top: 0;
+            color: var(--accent-gold);
+            text-align: center;
+            border-bottom: 2px solid var(--accent-bronze);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .toc li:last-child { border-bottom: none; }
+
+        .toc li::before {
+            content: '⬡ ';
+            color: var(--accent);
+            font-size: 0.7em;
+        }
+
+        .toc a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 30px;
+            border-top: 2px solid var(--border);
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        footer::before {
+            content: '☠';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-dark);
+            padding: 0 20px;
+            font-size: 1.5em;
+            color: var(--accent);
+        }
+
+        footer a { font-family: 'Cinzel', serif; letter-spacing: 1px; }
+        footer p { font-family: 'Cinzel', serif; letter-spacing: 2px; font-size: 0.95em; }
+
+        section {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%);
+        }
+
+        section:last-of-type::after { display: none; }
+
+        @media (max-width: 768px) {
+            .toolbar-links a { font-size: 0.65em; padding: 6px 8px; }
+            .toolbar-links a.hide-mobile { display: none; }
+            .toolbar-divider { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 4px; }
+            body { padding: 60px 10px 10px 10px; }
+            .toolbar-brand { font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="toolbar">
+        <div class="toolbar-inner">
+            <a href="../index.html" class="toolbar-brand">Aeterna Noctis</a>
+            <div class="toolbar-links">
+                <a href="../battles/index.html">Battles</a>
+                <a href="index.html">Rules</a>
+                <a href="../players/index.html">Rosters</a>
+                <span class="toolbar-divider"></span>
+                <a href="https://administratum.goonhammer.com/campaigns/019ccdaf-2230-78be-ae32-5440e44659b7" target="_blank" class="external">Tracker</a>
+                <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/" target="_blank" class="external hide-mobile">Wahapedia</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Errata & Clarifications</h1>
+            <p class="subtitle">Campaign Rulings & FAQ</p>
+        </header>
+
+        <nav class="toc">
+            <h3>Quick Reference</h3>
+            <ul>
+                <li><a href="#reinforcement-arrival">Reinforcement Wave Arrival Options</a></li>
+            </ul>
+        </nav>
+
+        <!-- NACHMUND GAUNTLET CLARIFICATIONS -->
+        <section id="nachmund">
+            <h2><a href="#nachmund" class="section-link">Nachmund Gauntlet</a></h2>
+
+            <div class="errata-entry" id="reinforcement-arrival">
+                <div class="errata-header">
+                    <div>
+                        <span class="errata-tag clarification">Clarification</span>
+                        <span class="errata-title">Reinforcement Wave Arrival Options</span>
+                    </div>
+                    <span class="errata-date">Added: April 2026</span>
+                </div>
+                <div class="errata-content">
+                    <p><strong>Question:</strong> How do units from Reinforcement Waves arrive on the battlefield?</p>
+
+                    <p><strong>Answer:</strong> When a Reinforcement Wave arrives at the start of a Battle Round, each unit in that wave can arrive using one of the following methods:</p>
+
+                    <table>
+                        <tr>
+                            <th>Method</th>
+                            <th>Requirements</th>
+                            <th>Placement</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Battlefield Edge</strong></td>
+                            <td>Any unit</td>
+                            <td>Wholly within 6" of your battlefield edge and more than 9" from enemy models</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deep Strike</strong></td>
+                            <td>Unit must have Deep Strike ability</td>
+                            <td>As per the unit's Deep Strike rules (typically more than 9" from enemy models)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Surgical Deep Strike</strong></td>
+                            <td>Unit must have Deep Strike ability + 1CP Stratagem</td>
+                            <td>As Deep Strike, but only needs to be more than 6" from enemy models</td>
+                        </tr>
+                    </table>
+
+                    <div class="note">
+                        <strong>Surgical Deep Strike Limit:</strong> Only one unit per Reinforcement Wave can use this Stratagem.
+                    </div>
+
+                    <p><strong>Source:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Tactical-Reserves" target="_blank">Wahapedia — Tactical Reserves</a></p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- PLACEHOLDER FOR FUTURE SECTIONS -->
+        <!--
+        <section id="crusade-rules">
+            <h2><a href="#crusade-rules" class="section-link">Crusade Rules</a></h2>
+
+            <div class="errata-entry" id="example-errata">
+                <div class="errata-header">
+                    <div>
+                        <span class="errata-tag ruling">Ruling</span>
+                        <span class="errata-title">Example Ruling Title</span>
+                    </div>
+                    <span class="errata-date">Added: Month Year</span>
+                </div>
+                <div class="errata-content">
+                    <p><strong>Question:</strong> Example question?</p>
+                    <p><strong>Answer:</strong> Example answer.</p>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <footer>
+            <p><a href="index.html">&larr; Return to Rules Reference</a></p>
+            <p style="margin-top: 20px; font-size: 0.9em;">Clarity brings victory.</p>
+        </footer>
+    </div>
+</body>
+</html>
