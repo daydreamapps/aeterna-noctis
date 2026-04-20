@@ -278,15 +278,27 @@
       "mission": "Stranglehold 2",
       "type": "hulk",
       "file": "battle_014_the_rot_eternal.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 828,
-      "date_real": null,
+      "date_real": "2026-04-19",
       "combatants": {
         "attacker": "death-guard",
         "defender": "necrons"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "death-guard": [
+          "Sow the Seeds of Corruption",
+          "Vile Research"
+        ],
+        "necrons": [
+          "The Unending Tally",
+          "Defiant to the End"
+        ]
+      },
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 11, "defender": 5 }
+      }
     }
   }
 }
