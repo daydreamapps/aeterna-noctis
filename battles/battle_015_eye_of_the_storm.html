@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle 015: Eye of the Storm - Aeterna Noctis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1612;
+            --bg-highlight: #241a14;
+            --accent: #8b0000;
+            --accent-bright: #c41e3a;
+            --accent-gold: #c9a227;
+            --accent-bronze: #8b6914;
+            --text: #e8dcc4;
+            --text-muted: #9a8b7a;
+            --bone: #d4c4a8;
+            --border: #3d3225;
+            --shadow-red: rgba(139, 0, 0, 0.4);
+            --shadow-gold: rgba(201, 162, 39, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            background-image:
+                radial-gradient(ellipse at top, #1a0a0a 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, #0a0a1a 0%, transparent 50%);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; position: relative; }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        header::before { content: '⚔'; display: block; font-size: 3em; margin-bottom: 15px; opacity: 0.8; }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80%; height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 20%, var(--accent-gold) 50%, var(--accent-gold) 80%, transparent 100%);
+        }
+
+        .mission-number {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9em;
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--shadow-red), 0 0 30px var(--shadow-red), 2px 2px 0 #000;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            color: var(--text-muted);
+            font-size: 1em;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin: 40px 0 20px 0;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--shadow-gold);
+        }
+
+        h2::before { content: '◆'; margin-right: 12px; color: var(--accent); font-size: 0.8em; }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--bone);
+            margin: 25px 0 12px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .card::before, .card::after {
+            content: '';
+            position: absolute;
+            width: 20px; height: 20px;
+            border-color: var(--accent-gold);
+            border-style: solid;
+        }
+
+        .card::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+        .card::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+        .overview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+
+        .overview-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .overview-item:last-child { border-bottom: none; }
+        .overview-label { color: var(--text-muted); font-size: 0.9em; }
+        .overview-value { font-weight: 600; color: var(--bone); }
+
+        .vox-transmission {
+            background: linear-gradient(145deg, #0d1a0d 0%, #0a0f0a 100%);
+            border: 2px solid #2d4a2d;
+            padding: 25px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+
+        .vox-transmission::before {
+            content: 'VOX-INTERCEPT';
+            position: absolute;
+            top: -12px; left: 20px;
+            background: #0a0f0a;
+            padding: 0 10px;
+            font-size: 0.8em;
+            color: #4a9956;
+            letter-spacing: 2px;
+        }
+
+        .vox-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #2d4a2d;
+            font-size: 0.85em;
+            color: #6a9a6a;
+        }
+
+        .vox-priority { color: #c9a227; }
+        .vox-body { color: #a0d4a8; line-height: 1.8; }
+        .vox-body p { margin-bottom: 12px; }
+
+        .vox-footer {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #2d4a2d;
+            color: #6a9a6a;
+            font-style: italic;
+        }
+
+        .matchup {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 25px;
+            margin: 25px 0;
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--accent-bronze);
+        }
+
+        .combatant { text-align: center; }
+
+        .combatant-alliance {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .combatant-alliance.marauders { color: var(--accent-gold); }
+        .combatant-alliance.despoilers { color: #9b4d96; }
+        .combatant-alliance.guardians { color: #4a9956; }
+
+        .combatant-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--bone);
+            margin-bottom: 5px;
+        }
+
+        .combatant-faction { color: var(--text-muted); font-size: 0.9em; }
+
+        .versus {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5em;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
+        }
+
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
+        }
+
+        tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+
+        .scoring-timing {
+            color: var(--text-muted);
+            font-size: 0.85em;
+            font-style: italic;
+        }
+
+        .vp-value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3em;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .note {
+            background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
+            border: 2px solid var(--accent-bronze);
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .note::before { content: '⚙ '; color: var(--accent-gold); }
+
+        .warning {
+            background: linear-gradient(145deg, rgba(139, 0, 0, 0.15) 0%, rgba(100, 0, 0, 0.1) 100%);
+            border: 2px solid var(--accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .warning::before { content: '⚠ '; color: var(--accent-bright); }
+
+        .custom-rule {
+            background: linear-gradient(145deg, rgba(100, 80, 150, 0.15) 0%, rgba(60, 40, 100, 0.1) 100%);
+            border: 2px solid #6a5a9a;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .custom-rule::before { content: '★ '; color: #9a8ad4; }
+
+        .role-tag {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7em;
+            padding: 2px 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .role-tag.defender { background: #2d5a4a; color: var(--text); }
+        .role-tag.attacker { background: #8b3030; color: var(--text); }
+
+        ul { margin-left: 25px; margin-bottom: 15px; }
+        li { margin: 10px 0; }
+        li::marker { color: var(--accent); }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: var(--bone);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(180deg, var(--accent) 0%, #5a0000 100%);
+            border-color: var(--accent-bright);
+            box-shadow: 0 0 15px var(--shadow-red);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            border-top: 2px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        footer::before {
+            content: '☠';
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 3px; }
+            .overview-grid { grid-template-columns: 1fr; }
+            .matchup { grid-template-columns: 1fr; text-align: center; }
+            .versus { padding: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Battle Logs</a>
+
+        <header>
+            <p class="mission-number">Hulk Battle 015</p>
+            <h1>Eye of the Storm</h1>
+            <p class="subtitle">Custom Mission — The Twin Pillars</p>
+        </header>
+
+        <!-- VOX Transmission -->
+        <div class="vox-transmission">
+            <div class="vox-header">
+                <span class="vox-priority">++ Priority: Vermillion ++</span>
+                <span>++ Source: Aeterna Noctis Sensorium ++</span>
+                <span>++ Timestamp: 829.M42 ++</span>
+            </div>
+            <div class="vox-body">
+                <p>ANOMALY DETECTED: Two xenos monoliths of unknown origin have been identified in Sector Omicron-4. These ancient pillars rise nearly 24 metres from the deck, their summits crackling with dormant energies. Between them, a strange fog churns—sensors unable to penetrate its depths.</p>
+                <p>The Judgement of Aldurukh moves to secure the site. The Dark Angels speak of "ancient secrets" that must not fall into unworthy hands. Their true motives, as always, remain shrouded.</p>
+                <p>The Trans-Eternians Alliance approaches from the opposite vector. The Kin have logged this location in their Votann—these pillars contain mineral deposits of immense value. A Grudge will be marked if they are denied their claim.</p>
+                <p>Two forces. Two pillars. One shrouded battlefield between them. The storm gathers.</p>
+            </div>
+            <div class="vox-footer">
+                <em>"In the eye of the storm, even the mightiest may fall."</em><br>
+                — Thought for the Day
+            </div>
+        </div>
+
+        <!-- Matchup -->
+        <div class="matchup">
+            <div class="combatant">
+                <span class="role-tag attacker">Attacker</span>
+                <div class="combatant-alliance guardians">Guardians</div>
+                <div class="combatant-name">The Judgement of Aldurukh</div>
+                <div class="combatant-faction">Dark Angels</div>
+            </div>
+            <div class="versus">VS</div>
+            <div class="combatant">
+                <span class="role-tag defender">Defender</span>
+                <div class="combatant-alliance marauders">Marauders</div>
+                <div class="combatant-name">The Trans-Eternians Alliance</div>
+                <div class="combatant-faction">Leagues of Votann</div>
+            </div>
+        </div>
+
+        <!-- Mission Overview -->
+        <section>
+            <h2>Mission Overview</h2>
+            <div class="card">
+                <p style="margin-bottom: 15px;">Two ancient xenos pillars rise from the depths of the Aeterna Noctis, their summits crackling with strange energies. Between them, an impenetrable fog churns—providing sanctuary to those within, but obscuring all sight. Both forces seek to control the high ground and dominate the shrouded battlefield below.</p>
+                <div class="overview-grid">
+                    <div class="overview-item">
+                        <span class="overview-label">Board Size</span>
+                        <span class="overview-value">60" x 44"</span>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-label">Tower Height</span>
+                        <span class="overview-value">~24" each</span>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-label">Tower Separation</span>
+                        <span class="overview-value">~24" apart</span>
+                    </div>
+                    <div class="overview-item">
+                        <span class="overview-label">Objectives</span>
+                        <span class="overview-value">5 Total</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Battlefield Setup -->
+        <section>
+            <h2>Battlefield Setup</h2>
+            <div class="card">
+                <h3>Tower Placement</h3>
+                <p>Two towers placed approximately 24" apart, creating a central corridor between them.</p>
+
+                <h3>Objectives</h3>
+                <ul>
+                    <li><strong>Tower Summits:</strong> 1 objective at the top of each tower (2 total)</li>
+                    <li><strong>Shrouded by Fog Zone:</strong> 3 objectives at ground level between the towers</li>
+                </ul>
+
+                <h3>The Shrouded by Fog Zone</h3>
+                <p>The entire ground-level area between the two towers (within 12" of the centre line connecting them).</p>
+            </div>
+        </section>
+
+        <!-- Special Rules -->
+        <section>
+            <h2>Special Rules</h2>
+
+            <h3>Shrouded by Fog</h3>
+            <div class="card">
+                <p><em>The strange energies between the pillars create a dense, concealing mist that confounds targeting systems and offers strange protection.</em></p>
+
+                <p><strong>INFANTRY and MOUNTED units</strong> wholly within this zone gain:</p>
+                <ul>
+                    <li><strong>Stealth:</strong> -1 to hit when targeted by ranged attacks</li>
+                    <li><strong>Benefit of Cover:</strong> +1 to saving throws against ranged attacks</li>
+                    <li><strong>4+ Invulnerable Save:</strong> Energy interference protects them</li>
+                </ul>
+
+                <p><strong>VEHICLE units</strong> wholly within this zone gain:</p>
+                <ul>
+                    <li><strong>Stealth:</strong> -1 to hit when targeted by ranged attacks</li>
+                    <li><strong>Benefit of Cover:</strong> +1 to saving throws against ranged attacks</li>
+                </ul>
+
+                <div class="note">
+                    Vehicles do NOT gain the 4+ invulnerable save—the energy field cannot fully encompass their mass.
+                </div>
+            </div>
+
+            <h3>Plunging Fire</h3>
+            <div class="card">
+                <p><em>From the heights, warriors rain death upon those below.</em></p>
+                <p>Models on the towers gain <strong>+1 to hit</strong> (ranged attacks only) when targeting units at ground level.</p>
+            </div>
+
+            <h3>Precarious Position</h3>
+            <div class="card">
+                <p><em>The ancient stone offers little purchase, and the distracted or panicked may find themselves plummeting to their doom.</em></p>
+                <p>Any unit that is <strong>Battle-shocked</strong> and has one or more models within 1" of a ledge must immediately take a <strong>Balance Test</strong> for each such model:</p>
+                <ul>
+                    <li>Roll a D6. On a <strong>1-2</strong>, that model <strong>falls and is slain</strong> (no saves of any kind).</li>
+                    <li>This roll <strong>can be re-rolled</strong> by spending 1 CP.</li>
+                </ul>
+
+                <div class="warning">
+                    Characters, elite units, and valuable models should think twice before standing near the edge!
+                </div>
+            </div>
+
+            <h3>Vertiginous Heights</h3>
+            <div class="card">
+                <p><em>A shot at the wrong moment can send a warrior tumbling into the void.</em></p>
+                <p>Any unit that is <strong>hit by a ranged attack</strong> while one or more of its models are within 1" of a ledge must immediately take a <strong>Battle-shock test</strong> after the attacking unit finishes its attacks.</p>
+                <p>This test suffers a <strong>-1 modifier for every 6" of height</strong> off the ground:</p>
+                <table>
+                    <tr>
+                        <th>Height</th>
+                        <th>Modifier</th>
+                    </tr>
+                    <tr>
+                        <td>6" high</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td>12" high</td>
+                        <td>-2</td>
+                    </tr>
+                    <tr>
+                        <td>18" high</td>
+                        <td>-3</td>
+                    </tr>
+                    <tr>
+                        <td>24" high</td>
+                        <td>-4</td>
+                    </tr>
+                </table>
+
+                <div class="note">
+                    A unit only takes one Vertiginous Heights Battle-shock test per phase, regardless of how many times it is hit.
+                </div>
+            </div>
+
+            <h3>Vertical Movement</h3>
+            <div class="card">
+                <p>Units can climb towers at <strong>half their Movement characteristic</strong> (measure vertically).</p>
+                <ul>
+                    <li><strong>FLY</strong> and <strong>JUMP PACK</strong> units move normally.</li>
+                    <li>Tower summits can hold a maximum of <strong>10 models</strong>.</li>
+                </ul>
+            </div>
+
+            <h3>Deep Strike Restrictions</h3>
+            <div class="card">
+                <p>Units cannot arrive via Deep Strike within 6" horizontally of a tower base (energy interference).</p>
+                <p>Units with Deep Strike <strong>can</strong> arrive on tower platforms if they fit within the model limit.</p>
+            </div>
+        </section>
+
+        <!-- Army Setup -->
+        <section>
+            <h2>Army Setup: Tactical Reserves</h2>
+            <div class="card">
+                <p>This mission uses <strong>Tactical Reserves</strong> with a special tower deployment option.</p>
+
+                <h3>Incursion (1000pts) Wave Configuration</h3>
+                <table>
+                    <tr>
+                        <th>Wave</th>
+                        <th>Points Limit</th>
+                        <th>Arrives</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary Wave</strong></td>
+                        <td>Up to 500 pts</td>
+                        <td>Deployment (start of battle)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reinforcement Wave 1</strong></td>
+                        <td>Up to 250 pts</td>
+                        <td>Start of Battle Round 2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reinforcement Wave 2</strong></td>
+                        <td>Up to 250 pts</td>
+                        <td>Start of Battle Round 3</td>
+                    </tr>
+                </table>
+
+                <h3>Tower Deployment</h3>
+                <div class="custom-rule">
+                    <strong>Special Rule:</strong> Up to <strong>half of your Primary Wave</strong> (by points) may be deployed on your designated tower instead of your deployment zone. Models must fit within the tower's model limit (10 models per summit).
+                </div>
+
+                <div class="note">
+                    Each player is assigned one tower at the start of the game (roll off or agree). You may only deploy on YOUR tower during initial deployment.
+                </div>
+            </div>
+        </section>
+
+        <!-- Scoring -->
+        <section>
+            <h2>Scoring</h2>
+
+            <h3>Progressive Objective: Fog Dominance</h3>
+            <div class="card">
+                <p><em>Control the shrouded battlefield to claim victory.</em></p>
+                <p class="scoring-timing">At the end of your turn:</p>
+                <table>
+                    <tr>
+                        <th>Condition</th>
+                        <th>VP</th>
+                    </tr>
+                    <tr>
+                        <td>Control one or more objectives in the Shrouded by Fog zone</td>
+                        <td class="vp-value">1 VP</td>
+                    </tr>
+                    <tr>
+                        <td>Control more Fog objectives than your opponent</td>
+                        <td class="vp-value">1 VP</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Progressive Objective: Summit Control</h3>
+            <div class="card">
+                <p><em>The high ground commands the battlefield.</em></p>
+                <p class="scoring-timing">At the end of each battle round:</p>
+                <table>
+                    <tr>
+                        <th>Condition</th>
+                        <th>VP</th>
+                    </tr>
+                    <tr>
+                        <td>Control one tower summit</td>
+                        <td class="vp-value">1 VP</td>
+                    </tr>
+                    <tr>
+                        <td>Control BOTH tower summits</td>
+                        <td class="vp-value">3 VP</td>
+                    </tr>
+                </table>
+                <div class="note">
+                    Controlling both summits awards 3 VP total (not 1 + 3).
+                </div>
+            </div>
+        </section>
+
+        <!-- Victor Bonus -->
+        <section>
+            <h2>Victor Bonus</h2>
+            <div class="card">
+                <p>The victor can select <strong>one additional unit</strong> from their Crusade army to be <strong>Marked for Greatness</strong>.</p>
+                <div class="note">
+                    This means the victor may Mark for Greatness <strong>two units</strong> in total after this battle (the standard one plus the bonus).
+                </div>
+            </div>
+        </section>
+
+        <!-- Agendas -->
+        <section>
+            <h2>Select Agendas</h2>
+            <div class="card">
+                <p>Each player selects up to 2 Agendas for this battle. Choose from your faction's Crusade Agendas or the Nachmund Gauntlet Agendas.</p>
+
+                <h3>Dark Angels — The Judgement of Aldurukh</h3>
+                <div class="note">
+                    <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/dark-angels#Agendas-2" target="_blank">View Dark Angels Agendas on Wahapedia</a>
+                </div>
+
+                <h3 style="margin-top: 20px;">Leagues of Votann — The Trans-Eternians Alliance</h3>
+                <div class="note">
+                    <a href="https://wahapedia.ru/wh40k10ed/factions/leagues-of-votann#Agendas" target="_blank">View Leagues of Votann Agendas on Wahapedia</a>
+                </div>
+
+                <h3 style="margin-top: 20px;">Nachmund Gauntlet Agendas</h3>
+                <div class="note">
+                    <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">View Nachmund Gauntlet Agendas on Wahapedia</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Post-Battle Reporting -->
+        <section>
+            <h2>Post-Battle Reporting</h2>
+            <div class="card">
+                <p>After the battle, report the following to your Game Master:</p>
+
+                <ul>
+                    <li><strong>Final Score:</strong> Your VP total and your opponent's VP total</li>
+                    <li><strong>Kills:</strong> Which of your units destroyed which enemy units</li>
+                    <li><strong>Casualties:</strong> Which of your units were destroyed (they must make Out of Action tests)</li>
+                    <li><strong>Falls:</strong> Any models that fell from the towers (for narrative glory!)</li>
+                    <li><strong>Notable Moments:</strong> 2-3 memorable events for the battle report</li>
+                </ul>
+
+                <h3>Quick XP Reference</h3>
+                <table>
+                    <tr>
+                        <th>Source</th>
+                        <th>XP</th>
+                    </tr>
+                    <tr>
+                        <td>Participated in battle</td>
+                        <td>+1 XP</td>
+                    </tr>
+                    <tr>
+                        <td>Destroyed 3 enemy units (cumulative)</td>
+                        <td>+1 XP</td>
+                    </tr>
+                    <tr>
+                        <td>Marked for Greatness</td>
+                        <td>+3 XP</td>
+                    </tr>
+                    <tr>
+                        <td>Agenda completion</td>
+                        <td>Varies</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p>The pillars await. The fog beckons. Only the bold will triumph.</p>
+        </footer>
+    </div>
+</body>
+</html>

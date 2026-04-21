@@ -299,6 +299,21 @@
         "victor": "despoilers",
         "score": { "attacker": 11, "defender": 5 }
       }
+    },
+    "015": {
+      "title": "Eye of the Storm",
+      "mission": "Eye of the Storm (Custom)",
+      "type": "hulk",
+      "file": "battle_015_eye_of_the_storm.html",
+      "status": "pending",
+      "date_m42": 829,
+      "date_real": null,
+      "combatants": {
+        "attacker": "dark-angels",
+        "defender": "leagues-of-votann"
+      },
+      "agendas": null,
+      "result": null
     }
   }
 }
