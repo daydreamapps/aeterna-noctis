@@ -327,7 +327,17 @@
         "attacker": "death-guard",
         "defender": "black-templars"
       },
-      "agendas": null,
+      "agendas": {
+        "death-guard": [
+          "Cut off the Head",
+          "Vile Research"
+        ],
+        "black-templars": [
+          "First-Hand Experience",
+          "Reconsecration",
+          "Oaths of Crusade"
+        ]
+      },
       "result": null
     }
   }
