@@ -137,19 +137,6 @@
         .card::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
         .card::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
 
-        .overview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-
-        .overview-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .overview-item:last-child { border-bottom: none; }
-        .overview-label { color: var(--text-muted); font-size: 0.9em; }
-        .overview-value { font-weight: 600; color: var(--bone); }
-
         .vox-transmission {
             background: linear-gradient(145deg, #0d1a0d 0%, #0a0f0a 100%);
             border: 2px solid #2d4a2d;
@@ -193,6 +180,24 @@
             font-style: italic;
         }
 
+        .result-banner {
+            text-align: center;
+            padding: 20px;
+            margin: 25px 0;
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 3px solid;
+        }
+
+        .result-banner.draw {
+            background: linear-gradient(145deg, #3d3d3d 0%, #1a1a1a 100%);
+            border-color: #666;
+            color: #aaa;
+        }
+
         .matchup {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -230,76 +235,10 @@
 
         .versus {
             font-family: 'Cinzel', serif;
-            font-size: 1.5em;
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            border: 2px solid var(--accent-bronze);
-        }
-
-        th, td {
-            padding: 14px 12px;
-            text-align: left;
-            border: 1px solid var(--border);
-        }
-
-        th {
-            font-family: 'Cinzel', serif;
-            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            font-size: 0.8em;
-            font-weight: 700;
-            letter-spacing: 2px;
-            border-bottom: 2px solid var(--accent-bronze);
-        }
-
-        tr:nth-child(even) { background: rgba(0,0,0,0.2); }
-
-        .scoring-timing {
-            color: var(--text-muted);
-            font-size: 0.85em;
-            font-style: italic;
-        }
-
-        .vp-value {
-            font-family: 'Cinzel', serif;
-            font-size: 1.3em;
+            font-size: 1.8em;
             color: var(--accent-gold);
             font-weight: 700;
         }
-
-        .note {
-            background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
-            border: 2px solid var(--accent-bronze);
-            padding: 15px 20px;
-            margin: 15px 0;
-        }
-
-        .note::before { content: '⚙ '; color: var(--accent-gold); }
-
-        .warning {
-            background: linear-gradient(145deg, rgba(139, 0, 0, 0.15) 0%, rgba(100, 0, 0, 0.1) 100%);
-            border: 2px solid var(--accent);
-            padding: 15px 20px;
-            margin: 15px 0;
-        }
-
-        .warning::before { content: '⚠ '; color: var(--accent-bright); }
-
-        .custom-rule {
-            background: linear-gradient(145deg, rgba(100, 80, 150, 0.15) 0%, rgba(60, 40, 100, 0.1) 100%);
-            border: 2px solid #6a5a9a;
-            padding: 15px 20px;
-            margin: 15px 0;
-        }
-
-        .custom-rule::before { content: '★ '; color: #9a8ad4; }
 
         .role-tag {
             display: inline-block;
@@ -313,6 +252,45 @@
 
         .role-tag.defender { background: #2d5a4a; color: var(--text); }
         .role-tag.attacker { background: #8b3030; color: var(--text); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
+        }
+
+        tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+
+        .destroyed { color: #995656; }
+        .battle-scar { color: #c9a227; }
+        .marked { color: #4a9956; font-weight: bold; }
+
+        .note {
+            background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
+            border: 2px solid var(--accent-bronze);
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .note::before { content: '⚙ '; color: var(--accent-gold); }
 
         ul { margin-left: 25px; margin-bottom: 15px; }
         li { margin: 10px 0; }
@@ -367,7 +345,6 @@
 
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; letter-spacing: 3px; }
-            .overview-grid { grid-template-columns: 1fr; }
             .matchup { grid-template-columns: 1fr; text-align: center; }
             .versus { padding: 10px 0; }
         }
@@ -378,201 +355,265 @@
         <a href="index.html" class="back-link">&larr; Back to Battle Logs</a>
 
         <header>
-            <p class="mission-number">Hulk Battle 016</p>
+            <p class="mission-number">Hulk Battle 016 — 830.M42</p>
             <h1>The Purged Silence</h1>
-            <p class="subtitle">Purge After Inload 4 — Cogitator Denial</p>
+            <p class="subtitle">Purge After Inload 4 — April 25, 2026</p>
         </header>
 
-        <!-- VOX Transmission -->
-        <div class="vox-transmission">
-            <div class="vox-header">
-                <span class="vox-priority">++ Priority: Crimson ++</span>
-                <span>++ Source: Aeterna Noctis Sensorium ++</span>
-                <span>++ Timestamp: 830.M42 ++</span>
-            </div>
-            <div class="vox-body">
-                <p>ALERT: Cogitator info-shrines detected in Sector Phi-7. Machine-spirits within contain intelligence archives of critical strategic value—navigation data, void-routes through the Rift, and records of xenos movements predating the Great Rift's sundering.</p>
-                <p>The Crusade of Binding Chains has established a defensive perimeter. Marshal Vlackl has declared these shrines sacrosanct—their data must be preserved for the Ecclesiarchy's archives, purged only when properly consecrated. The Black Templars will not suffer the Enemy to corrupt what rightfully belongs to the God-Emperor.</p>
-                <p>The Sons of Decay approach from the lower decks. Their Biologus Putrifiers have detected something within the cogitators—perhaps echoes of forbidden knowledge, or merely the chance to deny the Imperium another fragment of its crumbling domain. Where the Death Guard tread, nothing remains untainted.</p>
-                <p>Both forces seek the same objective: inload the data, then purge the shrines. What knowledge will survive? What will be lost to entropy and flame?</p>
-            </div>
-            <div class="vox-footer">
-                <em>"Knowledge is power. Guard it well—or destroy it utterly."</em><br>
-                — Thought for the Day
-            </div>
+        <!-- Result Banner -->
+        <div class="result-banner draw">
+            Draw — Neither Side Claims Victory
         </div>
 
-        <!-- Matchup -->
+        <!-- Matchup with Score -->
         <div class="matchup">
             <div class="combatant">
                 <span class="role-tag attacker">Attacker</span>
                 <div class="combatant-alliance despoilers">Despoilers</div>
                 <div class="combatant-name">The Sons of Decay</div>
-                <div class="combatant-faction">Death Guard</div>
+                <div class="combatant-faction">Death Guard (1395pts)</div>
             </div>
-            <div class="versus">VS</div>
+            <div class="versus">11 — 11</div>
             <div class="combatant">
                 <span class="role-tag defender">Defender</span>
                 <div class="combatant-alliance guardians">Guardians</div>
                 <div class="combatant-name">The Crusade of Binding Chains</div>
-                <div class="combatant-faction">Black Templars</div>
+                <div class="combatant-faction">Black Templars (1250pts)</div>
             </div>
         </div>
 
-        <!-- Mission Overview -->
+        <!-- After-Action VOX Transmission -->
+        <div class="vox-transmission">
+            <div class="vox-header">
+                <span class="vox-priority">++ Priority: Amber ++</span>
+                <span>++ Source: Aeterna Noctis Sensorium ++</span>
+                <span>++ Timestamp: 830.M42 ++</span>
+            </div>
+            <div class="vox-body">
+                <p>AFTER-ACTION REPORT: Sector Phi-7 engagement concluded. Outcome: INCONCLUSIVE. Cogitator shrines status: COMPROMISED. Intelligence recovery: PARTIAL.</p>
+                <p>The battle devolved into mutual annihilation. The Death Guard's Foetid Bloat-drone reaped a terrible harvest with three kills before its diseased hull finally ruptured, while the Lord of Virulence's calculated strikes earned him recognition among Grandfather Nurgle's favoured. The Black Templars' Inceptor Squad descended like avenging angels, their plasma fire cutting through the putrid horde.</p>
+                <p>Casualties were catastrophic on both sides—eleven Death Guard units fell to Black Templar fury, eight Crusaders joined the Emperor's side. Both Marshals emerged scarred: the Chaos Rhino bears new corruption, while the Black Templar Marshal carries wounds that will not easily heal.</p>
+                <p>The shrines burn. The data is lost to both sides. In the silence that follows, only the dead remain to guard secrets now reduced to ash.</p>
+            </div>
+            <div class="vox-footer">
+                <em>"In mutual destruction, both sides claim defeat."</em><br>
+                — Thought for the Day
+            </div>
+        </div>
+
+        <!-- Marked for Greatness -->
         <section>
-            <h2>Mission Overview</h2>
+            <h2>Marked for Greatness</h2>
             <div class="card">
-                <p style="margin-bottom: 15px;">Cogitator info-shrines at this site contain vital intelligence that must be accessed and eradicated to deny it to the foe. Forces must drop in swiftly, inload all essential intelligence, and then purge the shrines by any means necessary.</p>
-                <div class="overview-grid">
-                    <div class="overview-item">
-                        <span class="overview-label">Mission</span>
-                        <span class="overview-value">Purge After Inload 4</span>
-                    </div>
-                    <div class="overview-item">
-                        <span class="overview-label">Battle Size</span>
-                        <span class="overview-value">Incursion (1000pts)</span>
-                    </div>
-                    <div class="overview-item">
-                        <span class="overview-label">Objectives</span>
-                        <span class="overview-value">4 (Info-Shrines)</span>
-                    </div>
-                    <div class="overview-item">
-                        <span class="overview-label">Battle Rounds</span>
-                        <span class="overview-value">5</span>
-                    </div>
-                </div>
+                <h3>Death Guard — Lord of Virulence</h3>
+                <p>1 kill, 7 XP earned. His methodical application of blight and plague proved decisive in holding critical ground.</p>
+
+                <h3 style="margin-top: 20px;">Black Templars — Inceptor Squad</h3>
+                <p>1 kill, 4 XP earned. Their aerial assault disrupted Death Guard formations at crucial moments.</p>
             </div>
         </section>
 
-        <!-- Special Rules -->
+        <!-- Death Guard Casualties -->
         <section>
-            <h2>Mission Rules</h2>
-
-            <h3>Infopurge (Action)</h3>
+            <h2>Death Guard — The Sons of Decay</h2>
             <div class="card">
-                <p><em>Access the cogitator shrine, extract what data you can, then purge it to deny the enemy.</em></p>
-
                 <table>
                     <tr>
-                        <th>Phase</th>
-                        <th>Requirement</th>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP</th>
+                        <th>Status</th>
                     </tr>
                     <tr>
-                        <td><strong>Starts</strong></td>
-                        <td>Your Shooting phase, from the second battle round onwards</td>
+                        <td>Blightlord Terminators</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>Survived</td>
                     </tr>
                     <tr>
-                        <td><strong>Units</strong></td>
-                        <td>One unit from your Crusade army within range of an objective marker that is <strong>not</strong> within your own Deployment Zone</td>
+                        <td>Chaos Rhino</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="battle-scar">Battle Scar</td>
                     </tr>
                     <tr>
-                        <td><strong>Completes</strong></td>
-                        <td>End of your opponent's next turn, or the end of the battle (whichever comes first), if you control that objective marker</td>
+                        <td>Lord of Virulence</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td class="marked">Marked for Greatness</td>
+                    </tr>
+                    <tr>
+                        <td>Foetid Bloat-drone (Heavy Blight Launcher)</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Lord of Poxes</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Lord</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Deathshroud Terminators</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Foul Blightspawn</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Myphitic Blight-hauler</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Marines (Squad 1)</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Marines (Squad 2)</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Surgeon</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Chaos Spawn</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Poxwalkers</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
                     </tr>
                 </table>
-
-                <div class="custom-rule">
-                    <strong>If Completed:</strong> That objective marker is <strong>purged</strong> and removed from the battlefield.
-                </div>
+                <p style="margin-top: 15px;"><strong>Total:</strong> 8 kills | 33 XP earned | 11 units destroyed | 1 battle scar</p>
             </div>
         </section>
 
-        <!-- Scoring -->
+        <!-- Black Templars Casualties -->
         <section>
-            <h2>Mission Objectives</h2>
-
-            <h3>Info-Shrine Inload</h3>
+            <h2>Black Templars — The Crusade of Binding Chains</h2>
             <div class="card">
-                <p><em>As long as the info-shrines can be held, more intelligence can be gathered.</em></p>
-                <p class="scoring-timing">Progressive Objective — From the second battle round onwards, at the end of each player's Command phase:</p>
                 <table>
                     <tr>
-                        <th>Condition</th>
-                        <th>VP</th>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP</th>
+                        <th>Status</th>
                     </tr>
                     <tr>
-                        <td>Score 1VP for each objective marker you control (to a maximum of 2VP)</td>
-                        <td class="vp-value">1-2 VP</td>
+                        <td>Marshal</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td class="battle-scar">Battle Scar</td>
+                    </tr>
+                    <tr>
+                        <td>Captain in Gravis Armour</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Apothecary</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Inceptor Squad</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td class="marked">Marked for Greatness</td>
+                    </tr>
+                    <tr>
+                        <td>Storm Speeder Thunderstrike</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Crusader Squad (Surviving)</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Invader ATV</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Assault Intercessor Squad</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Crusader Squad (Destroyed)</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Emperor's Champion (Anointed)</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Aggressors</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Assault Intercessors</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Assault Intercessors with Jump Packs</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Intercessor Squad</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
                     </tr>
                 </table>
-                <div class="note">
-                    In the fifth battle round, the player who has the second turn scores VP as described above, but does so at the <strong>end of the turn</strong> instead of at the end of their Command phase.
-                </div>
-            </div>
-
-            <h3>Infopurge</h3>
-            <div class="card">
-                <p><em>Keep the foe ignorant, even at the expense of your enlightenment.</em></p>
-                <p class="scoring-timing">Progressive Objective — Each time a player whose turn it is purges an objective marker:</p>
-                <table>
-                    <tr>
-                        <th>Location</th>
-                        <th>VP</th>
-                    </tr>
-                    <tr>
-                        <td>Objective marker is within <strong>your own territory</strong></td>
-                        <td class="vp-value">2 VP</td>
-                    </tr>
-                    <tr>
-                        <td>Objective marker is within <strong>your opponent's territory</strong></td>
-                        <td class="vp-value">3 VP</td>
-                    </tr>
-                </table>
+                <p style="margin-top: 15px;"><strong>Total:</strong> 11 kills | 25 XP earned | 8 units destroyed | 1 battle scar</p>
             </div>
         </section>
 
-        <!-- Victor Bonus -->
-        <section>
-            <h2>Victor Bonus</h2>
-            <div class="card">
-                <p>The victor can select <strong>one unit</strong> from their Crusade army that purged one or more objective markers during the battle to gain a <strong>Battle Trait</strong>.</p>
-                <ul>
-                    <li>This must be a unit that can gain a Battle Trait.</li>
-                </ul>
-                <div class="custom-rule">
-                    <strong>Bonus:</strong> If the victor purged the objective marker within their opponent's deployment zone, they gain <strong>1 SAP</strong>.
-                </div>
-            </div>
-        </section>
-
-        <!-- Army Setup -->
-        <section>
-            <h2>Army Setup: Tactical Reserves</h2>
-            <div class="card">
-                <p>This mission uses <strong>Tactical Reserves</strong>.</p>
-
-                <h3>Incursion (1000pts) Wave Configuration</h3>
-                <table>
-                    <tr>
-                        <th>Wave</th>
-                        <th>Points Limit</th>
-                        <th>Arrives</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Primary Wave</strong></td>
-                        <td>Up to 500 pts</td>
-                        <td>Deployment (start of battle)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reinforcement Wave 1</strong></td>
-                        <td>Up to 250 pts</td>
-                        <td>Start of Battle Round 2</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reinforcement Wave 2</strong></td>
-                        <td>Up to 250 pts</td>
-                        <td>Start of Battle Round 3</td>
-                    </tr>
-                </table>
-
-                <div class="note">
-                    Reinforcements arrive from your board edge or via Deep Strike if the unit has that ability.
-                </div>
-            </div>
-        </section>
-
-        <!-- Agendas -->
+        <!-- Selected Agendas -->
         <section>
             <h2>Selected Agendas</h2>
             <div class="card">
@@ -587,26 +628,9 @@
 
                 <h3 style="margin-top: 25px;">Black Templars — The Crusade of Binding Chains</h3>
                 <ul>
-                    <li><strong>First-Hand Experience</strong>
-                        <ul style="margin-top: 5px; margin-bottom: 10px;">
-                            <li>1XP when Crusader Squad destroys a unit</li>
-                            <li>+1XP if Neophyte survives</li>
-                            <li>If unit gains 2XP, gain 2 Honour</li>
-                        </ul>
-                    </li>
-                    <li><strong>Reconsecration</strong>
-                        <ul style="margin-top: 5px; margin-bottom: 10px;">
-                            <li>Opponent selects NML objective as Holy Relic Marker</li>
-                            <li>If not held: do not gain 1 Relic from battle</li>
-                            <li>If held: gain D3 Relic, 1 Honour, and 3XP for 1 unit on the objective</li>
-                        </ul>
-                    </li>
-                    <li><strong>Oaths of Crusade</strong> — <em>Bonus Agenda</em>
-                        <ul style="margin-top: 5px; margin-bottom: 10px;">
-                            <li><em>"Reclaim our holy relics"</em> — Hold more objectives: 2 Relic</li>
-                            <li><em>"Slaughter the faithless"</em> — Kill 6 units: 2 Honour & 1 Relic</li>
-                        </ul>
-                    </li>
+                    <li><strong>First-Hand Experience</strong></li>
+                    <li><strong>Reconsecration</strong></li>
+                    <li><strong>Oaths of Crusade</strong> — <em>Bonus Agenda</em></li>
                 </ul>
                 <div class="note" style="margin-top: 10px;">
                     <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/black-templars#Agendas-2" target="_blank">Black Templars Agendas on Wahapedia</a>
@@ -614,48 +638,8 @@
             </div>
         </section>
 
-        <!-- Post-Battle Reporting -->
-        <section>
-            <h2>Post-Battle Reporting</h2>
-            <div class="card">
-                <p>After the battle, report the following to your Game Master:</p>
-
-                <ul>
-                    <li><strong>Final Score:</strong> Your VP total and your opponent's VP total</li>
-                    <li><strong>Objectives Purged:</strong> Which player purged which objectives, and where</li>
-                    <li><strong>Kills:</strong> Which of your units destroyed which enemy units</li>
-                    <li><strong>Casualties:</strong> Which of your units were destroyed (they must make Out of Action tests)</li>
-                    <li><strong>Notable Moments:</strong> 2-3 memorable events for the battle report</li>
-                </ul>
-
-                <h3>Quick XP Reference</h3>
-                <table>
-                    <tr>
-                        <th>Source</th>
-                        <th>XP</th>
-                    </tr>
-                    <tr>
-                        <td>Participated in battle</td>
-                        <td>+1 XP</td>
-                    </tr>
-                    <tr>
-                        <td>Destroyed 3 enemy units (cumulative)</td>
-                        <td>+1 XP</td>
-                    </tr>
-                    <tr>
-                        <td>Marked for Greatness</td>
-                        <td>+3 XP</td>
-                    </tr>
-                    <tr>
-                        <td>Agenda completion</td>
-                        <td>Varies</td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-
         <footer>
-            <p>The shrines await. Knowledge or oblivion—there is no middle ground.</p>
+            <p>The shrines are purged. The silence is complete. Neither side claims victory.</p>
         </footer>
     </div>
 </body>

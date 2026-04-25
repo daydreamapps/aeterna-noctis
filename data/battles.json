@@ -1,6 +1,6 @@
 {
   "current_phase": 1,
-  "m42_date": 823,
+  "m42_date": 830,
   "battles": {
     "001": {
       "title": "Breach of Sector Theta-9",
@@ -320,9 +320,9 @@
       "mission": "Purge After Inload 4",
       "type": "hulk",
       "file": "battle_016_the_purged_silence.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 830,
-      "date_real": null,
+      "date_real": "2026-04-25",
       "combatants": {
         "attacker": "death-guard",
         "defender": "black-templars"
@@ -338,7 +338,10 @@
           "Oaths of Crusade"
         ]
       },
-      "result": null
+      "result": {
+        "victor": "draw",
+        "score": { "attacker": 11, "defender": 11 }
+      }
     }
   }
 }
