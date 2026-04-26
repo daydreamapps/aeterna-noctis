@@ -181,6 +181,19 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 
 ---
 
+## Infiltrators — The Prep Crew
+
+### The Tenderizers
+**Sicarian Ruststalkers (10)** | 150 pts | Battle-ready (1 XP)
+*Led by Ruststalker Princeps Slicifax*
+*Wargear:* Transonic Razors
+
+> *Blade-Rhythm Specialists*
+>
+> Before the sacred meal can be served, the meat must be prepared. The Tenderizers fulfil this function with mechanical precision—infiltrating enemy lines and reducing resistance to optimal consistency through the application of high-frequency blade-work. Their transonic razors vibrate at frequencies that destabilize molecular bonds, rendering even the most heavily armoured targets... *soft*. Princeps Slicifax has perfected what he calls "the prep-work prayer": a rapid series of cuts that reduces a target from combat-ready to component parts in 2.3 seconds. The Spicy Ones avoid standing near them. Even rad-hardened warriors find the wet sounds unsettling.
+
+---
+
 ## Dedicated Transports
 
 ### *The Drive-Thru*
@@ -222,7 +235,8 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | The Crunchy Ones | 180 | Battle-ready | 1 | — | — |
 | *The Drive-Thru* | 85 | Battle-ready | 1 | — | — |
 | The Batter Boys | 60 | Battle-ready | 1 | — | — |
-| **TOTAL** | **1430 / 1600** | | | | |
+| The Tenderizers | 150 | Battle-ready | 1 | — | — |
+| **TOTAL** | **1580 / 1600** | | | | |
 
 ---
 
