@@ -342,6 +342,21 @@
         "victor": "draw",
         "score": { "attacker": 11, "defender": 11 }
       }
+    },
+    "017": {
+      "title": "Rust and Ruin",
+      "mission": "Front-line Warfare 5",
+      "type": "hulk",
+      "file": "battle_017_rust_and_ruin.html",
+      "status": "pending",
+      "date_m42": 831,
+      "date_real": null,
+      "combatants": {
+        "attacker": "adeptus-mechanicus",
+        "defender": "chaos-space-marines"
+      },
+      "agendas": null,
+      "result": null
     }
   }
 }

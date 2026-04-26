@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle 017: Rust and Ruin - Aeterna Noctis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1612;
+            --bg-highlight: #241a14;
+            --accent: #8b0000;
+            --accent-bright: #c41e3a;
+            --accent-gold: #c9a227;
+            --accent-bronze: #8b6914;
+            --text: #e8dcc4;
+            --text-muted: #9a8b7a;
+            --bone: #d4c4a8;
+            --border: #3d3225;
+            --shadow-red: rgba(139, 0, 0, 0.4);
+            --shadow-gold: rgba(201, 162, 39, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            background-image:
+                radial-gradient(ellipse at top, #1a0a0a 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, #0a0a1a 0%, transparent 50%);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; position: relative; }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        header::before { content: '⚔'; display: block; font-size: 3em; margin-bottom: 15px; opacity: 0.8; }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80%; height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 20%, var(--accent-gold) 50%, var(--accent-gold) 80%, transparent 100%);
+        }
+
+        .mission-number {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9em;
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--shadow-red), 0 0 30px var(--shadow-red), 2px 2px 0 #000;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            color: var(--text-muted);
+            font-size: 1em;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin: 40px 0 20px 0;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--shadow-gold);
+        }
+
+        h2::before { content: '◆'; margin-right: 12px; color: var(--accent); font-size: 0.8em; }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--bone);
+            margin: 25px 0 12px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .card::before, .card::after {
+            content: '';
+            position: absolute;
+            width: 20px; height: 20px;
+            border-color: var(--accent-gold);
+            border-style: solid;
+        }
+
+        .card::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+        .card::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+        .vox-transmission {
+            background: linear-gradient(145deg, #0d1a0d 0%, #0a0f0a 100%);
+            border: 2px solid #2d4a2d;
+            padding: 25px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+
+        .vox-transmission::before {
+            content: 'VOX-INTERCEPT';
+            position: absolute;
+            top: -12px; left: 20px;
+            background: #0a0f0a;
+            padding: 0 10px;
+            font-size: 0.8em;
+            color: #4a9956;
+            letter-spacing: 2px;
+        }
+
+        .vox-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #2d4a2d;
+            font-size: 0.85em;
+            color: #6a9a6a;
+        }
+
+        .vox-priority { color: #c9a227; }
+        .vox-body { color: #a0d4a8; line-height: 1.8; }
+        .vox-body p { margin-bottom: 12px; }
+
+        .vox-footer {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #2d4a2d;
+            color: #6a9a6a;
+            font-style: italic;
+        }
+
+        .matchup {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            padding: 25px;
+            margin: 25px 0;
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--accent-bronze);
+        }
+
+        .combatant { text-align: center; }
+
+        .combatant-alliance {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .combatant-alliance.marauders { color: var(--accent-gold); }
+        .combatant-alliance.despoilers { color: #9b4d96; }
+        .combatant-alliance.guardians { color: #4a9956; }
+
+        .combatant-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--bone);
+            margin-bottom: 5px;
+        }
+
+        .combatant-faction { color: var(--text-muted); font-size: 0.9em; }
+
+        .versus {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5em;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
+        }
+
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
+        }
+
+        tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+
+        .scoring-timing {
+            color: var(--text-muted);
+            font-size: 0.85em;
+            font-style: italic;
+        }
+
+        .vp-value {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3em;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .note {
+            background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
+            border: 2px solid var(--accent-bronze);
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .note::before { content: '⚙ '; color: var(--accent-gold); }
+
+        .warning {
+            background: linear-gradient(145deg, rgba(139, 0, 0, 0.15) 0%, rgba(100, 0, 0, 0.1) 100%);
+            border: 2px solid var(--accent);
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .warning::before { content: '⚠ '; color: var(--accent-bright); }
+
+        .role-tag {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7em;
+            padding: 2px 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .role-tag.defender { background: #2d5a4a; color: var(--text); }
+        .role-tag.attacker { background: #8b3030; color: var(--text); }
+
+        .report-section { margin-top: 15px; }
+
+        .report-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .report-item:last-child { border-bottom: none; }
+
+        .report-label {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            min-width: 140px;
+            font-size: 0.9em;
+        }
+
+        .report-desc { color: var(--text-muted); font-size: 0.9em; }
+
+        h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--bone);
+            margin: 20px 0 10px 0;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        ul { margin-left: 25px; margin-bottom: 15px; }
+        li { margin: 10px 0; }
+        li::marker { color: var(--accent); }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: var(--bone);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(180deg, var(--accent) 0%, #5a0000 100%);
+            border-color: var(--accent-bright);
+            box-shadow: 0 0 15px var(--shadow-red);
+        }
+
+        .source-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(180deg, var(--bg-highlight) 0%, #1a100d 100%);
+            border: 2px solid var(--accent);
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .source-link:hover {
+            background: linear-gradient(180deg, var(--accent) 0%, #5a0000 100%);
+            box-shadow: 0 0 20px var(--shadow-red);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            border-top: 2px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        footer::before {
+            content: '☠';
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 3px; }
+            .matchup { grid-template-columns: 1fr; text-align: center; }
+            .versus { padding: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Battle Logs</a>
+
+        <header>
+            <p class="mission-number">Hulk Battle 017</p>
+            <h1>Rust and Ruin</h1>
+            <p class="subtitle">Front-line Warfare 5 — Nachmund Gauntlet</p>
+        </header>
+
+        <!-- VOX Transmission - Pre-Battle Briefing -->
+        <div class="vox-transmission">
+            <div class="vox-header">
+                <span class="vox-priority">++ Priority: Crimson ++</span>
+                <span>++ Source: Kentarchus Minoris Relay ++</span>
+                <span>++ Timestamp: 831.M42 ++</span>
+            </div>
+            <div class="vox-body">
+                <p>OPERATIONAL BRIEFING: The Bottomless Bucket has identified critical infrastructure in Sector Epsilon-11 currently occupied by Chaos forces designated "The Killing Stone." Tactical analysis indicates the sector contains data-repository nodes that may hold fragments of the Colonel's final transmission logs.</p>
+                <p>The Tenderizers have been activated for their first operational deployment. Princeps Slicifax has requested "prep-work priority"—infiltration vectors through the sector's maintenance conduits will allow the Ruststalkers to engage enemy command elements before main force contact.</p>
+                <p>Technoarcheologists Menuvox Prime and Crumsworth Residuax have both submitted requisition forms for post-battle salvage rights. The Fabricator-Locum has approved both requests. What one reads, the other will collect.</p>
+                <p>The heretics must be dislodged. The data must be recovered. The Bucket demands.</p>
+            </div>
+            <div class="vox-footer">
+                <em>"Eleven herbs, eleven cuts, one truth: efficiency has no mercy."</em><br>
+                — Kentarchus Minoris Field Doctrine
+            </div>
+        </div>
+
+        <!-- Matchup -->
+        <div class="matchup">
+            <div class="combatant">
+                <span class="role-tag attacker">Attacker</span>
+                <div class="combatant-alliance guardians">Guardians</div>
+                <div class="combatant-name">The Bottomless Bucket</div>
+                <div class="combatant-faction">Adeptus Mechanicus</div>
+            </div>
+            <div class="versus">VS</div>
+            <div class="combatant">
+                <span class="role-tag defender">Defender</span>
+                <div class="combatant-alliance despoilers">Despoilers</div>
+                <div class="combatant-name">The Killing Stone</div>
+                <div class="combatant-faction">Chaos Space Marines</div>
+            </div>
+        </div>
+
+        <!-- Mission Rules -->
+        <section>
+            <h2>Mission Rules</h2>
+            <div class="card">
+                <h3>Chosen Battlefield</h3>
+                <p>Starting with the <strong>Defender</strong>, players alternate setting up <strong>six objective markers</strong> on the battlefield:</p>
+                <ul>
+                    <li>One objective marker must be set up wholly within each deployment zone</li>
+                    <li>The rest set up wholly within No Man's Land</li>
+                    <li>Objective markers cannot be set up within 6" of one or more other objective markers and/or battlefield edges</li>
+                </ul>
+                <div class="note">
+                    If it is not possible to set up an objective marker as described above, it is not set up.
+                </div>
+            </div>
+        </section>
+
+        <!-- Scoring -->
+        <section>
+            <h2>Scoring</h2>
+
+            <h3>End Game Objective: Line of Advance</h3>
+            <div class="card">
+                <p><em>Opening and holding a path into the enemy's back lines allows the push to gather pace.</em></p>
+                <p class="scoring-timing">At the end of the battle:</p>
+                <table>
+                    <tr>
+                        <th>Condition</th>
+                        <th>VP</th>
+                    </tr>
+                    <tr>
+                        <td>Control the objective marker in your deployment zone AND the objective marker in your opponent's deployment zone</td>
+                        <td class="vp-value">3 VP</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Progressive Objective: Commanding Position</h3>
+            <div class="card">
+                <p><em>To maximise hopes of breaking the enemy line, you must ensure your own holds firm.</em></p>
+                <p class="scoring-timing">From Round 2 onwards, at the end of your Command phase:</p>
+                <table>
+                    <tr>
+                        <th>Condition</th>
+                        <th>VP</th>
+                    </tr>
+                    <tr>
+                        <td>For each objective marker you control in No Man's Land</td>
+                        <td class="vp-value">1 VP each</td>
+                    </tr>
+                    <tr>
+                        <td>If you control the objective marker in your opponent's deployment zone</td>
+                        <td class="vp-value">2 VP</td>
+                    </tr>
+                </table>
+                <div class="note">
+                    <strong>Round 5 Exception:</strong> The player with the second turn scores at the end of their turn instead of their Command phase.
+                </div>
+            </div>
+        </section>
+
+        <!-- Victor Bonus -->
+        <section>
+            <h2>Victor Bonus</h2>
+            <div class="card">
+                <p>Each unit from the victor's Crusade army that <strong>ended the battle within range of an objective marker the victor controls</strong> gains <strong>1XP</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Agendas -->
+        <section>
+            <h2>Agenda Selection</h2>
+            <div class="card">
+                <h3>Adeptus Mechanicus — The Bottomless Bucket</h3>
+                <p>Select agendas from:</p>
+                <ul>
+                    <li><a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus#Agendas" target="_blank">Adeptus Mechanicus Agendas (Wahapedia)</a></li>
+                    <li><a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Nachmund Gauntlet Agendas (Wahapedia)</a></li>
+                </ul>
+
+                <h3 style="margin-top: 25px;">Chaos Space Marines — The Killing Stone</h3>
+                <p>Select agendas from:</p>
+                <ul>
+                    <li><a href="https://wahapedia.ru/wh40k10ed/factions/chaos-space-marines#Agendas" target="_blank">Chaos Space Marines Agendas (Wahapedia)</a></li>
+                    <li><a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Nachmund Gauntlet Agendas (Wahapedia)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Post-Battle Reporting -->
+        <section>
+            <h2>Post-Battle Checklist</h2>
+            <div class="card">
+                <div class="report-section">
+                    <div class="report-item">
+                        <span class="report-label">Final Score</span>
+                        <span class="report-desc">Record VP totals for both players</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">Casualties</span>
+                        <span class="report-desc">List destroyed units and Out of Action test results</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">Kill Tallies</span>
+                        <span class="report-desc">Record which units destroyed which enemy units</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">Agenda Results</span>
+                        <span class="report-desc">Calculate XP and rewards from completed agendas</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">Marked for Greatness</span>
+                        <span class="report-desc">Victor selects one unit for +3XP</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">Victor Bonus XP</span>
+                        <span class="report-desc">+1XP to each unit controlling an objective at battle end</span>
+                    </div>
+                    <div class="report-item">
+                        <span class="report-label">Battle Honours</span>
+                        <span class="report-desc">Check for rank-ups and select new abilities</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Source Link -->
+        <section style="text-align: center; margin-top: 40px;">
+            <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Front-line-Warfare-5" target="_blank" class="source-link">
+                View Full Mission Rules on Wahapedia &rarr;
+            </a>
+        </section>
+
+        <footer>
+            <p>The Hulk awaits. The Omnissiah provides.</p>
+        </footer>
+    </div>
+</body>
+</html>
