@@ -103,6 +103,15 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 
 ---
 
+### Technoarcheologist Crumsworth Residuax
+**Technoarcheologist** | 45 pts | Battle-ready (1 XP)
+
+> *The Crumb-Collector*
+>
+> Where other Technoarcheologists seek intact relics, Crumsworth seeks what others discard—the crumbs. Shattered data-crystals, fragmented circuit-wafers, the dust left behind when greater treasures are removed. His augmetic hands contain molecular sieves capable of sorting debris by composition, and his optical implants can identify a component's origin from a single flake of corroded metal. He has reconstructed complete STC fragments from what other expeditions swept into waste bins. Menuvox Prime reads the labels; Crumsworth reads what fell off the shelf. Together, they miss nothing. *"The Bucket's true secrets won't be in the Receptacle itself. They'll be in what spilled out along the way."*
+
+---
+
 ## Battleline
 
 ### The Original Recipe
@@ -226,6 +235,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | Skatros Pepprix | 50 | Battle-ready | 1 | — | — |
 | Enginseer Gravalox | 55 | Battle-ready | 1 | — | — |
 | Menuvox Prime (Technoarcheologist) | 45 | Battle-ready | 1 | — | — |
+| Crumsworth Residuax (Technoarcheologist) | 45 | Battle-ready | 1 | — | — |
 | The Original Recipe | 85 | Battle-ready | 1 | — | — |
 | The Extra Crispy | 85 | Battle-ready | 1 | — | — |
 | The Spicy Ones | 90 | Battle-ready | 1 | — | — |
@@ -236,7 +246,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | *The Drive-Thru* | 85 | Battle-ready | 1 | — | — |
 | The Batter Boys | 60 | Battle-ready | 1 | — | — |
 | The Tenderizers | 150 | Battle-ready | 1 | — | — |
-| **TOTAL** | **1580 / 1600** | | | | |
+| **TOTAL** | **1625 / 1600** | | | | |
 
 ---
 
