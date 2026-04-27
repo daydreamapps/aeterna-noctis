@@ -305,15 +305,24 @@
       "mission": "Eye of the Storm (Custom)",
       "type": "hulk",
       "file": "battle_015_eye_of_the_storm.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 829,
-      "date_real": null,
+      "date_real": "2026-04-23",
       "combatants": {
         "attacker": "dark-angels",
         "defender": "leagues-of-votann"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "dark-angels": [
+          "Raze and Ruin",
+          "Cut off the Head"
+        ],
+        "leagues-of-votann": []
+      },
+      "result": {
+        "victor": "guardians",
+        "score": { "attacker": 14, "defender": 8 }
+      }
     },
     "016": {
       "title": "The Purged Silence",
