@@ -78,6 +78,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 ### Skatros Pepprix
 **Sydonian Skatros** | 50 pts | Battle-ready (1 XP)
 *Wargear:* Radium Jezzail
+*Battle Scar:* Fatigued
 
 > *The Secret Ingredient*
 >
@@ -232,7 +233,7 @@ Each "herb" is a sacred data-sequence, a fragment of optimization code from the 
 | Crispian Secundus (Datasmith) | 60 | Battle-ready | 1 | — | — |
 | Battreus Coating-Prime (Datasmith) | 60 | Battle-ready | 1 | — | — |
 | Strider-Alpha Gallux | 95 | Battle-ready | 1 | — | — |
-| Skatros Pepprix | 50 | Battle-ready | 1 | — | — |
+| Skatros Pepprix | 50 | Battle-ready | 1 | — | Fatigued |
 | Enginseer Gravalox | 55 | Battle-ready | 1 | — | — |
 | Menuvox Prime (Technoarcheologist) | 45 | Battle-ready | 1 | — | — |
 | Crumsworth Residuax (Technoarcheologist) | 45 | Battle-ready | 1 | — | — |
