@@ -239,7 +239,7 @@
       "mission": "Purge After Inload 4",
       "type": "hulk",
       "file": "battle_012_echoes_of_the_silenced.html",
-      "status": "pending",
+      "status": "cancelled",
       "date_m42": 826,
       "date_real": null,
       "combatants": {
@@ -247,7 +247,8 @@
         "defender": "necrons"
       },
       "agendas": null,
-      "result": null
+      "result": null,
+      "cancellation_reason": "Warp storm surge in Sector Lambda-9 forced both forces to withdraw before engagement"
     },
     "013": {
       "title": "No Ground Given",
