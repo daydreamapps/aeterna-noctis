@@ -7,7 +7,7 @@
 | Bridge of Sovereignty | Unclaimed | 0 | 0 |
 | Nova Cannon Spires | Unclaimed | 0 | 0 |
 | Vox-Relay Array | Unclaimed | 0 | 0 |
-| Hangar Deck "Tartarus" | Unclaimed | 0 | 0 |
+| Hangar Deck "Tertius" | Unclaimed | 0 | 0 |
 
 ---
 
@@ -53,7 +53,7 @@
 
 ---
 
-## Hangar Deck "Tartarus"
+## Hangar Deck "Tertius"
 **Function:** Launch bays and docking access
 
 *The Hangar yawns open to the void, its mag-clamps and launch rails still functional despite millennia of neglect. From here, strike forces deploy to the anchored worlds.*
