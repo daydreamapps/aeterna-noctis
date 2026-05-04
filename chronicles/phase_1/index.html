@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase I — Aeterna Noctis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1612;
+            --bg-highlight: #241a14;
+            --accent: #8b0000;
+            --accent-bright: #c41e3a;
+            --accent-gold: #c9a227;
+            --accent-bronze: #8b6914;
+            --text: #e8dcc4;
+            --text-muted: #9a8b7a;
+            --bone: #d4c4a8;
+            --border: #3d3225;
+            --shadow-red: rgba(139, 0, 0, 0.4);
+            --shadow-gold: rgba(201, 162, 39, 0.3);
+            --guardians: #2a4a2a;
+            --guardians-text: #7ec87e;
+            --despoilers: #4a1a1a;
+            --despoilers-text: #c87e7e;
+            --marauders: #1a1a4a;
+            --marauders-text: #7e7ec8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            background-image:
+                radial-gradient(ellipse at top, #1a0a0a 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, #0a0a1a 0%, transparent 50%);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 70px 20px 20px 20px;
+            min-height: 100vh;
+        }
+
+        .toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, #0d0a08 0%, #1a1210 100%);
+            border-bottom: 2px solid var(--border);
+            padding: 0 20px;
+            z-index: 999;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+
+        .toolbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        .toolbar-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .toolbar-brand:hover {
+            color: var(--accent-gold);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .toolbar-links {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .toolbar-links a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75em;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 8px 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .toolbar-links a:hover {
+            color: var(--accent-gold);
+            border-color: var(--border);
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        .toolbar-links a.external::after {
+            content: ' ↗';
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
+        .toolbar-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border);
+            margin: 0 5px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; position: relative; }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 20%, var(--accent-gold) 80%, transparent 100%);
+        }
+
+        .phase-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--shadow-red), 0 0 30px var(--shadow-red), 2px 2px 0 #000;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 1.1em;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin: 50px 0 25px 0;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--shadow-gold);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--bone);
+            margin: 30px 0 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            padding: 30px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .card::before, .card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: var(--accent-gold);
+            border-style: solid;
+        }
+
+        .card::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+        .card::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+        .vox-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-bronze);
+            display: inline-block;
+            padding: 3px 10px;
+            margin-bottom: 15px;
+        }
+
+        .vox-text {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: var(--text);
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        td:first-child {
+            text-align: left;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+            color: var(--bone);
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
+        }
+
+        th.guardians { color: var(--guardians-text); }
+        th.despoilers { color: var(--despoilers-text); }
+        th.marauders { color: var(--marauders-text); }
+
+        td.guardians { background: rgba(42, 74, 42, 0.25); color: var(--guardians-text); font-weight: 600; }
+        td.despoilers { background: rgba(74, 26, 26, 0.25); color: var(--despoilers-text); font-weight: 600; }
+        td.marauders { background: rgba(26, 26, 74, 0.25); color: var(--marauders-text); font-weight: 600; }
+
+        td.gain-positive {
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        td.none {
+            color: var(--text-muted);
+            font-size: 0.85em;
+        }
+
+        tr:hover td { background-color: rgba(255,255,255,0.02); }
+        tr:hover td.guardians { background: rgba(42, 74, 42, 0.35); }
+        tr:hover td.despoilers { background: rgba(74, 26, 26, 0.35); }
+        tr:hover td.marauders { background: rgba(26, 26, 74, 0.35); }
+
+        .table-note {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+        }
+
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        footer a:hover { color: var(--accent-bright); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 4px; }
+            .toolbar-links a { font-size: 0.65em; padding: 6px 8px; }
+            .toolbar-divider { display: none; }
+            th, td { padding: 10px 8px; font-size: 0.85em; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="toolbar">
+        <div class="toolbar-inner">
+            <a href="../../index.html" class="toolbar-brand">Aeterna Noctis</a>
+            <div class="toolbar-links">
+                <a href="../../battles/index.html">Battles</a>
+                <a href="../../rules/index.html">Rules</a>
+                <a href="../../players/index.html">Rosters</a>
+                <span class="toolbar-divider"></span>
+                <a href="https://administratum.goonhammer.com/campaigns/019ccdaf-2230-78be-ae32-5440e44659b7" target="_blank" class="external">Tracker</a>
+                <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/" target="_blank" class="external hide-mobile">Wahapedia</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <p class="phase-label">Campaign Chronicle</p>
+            <h1>Phase I</h1>
+            <p class="subtitle">The First Tide of Blood</p>
+        </header>
+
+        <h2>Vox-Intercept // Allocation Report</h2>
+
+        <div class="card">
+            <span class="vox-label">Transmitted: End of Phase I</span>
+            <p class="vox-text">
+                As the first phase of the war for the Aeterna Noctis drew to a close, the three alliances committed their forces in a display of diverging priorities. The Despoilers moved with grim certainty upon the Bridge of Sovereignty, deploying unopposed — their grip on the ship's nerve-centre now tightening by two control levels. The Guardians, meanwhile, cast only a token force toward the Nova Cannon Spires, yet with none to contest them, that modest commitment is enough to secure a foothold there. Most striking was the savage three-way contest that erupted around Hangar Deck "Tertius" — all three alliances funnelling forces into the launch bays with desperate urgency. The Despoilers edge out the Guardians, earning themselves a two-level gain, while the Guardians claw back one level of their own. The Marauders' commitment, though substantial, proves insufficient to register any predicted gain. Perhaps most telling of all is the silence around the Vox-Relay Array: not a single warrior was committed by any alliance, leaving it cold, dark, and unclaimed. Whether this was oversight or cold calculation remains unclear — for the machinations of hidden agents on all sides are yet to be known.
+            </p>
+        </div>
+
+        <h2>Force Distribution</h2>
+
+        <h3>Forces Committed</h3>
+        <table>
+            <tr>
+                <th>Site</th>
+                <th class="guardians">Guardians</th>
+                <th class="despoilers">Despoilers</th>
+                <th class="marauders">Marauders</th>
+            </tr>
+            <tr>
+                <td>Bridge of Sovereignty</td>
+                <td class="none">—</td>
+                <td class="despoilers">15</td>
+                <td class="none">—</td>
+            </tr>
+            <tr>
+                <td>Nova Cannon Spires</td>
+                <td class="guardians">2</td>
+                <td class="none">—</td>
+                <td class="none">—</td>
+            </tr>
+            <tr>
+                <td>Vox-Relay Array</td>
+                <td class="none">—</td>
+                <td class="none">—</td>
+                <td class="none">—</td>
+            </tr>
+            <tr>
+                <td>Hangar Deck "Tertius"</td>
+                <td class="guardians">21</td>
+                <td class="despoilers">24</td>
+                <td class="marauders">18</td>
+            </tr>
+        </table>
+
+        <h3>Predicted Control Gained</h3>
+        <table>
+            <tr>
+                <th>Site</th>
+                <th class="guardians">Guardians</th>
+                <th class="despoilers">Despoilers</th>
+                <th class="marauders">Marauders</th>
+            </tr>
+            <tr>
+                <td>Bridge of Sovereignty</td>
+                <td class="none">—</td>
+                <td class="despoilers gain-positive">+2</td>
+                <td class="none">—</td>
+            </tr>
+            <tr>
+                <td>Nova Cannon Spires</td>
+                <td class="guardians gain-positive">+2</td>
+                <td class="none">—</td>
+                <td class="none">—</td>
+            </tr>
+            <tr>
+                <td>Vox-Relay Array</td>
+                <td class="none">—</td>
+                <td class="none">—</td>
+                <td class="none">—</td>
+            </tr>
+            <tr>
+                <td>Hangar Deck "Tertius"</td>
+                <td class="guardians gain-positive">+1</td>
+                <td class="despoilers gain-positive">+2</td>
+                <td class="none">—</td>
+            </tr>
+        </table>
+        <p class="table-note">Predicted gains do not account for hidden agent actions. Final control changes may differ.</p>
+
+        <footer>
+            <p><a href="../../index.html">&larr; Return to Campaign Home</a></p>
+            <p style="margin-top: 20px; font-size: 0.9em;">In the dark of the void, all wars begin the same way.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
