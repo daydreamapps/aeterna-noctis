@@ -355,11 +355,9 @@
             background: rgba(139, 0, 0, 0.1);
         }
 
-        .empty-row {
-            text-align: center;
-            font-style: italic;
-            color: var(--text-muted);
-        }
+        .win { color: #4ade80; font-weight: bold; }
+        .loss { color: var(--accent-bright); font-weight: bold; }
+        .draw { color: var(--accent-gold); font-weight: bold; }
 
         .crusade-log {
             background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
@@ -482,7 +480,7 @@
                     <div class="label">Wins</div>
                 </div>
                 <div class="stat-box">
-                    <div class="value">1</div>
+                    <div class="value">3</div>
                     <div class="label">Losses</div>
                 </div>
                 <div class="stat-box">
@@ -541,17 +539,17 @@
 
                 <div class="unit-card character">
                     <div class="unit-name">Alpha-Herbus Kryspa-11</div>
-                    <div class="unit-type">Skitarii Marshal | 45 pts</div>
+                    <div class="unit-type">Skitarii Marshal | 35 pts</div>
                     <div class="unit-narrative">
                         <strong>Keeper of the Eleven</strong><br>
                         Eleven augmetic implants. Eleven combat subroutines. Eleven herbs-of-the-Omnissiah grafted into his bio-reactor for "optimal performance." Kryspa-11 guards the <em>Cartograph Aromaticus</em>—a data-shard fused to his cerebral cortex containing the Sacred Recipe's weapon anointment secrets. Before battle, he anoints each warrior's weapons with the <em>Unctio Digitorum</em>, a blend of eleven proprietary compounds that smells faintly of salt and paprika. His kill-counter has been stuck at 1,111 for three campaigns. He insists this is "correct."
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 4</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 8</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Teleportation Node</span>
                         <span class="scars">Scars: 0</span>
                     </div>
                     <div class="unit-links">
@@ -567,11 +565,12 @@
                         Crispian Secundus's internal chronometers are calibrated to eleven decimal places. She knows the exact moment to strike—the precise microsecond when enemy shields cycle, when plasma coils reach optimal temperature, when the Kastelan battle-protocols must shift. The Skitarii call her "The Timer." She finds the designation efficient.
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 7</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 9</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Temporopia (Enhancement)</span>
+                        <span class="honours">Honours: 2 total</span>
                         <span class="scars">Scars: 0</span>
                     </div>
                     <div class="unit-links">
@@ -581,17 +580,18 @@
 
                 <div class="unit-card character">
                     <div class="unit-name">Datasmith Battreus Coating-Prime</div>
-                    <div class="unit-type">Cybernetica Datasmith | 60 pts</div>
+                    <div class="unit-type">Cybernetica Datasmith | 35 pts</div>
                     <div class="unit-narrative">
                         <strong>The Crumb-Lord</strong><br>
                         Battreus oversees the armour integrity protocols of the Kastelan robots—specifically, the sacred application of protective layering. Where Crispian Secundus calculates <em>when</em> to strike, Battreus ensures the Kastelans can <em>endure</em> the retaliation. His mentor-engrams contain fragments of the Fifth and Eighth Mysteries—the Coating Herb and the Crunch Herb—allowing him to optimize ablative plating through a process the forge world calls "double-dipping."
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 1</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 6</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Teleportation Node</span>
+                        <span class="honours">Vox Shell</span>
                         <span class="scars">Scars: 0</span>
                     </div>
                     <div class="unit-links">
@@ -607,11 +607,13 @@
                         Gallux leads the Striding Flock, and his mount—<em>The Perch</em>—stands taller than any other Ironstrider in the expedition. His targeting cogitators contain fragments of the Tenth Mystery, the Aromatic Herb, granting him preternatural sensor acuity. The rangers whisper that he can smell fear through their data-tethers.
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 7</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 13</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Multiplexed Neural Inducer (Relic)</span>
+                    </div>
+                    <div class="unit-meta">
                         <span class="scars">Scars: 1</span>
                     </div>
                     <div class="unit-meta" style="color: var(--accent-bright);">
@@ -630,12 +632,15 @@
                         Pepprix speaks to no one. She communicates only through data-bursts and kill-confirmations. Her targeting mantra is simple: <em>"One shot. One seasoning."</em> The rangers believe she carries a fragment of the Eleventh Mystery—the Secret Herb—in her ammunition feed. Pepprix neither confirms nor denies.
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 10</span>
-                        <span class="rank">Blooded</span>
+                        <span class="xp">XP: 12</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
-                        <span class="scars">Scars: 0</span>
+                        <span class="honours">Honours: 1</span>
+                        <span class="scars">Scars: 1</span>
+                    </div>
+                    <div class="unit-meta" style="color: var(--accent-bright);">
+                        <span>⚠ FATIGUED</span>
                     </div>
                     <div class="unit-links">
                         <a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus/Sydonian-Skatros" target="_blank">View Datacard</a>
@@ -650,7 +655,7 @@
                         Every expedition needs a priest who keeps the machines fed. Gravalox tends to the sacred lubricants, the fuel-lines, and the data-wafer preservation systems. He carries a flask of "the good oil" blessed by Kentarchus Minoris's highest magi. The Skitarii swear it smells faintly of rendered protein.
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 1</span>
+                        <span class="xp">XP: 3</span>
                         <span class="rank">Battle-ready</span>
                     </div>
                     <div class="unit-meta">
@@ -668,6 +673,26 @@
                     <div class="unit-narrative">
                         <strong>The Menu Reader</strong><br>
                         Ancient menus hold ancient truths. Menuvox Prime can interpret degraded data-inscriptions that would baffle lesser adepts—the faded labels on corroded ammunition crates, the worn serial numbers on salvaged components, the half-erased maintenance logs of vehicles dead for millennia. He reads the battlefield's leftovers like a sacred text. The Skitarii call him "the Menu Reader" because he once recovered a complete tactical protocol from the grease-stains on an abandoned ration container.
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 3</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus/Technoarcheologist" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+                <div class="unit-card character">
+                    <div class="unit-name">Crumsworth</div>
+                    <div class="unit-type">Technoarcheologist | 44 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Newly Requisitioned — Narrative Pending</strong><br>
+                        A second Technoarcheologist attached to the expedition after the initial engagements demonstrated the need for additional recovery specialists. Crumsworth arrived aboard a resupply shuttle from Ferrum IX, his inload-primers still adjusting to the hulk's corrupted data-fields.
                     </div>
                     <div class="unit-meta">
                         <span class="xp">XP: 1</span>
@@ -698,11 +723,11 @@
                         These rangers wear robes of purest white in honour of the Fabricator-Colonellus, maintained through the Coating Herb's stain-resistant protocols. They were the first Skitarii awakened for the expedition—the "first batch" from Ken-Tar's revivification chambers. Original. Optimal. Pure.
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 4</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 10</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Fleet of Foot</span>
                         <span class="scars">Scars: 0</span>
                     </div>
                     <div class="unit-links">
@@ -718,11 +743,11 @@
                         Their armour bears the scorch-marks of a hundred rad-bombardments, their cloaks bleached and cracked from exposure to the forge world's thermal vents. They have been "deep-fried" by enemy fire so many times that their pain-suppressors have burned out entirely. They feel nothing. They are thermally optimized.
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 4</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 7</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Honours: 1</span>
                         <span class="scars">Scars: 1</span>
                     </div>
                     <div class="unit-meta" style="color: var(--accent-bright);">
@@ -735,10 +760,30 @@
 
                 <div class="unit-card battleline">
                     <div class="unit-name">The Spicy Ones</div>
-                    <div class="unit-type">Skitarii Vanguard (10) | 90 pts</div>
+                    <div class="unit-type">Skitarii Vanguard (10) | 95 pts</div>
                     <div class="unit-narrative">
                         <strong>Led by Vanguard Alpha Scovilus Prime</strong><br>
                         The Spicy Ones run hot—hotter than any other unit in the expedition. Their radium carbines have been overtuned to deliver maximum rad-saturation, and their bodies have been modified to channel the excess radiation rather than suppress it. Standing near them causes servo-motors to stutter and flesh to blister. <em>"If they can't handle the heat, they shouldn't have entered the Bucket."</em>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="xp">XP: 0</span>
+                        <span class="rank">Battle-ready</span>
+                    </div>
+                    <div class="unit-meta">
+                        <span class="honours">Honours: 0</span>
+                        <span class="scars">Scars: 0</span>
+                    </div>
+                    <div class="unit-links">
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus/Skitarii-Vanguard" target="_blank">View Datacard</a>
+                    </div>
+                </div>
+
+                <div class="unit-card battleline">
+                    <div class="unit-name">The Tenderisers</div>
+                    <div class="unit-type">Sicarian Ruststalkers | 160 pts</div>
+                    <div class="unit-narrative">
+                        <strong>Newly Requisitioned — Narrative Pending</strong><br>
+                        Called up from the reserves of the <em>Colonel's Bounty</em> after the expedition's early engagements demonstrated the need for close-quarters shock troops. The Tenderisers move through the hulk's corridors like living blades, their transonic razors humming with the Seventh Mystery's harmonic frequencies.
                     </div>
                     <div class="unit-meta">
                         <span class="xp">XP: 1</span>
@@ -749,7 +794,7 @@
                         <span class="scars">Scars: 0</span>
                     </div>
                     <div class="unit-links">
-                        <a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus/Skitarii-Vanguard" target="_blank">View Datacard</a>
+                        <a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus/Sicarian-Ruststalkers" target="_blank">View Datacard</a>
                     </div>
                 </div>
 
@@ -769,11 +814,14 @@
                         The twin Ironstriders are inseparable—their machine spirits bound through a shared data-covenant. Where one strikes, the other follows. Their pilots have synchronized their firing solutions to within 0.003 seconds of each other. Left. Right. Left. Right. The rhythm of the hunt. <em>At Sector Epsilon-4, The Drumsticks achieved the expedition's only kills—destroying Geoff the Bloat-drone and a Chaos Spawn before being overwhelmed by Tri-Lobe vectors.</em>
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 10</span>
-                        <span class="rank">Blooded</span>
+                        <span class="xp">XP: 18</span>
+                        <span class="rank" style="color: #fbbf24;">Veteran</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Sanctified Engine</span>
+                        <span class="honours">Honours: 2 total</span>
+                    </div>
+                    <div class="unit-meta">
                         <span class="scars">Scars: 1</span>
                     </div>
                     <div class="unit-meta" style="color: var(--accent-bright);">
@@ -785,18 +833,18 @@
                 </div>
 
                 <div class="unit-card vehicle">
-                    <div class="unit-name">The Hot Wings</div>
-                    <div class="unit-type">Sydonian Dragoons (2) | 130 pts</div>
+                    <div class="unit-name">Spicy Wings</div>
+                    <div class="unit-type">Sydonian Dragoons with Taser Lances (2) | 130 pts</div>
                     <div class="unit-narrative">
                         <strong>Designated: Port Wing, Starboard Wing</strong><br>
                         Speed is the essence of the Wings. These Dragoons circle the battlefield's edge, their taser lances crackling with barely-contained energy, waiting for the perfect moment to sweep in and strike. They embody the Sixth Mystery—the Temporal Herb—striking at the exact instant when enemy formations begin to turn. <em>Destroyed Mobidus Rottcount in close combat.</em>
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 7</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 8</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Unliving</span>
                         <span class="scars">Scars: 0</span>
                     </div>
                     <div class="unit-links">
@@ -814,13 +862,13 @@
 
                 <div class="unit-card vehicle">
                     <div class="unit-name">The Zingers</div>
-                    <div class="unit-type">Serberys Raiders (3) | 75 pts</div>
+                    <div class="unit-type">Serberys Raiders (3) | 60 pts</div>
                     <div class="unit-narrative">
                         <strong>Led by Alpha Capsaicine — DISGRACED</strong><br>
                         The Zingers earned their name from the modified galvanic carbines they carry—overcharged to deliver a "spicier" energy discharge that leaves targets smoking. Their Serberys mounts have been fitted with heat-dispersal vanes that glow red during extended engagements. Alpha Capsaicine maintains they're the hottest unit in the expedition. No one argues. <em>"First to strike. First to burn."</em> <em style="color: var(--accent-bright);">Eliminated in Round One by Geoff the Bloat-drone without firing a shot. The unit's designation has been flagged for review.</em>
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 4</span>
+                        <span class="xp">XP: 1</span>
                         <span class="rank">Battle-ready</span>
                     </div>
                     <div class="unit-meta">
@@ -851,11 +899,12 @@
                         The Wafer Pair's logic-cores contain stacked data-wafers arranged in eleven precisely-calibrated layers—a configuration unique to Kentarchus Minoris. Each layer processes a different aspect of combat. The result is mechanical perfection. Crisp. Clean. Optimal. <em>Battle-shocked themselves upon deep strike deployment and stood paralysed as plague-spawn overwhelmed their position.</em>
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 4</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 16</span>
+                        <span class="rank" style="color: #fbbf24;">Veteran</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Behemoth</span>
+                        <span class="honours">Honours: 2 total</span>
                         <span class="scars">Scars: 0</span>
                     </div>
                     <div class="unit-links">
@@ -871,11 +920,11 @@
                         These Kastelans have served the Omnissiah for eight centuries. Their armour is pitted with las-burns, their carapaces cracked and re-welded dozens of times. The Datasmiths call them "thermally optimized"—a euphemism for ancient, battered, and sublime. They are perfect. They are crispy.
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 4</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 8</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Honours: 1</span>
                         <span class="scars">Scars: 0</span>
                     </div>
                     <div class="unit-links">
@@ -899,12 +948,12 @@
                         Named for an ancient Kentarchus logistical designation, <em>The Drive-Thru</em> ferries Skitarii to the front lines with mechanical efficiency. Its hull bears the expedition's sacred motto—<em>"The Bucket Provides"</em>—in burnished copper lettering. The vehicle's machine spirit accelerates noticeably when carrying a full complement of passengers, as if eager to deliver its cargo.
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 1</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 7</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
-                        <span class="scars">Scars: 0</span>
+                        <span class="honours">Honours: 1</span>
+                        <span class="scars">Scars: 1</span>
                     </div>
                     <div class="unit-links">
                         <a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus/Skorpius-Dunerider" target="_blank">View Datacard</a>
@@ -927,11 +976,11 @@
                         These servitors once assisted Datasmith Battreus in the sacred double-dipping rituals—applying protective coating compounds to Kastelan armour plates in precise, overlapping layers. Their muscle-memory remains even after full lobotomization, and they have been repurposed for combat operations where their rhythmic, repetitive striking motions prove devastatingly effective. <em>Dip. Coat. Strike. Repeat.</em>
                     </div>
                     <div class="unit-meta">
-                        <span class="xp">XP: 1</span>
-                        <span class="rank">Battle-ready</span>
+                        <span class="xp">XP: 8</span>
+                        <span class="rank" style="color: #60a5fa;">Blooded</span>
                     </div>
                     <div class="unit-meta">
-                        <span class="honours">Honours: 0</span>
+                        <span class="honours">Enhanced Bionics</span>
                         <span class="scars">Scars: 0</span>
                     </div>
                     <div class="unit-links">
@@ -960,55 +1009,63 @@
                     <tbody>
                         <tr>
                             <td>Alpha-Herbus Kryspa-11 (Marshal)</td>
-                            <td>45</td>
-                            <td>Battle-ready</td>
-                            <td>4</td>
-                            <td>—</td>
+                            <td>35</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>8</td>
+                            <td>Teleportation Node</td>
                             <td>—</td>
                         </tr>
                         <tr>
                             <td>Crispian Secundus (Datasmith)</td>
                             <td>60</td>
-                            <td>Battle-ready</td>
-                            <td>7</td>
-                            <td>—</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>9</td>
+                            <td>Temporopia (Enhancement) +1</td>
                             <td>—</td>
                         </tr>
                         <tr>
                             <td>Battreus Coating-Prime (Datasmith)</td>
-                            <td>60</td>
-                            <td>Battle-ready</td>
-                            <td>1</td>
-                            <td>—</td>
+                            <td>35</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>6</td>
+                            <td>Teleportation Node, Vox Shell</td>
                             <td>—</td>
                         </tr>
                         <tr>
                             <td>Strider-Alpha Gallux</td>
                             <td>95</td>
-                            <td>Battle-ready</td>
-                            <td>7</td>
-                            <td>—</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>13</td>
+                            <td>Multiplexed Neural Inducer (Relic)</td>
                             <td>1 (Battle-weary)</td>
                         </tr>
                         <tr>
                             <td>Skatros Pepprix</td>
                             <td>50</td>
-                            <td>Blooded</td>
-                            <td>10</td>
-                            <td>—</td>
-                            <td>—</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>12</td>
+                            <td>1</td>
+                            <td>1 (Fatigued)</td>
                         </tr>
                         <tr>
                             <td>Enginseer Gravalox</td>
                             <td>55</td>
                             <td>Battle-ready</td>
-                            <td>1</td>
+                            <td>3</td>
                             <td>—</td>
                             <td>—</td>
                         </tr>
                         <tr>
                             <td>Menuvox Prime (Technoarcheologist)</td>
                             <td>45</td>
+                            <td>Battle-ready</td>
+                            <td>3</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Crumsworth (Technoarcheologist) ✦</td>
+                            <td>44</td>
                             <td>Battle-ready</td>
                             <td>1</td>
                             <td>—</td>
@@ -1017,22 +1074,30 @@
                         <tr>
                             <td>The Original Recipe</td>
                             <td>85</td>
-                            <td>Battle-ready</td>
-                            <td>4</td>
-                            <td>—</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>10</td>
+                            <td>Fleet of Foot</td>
                             <td>—</td>
                         </tr>
                         <tr>
                             <td>The Extra Crispy</td>
                             <td>85</td>
-                            <td>Battle-ready</td>
-                            <td>4</td>
-                            <td>—</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>7</td>
+                            <td>1</td>
                             <td>1 (Battle-weary)</td>
                         </tr>
                         <tr>
                             <td>The Spicy Ones</td>
-                            <td>90</td>
+                            <td>95</td>
+                            <td>Battle-ready</td>
+                            <td>0</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>The Tenderisers ✦</td>
+                            <td>160</td>
                             <td>Battle-ready</td>
                             <td>1</td>
                             <td>—</td>
@@ -1041,65 +1106,65 @@
                         <tr>
                             <td>The Drumsticks ★</td>
                             <td>170</td>
-                            <td>Blooded</td>
-                            <td>10</td>
-                            <td>—</td>
+                            <td style="color: #fbbf24;">Veteran</td>
+                            <td>18</td>
+                            <td>Sanctified Engine +1</td>
                             <td>1 (Deep Scars)</td>
                         </tr>
                         <tr>
-                            <td>The Hot Wings</td>
+                            <td>Spicy Wings</td>
                             <td>130</td>
-                            <td>Battle-ready</td>
-                            <td>7</td>
-                            <td>—</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>8</td>
+                            <td>Unliving</td>
                             <td>—</td>
                         </tr>
                         <tr>
                             <td>The Zingers</td>
-                            <td>75</td>
+                            <td>60</td>
                             <td>Battle-ready</td>
-                            <td>4</td>
+                            <td>1</td>
                             <td>—</td>
                             <td>1 (Disgraced)</td>
                         </tr>
                         <tr>
                             <td>The Wafer Pair</td>
                             <td>180</td>
-                            <td>Battle-ready</td>
-                            <td>4</td>
-                            <td>—</td>
+                            <td style="color: #fbbf24;">Veteran</td>
+                            <td>16</td>
+                            <td>Behemoth +1</td>
                             <td>—</td>
                         </tr>
                         <tr>
                             <td>The Crunchy Ones</td>
                             <td>180</td>
-                            <td>Battle-ready</td>
-                            <td>4</td>
-                            <td>—</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>8</td>
+                            <td>1</td>
                             <td>—</td>
                         </tr>
                         <tr>
                             <td><em>The Drive-Thru</em></td>
                             <td>85</td>
-                            <td>Battle-ready</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>7</td>
                             <td>1</td>
-                            <td>—</td>
-                            <td>—</td>
+                            <td>1</td>
                         </tr>
                         <tr>
                             <td>The Batter Boys</td>
                             <td>60</td>
-                            <td>Battle-ready</td>
-                            <td>1</td>
-                            <td>—</td>
+                            <td style="color: #60a5fa;">Blooded</td>
+                            <td>8</td>
+                            <td>Enhanced Bionics</td>
                             <td>—</td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td>TOTAL</td>
-                            <td>1550 / 1600 pts</td>
-                            <td colspan="4"></td>
+                            <td>1709 pts</td>
+                            <td colspan="4" style="font-size: 0.85em; font-weight: normal; color: var(--text-muted);">✦ newly added to Order of Battle — narrative pending</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -1114,19 +1179,33 @@
                     <thead>
                         <tr>
                             <th>Date</th>
-                            <th>Battle Type</th>
+                            <th>Battle</th>
+                            <th>Mission</th>
                             <th>Opponent</th>
                             <th>Result</th>
-                            <th>Notes</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>824.M42</td>
-                            <td><a href="../battles/battle_010_tide_of_iron.html">Tide of Iron</a></td>
-                            <td>Sons of Decay (Death Guard)</td>
-                            <td style="color: var(--accent-bright);">Loss 7-11</td>
-                            <td>10 units destroyed. 4 battle scars. Drumsticks marked for greatness.</td>
+                            <td><a href="../battles/battle_010_tide_of_iron.html" style="color: var(--accent-gold);">#010 — Tide of Iron</a></td>
+                            <td>Front-line Warfare</td>
+                            <td>The Sons of Decay (Death Guard)</td>
+                            <td class="loss">DEFEAT (7–11)</td>
+                        </tr>
+                        <tr>
+                            <td>825.M42</td>
+                            <td><a href="../battles/battle_011_spoils_of_decay.html" style="color: var(--accent-gold);">#011 — Spoils of Decay</a></td>
+                            <td>Supply Raid</td>
+                            <td>The Sons of Decay (Death Guard)</td>
+                            <td class="loss">DEFEAT (8–10)</td>
+                        </tr>
+                        <tr>
+                            <td>831.M42</td>
+                            <td><a href="../battles/battle_017_rust_and_ruin.html" style="color: var(--accent-gold);">#017 — Rust and Ruin</a></td>
+                            <td>Front-line Warfare</td>
+                            <td>The Killing Stone (Chaos Space Marines)</td>
+                            <td class="loss">DEFEAT (5–9)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1144,6 +1223,15 @@
                 <p>The expedition deploys under Guardian alliance protocols. The Black Templars of the Crusade of Binding Chains have provided materiel support and logistical access to Ferrum IX. In return, the Skitarii will assist in stabilizing the hulk's key sectors.</p>
                 <p style="text-align: center; margin-top: 20px;"><strong>The Bucket provides. The Bucket demands.</strong></p>
                 <p style="text-align: center; font-style: normal; color: var(--accent-bright);"><em>For the Eleven Herbs. For the Colonel. The Bucket is bottomless.</em></p>
+                <hr style="border: none; border-top: 1px solid var(--border); margin: 15px 0;">
+                <p><strong>824.M42 — The Tide of Iron: First Engagement</strong><br>
+                The Bottomless Bucket's baptism in void-hull combat was a litany of tactical miscalculation. Deployed against the Sons of Decay in sector corridors designated Theta-Forge, the Skitarii Rangers advanced efficiently along three vectors. The Kastelan-class Wafer Pair, inserted via deep-strike protocol, suffered catastrophic battle-shock upon materialization and stood inert as plague vectors overwhelmed their position. The expedition was driven from the sector 7-11. First blood to the Despoilers. Fabricator-Colonellus data-entries redacted from the after-action liturgy.</p>
+                <hr style="border: none; border-top: 1px solid var(--border); margin: 15px 0;">
+                <p><strong>825.M42 — Spoils of Decay: The Harvest Denied</strong><br>
+                Attempting to reclaim supply caches from contested corridors, the expedition found the Sons of Decay had seeded the approach routes with bloat-mines and vectorium-gas dispensers. The Drumsticks drove deep and registered kills, their Sanctified Engine protocols allowing them to weather plague-fire that should have scoured them to slag. Yet the supply caches fell to the Despoilers—8-10. The expedition's logistical position weakens. Archeotech requisitions are accelerated. The Bucket demands sacrifice.</p>
+                <hr style="border: none; border-top: 1px solid var(--border); margin: 15px 0;">
+                <p><strong>831.M42 — Rust and Ruin: The Third Failure</strong><br>
+                In the corroded manufactorum sectors of the hulk's deepest strata, the expedition engaged the Chaos-tainted warriors of the Killing Stone. What should have been a straightforward Front-line action devolved into ambush and counter-ambush through corridors slick with coolant and ancient blood. The Wafer Pair—now hardened by two engagements—fought with the mechanical fury of veteran automata, but the traitors held the initiative throughout. Final score: 5-9. Three defeats. Three data-failures. The Magi of Kentarchus Minoris have been notified. A formal review of tactical subroutines has been initiated.</p>
             </div>
         </section>
 
