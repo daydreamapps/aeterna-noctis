@@ -1,13 +1,13 @@
 # Aeterna Noctis - Strategic Sites
 
-## Control Overview
+## Control Overview — After Phase I
 
-| Site | Controller | Battle Points | SAP |
-|------|------------|---------------|-----|
-| Bridge of Sovereignty | Unclaimed | 0 | 0 |
-| Nova Cannon Spires | Unclaimed | 0 | 0 |
-| Vox-Relay Array | Unclaimed | 0 | 0 |
-| Hangar Deck "Tertius" | Unclaimed | 0 | 0 |
+| Site | Controller | Guardians | Despoilers | Marauders | Bonus Active |
+|------|------------|-----------|------------|-----------|--------------|
+| Bridge of Sovereignty | Despoilers (3) | 1 | **3** | — | +1 CP per battle (Despoilers) |
+| Nova Cannon Spires | Marauders (3) | — | — | **3** | Re-roll hits, one unit, one phase (Marauders) |
+| Vox-Relay Array | Guardians (2) | **2** | — | — | +1 Surgical Deep Strike (Guardians) |
+| Hangar Deck "Tertius" | Despoilers (2) | 1 | **2** | — | Scout 6", one unit (Despoilers) |
 
 ---
 
@@ -19,9 +19,10 @@
 **Strategic Site Bonus:** While your alliance controls this site, players in that alliance gain +1CP at the start of each battle.
 
 ### Control History
-| Phase | Battle | Victor | BP Change |
-|-------|--------|--------|-----------|
-| - | - | - | - |
+| Phase | Alliance | BP | SAP | Strategic Goal | Control Gained |
+|-------|----------|----|-----|----------------|----------------|
+| I | Guardians | — | 1 | — | +1 |
+| I | Despoilers | 15 | 2 | Decisive First Strike (+1) | +3 |
 
 ---
 
@@ -33,9 +34,11 @@
 **Strategic Site Bonus:** While your alliance controls this site, once per battle a player in that alliance may re-roll all hit rolls for one of their units for one phase (declare at the start of the phase).
 
 ### Control History
-| Phase | Battle | Victor | BP Change |
-|-------|--------|--------|-----------|
-| - | - | - | - |
+| Phase | Alliance | BP | SAP | Strategic Goal | Control Gained |
+|-------|----------|----|-----|----------------|----------------|
+| I | Guardians | — | 1 | — | — |
+| I | Despoilers | — | 1 | — | — |
+| I | Marauders | — | 7 | Decisive First Strike (+1) | +3 |
 
 ---
 
@@ -47,9 +50,9 @@
 **Strategic Site Bonus:** While your alliance controls this site, players in that alliance add +1 to all Surgical Deep Strike tests.
 
 ### Control History
-| Phase | Battle | Victor | BP Change |
-|-------|--------|--------|-----------|
-| - | - | - | - |
+| Phase | Alliance | BP | SAP | Strategic Goal | Control Gained |
+|-------|----------|----|-----|----------------|----------------|
+| I | Guardians | 2 | — | — | +2 |
 
 ---
 
@@ -61,9 +64,11 @@
 **Strategic Site Bonus:** While your alliance controls this site, once per battle a player in that alliance may select one unit in their army — that unit gains the Scout 6" ability for that battle.
 
 ### Control History
-| Phase | Battle | Victor | BP Change |
-|-------|--------|--------|-----------|
-| - | - | - | - |
+| Phase | Alliance | BP | SAP | Strategic Goal | Control Gained |
+|-------|----------|----|-----|----------------|----------------|
+| I | Guardians | 21 | — | — | +1 |
+| I | Despoilers | 24 | — | — | +2 |
+| I | Marauders | 18 | — | — | — |
 
 ---
 
