@@ -485,6 +485,10 @@
             color: var(--text);
         }
 
+        .result-destroyed { color: #c44a40; font-style: italic; }
+        .result-mfg { color: var(--accent-gold); font-weight: 700; }
+        .result-scar { color: #9b6d4d; font-style: italic; }
+
         .report-section {
             margin-top: 15px;
         }
@@ -617,85 +621,47 @@
             <p class="subtitle">Supply Raid — Nachmund Gauntlet</p>
         </header>
 
-        <!-- VOX Transmission -->
+        <!-- Victory Banner -->
+        <div class="card" style="background: linear-gradient(145deg, #3d1a3d 0%, #1f0d1f 100%); border: 2px solid #9b4d96; text-align: center; padding: 30px;">
+            <div style="font-family: 'Cinzel', serif; font-size: 1.2em; color: #9b4d96; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;">Despoilers Victory</div>
+            <div style="font-family: 'Cinzel', serif; font-size: 2.5em; font-weight: 700; color: #d4a0d4; margin-bottom: 10px;">16 — 4</div>
+            <div style="font-family: 'Cinzel', serif; font-size: 1.1em; color: #9a6a9a; text-transform: uppercase; letter-spacing: 2px;">Aeldari Force Destroyed — Supply Cache Claimed</div>
+        </div>
+
+        <!-- VOX Transmission - After Action Report -->
         <div class="vox-transmission">
             <div class="vox-header">
-                <span class="vox-priority">++ Priority: Crimson ++</span>
+                <span class="vox-priority">++ Priority: Amber ++</span>
                 <span>++ Source: Aeterna Noctis Sensorium ++</span>
                 <span>++ Timestamp: 822.M42 ++</span>
             </div>
             <div class="vox-body">
-                <p>INTERCEPTED COMMUNICATION: Auspex readings confirm hostile bio-signatures converging on supply cache Delta-7. The taint of Nurgle pervades the corridor atmospherics—Death Guard forces have been identified advancing through Sector Omicron.</p>
-                <p>Aeldari xenos presence also detected. The Bahzhakhain Süirel emerge from the shadows, their motivations unclear but their path set toward the same objective. Two predators hunting the same prey.</p>
-                <p>Recommend immediate sector quarantine. Whatever supplies remain in that cache are now contested ground. The stench of decay wars with the cold precision of the Aeldari—only one will claim the prize.</p>
+                <p>AFTER-ACTION REPORT — ENGAGEMENT: SUPPLY RAID. The Bahzhakhain Süirel drove hard into the corridors of the Bleeding Core, their Corsair blades and wraith-constructs seeking the supply caches of Sector Omicron. They found the Sons of Decay waiting. They did not leave.</p>
+                <p>Sephraxis the Blight-Crowned prosecuted the engagement with merciless precision, felling four Aeldari across the engagement and accruing nine marks of experience in a single action. The Tallyman Morbidus Rottcount, ever faithful in accounting, was elevated beyond his station — his tally sheets now listing ten destroyed xenos units to the glory of the Plague God.</p>
+                <p>The Aeldari were expunged wholesale. All ten Bahzhakhain Süirel units were destroyed — their Warp Spiders, though marked for greatness in death, found only annihilation. The Rotbound Host and Noxious Chariot were broken in the exchange, and one Plague Marines division ground to dust. A tolerable tithe. The supply caches belong to the rot now.</p>
             </div>
             <div class="vox-footer">
-                <em>"In the garden of war, all paths lead to ruin."</em><br>
-                — Thought for the Day
+                <em>"Every road leads to Nurgle. The Aeldari simply arrived sooner."</em><br>
+                — Morbidus Rottcount, Final Tally of the Withered Path
             </div>
         </div>
 
         <!-- Matchup -->
         <div class="matchup">
             <div class="combatant">
+                <span class="role-tag attacker">Attacker</span>
                 <div class="combatant-alliance marauders">Marauders</div>
-                <div class="combatant-name">Bahzhakhain Süirel</div>
-                <div class="combatant-faction">Aeldari</div>
+                <div class="combatant-name" style="color: var(--text-muted);">Bahzhakhain Süirel</div>
+                <div class="combatant-faction">Aeldari — Motif_6</div>
             </div>
-            <div class="versus">VS</div>
+            <div class="versus">4 — 16</div>
             <div class="combatant">
+                <span class="role-tag defender">Defender</span>
                 <div class="combatant-alliance despoilers">Despoilers</div>
-                <div class="combatant-name">The Sons of Decay</div>
-                <div class="combatant-faction">Death Guard</div>
+                <div class="combatant-name" style="color: #9b4d96;">The Sons of Decay</div>
+                <div class="combatant-faction">Death Guard — ScoutMaster the Pale</div>
             </div>
         </div>
-
-        <!-- Mission Overview -->
-        <section>
-            <h2>Mission Overview</h2>
-            <div class="card">
-                <div class="overview-grid">
-                    <div class="overview-item">
-                        <span class="overview-label">Board Size</span>
-                        <span class="overview-value">60" x 44"</span>
-                    </div>
-                    <div class="overview-item">
-                        <span class="overview-label">Objectives</span>
-                        <span class="overview-value">5 Total</span>
-                    </div>
-                    <div class="overview-item">
-                        <span class="overview-label">Deployment</span>
-                        <span class="overview-value">Hammer and Anvil</span>
-                    </div>
-                    <div class="overview-item">
-                        <span class="overview-label">Centre Exclusion</span>
-                        <span class="overview-value">6" Radius</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Deployment Map -->
-        <section>
-            <h2>Deployment Zones</h2>
-            <div class="deployment-map">
-                <img src="https://wahapedia.ru/wh40k10ed/img/maps/ng/SupplyRaid.png" alt="Supply Raid Deployment Map - 60x44 inch board with Hammer and Anvil deployment">
-            </div>
-        </section>
-
-        <!-- Objective Placement -->
-        <section>
-            <h2>Objective Placement</h2>
-            <div class="card">
-                <p><strong>Setup:</strong> Place objectives as shown on the deployment map.</p>
-                <h3>Placement Rules</h3>
-                <ul>
-                    <li><strong>1 objective</strong> in the centre of the battlefield</li>
-                    <li><strong>2 objectives</strong> in No Man's Land, each 18" from centre along the short axis</li>
-                    <li><strong>2 objectives</strong> in deployment zones, each 6" from centre along the long axis</li>
-                </ul>
-            </div>
-        </section>
 
         <!-- Scoring -->
         <section>
@@ -743,49 +709,177 @@
             </div>
         </section>
 
-        <!-- Army Setup -->
+        <!-- Battle Results -->
         <section>
-            <h2>Army Setup: Tactical Reserves</h2>
+            <h2>Battle Results</h2>
+
+            <h3>The Sons of Decay — Death Guard</h3>
             <div class="card">
-                <p>Nachmund Gauntlet uses <strong>Tactical Reserves</strong> — your army is split into waves that arrive throughout the battle.</p>
-
-                <h3>Incursion (1000pts) Wave Configuration</h3>
                 <table>
-                    <tr>
-                        <th>Wave</th>
-                        <th>Points Limit</th>
-                        <th>Arrives</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Primary Wave</strong></td>
-                        <td>Up to 400 pts</td>
-                        <td>Deployment (start of battle)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reinforcement Wave 1</strong></td>
-                        <td>Up to 300 pts</td>
-                        <td>Start of Battle Round 2</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reinforcement Wave 2</strong></td>
-                        <td>Up to 300 pts</td>
-                        <td>Start of Battle Round 3</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th>Kills</th>
+                            <th>XP</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chaos Rhino (Noxious Chariot)</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Chaos Spawn (Toxic Mergers)</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Deathshroud Terminators (Rotbound Host)</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Foetid Bloat-drone w/ Heavy Blight Launcher (Geoff)</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Lord of Poxes (Das Boot)</td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Plague Lord (Sephraxis the Blight-Crowned)</td>
+                            <td>4</td>
+                            <td>9</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Plague Marines (Division IX - Pus Rotters)</td>
+                            <td>2</td>
+                            <td>7</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Plague Marines</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Plague Marines</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Plague Surgeon (Mortivian the Tender)</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Poxwalkers (Infested Sockets)</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>Tallyman (Morbidus Rottcount)</td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td class="result-mfg">Marked for Greatness</td>
+                        </tr>
+                    </tbody>
                 </table>
-
-                <div class="warning">
-                    Your total army can exceed 1000pts — the wave limits are separate. Plan your Order of Battle accordingly.
-                </div>
-
-                <h3>Building Your Waves</h3>
-                <ul>
-                    <li>Assign each unit to a wave <strong>before the battle</strong></li>
-                    <li>Reinforcement waves arrive from your battlefield edge (or via Deep Strike if the unit has that ability)</li>
-                    <li>You choose which reinforcement wave arrives at the start of each round</li>
-                </ul>
-
                 <div class="note">
-                    <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Tactical-Reserves" target="_blank">Full Tactical Reserves rules on Wahapedia</a>
+                    Total XP earned: 40. Units destroyed: 3 (Chaos Rhino, Deathshroud Terminators, Plague Marines). Battle scars: 0. Victor Bonus: Increase Supply Limit.
+                </div>
+            </div>
+
+            <h3>Bahzhakhain Süirel — Aeldari</h3>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th>Kills</th>
+                            <th>XP</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Corsair Skyreavers</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Dark Reapers</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Falcon</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Fire Dragons</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Howling Banshees</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Rangers</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Storm Guardians</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Warp Spiders</td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td class="result-destroyed">Destroyed — <span class="result-mfg">Marked for Greatness</span></td>
+                        </tr>
+                        <tr>
+                            <td>Wraithblades</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                        <tr>
+                            <td>Wraithlord</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td class="result-destroyed">Destroyed</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    Total XP earned: 13. Units destroyed: 10 (fully tabled). Battle scars: 0.
                 </div>
             </div>
         </section>
@@ -839,61 +933,6 @@
 
                 <h3>Tactical Reserves</h3>
                 <p>This mission uses the Nachmund Gauntlet Tactical Reserves rules. Units arrive in waves as detailed above.</p>
-            </div>
-        </section>
-
-        <!-- Post-Battle Reporting -->
-        <section>
-            <h2>Post-Battle Reporting</h2>
-            <div class="card">
-                <p>After the battle, report the following to your Game Master:</p>
-
-                <div class="report-section">
-                    <div class="report-item">
-                        <span class="report-label">Final Score</span>
-                        <span class="report-desc">Your VP total and your opponent's VP total</span>
-                    </div>
-                    <div class="report-item">
-                        <span class="report-label">Kills</span>
-                        <span class="report-desc">Which of your units destroyed which enemy units (for "Dealers of Death" XP: +1 XP per 3 units destroyed)</span>
-                    </div>
-                    <div class="report-item">
-                        <span class="report-label">Casualties</span>
-                        <span class="report-desc">Which of your units were destroyed (they must make Out of Action tests)</span>
-                    </div>
-                    <div class="report-item">
-                        <span class="report-label">XP Earned</span>
-                        <span class="report-desc">Per unit: +1 XP (participation) + Agenda XP + Dealers of Death + Marked for Greatness (if applicable)</span>
-                    </div>
-                    <div class="report-item">
-                        <span class="report-label">Notable Moments</span>
-                        <span class="report-desc">2-3 memorable events for the battle report (heroic last stands, dramatic kills, lucky/unlucky dice, etc.)</span>
-                    </div>
-                </div>
-
-                <h3>Quick XP Reference</h3>
-                <table>
-                    <tr>
-                        <th>Source</th>
-                        <th>XP</th>
-                    </tr>
-                    <tr>
-                        <td>Participated in battle</td>
-                        <td>+1 XP</td>
-                    </tr>
-                    <tr>
-                        <td>Destroyed 3 enemy units (cumulative)</td>
-                        <td>+1 XP</td>
-                    </tr>
-                    <tr>
-                        <td>Marked for Greatness</td>
-                        <td>+3 XP</td>
-                    </tr>
-                    <tr>
-                        <td>Agenda completion</td>
-                        <td>Varies (see above)</td>
-                    </tr>
-                </table>
             </div>
         </section>
 

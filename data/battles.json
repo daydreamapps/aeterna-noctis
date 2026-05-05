@@ -114,9 +114,9 @@
       "mission": "Supply Raid",
       "type": "hulk",
       "file": "battle_007_the_withered_path.html",
-      "status": "in_progress",
+      "status": "completed",
       "date_m42": 822,
-      "date_real": "2026-04-07",
+      "date_real": "2026-05-04",
       "combatants": {
         "attacker": "aeldari",
         "defender": "death-guard"
@@ -131,7 +131,10 @@
           "Vile Research"
         ]
       },
-      "result": null
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 4, "defender": 16 }
+      }
     },
     "008": {
       "title": "It's Snow Way to Die",
