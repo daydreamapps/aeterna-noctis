@@ -353,6 +353,24 @@
         "score": { "attacker": 11, "defender": 11 }
       }
     },
+    "018": {
+      "title": "The Fall",
+      "mission": "Vital Stronghold",
+      "type": "hulk",
+      "file": "battle_018_the_fall.html",
+      "status": "completed",
+      "date_m42": 832,
+      "date_real": "2026-05-04",
+      "combatants": {
+        "attacker": "aeldari",
+        "defender": "death-guard"
+      },
+      "agendas": null,
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 0, "defender": 16 }
+      }
+    },
     "017": {
       "title": "Rust and Ruin",
       "mission": "Front-line Warfare 5",
