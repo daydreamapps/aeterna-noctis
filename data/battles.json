@@ -374,6 +374,21 @@
         "score": { "attacker": 0, "defender": 16 }
       }
     },
+    "019": {
+      "title": "The Lion's Shadow",
+      "mission": "Heralds of Vengeance 6",
+      "type": "hulk",
+      "file": "battle_019_the_lions_shadow.html",
+      "status": "pending",
+      "date_m42": 833,
+      "date_real": "2026-05-08",
+      "combatants": {
+        "attacker": "dark-angels",
+        "defender": "black-templars"
+      },
+      "agendas": null,
+      "result": null
+    },
     "017": {
       "title": "Rust and Ruin",
       "mission": "Front-line Warfare 5",
