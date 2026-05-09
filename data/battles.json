@@ -389,6 +389,21 @@
       "agendas": null,
       "result": null
     },
+    "020": {
+      "title": "Shores of Contagion",
+      "mission": "Beachhead Offensive 4",
+      "type": "hulk",
+      "file": "battle_020_shores_of_contagion.html",
+      "status": "pending",
+      "date_m42": 834,
+      "date_real": "2026-05-09",
+      "combatants": {
+        "attacker": "death-guard",
+        "defender": "adeptus-mechanicus"
+      },
+      "agendas": null,
+      "result": null
+    },
     "017": {
       "title": "Rust and Ruin",
       "mission": "Front-line Warfare 5",
