@@ -264,6 +264,9 @@
             margin-bottom: 5px;
         }
 
+        .combatant.winner .combatant-name { color: var(--accent-gold); }
+        .combatant.loser .combatant-name { color: var(--text-muted); }
+
         .combatant-faction { color: var(--text-muted); font-size: 0.9em; }
 
         .versus {
@@ -286,32 +289,26 @@
         .role-tag.defender { background: #2d5a4a; color: var(--text); }
         .role-tag.attacker { background: #8b3030; color: var(--text); }
 
-        .pending-banner {
+        .victory-banner {
             text-align: center;
             padding: 20px;
             margin: 25px 0;
             font-family: 'Cinzel', serif;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            border: 3px solid var(--accent-gold);
-            background: linear-gradient(145deg, #2d2010 0%, #1a1208 100%);
+            border: 3px solid #4a9956;
+            background: linear-gradient(145deg, #0d2010 0%, #081208 100%);
+            color: #a0d4a8;
+        }
+
+        .victory-score {
+            display: block;
+            font-size: 1.6em;
             color: var(--accent-gold);
-        }
-
-        .deployment-map {
-            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
-            border: 2px solid var(--accent-bronze);
-            padding: 30px;
-            margin: 25px 0;
-            text-align: center;
-        }
-
-        .deployment-map img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid var(--border);
+            margin-top: 8px;
+            letter-spacing: 6px;
         }
 
         table {
@@ -340,6 +337,9 @@
 
         tr:nth-child(even) { background: rgba(0,0,0,0.2); }
 
+        td.destroyed { color: #c44a40; font-style: italic; }
+        td.mfg { color: var(--accent-gold); font-weight: bold; }
+
         .note {
             background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
             border: 2px solid var(--accent-bronze);
@@ -349,21 +349,29 @@
 
         .note::before { content: '⚙ '; color: var(--accent-gold); }
 
-        .checklist {
+        .agenda-result {
             background: linear-gradient(145deg, #0a100a 0%, #080d08 100%);
-            border: 2px solid #2d4a2d;
-            padding: 20px 25px;
-            margin: 20px 0;
+            border-left: 3px solid #4a9956;
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-size: 0.95em;
         }
 
-        .checklist h3 {
-            color: #4a9956;
-            margin-bottom: 15px;
+        .agenda-result.failed {
+            border-left-color: var(--accent);
+            background: linear-gradient(145deg, #100a0a 0%, #0d0808 100%);
         }
 
-        .checklist ul { list-style: none; margin-left: 0; }
-        .checklist li { margin: 8px 0; color: var(--text-muted); }
-        .checklist li::before { content: '☐ '; color: #4a9956; }
+        .sap-gain {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.75em;
+            padding: 2px 8px;
+            background: #1a2d1a;
+            border: 1px solid #4a9956;
+            color: #a0d4a8;
+            margin-left: 8px;
+        }
 
         ul { margin-left: 25px; margin-bottom: 15px; }
         li { margin: 10px 0; }
@@ -446,21 +454,22 @@
             <p class="subtitle">Vital Stronghold 6 — 8 May 2026</p>
         </header>
 
-        <!-- Pending Banner -->
-        <div class="pending-banner">
-            ++ Engagement Pending — Awaiting Resolution ++
+        <!-- Victory Banner -->
+        <div class="victory-banner">
+            ++ Engagement Resolved — Guardians Victory ++
+            <span class="victory-score">4 — 3</span>
         </div>
 
         <!-- Matchup -->
         <div class="matchup">
-            <div class="combatant">
-                <span class="role-tag attacker">Attacker</span>
+            <div class="combatant winner">
+                <span class="role-tag attacker">Attacker — Victor</span>
                 <div class="combatant-alliance guardians">Guardians</div>
                 <div class="combatant-name">The Judgement of Aldurukh</div>
                 <div class="combatant-faction">Dark Angels</div>
             </div>
-            <div class="versus">VS</div>
-            <div class="combatant">
+            <div class="versus">4 — 3</div>
+            <div class="combatant loser">
                 <span class="role-tag defender">Defender</span>
                 <div class="combatant-alliance guardians">Guardians</div>
                 <div class="combatant-name">The Crusade of Binding Chains</div>
@@ -468,134 +477,153 @@
             </div>
         </div>
 
-        <!-- Pre-Battle VOX Transmission -->
+        <!-- After-Action VOX Transmission -->
         <div class="vox-transmission">
             <div class="vox-header">
-                <span class="vox-priority">++ Priority: Crimson ++</span>
+                <span class="vox-priority">++ Priority: Amber ++</span>
                 <span>++ Source: Aeterna Noctis Sensorium ++</span>
-                <span>++ Timestamp: 833.M42 ++</span>
+                <span>++ Timestamp: 833.M42 — POST-ENGAGEMENT ++</span>
             </div>
             <div class="vox-body">
-                <p>PRE-ENGAGEMENT BRIEFING: Sector Omega-Null, deep within the Aeterna Noctis's corrupted mid-decks. Conflict classification: FRATRICIDAL. Both forces bear the seal of the Guardians alliance. Cause: DISPUTED.</p>
-                <p>The Crusade of Binding Chains has been driven back. The Black Templars — their advance shattered by forces unknown — have retreated to a fortified enclave deep in the mid-decks, a redoubt of adamantine bulkheads and sanctified killing grounds. Marshal-Dreadnought Valdric has sealed the gates and refused extraction. He will hold this stronghold or he will die within it. There is no third scripture.</p>
-                <p>The Judgement of Aldurukh converges from two directions simultaneously. The Deathwing's movements were never random — the pincer was prepared before the first shot was fired. They advance through Attack Corridors Sigma and Tau, cutting off all avenues of relief, ensuring that whatever emerges from those fortified halls is theirs to judge.</p>
-                <p>What purpose drives the Lion's sons to crush their own allies into rubble? The sensorium offers no answer. Only the clash of ceramite and the echo of oaths broken in the darkness.</p>
+                <p>ENGAGEMENT RESOLVED: Sector Omega-Null. Fratricidal engagement concluded. Victor: THE JUDGEMENT OF ALDURUKH. Final tally: four objectives to three.</p>
+                <p>The Black Templars held for three battle rounds. The Emperor's Champion fell before the Sicaran Venator's guns; the Crusader Squad — five kills to their name — was annihilated to the last warrior. When the Leviathan Dreadnought ground through the final corridor and seized the central strongpoint, Marshal-Dreadnought Valdric's position collapsed beyond recovery.</p>
+                <p>Yet the Crusade of Binding Chains extracted a toll. Their Cut Off the Head rite bore fruit — the Judiciar fell, the Ravenwing Command Squad was shattered, and the dark bargain earned two Strategic Asset points for the Guardians' cause. The Assault Intercessors with Jump Packs earned immortal distinction in the Chapter's records: Marked for Greatness. They died gloriously.</p>
+                <p>The Leviathan Dreadnought stands tallest in the ashes of Omega-Null — Marked for Greatness, Victor Bonus claimed. The Lion's shadow stretches further into the hulk's corrupted bones.</p>
             </div>
             <div class="vox-footer">
-                <em>"What does the lion hunt, when all prey has fled? Its own shadow."</em><br>
-                — Inscription recovered from Sector Omega-Null bulkhead, origin unknown
+                <em>"Brothers in arms are brothers in silence afterwards."</em><br>
+                — Recovered inscription, Sector Omega-Null bulkhead, origin unknown
             </div>
         </div>
 
-        <!-- Mission Overview -->
+        <!-- Mission Rules Reference -->
         <section>
-            <h2>Mission Overview</h2>
+            <h2>Mission Rules</h2>
             <div class="card">
                 <p><strong>Mission:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Vital-Stronghold" target="_blank">Vital Stronghold 6</a> — Nachmund Gauntlet Crusade Mission</p>
-                <p style="margin-top: 10px;">An isolated force has been driven back to a pivotal defensive enclave. Will they hold out long enough to be reinforced, or will converging enemy assault groups crush them and claim their bolthole?</p>
 
                 <h3>Mission Rule — Pincer Attack</h3>
-                <p style="margin-bottom: 10px;">At the start of the Reinforcements step of the Defender's Movement phase in the second battle round, the Defender must select two of their Reinforcement Waves to arrive from Tactical Reserves, but will not be able to select any other Reinforcement Waves to arrive that battle.</p>
+                <p style="margin-bottom: 10px;">At the start of the Reinforcements step of the Defender's Movement phase in the second battle round, the Defender must select two of their Reinforcement Waves to arrive from Tactical Reserves.</p>
                 <ul>
-                    <li>Each unit from one of those Reinforcement Waves must be set up wholly within <strong>Attack Zone 1</strong></li>
-                    <li>Each unit from the other Reinforcement Wave must be set up wholly within <strong>Attack Zone 2</strong></li>
-                    <li>One unit from one of the selected Reinforcement Waves may perform a <strong>Surgical Deep Strike</strong>, however that unit must be set up wholly within Attack Zone 1 or Attack Zone 2</li>
+                    <li>Each unit from one Reinforcement Wave must be set up wholly within <strong>Attack Zone 1</strong></li>
+                    <li>Each unit from the other must be set up wholly within <strong>Attack Zone 2</strong></li>
+                    <li>One unit may perform a <strong>Surgical Deep Strike</strong> within Attack Zone 1 or 2</li>
                 </ul>
 
                 <h3>Mission Rule — Stronghold</h3>
-                <p style="margin-bottom: 10px;">The Defender must set up five additional objective markers on the battlefield:</p>
-                <ul>
-                    <li>Two or more objective markers must be set up in No Man's Land</li>
-                    <li>Each objective marker cannot be set up within 6" of one or more other objective markers and/or one or more battlefield edges</li>
-                    <li>If it is not possible to set up an objective marker, it is not set up on the battlefield</li>
-                </ul>
+                <p>The Defender sets up five additional objective markers — two or more in No Man's Land, each at least 6" from other markers and battlefield edges.</p>
 
                 <h3>Victor Bonus</h3>
-                <p>The victor can select one unit from their Crusade army that is wholly within 6" of the centre of the battlefield; that unit gains <strong>5XP</strong>.</p>
-            </div>
-        </section>
-
-        <!-- Deployment Map -->
-        <section>
-            <h2>Deployment Zones</h2>
-            <div class="deployment-map">
-                <img src="https://wahapedia.ru/wh40k10ed/img/maps/ng/VitalStronghold.png" alt="Vital Stronghold Deployment Map — Defender holds the centre, Attacker converges from Attack Zone 1 and Attack Zone 2 on opposite flanks">
-            </div>
-        </section>
-
-        <!-- Scoring -->
-        <section>
-            <h2>Mission Objectives</h2>
-            <div class="card">
-                <h3>The Fortress Claimed — Progressive Objective</h3>
-                <p style="margin-bottom: 10px;">Victory will almost certainly go to whichever commander holds onto the strongpoint.</p>
-                <p style="margin-bottom: 15px;">From the second battle round onwards, at the end of the Command phase, the player whose turn it is scores <strong>1VP for each objective marker they control</strong> (to a maximum of 4VP).</p>
-                <div class="note">
-                    In the fifth battle round, the player who has the second turn scores VP as described above, but does so at the end of the <em>turn</em> instead of at the end of their Command phase.
+                <p>The victor selected one unit wholly within 6" of the centre of the battlefield — that unit gains <strong>5XP</strong>.</p>
+                <div class="note" style="margin-top: 15px;">
+                    <strong>The Judgement of Aldurukh</strong> claimed the Victor Bonus: <strong>Leviathan Dreadnought +5XP</strong>.
                 </div>
+            </div>
+        </section>
 
-                <h3 style="margin-top: 25px;">Central Strongpoint — End Game Objective</h3>
-                <p style="margin-bottom: 15px;">Seize this point to raise your flag of victory over the very heart of the fortress.</p>
+        <!-- Battle Casualties -->
+        <section>
+            <h2>Battle Casualties</h2>
+            <div class="card">
+                <h3>The Judgement of Aldurukh — Dark Angels</h3>
                 <table>
                     <tr>
-                        <th>Condition</th>
-                        <th>VP</th>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP Gained</th>
+                        <th>Status</th>
                     </tr>
-                    <tr>
-                        <td>Defender controls the Central objective marker at end of battle</td>
-                        <td>2VP</td>
-                    </tr>
-                    <tr>
-                        <td>Attacker controls the Central objective marker at end of battle</td>
-                        <td>3VP</td>
-                    </tr>
+                    <tr><td>Leviathan Dreadnought</td><td>1</td><td>10</td><td class="mfg">Destroyed — Marked for Greatness</td></tr>
+                    <tr><td>Hellblasters</td><td>2</td><td>3</td><td>—</td></tr>
+                    <tr><td>Hellblasters</td><td>1</td><td>10</td><td>—</td></tr>
+                    <tr><td>Ravenwing Black Knights</td><td>2</td><td>1</td><td>—</td></tr>
+                    <tr><td>Sicaran Venator</td><td>1</td><td>3</td><td>—</td></tr>
+                    <tr><td>Champion of the Chapter (Crucible)</td><td>1</td><td>3</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Bladeguard Veterans</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Bladeguard Veterans</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Judiciar</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Lieutenant</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Outriders</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Ravenwing Command Squad</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Vanguard Veterans</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
                 </table>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9em;"><strong>Total:</strong> 8 units destroyed &bull; 37 XP gained</p>
+
+                <h3 style="margin-top: 30px;">The Crusade of Binding Chains — Black Templars</h3>
+                <table>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP Gained</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr><td>Invader ATV (Battle-Ready)</td><td>1</td><td>12</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Crusader Squad (Battle-Ready)</td><td>5</td><td>8</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Assault Intercessors with Jump Packs</td><td>0</td><td>8</td><td class="mfg">Destroyed — Marked for Greatness</td></tr>
+                    <tr><td>Intercessor Squad (Battle-Ready)</td><td>0</td><td>5</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Aggressors</td><td>1</td><td>2</td><td>—</td></tr>
+                    <tr><td>Captain in Gravis Armour (Battle-Ready)</td><td>0</td><td>2</td><td>—</td></tr>
+                    <tr><td>High Marshal Helbrecht</td><td>0</td><td>2</td><td>—</td></tr>
+                    <tr><td>Storm Speeder Thunderstrike (Battle-Ready)</td><td>0</td><td>2</td><td>—</td></tr>
+                    <tr><td>Venerable Battle-Brother [Crucible]</td><td>0</td><td>2</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Assault Intercessor Squad (Battle-Ready)</td><td>2</td><td>4</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Emperor's Champion (Anointed)</td><td>0</td><td>2</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Inceptor Squad (Battle-Ready)</td><td>0</td><td>2</td><td class="destroyed">Destroyed</td></tr>
+                </table>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9em;"><strong>Total:</strong> 9 units destroyed &bull; 51 XP gained</p>
             </div>
         </section>
 
         <!-- Agendas -->
         <section>
-            <h2>Agenda Selection</h2>
+            <h2>Agendas &amp; Rewards</h2>
             <div class="card">
                 <h3>Dark Angels — The Judgement of Aldurukh</h3>
-                <p>Agendas to be selected before battle.</p>
-                <div class="note" style="margin-top: 10px;">
-                    <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/dark-angels#Agendas-2" target="_blank">Dark Angels Agendas on Wahapedia</a>
+
+                <p><strong>Cut Off the Head</strong></p>
+                <div class="agenda-result">
+                    Each time a model destroys an enemy CHARACTER, the unit gains 2XP. Enemy WARLORD/EPIC HERO grants +2XP. +1SAP if enemy Warlord is destroyed.
                 </div>
 
-                <h3 style="margin-top: 25px;">Black Templars — The Crusade of Binding Chains</h3>
-                <p>Agendas to be selected before battle.</p>
-                <div class="note" style="margin-top: 10px;">
-                    <a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/black-templars#Agendas-2" target="_blank">Black Templars Agendas on Wahapedia</a>
+                <p style="margin-top: 15px;"><strong>Raze &amp; Ruin</strong></p>
+                <div class="agenda-result">
+                    Results recorded on Administratum.
                 </div>
 
-                <h3 style="margin-top: 25px;">Nachmund Gauntlet Agendas</h3>
-                <div class="note">
-                    <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Nachmund Gauntlet Agendas on Wahapedia</a>
+                <p style="margin-top: 15px;"><strong>Blessings (2 used)</strong></p>
+                <div class="agenda-result">
+                    <strong>Teleportarium:</strong> Two BATTLELINE units (or one other) gain Deep Strike during Declare Battle-formations.<br>
+                    <strong>Tactical Gains:</strong> At end of battle, roll D6 +3 if victor; on 4+, gain 1 Strategic Asset point. <span class="sap-gain">+1 SAP</span>
                 </div>
-            </div>
-        </section>
 
-        <!-- Post-Battle Checklist -->
-        <section>
-            <h2>Post-Battle Checklist</h2>
-            <div class="checklist">
-                <h3>++ Reporting Protocol ++</h3>
-                <ul>
-                    <li>Record final score for both sides</li>
-                    <li>Record Victor Bonus (5XP to one unit wholly within 6" of battlefield centre)</li>
-                    <li>Record selected agendas for both forces</li>
-                    <li>Update unit XP and kill tallies</li>
-                    <li>Note any Battle Honours, Battle Scars, or Marked for Greatness</li>
-                    <li>Update <code>data/battles.json</code> with result</li>
-                    <li>Update <code>data/alliances.json</code> SAP totals</li>
-                    <li>Generate after-action VOX-INTERCEPT narrative</li>
-                </ul>
+                <h3 style="margin-top: 30px;">Black Templars — The Crusade of Binding Chains</h3>
+
+                <p><strong>Cut Off the Head</strong> <span class="sap-gain">+1 SAP</span></p>
+                <div class="agenda-result">
+                    Breakers of Dawn +2XP (Ravenwing Command Squad) &bull; Zealot's Pursuit +4XP (Judiciar — Warlord) &bull; Pyre of Heretics +2XP (Lieutenant).<br>
+                    Enemy Warlord destroyed — <strong>+1 SAP earned</strong>.
+                </div>
+
+                <p style="margin-top: 15px;"><strong>Search Drop Site</strong> <span class="sap-gain">+1 SAP</span></p>
+                <div class="agenda-result">
+                    Silent Judgement +3XP (centre objective) &bull; Zealot's Pursuit +6XP (far middle &amp; far left) &bull; Righteous Fall +3XP (far right).<br>
+                    Three or more objectives searched — <strong>+1 SAP earned</strong>.
+                </div>
+
+                <p style="margin-top: 15px;"><strong>Oaths of Crusade</strong></p>
+                <div class="agenda-result">
+                    <em>Reclaim Our Holy Relics</em> — <strong style="color: var(--accent);">Failed</strong> (did not control more objectives than opponent at battle's end).<br>
+                    <em>...and Slaughter the Faithless... (6)</em> — <strong style="color: #a0d4a8;">Completed</strong> — Honour points awarded.
+                </div>
+
+                <div class="note" style="margin-top: 20px;">
+                    <strong>Nachmund Agendas:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Wahapedia</a>
+                </div>
             </div>
         </section>
 
         <footer>
-            <p>Brother turns blade upon brother. Even the Lion casts a shadow.</p>
+            <p>The Lion's shadow falls where it will. Kin or foe — the darkness makes no distinction.</p>
         </footer>
     </div>
 </body>

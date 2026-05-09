@@ -376,18 +376,31 @@
     },
     "019": {
       "title": "The Lion's Shadow",
-      "mission": "Heralds of Vengeance 6",
+      "mission": "Vital Stronghold 6",
       "type": "hulk",
       "file": "battle_019_the_lions_shadow.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 833,
       "date_real": "2026-05-08",
       "combatants": {
         "attacker": "dark-angels",
         "defender": "black-templars"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "dark-angels": [
+          "Cut Off the Head",
+          "Raze and Ruin"
+        ],
+        "black-templars": [
+          "Cut Off the Head",
+          "Search Drop Site",
+          "Oaths of Crusade"
+        ]
+      },
+      "result": {
+        "victor": "guardians",
+        "score": { "attacker": 4, "defender": 3 }
+      }
     },
     "020": {
       "title": "Shores of Contagion",
