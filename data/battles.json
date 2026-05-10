@@ -428,15 +428,21 @@
       "mission": "The Gauntlet 5",
       "type": "hulk",
       "file": "battle_021_iron_against_iron.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 835,
       "date_real": "2026-05-10",
       "combatants": {
         "attacker": "chaos-space-marines",
         "defender": "adeptus-mechanicus"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "chaos-space-marines": [],
+        "adeptus-mechanicus": ["Tech Scavengers", "Search Drop Site"]
+      },
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 11, "defender": 9 }
+      }
     },
     "017": {
       "title": "Rust and Ruin",
