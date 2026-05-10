@@ -1,6 +1,6 @@
 {
   "current_phase": 1,
-  "m42_date": 835,
+  "m42_date": 836,
   "battles": {
     "001": {
       "title": "Breach of Sector Theta-9",
@@ -421,6 +421,27 @@
       "result": {
         "victor": "despoilers",
         "score": { "attacker": 6, "defender": 4 }
+      }
+    },
+    "022": {
+      "title": "Undulating Threat",
+      "mission": "Saboteurs 2",
+      "type": "hulk",
+      "file": "battle_022_undulating_threat.html",
+      "status": "completed",
+      "date_m42": 836,
+      "date_real": "2026-05-10",
+      "combatants": {
+        "attacker": "aeldari",
+        "defender": "death-guard"
+      },
+      "agendas": {
+        "death-guard": ["Repel the Foe", "Viral Harvest"],
+        "aeldari": ["None Survive", "Evasive"]
+      },
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 3, "defender": 12 }
       }
     },
     "021": {
