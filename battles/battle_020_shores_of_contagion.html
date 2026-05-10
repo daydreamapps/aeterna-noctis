@@ -38,7 +38,6 @@
             min-height: 100vh;
         }
 
-        /* Top Toolbar */
         .toolbar {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -233,6 +232,28 @@
             font-style: italic;
         }
 
+        .victory-banner {
+            text-align: center;
+            padding: 20px;
+            margin: 25px 0;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 3px solid #9b4d96;
+            background: linear-gradient(145deg, #1a0d20 0%, #120810 100%);
+            color: #d4a0d4;
+        }
+
+        .victory-score {
+            display: block;
+            font-size: 1.6em;
+            color: var(--accent-gold);
+            margin-top: 8px;
+            letter-spacing: 6px;
+        }
+
         .matchup {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -245,6 +266,8 @@
         }
 
         .combatant { text-align: center; }
+        .combatant.winner .combatant-name { color: var(--accent-gold); }
+        .combatant.loser .combatant-name { color: var(--text-muted); }
 
         .combatant-alliance {
             font-family: 'Cinzel', serif;
@@ -287,34 +310,6 @@
         .role-tag.defender { background: #2d5a4a; color: var(--text); }
         .role-tag.attacker { background: #8b3030; color: var(--text); }
 
-        .pending-banner {
-            text-align: center;
-            padding: 20px;
-            margin: 25px 0;
-            font-family: 'Cinzel', serif;
-            font-size: 1.2em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border: 3px solid var(--accent-gold);
-            background: linear-gradient(145deg, #2d2010 0%, #1a1208 100%);
-            color: var(--accent-gold);
-        }
-
-        .deployment-map {
-            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
-            border: 2px solid var(--accent-bronze);
-            padding: 30px;
-            margin: 25px 0;
-            text-align: center;
-        }
-
-        .deployment-map img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid var(--border);
-        }
-
         table {
             width: 100%;
             border-collapse: collapse;
@@ -341,6 +336,10 @@
 
         tr:nth-child(even) { background: rgba(0,0,0,0.2); }
 
+        td.destroyed { color: #c44a40; font-style: italic; }
+        td.battle-scar { color: #c9822a; font-style: italic; }
+        td.mfg { color: var(--accent-gold); font-weight: bold; }
+
         .note {
             background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
             border: 2px solid var(--accent-bronze);
@@ -350,21 +349,23 @@
 
         .note::before { content: '⚙ '; color: var(--accent-gold); }
 
-        .checklist {
+        .agenda-result {
             background: linear-gradient(145deg, #0a100a 0%, #080d08 100%);
-            border: 2px solid #2d4a2d;
-            padding: 20px 25px;
-            margin: 20px 0;
+            border-left: 3px solid #4a9956;
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-size: 0.95em;
         }
 
-        .checklist h3 {
+        .agenda-result.failed {
+            border-left-color: var(--accent);
+            background: linear-gradient(145deg, #100a0a 0%, #0d0808 100%);
+        }
+
+        .sap-gain {
             color: #4a9956;
-            margin-bottom: 15px;
+            font-weight: bold;
         }
-
-        .checklist ul { list-style: none; margin-left: 0; }
-        .checklist li { margin: 8px 0; color: var(--text-muted); }
-        .checklist li::before { content: '☐ '; color: #4a9956; }
 
         ul { margin-left: 25px; margin-bottom: 15px; }
         li { margin: 10px 0; }
@@ -447,21 +448,22 @@
             <p class="subtitle">Beachhead Offensive 4 — 9 May 2026</p>
         </header>
 
-        <!-- Pending Banner -->
-        <div class="pending-banner">
-            ++ Engagement Pending — Awaiting Resolution ++
+        <!-- Victory Banner -->
+        <div class="victory-banner">
+            ++ Engagement Resolved — Despoilers Victory ++
+            <span class="victory-score">6 — 4</span>
         </div>
 
         <!-- Matchup -->
         <div class="matchup">
-            <div class="combatant">
-                <span class="role-tag attacker">Attacker</span>
+            <div class="combatant winner">
+                <span class="role-tag attacker">Attacker — Victor</span>
                 <div class="combatant-alliance despoilers">Despoilers</div>
                 <div class="combatant-name">The Sons of Decay</div>
                 <div class="combatant-faction">Death Guard</div>
             </div>
-            <div class="versus">VS</div>
-            <div class="combatant">
+            <div class="versus">6 — 4</div>
+            <div class="combatant loser">
                 <span class="role-tag defender">Defender</span>
                 <div class="combatant-alliance guardians">Guardians</div>
                 <div class="combatant-name">The Bottomless Bucket</div>
@@ -469,18 +471,18 @@
             </div>
         </div>
 
-        <!-- Pre-Battle VOX Transmission -->
+        <!-- After-Action VOX Transmission -->
         <div class="vox-transmission">
             <div class="vox-header">
-                <span class="vox-priority">++ Priority: Vermillion ++</span>
+                <span class="vox-priority">++ Priority: Amber ++</span>
                 <span>++ Source: Aeterna Noctis Sensorium ++</span>
-                <span>++ Timestamp: 834.M42 ++</span>
+                <span>++ Timestamp: 834.M42 — POST-ENGAGEMENT ++</span>
             </div>
             <div class="vox-body">
-                <p>PRE-ENGAGEMENT BRIEFING: Sector Rho-Vitalis, the hulk's lower manufactorum ring. Threat classification: CONTAGION INCURSION. Biological hazard rating: EXTREME.</p>
-                <p>The Sons of Decay have come again. Twice the Adeptus Mechanicus of the Bottomless Bucket have barred their advance — twice the plague-swollen dead have risen to swallow those gains whole. Now the Death Guard press deeper, seeking not merely to contest ground but to establish an irrevocable beachhead from which no purging flame could ever fully cleanse them.</p>
-                <p>Arch-Magos Tertius Vorel has sealed Sector Rho-Vitalis behind quarantine bulkheads seventeen layers deep. His skitarii hold every choke point in overlapping fields of galvanic fire. He has run the probability cascades eight hundred times. The hulk's geometry favours the defender. The data is unambiguous.</p>
-                <p>And yet. The data did not account for the patience of the plague. The Sons of Decay do not assault — they arrive. They are already in the sector, already breathing their contagion into the recycled air. The bulkheads seal nothing that has not already been compromised. The beach was lost before the first shot fired.</p>
+                <p>ENGAGEMENT RESOLVED: Sector Rho-Vitalis. Beachhead secured. Victor: THE SONS OF DECAY. Final tally: six objectives to four.</p>
+                <p>The Deathshroud broke it open in round two — their advance drove through the Terrax-Pattern Termite's hull, and the emergency disembark scattered five Sicarians into the corridor where they perished in seconds. The Adeptus Mechanicus defence began to unravel. The Plague Lord claimed three kills; the Lord of Virulence added two more. Eleven Mechanicus units were dragged into the rot against five of the Sons' own number.</p>
+                <p>The killing blow came in the fifth. A single Blightlord — alone in the corridor, slaved to obscene purpose — made an eleven-inch charge and tore apart both Kastelan battle-automata and their attendant Datasmith in the same terrible breath. The Bottomless Bucket's position collapsed. The Terrax-Pattern Termite earned Marked for Greatness in its destruction — a worthy epitaph for a machine that fought to the last.</p>
+                <p>Sector Rho-Vitalis belongs to the plague. The Sons of Decay have their beachhead. The contagion spreads deeper.</p>
             </div>
             <div class="vox-footer">
                 <em>"A beachhead is not taken by force. It is taken by rot."</em><br>
@@ -488,87 +490,114 @@
             </div>
         </div>
 
-        <!-- Mission Overview -->
+        <!-- Mission Rules Reference -->
         <section>
-            <h2>Mission Overview</h2>
+            <h2>Mission Rules</h2>
             <div class="card">
                 <p><strong>Mission:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Beachhead-Offensive-4" target="_blank">Beachhead Offensive 4</a> — Nachmund Gauntlet Crusade Mission</p>
-                <p style="margin-top: 10px;">Charged with securing the toe-hold from which a more comprehensive invasion can be launched, one commander masses all their warriors and unleashes a desperate assault. Their opponent seeks to hurl them back, defending their territory in the process.</p>
 
                 <h3>Mission Rule — Beachhead</h3>
-                <p>In the Deploy Crusade Armies step, instead of the players alternating setting up their units, first the <strong>Attacker deploys all the units in their Primary Wave</strong> wholly within their deployment zone, and then the Defender sets up all of the units in their Primary Wave wholly within their deployment zone.</p>
+                <p>In the Deploy Crusade Armies step, instead of alternating, the <strong>Attacker deploys all Primary Wave units first</strong>, then the Defender deploys theirs.</p>
 
                 <h3>Mission Rule — Strategic Offensive</h3>
                 <p>The <strong>Attacker decides</strong> which player has the first turn.</p>
 
                 <h3>Victor Bonus</h3>
-                <p>The victor can select <strong>one additional unit</strong> from their Crusade army to be <strong>Marked for Greatness</strong>.</p>
-            </div>
-        </section>
-
-        <!-- Deployment Map -->
-        <section>
-            <h2>Deployment Zones</h2>
-            <div class="deployment-map">
-                <img src="https://wahapedia.ru/wh40k10ed/img/maps/ng/BeachheadOffensive.png" alt="Beachhead Offensive Deployment Map — Attacker masses in their deployment zone, Defender holds opposite end">
-            </div>
-        </section>
-
-        <!-- Scoring -->
-        <section>
-            <h2>Mission Objectives</h2>
-            <div class="card">
-                <h3>Secure Beachhead — Progressive Objective</h3>
-                <p style="margin-bottom: 10px;">With every yard advanced into enemy territory, the invaders come closer to securing their beachhead.</p>
-                <p style="margin-bottom: 10px;">From the <strong>second battle round</strong> onwards, at the end of the Command phase, the player whose turn it is scores VP as follows:</p>
-                <ul>
-                    <li>For each objective marker that the player controls, they score <strong>1VP</strong>.</li>
-                    <li>If it is the <strong>Attacker's turn</strong> and the Attacker controls the objective marker in their own deployment zone, then for each <em>other</em> objective marker they control, the Attacker scores an <strong>additional 1VP</strong>.</li>
-                </ul>
-                <div class="note">
-                    In the <strong>fifth battle round</strong>, the player who has the second turn scores VP as described above, but does so at the end of the <em>turn</em> instead of at the end of their Command phase.
+                <p>The victor selects <strong>one additional unit</strong> to be <strong>Marked for Greatness</strong>.</p>
+                <div class="note" style="margin-top: 15px;">
+                    <strong>The Sons of Decay</strong> claimed the Victor Bonus: <strong>Foul Blightspawn</strong> — Marked for Greatness.
                 </div>
             </div>
         </section>
 
-        <!-- Agendas -->
+        <!-- Battle Casualties -->
         <section>
-            <h2>Agenda Selection</h2>
+            <h2>Battle Casualties</h2>
+            <div class="card">
+                <h3>The Sons of Decay — Death Guard</h3>
+                <table>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP Gained</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr><td>Plague Lord</td><td>3</td><td>8</td><td>—</td></tr>
+                    <tr><td>Lord of Virulence</td><td>2</td><td>5</td><td>—</td></tr>
+                    <tr><td>Foul Blightspawn</td><td>1</td><td>5</td><td class="mfg">Marked for Greatness</td></tr>
+                    <tr><td>Tallyman</td><td>0</td><td>4</td><td class="mfg">Marked for Greatness</td></tr>
+                    <tr><td>Plague Lord [Crucible]</td><td>0</td><td>4</td><td class="mfg">Destroyed — Marked for Greatness</td></tr>
+                    <tr><td>Lord of Poxes</td><td>1</td><td>3</td><td>—</td></tr>
+                    <tr><td>Plague Marines</td><td>0</td><td>3</td><td>—</td></tr>
+                    <tr><td>Blightlord Terminators</td><td>1</td><td>2</td><td>—</td></tr>
+                    <tr><td>Deathshroud Terminators</td><td>3</td><td>1</td><td>—</td></tr>
+                    <tr><td>Plague Marines</td><td>0</td><td>1</td><td class="battle-scar">Battle Scar</td></tr>
+                    <tr><td>Poxwalkers</td><td>0</td><td>1</td><td>—</td></tr>
+                    <tr><td>Poxwalkers</td><td>0</td><td>1</td><td>—</td></tr>
+                    <tr><td>Chaos Spawn</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Foetid Bloat-Drone</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Foetid Bloat-Drone with Heavy Blight Launcher</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Plague Surgeon</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                </table>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9em;"><strong>Total:</strong> 5 units destroyed, 1 battle scar &bull; 42 XP gained</p>
+
+                <h3 style="margin-top: 30px;">The Bottomless Bucket — Adeptus Mechanicus</h3>
+                <table>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP Gained</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr><td>Terrax-Pattern Termite</td><td>0</td><td>7</td><td class="mfg">Destroyed — Marked for Greatness</td></tr>
+                    <tr><td>Skitarii Rangers</td><td>0</td><td>4</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Tech-Priest Enginseer</td><td>0</td><td>4</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Ironstrider Alpha [Crucible]</td><td>0</td><td>1</td><td>—</td></tr>
+                    <tr><td>Ironstrider Ballistarii</td><td>0</td><td>1</td><td>—</td></tr>
+                    <tr><td>Cybernetica Datasmith</td><td>3</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Cybernetica Datasmith</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Kastelan Robots</td><td>2</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Kastelan Robots</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Magos [Crucible]</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Sicarian Ruststalkers</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Skitarii Rangers</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Skitarii Vanguard</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                </table>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9em;"><strong>Total:</strong> 11 units destroyed &bull; 25 XP gained &bull; All Out of Action tests passed</p>
+            </div>
+        </section>
+
+        <!-- Agendas & Rewards -->
+        <section>
+            <h2>Agendas &amp; Rewards</h2>
             <div class="card">
                 <h3>Death Guard — The Sons of Decay</h3>
-                <p>Agendas to be selected before battle.</p>
-                <div class="note" style="margin-top: 10px;">
-                    <a href="https://wahapedia.ru/wh40k10ed/factions/death-guard#Agendas" target="_blank">Death Guard Agendas on Wahapedia</a>
+                <p style="color: var(--text-muted); font-style: italic;">No agendas recorded.</p>
+
+                <h3 style="margin-top: 30px;">Adeptus Mechanicus — The Bottomless Bucket</h3>
+
+                <p><strong>Tech Scavengers</strong></p>
+                <div class="agenda-result">
+                    Target unit destroyed by Terrax-Pattern Termite — <strong>+3XP</strong> gained.<br>
+                    <span style="color: var(--text-muted);">Archeotech recovery failed</span> — Termite destroyed before reaching the marker.
                 </div>
 
-                <h3 style="margin-top: 25px;">Adeptus Mechanicus — The Bottomless Bucket</h3>
-                <p>Agendas to be selected before battle.</p>
-                <div class="note" style="margin-top: 10px;">
-                    <a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus#Agendas" target="_blank">Adeptus Mechanicus Agendas on Wahapedia</a>
+                <p style="margin-top: 15px;"><strong>Search Drop Site</strong></p>
+                <div class="agenda-result">
+                    Magos [Crucible] completed Search Drop Site action — <strong>+3XP</strong>.<br>
+                    Extra Crispy (Skitarii Rangers) completed Search Drop Site action — <strong>+3XP</strong>.<br>
+                    <span style="color: var(--text-muted);">SAP bonus not achieved</span> — three or more searched objectives not controlled at battle's end.
                 </div>
 
-                <h3 style="margin-top: 25px;">Nachmund Gauntlet Agendas</h3>
-                <div class="note">
-                    <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Nachmund Gauntlet Agendas on Wahapedia</a>
+                <p style="margin-top: 15px;"><strong>Blessings (2 used)</strong></p>
+                <div class="agenda-result">
+                    <strong>Rapid Reinforcements:</strong> One additional unit brought forward from Wave 2 into Wave 1 reinforcements.<br>
+                    <strong>High Strategy:</strong> +2CP at the start of the battle.
                 </div>
-            </div>
-        </section>
 
-        <!-- Post-Battle Checklist -->
-        <section>
-            <h2>Post-Battle Checklist</h2>
-            <div class="checklist">
-                <h3>++ Reporting Protocol ++</h3>
-                <ul>
-                    <li>Record final score for both sides</li>
-                    <li>Record Victor Bonus (winner selects one additional unit Marked for Greatness)</li>
-                    <li>Record selected agendas for both forces</li>
-                    <li>Update unit XP and kill tallies</li>
-                    <li>Note any Battle Honours, Battle Scars, or Marked for Greatness</li>
-                    <li>Update <code>data/battles.json</code> with result</li>
-                    <li>Update <code>data/alliances.json</code> SAP totals</li>
-                    <li>Generate after-action VOX-INTERCEPT narrative</li>
-                </ul>
+                <div class="note" style="margin-top: 20px;">
+                    <strong>Nachmund Agendas:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Wahapedia</a>
+                </div>
             </div>
         </section>
 

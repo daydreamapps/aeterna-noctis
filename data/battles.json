@@ -1,6 +1,6 @@
 {
   "current_phase": 1,
-  "m42_date": 830,
+  "m42_date": 835,
   "battles": {
     "001": {
       "title": "Breach of Sector Theta-9",
@@ -407,15 +407,21 @@
       "mission": "Beachhead Offensive 4",
       "type": "hulk",
       "file": "battle_020_shores_of_contagion.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 834,
       "date_real": "2026-05-09",
       "combatants": {
         "attacker": "death-guard",
         "defender": "adeptus-mechanicus"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "death-guard": [],
+        "adeptus-mechanicus": ["Tech Scavengers", "Search Drop Site"]
+      },
+      "result": {
+        "victor": "despoilers",
+        "score": { "attacker": 6, "defender": 4 }
+      }
     },
     "021": {
       "title": "Iron Against Iron",
