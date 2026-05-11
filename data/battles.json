@@ -465,6 +465,21 @@
         "score": { "attacker": 11, "defender": 9 }
       }
     },
+    "023": {
+      "title": "The Dying Light",
+      "mission": "Final Stand 1",
+      "type": "hulk",
+      "file": "battle_023_the_dying_light.html",
+      "status": "pending",
+      "date_m42": 837,
+      "date_real": "2026-05-11",
+      "combatants": {
+        "attacker": "aeldari",
+        "defender": "dark-angels"
+      },
+      "agendas": null,
+      "result": null
+    },
     "017": {
       "title": "Rust and Ruin",
       "mission": "Front-line Warfare 5",
