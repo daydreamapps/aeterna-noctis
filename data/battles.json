@@ -467,14 +467,14 @@
     },
     "023": {
       "title": "The Dying Light",
-      "mission": "Final Stand 1",
+      "mission": "Beachhead Offensive 4",
       "type": "hulk",
       "file": "battle_023_the_dying_light.html",
       "status": "pending",
       "date_m42": 837,
-      "date_real": "2026-05-11",
+      "date_real": "2026-05-12",
       "combatants": {
-        "attacker": "aeldari",
+        "attacker": "adeptus-mechanicus",
         "defender": "dark-angels"
       },
       "agendas": null,
