@@ -1,6 +1,6 @@
 {
   "current_phase": 1,
-  "m42_date": 837,
+  "m42_date": 838,
   "battles": {
     "001": {
       "title": "Breach of Sector Theta-9",
@@ -485,6 +485,21 @@
         "victor": "guardians",
         "score": { "attacker": 11, "defender": 8 }
       }
+    },
+    "024": {
+      "title": "The Dying Light",
+      "mission": "Final Stand 1",
+      "type": "hulk",
+      "file": "battle_024_the_dying_light.html",
+      "status": "pending",
+      "date_m42": 838,
+      "date_real": "2026-05-13",
+      "combatants": {
+        "attacker": "aeldari",
+        "defender": "dark-angels"
+      },
+      "agendas": null,
+      "result": null
     },
     "017": {
       "title": "Rust and Ruin",
