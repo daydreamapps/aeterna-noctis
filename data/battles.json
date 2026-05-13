@@ -466,10 +466,10 @@
       }
     },
     "023": {
-      "title": "The Dying Light",
+      "title": "The Iron Shore",
       "mission": "Beachhead Offensive 4",
       "type": "hulk",
-      "file": "battle_023_the_dying_light.html",
+      "file": "battle_023_the_iron_shore.html",
       "status": "completed",
       "date_m42": 837,
       "date_real": "2026-05-12",
