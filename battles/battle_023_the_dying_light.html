@@ -232,6 +232,28 @@
             font-style: italic;
         }
 
+        .victory-banner {
+            text-align: center;
+            padding: 20px;
+            margin: 25px 0;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 3px solid #4a9956;
+            background: linear-gradient(145deg, #0d1a0d 0%, #080f08 100%);
+            color: #7dc47d;
+        }
+
+        .victory-score {
+            display: block;
+            font-size: 1.6em;
+            color: var(--accent-gold);
+            margin-top: 8px;
+            letter-spacing: 6px;
+        }
+
         .matchup {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -244,6 +266,8 @@
         }
 
         .combatant { text-align: center; }
+        .combatant.winner .combatant-name { color: var(--accent-gold); }
+        .combatant.loser .combatant-name { color: var(--text-muted); }
 
         .combatant-alliance {
             font-family: 'Cinzel', serif;
@@ -255,6 +279,7 @@
 
         .combatant-alliance.guardians { color: #4a9956; }
         .combatant-alliance.marauders { color: var(--accent-gold); }
+        .combatant-alliance.despoilers { color: #c44a40; }
 
         .combatant-name {
             font-family: 'Cinzel', serif;
@@ -286,19 +311,35 @@
         .role-tag.defender { background: #2d5a4a; color: var(--text); }
         .role-tag.attacker { background: #8b3030; color: var(--text); }
 
-        .pending-banner {
-            text-align: center;
-            padding: 20px;
-            margin: 25px 0;
-            font-family: 'Cinzel', serif;
-            font-size: 1em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border: 3px solid var(--accent-bronze);
-            background: linear-gradient(145deg, #1a1508 0%, #120f05 100%);
-            color: var(--accent-gold);
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
         }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
+        }
+
+        tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+
+        td.destroyed { color: #c44a40; font-style: italic; }
+        td.battle-scar { color: #c9822a; font-style: italic; }
+        td.mfg { color: var(--accent-gold); font-weight: bold; }
 
         .note {
             background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
@@ -309,13 +350,38 @@
 
         .note::before { content: '⚙ '; color: var(--accent-gold); }
 
+        .mission-obj {
+            background: linear-gradient(145deg, #0a100a 0%, #080d08 100%);
+            border-left: 3px solid #4a9956;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .mission-obj h4 {
+            font-family: 'Cinzel', serif;
+            color: #6ab870;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .agenda-result {
+            background: linear-gradient(145deg, #0a100a 0%, #080d08 100%);
+            border-left: 3px solid #4a9956;
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-size: 0.95em;
+        }
+
+        .agenda-result.failed {
+            border-left-color: var(--accent);
+            background: linear-gradient(145deg, #100a0a 0%, #0d0808 100%);
+        }
+
         ul { margin-left: 25px; margin-bottom: 15px; }
         li { margin: 10px 0; }
         li::marker { color: var(--accent); }
-
-        .checklist { list-style: none; margin-left: 0; }
-        .checklist li { padding-left: 5px; }
-        .checklist li::before { content: '☐ '; color: var(--accent-gold); font-size: 1.1em; }
 
         a { color: var(--accent-gold); text-decoration: none; transition: all 0.2s; }
         a:hover { color: var(--bone); text-shadow: 0 0 10px var(--shadow-gold); }
@@ -338,34 +404,6 @@
             background: linear-gradient(180deg, var(--accent) 0%, #5a0000 100%);
             border-color: var(--accent-bright);
             box-shadow: 0 0 15px var(--shadow-red);
-        }
-
-        .mission-obj {
-            background: linear-gradient(145deg, #0a100a 0%, #080d08 100%);
-            border-left: 3px solid #4a9956;
-            padding: 15px 20px;
-            margin: 15px 0;
-        }
-
-        .mission-obj h4 {
-            font-family: 'Cinzel', serif;
-            color: #6ab870;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-
-        .deployment-map {
-            background: #0a0d0a;
-            border: 2px solid var(--border);
-            padding: 20px;
-            margin: 15px 0;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85em;
-            color: #6a9a6a;
-            text-align: center;
-            line-height: 2;
         }
 
         footer {
@@ -422,21 +460,22 @@
             <p class="subtitle">Beachhead Offensive 4 — 12 May 2026</p>
         </header>
 
-        <!-- Pending Banner -->
-        <div class="pending-banner">
-            ++ Engagement Pending — Awaiting Resolution ++
+        <!-- Victory Banner -->
+        <div class="victory-banner">
+            ++ Engagement Resolved — Guardians Victory ++
+            <span class="victory-score">11 — 8</span>
         </div>
 
         <!-- Matchup -->
         <div class="matchup">
-            <div class="combatant">
-                <span class="role-tag attacker">Attacker</span>
+            <div class="combatant winner">
+                <span class="role-tag attacker">Attacker — Victor</span>
                 <div class="combatant-alliance guardians">Guardians</div>
                 <div class="combatant-name">The Bottomless Bucket</div>
                 <div class="combatant-faction">Adeptus Mechanicus</div>
             </div>
-            <div class="versus">vs</div>
-            <div class="combatant">
+            <div class="versus">11 — 8</div>
+            <div class="combatant loser">
                 <span class="role-tag defender">Defender</span>
                 <div class="combatant-alliance marauders">Marauders</div>
                 <div class="combatant-name">Bahzhakhain Süirel</div>
@@ -444,36 +483,34 @@
             </div>
         </div>
 
-        <!-- Pre-Battle VOX Transmission -->
+        <!-- After-Action VOX Transmission -->
         <div class="vox-transmission">
             <div class="vox-header">
-                <span class="vox-priority">++ Priority: Vermillion ++</span>
+                <span class="vox-priority">++ Priority: Amber ++</span>
                 <span>++ Source: Aeterna Noctis Sensorium ++</span>
-                <span>++ Timestamp: 837.M42 — PRE-ENGAGEMENT ++</span>
+                <span>++ Timestamp: 837.M42 — POST-ENGAGEMENT ++</span>
             </div>
             <div class="vox-body">
-                <p>ENGAGEMENT IMMINENT: Space Hulk Aeterna Noctis — Sub-sector Malakor. Mechanicus cohort advancing on Marauders position. Designation: THE BOTTOMLESS BUCKET. Affiliation: Guardians. Threat classification: Cross-Alliance — Extreme.</p>
-                <p>The Omnissiah's servants have calculated that this section of the hulk holds sufficient archaeotech to tip the war's balance permanently. The Magi of the Bottomless Bucket have identified their landing zone, marshalled their cohort, and moved with the cold efficiency that is their birthright. They do not negotiate territory. They acquire it. The beachhead will be established — it is merely a matter of acceptable attrition.</p>
-                <p>What they did not account for is the Bahzhakhain Süirel. Bloodied but unbroken, the Aeldari hold this ground with the grim tenacity of a dying warrior who still has one good blade. They have lost much to the Despoilers' plague and savagery — they will not yield another inch to cog-worshippers who have mistaken their silence for absence. The Mechanicus advance will be met, and the skeins of fate will be paid in metal and oil.</p>
+                <p>ENGAGEMENT RESOLVED: Space Hulk Aeterna Noctis — Sub-sector Malakor. Beachhead established. Victor: THE BOTTOMLESS BUCKET. Final tally: eleven to eight.</p>
+                <p>The Adeptus Mechanicus came with cold calculation, and cold calculation prevailed. The Skorpius Dunerider swept the forward approach, searching drop sites before the Aeldari could contest them — its contribution to the Omnissiah's databanks measured in territory secured and a character's skull crushed beneath its treads. The Terrax-Pattern Termite bored into the heart of the Aeldari lines, its passengers shredding the last of the Dark Reapers before being torn apart by the Wraithguard's implacable advance. The Ghost Warrior warlord fell to Kastelan fists. Three objectives searched. The beachhead calcified.</p>
+                <p>The Aeldari fought with the fury of the dying. Jain Zar and the Howling Banshees arrived late and hit like a blade in the dark — three kills, two Admech units unmade in a single turn, Marked for Greatness in victory's shadow. It was not enough. The margin was three. The corridors belong to the Omnissiah now.</p>
+                <p>The Servitor Battleclade endured without glory and was honoured for it. The Skorpius Dunerider was singled out above all — Marked for Greatness. The Bottomless Bucket claims its beachhead.</p>
             </div>
             <div class="vox-footer">
-                <em>"Every sector is a data-point. Every corpse is an argument."</em><br>
-                — Intercept attributed to Magos-Prime, The Bottomless Bucket, 837.M42
+                <em>"The calculation was never in doubt. Only the rounding error."</em><br>
+                — Recovered parchment, Bottomless Bucket command node
             </div>
         </div>
 
-        <!-- Mission Overview -->
+        <!-- Mission Rules Reference -->
         <section>
-            <h2>Mission Overview</h2>
+            <h2>Mission Rules</h2>
             <div class="card">
                 <p><strong>Mission:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Beachhead-Offensive-4" target="_blank">Beachhead Offensive 4</a> — Nachmund Gauntlet Crusade Mission</p>
-                <p style="margin-top: 12px; color: var(--text-muted); font-style: italic;">Charged with securing the toe-hold from which a more comprehensive invasion can be launched, one commander masses all their warriors and unleashes a desperate assault. Their opponent seeks to hurl them back, defending their territory in the process.</p>
 
-                <h3>Mission Rules</h3>
-
-                <div class="mission-obj">
+                <div class="mission-obj" style="margin-top: 15px;">
                     <h4>Beachhead</h4>
-                    <p>In the Deploy Crusade Armies step, instead of alternating, the <strong>Attacker deploys all Primary Wave units first</strong>, wholly within their deployment zone. Then the <strong>Defender deploys all Primary Wave units</strong>, wholly within their deployment zone.</p>
+                    <p>Attacker deploys all Primary Wave units first; then the Defender deploys all Primary Wave units.</p>
                 </div>
 
                 <div class="mission-obj">
@@ -481,68 +518,113 @@
                     <p>The <strong>Attacker decides</strong> which player has the first turn.</p>
                 </div>
 
-                <h3 style="margin-top: 25px;">Deployment</h3>
                 <img src="https://wahapedia.ru/wh40k10ed/img/maps/ng/BeachheadOffensive.png" alt="Beachhead Offensive deployment map" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border: 2px solid var(--border);">
-                <p style="font-size: 0.9em; color: var(--text-muted);">Six objective markers. Attacker deploys in a semicircular zone (18" radius from centre of their long edge). Three objectives in the Defender's zone, one mid-table centre, two on the flanks, one within the Attacker's deployment zone.</p>
-            </div>
-        </section>
 
-        <!-- Mission Objectives -->
-        <section>
-            <h2>Mission Objectives</h2>
-            <div class="card">
                 <h3>Secure Beachhead <span style="color: var(--text-muted); font-size: 0.85em; font-family: 'Crimson Text';">— Progressive</span></h3>
-                <p>With every yard advanced into enemy territory, the invaders come closer to securing their beachhead.</p>
-                <ul style="margin-top: 10px;">
-                    <li>From the <strong>second battle round onwards</strong>, at the end of the <strong>Command phase</strong>, the player whose turn it is scores VP as follows:</li>
-                    <li>For each objective marker that the player controls, they score <strong>1VP</strong>.</li>
-                    <li>If it is the <strong>Attacker's turn</strong> and the Attacker controls the objective marker in their <strong>own deployment zone</strong>, then for each <strong>other</strong> objective marker they control, the Attacker scores an additional <strong>1VP</strong>.</li>
-                    <li>In the <strong>fifth battle round</strong>, the player with the second turn scores VP as described above, but does so at the <strong>end of their turn</strong> instead of at the end of their Command phase.</li>
+                <ul>
+                    <li>From the <strong>second battle round onwards</strong>, at the end of the <strong>Command phase</strong>, the active player scores <strong>1VP per objective marker controlled</strong>.</li>
+                    <li>If it is the <strong>Attacker's turn</strong> and they control their own deployment zone objective, each additional objective they control scores <strong>+1VP</strong> (doubled).</li>
+                    <li>In the <strong>fifth battle round</strong>, the second player scores at the end of their turn instead of Command phase.</li>
                 </ul>
 
-                <h3 style="margin-top: 25px;">Victor Bonus</h3>
-                <p>The victor can select <strong>one additional unit</strong> from their Crusade army to be <strong>Marked for Greatness</strong>.</p>
-            </div>
-        </section>
-
-        <!-- Agendas -->
-        <section>
-            <h2>Agendas</h2>
-            <div class="card">
-                <p>Each commander selects their agendas before the battle. Links below — no agendas set yet.</p>
-
-                <h3 style="margin-top: 20px;">Adeptus Mechanicus — The Bottomless Bucket</h3>
-                <p><a href="https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus#Agendas" target="_blank">Adeptus Mechanicus Agendas &rarr;</a></p>
-                <p style="margin-top: 8px; color: var(--text-muted); font-style: italic;">Agendas to be recorded here before engagement begins.</p>
-
-                <h3 style="margin-top: 25px;">Aeldari — Bahzhakhain Süirel</h3>
-                <p><a href="https://wahapedia.ru/wh40k10ed/factions/aeldari#Agendas" target="_blank">Aeldari Agendas &rarr;</a></p>
-                <p style="margin-top: 8px; color: var(--text-muted); font-style: italic;">Agendas to be recorded here before engagement begins.</p>
-
-                <div class="note" style="margin-top: 20px;">
-                    <strong>Nachmund Campaign Agendas:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Wahapedia</a>
+                <h3>Victor Bonus</h3>
+                <p>The victor selects <strong>one additional unit</strong> to be Marked for Greatness.</p>
+                <div class="note" style="margin-top: 15px;">
+                    <strong>The Bottomless Bucket</strong> claimed the Victor Bonus: <strong>+1 additional Marked for Greatness</strong>.
                 </div>
             </div>
         </section>
 
-        <!-- Post-Battle Checklist -->
+        <!-- Battle Casualties -->
         <section>
-            <h2>Post-Battle Checklist</h2>
+            <h2>Battle Casualties</h2>
             <div class="card">
-                <ul class="checklist">
-                    <li>Record final score and victor</li>
-                    <li>Record all agenda results (achieved / failed)</li>
-                    <li>Record XP for every unit (kills, agenda bonuses, participation)</li>
-                    <li>Apply Victor Bonus — victor selects one additional unit to be Marked for Greatness</li>
-                    <li>Note any units Destroyed, Battle Scarred, or Marked for Greatness</li>
-                    <li>Update Administratum tracker</li>
-                    <li>Run <code>/finalize-battle 023</code> to complete this report</li>
-                </ul>
+                <h3>The Bottomless Bucket — Adeptus Mechanicus</h3>
+                <table>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP Gained</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr><td>Skorpius Dunerider (Battle-Ready)</td><td>1</td><td>7</td><td class="mfg">Marked for Greatness</td></tr>
+                    <tr><td>Servitor Battleclade (Battle-Ready)</td><td>0</td><td>4</td><td class="mfg">Marked for Greatness</td></tr>
+                    <tr><td>Sicarian Infiltrators</td><td>0</td><td>4</td><td>—</td></tr>
+                    <tr><td>Cybernetica Datasmith (Battle-Ready)</td><td>0</td><td>5</td><td>—</td></tr>
+                    <tr><td>Kastelan Robots (Battle-Ready)</td><td>3</td><td>4</td><td>—</td></tr>
+                    <tr><td>Sydonian Skatros (Battle-Ready)</td><td>0</td><td>1</td><td>—</td></tr>
+                    <tr><td>Technoarcheologist</td><td>1</td><td>1</td><td>—</td></tr>
+                    <tr><td>Technoarcheologist (Battle-Ready)</td><td>0</td><td>1</td><td>—</td></tr>
+                    <tr><td>X-101</td><td>0</td><td>1</td><td>—</td></tr>
+                    <tr><td>Kastelan Robots (Battle-Ready)</td><td>1</td><td>4</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Cybernetica Datasmith (Battle-Ready)</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Hastarii Exterminators</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Plucky Pals</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Pteraxii Skystalkers</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Skitarii Marshal (Battle-Ready)</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Tech-Priest Enginseer (Battle-Ready)</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Terrax-Pattern Termite</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                </table>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9em;"><strong>Total:</strong> 6 units destroyed &bull; 39 XP gained</p>
+
+                <h3 style="margin-top: 30px;">Bahzhakhain Süirel — Aeldari</h3>
+                <table>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP Gained</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr><td>Howling Banshees</td><td>3</td><td>4</td><td class="mfg">Marked for Greatness</td></tr>
+                    <tr><td>Jain Zar</td><td>3</td><td>1</td><td>—</td></tr>
+                    <tr><td>Eldrad Ulthran</td><td>0</td><td>1</td><td>—</td></tr>
+                    <tr><td>Warp Spiders</td><td>1</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Wraithblades</td><td>2</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Lhykhis</td><td>2</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Dark Reapers</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Falcon</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Fire Dragons</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Ghost Warrior [Crucible] (Battle-Ready)</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Rangers</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Storm Guardians</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Swooping Hawks</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                </table>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9em;"><strong>Total:</strong> 11 units destroyed &bull; 16 XP gained</p>
+            </div>
+        </section>
+
+        <!-- Agendas & Rewards -->
+        <section>
+            <h2>Agendas &amp; Rewards</h2>
+            <div class="card">
+                <h3>Adeptus Mechanicus — The Bottomless Bucket</h3>
+
+                <p><strong>Tech Scavengers</strong></p>
+                <div class="agenda-result">
+                    Select the highest-value enemy VEHICLE unit; gain an Archeotech Part if an Admech unit is within 3" of the marker when it is destroyed. Result not formally recorded.
+                </div>
+
+                <p style="margin-top: 15px;"><strong>Search Drop Site</strong></p>
+                <div class="agenda-result">
+                    Three objective markers searched during the battle. <span style="color: #4a9956; font-weight: bold;">+1 SAP achieved.</span>
+                </div>
+
+                <p style="margin-top: 15px;"><strong>Cut Off the Head</strong></p>
+                <div class="agenda-result">
+                    Ghost Warrior [Crucible] (enemy Warlord) destroyed by Kastelan Robots — +2XP (character) +2XP (Warlord). Lhykhis (enemy character) destroyed by Skorpius Dunerider — +2XP. <span style="color: #4a9956; font-weight: bold;">Enemy Warlord slain: +1 SAP achieved.</span>
+                </div>
+
+                <h3 style="margin-top: 30px;">Aeldari — Bahzhakhain Süirel</h3>
+                <p style="color: var(--text-muted); font-style: italic;">Agendas not recorded.</p>
+
+                <div class="note" style="margin-top: 20px;">
+                    <strong>Nachmund Agendas:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Wahapedia</a>
+                </div>
             </div>
         </section>
 
         <footer>
-            <p>The light at the end of the corridor is not salvation. It is muzzle flash.</p>
+            <p>The machine does not fear the dying light. It simply recalculates.</p>
         </footer>
     </div>
 </body>

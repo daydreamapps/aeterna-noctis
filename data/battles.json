@@ -1,6 +1,6 @@
 {
   "current_phase": 1,
-  "m42_date": 836,
+  "m42_date": 837,
   "battles": {
     "001": {
       "title": "Breach of Sector Theta-9",
@@ -470,15 +470,21 @@
       "mission": "Beachhead Offensive 4",
       "type": "hulk",
       "file": "battle_023_the_dying_light.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 837,
       "date_real": "2026-05-12",
       "combatants": {
         "attacker": "adeptus-mechanicus",
         "defender": "aeldari"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "adeptus-mechanicus": ["Tech Scavengers", "Search Drop Site", "Cut Off the Head"],
+        "aeldari": []
+      },
+      "result": {
+        "victor": "guardians",
+        "score": { "attacker": 11, "defender": 8 }
+      }
     },
     "017": {
       "title": "Rust and Ruin",
