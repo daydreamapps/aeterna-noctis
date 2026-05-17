@@ -486,6 +486,21 @@
         "score": { "attacker": 11, "defender": 8 }
       }
     },
+    "025": {
+      "title": "The Rusted Bulwark",
+      "mission": "The Gauntlet 5",
+      "type": "hulk",
+      "file": "battle_025_the_rusted_bulwark.html",
+      "status": "pending",
+      "date_m42": 839,
+      "date_real": "2026-05-17",
+      "combatants": {
+        "attacker": "adeptus-mechanicus",
+        "defender": "death-guard"
+      },
+      "agendas": null,
+      "result": null
+    },
     "024": {
       "title": "The Dying Light",
       "mission": "Final Stand 1",
