@@ -501,6 +501,21 @@
       "agendas": null,
       "result": null
     },
+    "026": {
+      "title": "The Vanishing Protocol",
+      "mission": "Retrieval 3",
+      "type": "hulk",
+      "file": "battle_026_the_vanishing_protocol.html",
+      "status": "pending",
+      "date_m42": 840,
+      "date_real": "2026-05-17",
+      "combatants": {
+        "attacker": "adeptus-mechanicus",
+        "defender": "necrons"
+      },
+      "agendas": null,
+      "result": null
+    },
     "024": {
       "title": "The Dying Light",
       "mission": "Final Stand 1",
