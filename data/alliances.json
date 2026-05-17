@@ -5,7 +5,7 @@
       "tagline": "Those who seek to save the sector—or claim its protection for themselves.",
       "color": "#4a9956",
       "cvp": 0,
-      "sap": 6,
+      "sap": 7,
       "warmaster": null,
       "requisition_pool": 0,
       "members": [
@@ -62,9 +62,9 @@
       "requisition_pool": 0,
       "members": [
         {
-          "player": null,
+          "player": "alxnns1",
           "faction": "necrons",
-          "army_name": "Rattle Me Bones",
+          "army_name": "Tekhsarun Awakening",
           "home_world": null
         },
         {

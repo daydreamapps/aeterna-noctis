@@ -506,15 +506,21 @@
       "mission": "Retrieval 3",
       "type": "hulk",
       "file": "battle_026_the_vanishing_protocol.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 840,
       "date_real": "2026-05-17",
       "combatants": {
         "attacker": "adeptus-mechanicus",
         "defender": "necrons"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "adeptus-mechanicus": ["Cut Off the Head", "Tech Scavengers"],
+        "necrons": []
+      },
+      "result": {
+        "victor": "draw",
+        "score": { "attacker": 5, "defender": 5 }
+      }
     },
     "024": {
       "title": "The Dying Light",
