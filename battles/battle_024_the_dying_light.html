@@ -189,6 +189,28 @@
         .card::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
         .card::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
 
+        .victory-banner {
+            text-align: center;
+            padding: 20px;
+            margin: 25px 0;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 3px solid var(--accent-gold);
+            background: linear-gradient(145deg, #1a1508 0%, #120f05 100%);
+            color: var(--accent-gold);
+        }
+
+        .victory-score {
+            display: block;
+            font-size: 1.6em;
+            color: var(--bone);
+            margin-top: 8px;
+            letter-spacing: 6px;
+        }
+
         .vox-transmission {
             background: linear-gradient(145deg, #0d1a0d 0%, #0a0f0a 100%);
             border: 2px solid #2d4a2d;
@@ -232,20 +254,6 @@
             font-style: italic;
         }
 
-        .pending-banner {
-            text-align: center;
-            padding: 20px;
-            margin: 25px 0;
-            font-family: 'Cinzel', serif;
-            font-size: 1em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border: 3px solid var(--accent-bronze);
-            background: linear-gradient(145deg, #1a1508 0%, #120f05 100%);
-            color: var(--accent-gold);
-        }
-
         .note {
             background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
             border: 2px solid var(--accent-bronze);
@@ -283,6 +291,8 @@
         }
 
         .combatant { text-align: center; }
+        .combatant.winner .combatant-name { color: var(--accent-gold); }
+        .combatant.loser .combatant-name { color: var(--text-muted); }
 
         .combatant-alliance {
             font-family: 'Cinzel', serif;
@@ -294,6 +304,7 @@
 
         .combatant-alliance.guardians { color: #4a9956; }
         .combatant-alliance.marauders { color: var(--accent-gold); }
+        .combatant-alliance.despoilers { color: #c44a40; }
 
         .combatant-name {
             font-family: 'Cinzel', serif;
@@ -325,13 +336,38 @@
         .role-tag.defender { background: #2d5a4a; color: var(--text); }
         .role-tag.attacker { background: #8b3030; color: var(--text); }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 0.95em;
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            padding: 8px 10px;
+            border-bottom: 2px solid var(--border);
+            text-align: left;
+        }
+
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid rgba(61, 50, 37, 0.5);
+            color: var(--text);
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        td.destroyed { color: #c44a40; font-weight: 600; }
+        td.mfg { color: var(--accent-gold); font-weight: 600; }
+
         ul { margin-left: 25px; margin-bottom: 15px; }
         li { margin: 10px 0; }
         li::marker { color: var(--accent); }
-
-        .checklist { list-style: none; margin-left: 0; }
-        .checklist li { padding-left: 5px; }
-        .checklist li::before { content: '☐ '; color: var(--accent-gold); font-size: 1.1em; }
 
         a { color: var(--accent-gold); text-decoration: none; transition: all 0.2s; }
         a:hover { color: var(--bone); text-shadow: 0 0 10px var(--shadow-gold); }
@@ -410,21 +446,22 @@
             <p class="subtitle">Final Stand 1 — 13 May 2026</p>
         </header>
 
-        <!-- Pending Banner -->
-        <div class="pending-banner">
-            ++ Engagement Pending — Awaiting Resolution ++
+        <!-- Victory Banner -->
+        <div class="victory-banner">
+            ++ Engagement Resolved — Marauders Victory ++
+            <span class="victory-score">12 — 7</span>
         </div>
 
-        <!-- Matchup -->
+        <!-- Matchup with Score -->
         <div class="matchup">
-            <div class="combatant">
-                <span class="role-tag attacker">Attacker</span>
+            <div class="combatant winner">
+                <span class="role-tag attacker">Attacker — Victor</span>
                 <div class="combatant-alliance marauders">Marauders</div>
                 <div class="combatant-name">Bahzhakhain Süirel</div>
                 <div class="combatant-faction">Aeldari</div>
             </div>
-            <div class="versus">vs</div>
-            <div class="combatant">
+            <div class="versus">12 — 7</div>
+            <div class="combatant loser">
                 <span class="role-tag defender">Defender</span>
                 <div class="combatant-alliance guardians">Guardians</div>
                 <div class="combatant-name">The Judgement of Aldurukh</div>
@@ -432,105 +469,138 @@
             </div>
         </div>
 
-        <!-- Pre-Battle VOX Transmission -->
+        <!-- After-Action VOX Transmission -->
         <div class="vox-transmission">
             <div class="vox-header">
-                <span class="vox-priority">++ Priority: Vermillion ++</span>
+                <span class="vox-priority">++ Priority: Amber ++</span>
                 <span>++ Source: Aeterna Noctis Sensorium ++</span>
-                <span>++ Timestamp: 838.M42 — PRE-ENGAGEMENT ++</span>
+                <span>++ Timestamp: 838.M42 — AFTER-ACTION ++</span>
             </div>
             <div class="vox-body">
-                <p>ENGAGEMENT IMMINENT: Space Hulk Aeterna Noctis — Sub-sector Malakor. Xenos strike force advancing on Guardians position. Designation: BAHZHAKHAIN SÜIREL. Affiliation: Marauders. Threat rating: Extreme.</p>
-                <p>The skeins of fate have spoken — and for once they do not whisper retreat. Driven back from one objective after another, ground down by plague and iron in equal measure, the Aeldari of the Bahzhakhain Süirel have recalculated their thread. The farseers see only a single viable path remaining: a brutal, overwhelming assault before the Judgement of Aldurukh can consolidate their position. The children of Asuryan do not come to negotiate. They come to break the Dark Angels' final stand.</p>
-                <p>The sons of the Lion have dug in deep. Forewarned of the coming storm, the Judgement of Aldurukh holds its ground with the quiet certainty of warriors who have never learned how to yield. Their reserves move through the corridors toward them — whether those reinforcements arrive before the Aeldari host is the question on which this engagement will turn. The dying light of the Aeldari campaign may yet illuminate the Dark Angels' defeat.</p>
+                <p>AFTER-ACTION REPORT: Space Hulk Aeterna Noctis — Sub-sector Malakor. Final Stand engagement concluded. Outcome: MARAUDERS VICTORY. The last light of the Bahzhakhain Süirel's campaign burned bright enough to scorch the sons of the Lion from their prepared lines.</p>
+                <p>The Swooping Hawks struck first, breaking through the Dark Angels' advance screen in the opening exchange. Second round: Warp Spiders unmade two squads in swift succession; Maugan Ra carved through a named champion without breaking stride. The third round was the crucible — Fire Dragons gutted armour and infantry alike, a second Warp Spiders unit swept the flanks clean, and Jain Zar herself put down the Guardians' field commander. Lhykhis, burning with the fury of the doomed, took two kills before being silenced. The Aspect Warriors named her Marked for Greatness before they recorded her loss.</p>
+                <p>Turns four and five saw Fire Dragons return to glory — two more armoured kills — before Fuegan and Maugan Ra cracked a second Decimator together in the final moments. The Autarch Wayleaper fell. Fuegan fell. The corridors, however, belong to the Bahzhakhain Süirel. Twelve kills to seven. The dying light did not go out.</p>
             </div>
             <div class="vox-footer">
-                <em>"The farseers do not promise victory. They promise only that this is the last chance."</em><br>
-                — Intercept attributed to Bahzhakhain Süirel command vox, 838.M42
+                <em>"We did not come here to survive. We came here to make them remember us."</em><br>
+                — Last recorded transmission attributed to Lhykhis, 838.M42
             </div>
         </div>
 
-        <!-- Mission Overview -->
+        <!-- Marked for Greatness -->
         <section>
-            <h2>Mission Overview</h2>
+            <h2>Marked for Greatness</h2>
+            <div class="card">
+                <h3>Aeldari — Lhykhis</h3>
+                <p>2 kills, 4 XP. Destroyed in battle, but the Bahzhakhain Süirel refused to let her sacrifice go unrecorded. Lhykhis struck twice before being silenced — a final defiant act that exemplified the Aeldari's willingness to spend all they had on this last assault. Her name endures in the craftworld's war-shrines.</p>
+
+                <h3 style="margin-top: 20px;">Dark Angels — Sternguard</h3>
+                <p>3 kills, 10 XP. The most decorated unit of a losing force. The Sternguard fought with the cold precision of veterans who knew their position was falling but refused to abandon their duty, accounting for three confirmed kills and earning the highest experience tally of the engagement.</p>
+            </div>
+        </section>
+
+        <!-- Mission Rules Reference -->
+        <section>
+            <h2>Mission Rules</h2>
             <div class="card">
                 <p><strong>Mission:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Final-Stand" target="_blank">Final Stand 1</a> — Nachmund Gauntlet Crusade Mission</p>
-                <p style="margin-top: 12px; color: var(--text-muted); font-style: italic;">Driven back by repeated strikes, one army must now dig in and try to endure as the last of their scattered reserves race to their aid. Their foes have a chance to crush them for good if they can only break this determined final stand.</p>
 
-                <h3>Mission Rules</h3>
-
-                <div class="mission-obj">
+                <div class="mission-obj" style="margin-top: 15px;">
                     <h4>Strategic Offensive</h4>
                     <p>The <strong>Attacker decides</strong> which player has the first turn.</p>
                 </div>
 
                 <div class="mission-obj">
                     <h4>Delayed Reserves</h4>
-                    <p>The <strong>Defender's</strong> Reinforcement waves arrive in the Reinforcement step of their Movement phase in the <strong>third and fourth</strong> battle round, instead of the second and third.</p>
+                    <p>The <strong>Defender's</strong> Reinforcement waves arrive in the <strong>third and fourth</strong> battle round, instead of the second and third.</p>
                 </div>
 
-                <h3 style="margin-top: 25px;">Deployment</h3>
                 <img src="https://wahapedia.ru/wh40k10ed/img/maps/ng/FinalStand.png" alt="Final Stand deployment map" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border: 2px solid var(--border);">
-                <p style="font-size: 0.9em; color: var(--text-muted);">Two objective markers: one in <strong>No Man's Land</strong>, one in the <strong>Defender's deployment zone</strong>.</p>
-            </div>
-        </section>
 
-        <!-- Mission Objectives -->
-        <section>
-            <h2>Mission Objectives</h2>
-            <div class="card">
                 <h3>Stand Firm <span style="color: var(--text-muted); font-size: 0.85em; font-family: 'Crimson Text';">— Progressive</span></h3>
-                <p>The longer the defenders hold their ground, the more hope they have of enduring this onslaught.</p>
-                <ul style="margin-top: 10px;">
+                <ul>
                     <li>At the end of <strong>each player's turn</strong>, the player who controls the objective in the <strong>Defender's deployment zone</strong> scores <strong>1VP</strong>.</li>
                     <li>At the end of the <strong>Attacker's turn</strong>, if the Attacker controls the objective in <strong>No Man's Land</strong>, the Attacker scores <strong>1VP</strong>.</li>
                 </ul>
 
-                <h3 style="margin-top: 25px;">No Quarter <span style="color: var(--text-muted); font-size: 0.85em; font-family: 'Crimson Text';">— Progressive</span></h3>
-                <p>Both commanders are determined to see the other's forces annihilated in this merciless clash.</p>
-                <ul style="margin-top: 10px;">
+                <h3>No Quarter <span style="color: var(--text-muted); font-size: 0.85em; font-family: 'Crimson Text';">— Progressive</span></h3>
+                <ul>
                     <li>At the end of the <strong>battle round</strong>, the <strong>Defender</strong> scores <strong>1VP</strong> if one or more Attacker units were destroyed that round.</li>
                     <li>At the end of the <strong>battle round</strong>, the <strong>Attacker</strong> scores <strong>1VP</strong> if more Defender units than Attacker units were destroyed that round.</li>
                 </ul>
 
-                <h3 style="margin-top: 25px;">Victor Bonus</h3>
+                <h3>Victor Bonus</h3>
                 <p>Each unit from the victor's Crusade army that ended the battle <strong>wholly within the Defender's deployment zone</strong> gains <strong>1XP</strong>. If the victor controls the objective in the Defender's deployment zone at the end of the battle, they gain <strong>1SAP</strong>.</p>
             </div>
         </section>
 
-        <!-- Agendas -->
+        <!-- Battle Casualties -->
         <section>
-            <h2>Agendas</h2>
+            <h2>Battle Casualties</h2>
             <div class="card">
-                <p>Each commander selects their agendas before the battle.</p>
+                <h3>Bahzhakhain Süirel — Aeldari</h3>
+                <table>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr><td>Fire Dragons</td><td>2</td><td>1</td><td>—</td></tr>
+                    <tr><td>Lhykhis</td><td>2</td><td>4</td><td class="mfg">Destroyed — Marked for Greatness</td></tr>
+                    <tr><td>Dark Reapers</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Eldrad Ulthran</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Falcon</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Ghost Warrior [Crucible] (Battle-Ready)</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Howling Banshees</td><td>1</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Jain Zar</td><td>1</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Rangers</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Storm Guardians</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Swooping Hawks</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Warp Spiders</td><td>2</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Wraithblades</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                </table>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9em;"><strong>Total:</strong> 12 units destroyed &bull; 16 XP gained</p>
 
-                <h3 style="margin-top: 20px;">Aeldari — Bahzhakhain Süirel</h3>
-                <p><a href="https://wahapedia.ru/wh40k10ed/factions/aeldari#Agendas" target="_blank">Aeldari Agendas &rarr;</a></p>
-                <p style="margin-top: 8px; color: var(--text-muted); font-style: italic;">Agendas to be recorded here before engagement begins.</p>
+                <h3 style="margin-top: 30px;">The Judgement of Aldurukh — Dark Angels</h3>
+                <table>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr><td>Sternguard</td><td>3</td><td>10</td><td class="mfg">Marked for Greatness</td></tr>
+                    <tr><td>Assault Intercessors</td><td>2</td><td>4</td><td>—</td></tr>
+                    <tr><td>Bladeguard</td><td>2</td><td>5</td><td>—</td></tr>
+                    <tr><td>Hellblasters</td><td>1</td><td>6</td><td>—</td></tr>
+                    <tr><td>Judiciar</td><td>1</td><td>6</td><td>—</td></tr>
+                    <tr><td>Lieutenant</td><td>1</td><td>6</td><td>—</td></tr>
+                    <tr><td>Hellblasters</td><td>1</td><td>2</td><td>—</td></tr>
+                    <tr><td>Bladeguard</td><td>0</td><td>1</td><td>—</td></tr>
+                    <tr><td>Vanguard Veterans</td><td>1</td><td>1</td><td>—</td></tr>
+                    <tr><td>Leviathan Dreadnought</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Outriders</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Ravenwing Command Squad</td><td>0</td><td>1</td><td class="destroyed">Destroyed</td></tr>
+                    <tr><td>Sicaran Venator</td><td>1</td><td>2</td><td class="destroyed">Destroyed</td></tr>
+                </table>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9em;"><strong>Total:</strong> 4 units destroyed &bull; 46 XP gained</p>
+            </div>
+        </section>
+
+        <!-- Agendas & Rewards -->
+        <section>
+            <h2>Agendas &amp; Rewards</h2>
+            <div class="card">
+                <h3>Aeldari — Bahzhakhain Süirel</h3>
+                <p style="color: var(--text-muted); font-style: italic;">Agendas not recorded.</p>
 
                 <h3 style="margin-top: 25px;">Dark Angels — The Judgement of Aldurukh</h3>
-                <p><a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/dark-angels#Agendas-2" target="_blank">Dark Angels Agendas &rarr;</a></p>
-                <p style="margin-top: 8px; color: var(--text-muted); font-style: italic;">Agendas to be recorded here before engagement begins.</p>
+                <p style="color: var(--text-muted); font-style: italic;">Agendas not recorded.</p>
 
                 <div class="note" style="margin-top: 20px;">
                     <strong>Nachmund Campaign Agendas:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Wahapedia</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Post-Battle Checklist -->
-        <section>
-            <h2>Post-Battle Checklist</h2>
-            <div class="card">
-                <ul class="checklist">
-                    <li>Record final score and victor</li>
-                    <li>Record all agenda results (achieved / failed)</li>
-                    <li>Record XP for every unit (kills, agenda bonuses, participation)</li>
-                    <li>Apply Victor Bonus — units wholly in Defender's deployment zone gain 1XP each; if victor controls DDZ objective, gain 1SAP</li>
-                    <li>Note any units Destroyed, Battle Scarred, or Marked for Greatness</li>
-                    <li>Update Administratum tracker</li>
-                    <li>Run <code>/finalize-battle 024</code> to complete this report</li>
-                </ul>
             </div>
         </section>
 

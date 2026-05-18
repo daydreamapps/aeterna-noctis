@@ -533,7 +533,7 @@
       "mission": "Final Stand 1",
       "type": "hulk",
       "file": "battle_024_the_dying_light.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 838,
       "date_real": "2026-05-13",
       "combatants": {
@@ -541,7 +541,10 @@
         "defender": "dark-angels"
       },
       "agendas": null,
-      "result": null
+      "result": {
+        "victor": "marauders",
+        "score": { "attacker": 12, "defender": 7 }
+      }
     },
     "017": {
       "title": "Rust and Ruin",
