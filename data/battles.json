@@ -491,15 +491,21 @@
       "mission": "The Gauntlet 5",
       "type": "hulk",
       "file": "battle_025_the_rusted_bulwark.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 839,
       "date_real": "2026-05-17",
       "combatants": {
         "attacker": "black-templars",
         "defender": "death-guard"
       },
-      "agendas": null,
-      "result": null
+      "agendas": {
+        "black-templars": ["First-Hand Experience", "Fulfil Your Vows", "Oaths of Crusade"],
+        "death-guard": ["Viral Harvest", "Repel the Foe"]
+      },
+      "result": {
+        "victor": "draw",
+        "score": { "attacker": 11, "defender": 11 }
+      }
     },
     "026": {
       "title": "The Vanishing Protocol",

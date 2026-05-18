@@ -189,6 +189,24 @@
         .card::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
         .card::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
 
+        .result-banner {
+            text-align: center;
+            padding: 20px;
+            margin: 25px 0;
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 3px solid;
+        }
+
+        .result-banner.draw {
+            background: linear-gradient(145deg, #3d3d3d 0%, #1a1a1a 100%);
+            border-color: #666;
+            color: #aaa;
+        }
+
         .vox-transmission {
             background: linear-gradient(145deg, #0d1a0d 0%, #0a0f0a 100%);
             border: 2px solid #2d4a2d;
@@ -230,45 +248,6 @@
             border-top: 1px solid #2d4a2d;
             color: #6a9a6a;
             font-style: italic;
-        }
-
-        .pending-banner {
-            text-align: center;
-            padding: 20px;
-            margin: 25px 0;
-            font-family: 'Cinzel', serif;
-            font-size: 1em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border: 3px solid var(--accent-bronze);
-            background: linear-gradient(145deg, #1a1508 0%, #120f05 100%);
-            color: var(--accent-gold);
-        }
-
-        .note {
-            background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
-            border: 2px solid var(--accent-bronze);
-            padding: 15px 20px;
-            margin: 15px 0;
-        }
-
-        .note::before { content: '⚙ '; color: var(--accent-gold); }
-
-        .mission-obj {
-            background: linear-gradient(145deg, #0a100a 0%, #080d08 100%);
-            border-left: 3px solid #4a9956;
-            padding: 15px 20px;
-            margin: 15px 0;
-        }
-
-        .mission-obj h4 {
-            font-family: 'Cinzel', serif;
-            color: #6ab870;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
         }
 
         .matchup {
@@ -325,13 +304,64 @@
         .role-tag.defender { background: #2d5a4a; color: var(--text); }
         .role-tag.attacker { background: #8b3030; color: var(--text); }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
+        }
+
+        tr:nth-child(even) { background: rgba(0,0,0,0.2); }
+
+        .destroyed { color: #995656; }
+        .battle-scar { color: #c9a227; }
+        .marked { color: #4a9956; font-weight: bold; }
+
+        .note {
+            background: linear-gradient(145deg, rgba(201, 162, 39, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
+            border: 2px solid var(--accent-bronze);
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .note::before { content: '⚙ '; color: var(--accent-gold); }
+
+        .mission-obj {
+            background: linear-gradient(145deg, #0a100a 0%, #080d08 100%);
+            border-left: 3px solid #4a9956;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .mission-obj h4 {
+            font-family: 'Cinzel', serif;
+            color: #6ab870;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
         ul { margin-left: 25px; margin-bottom: 15px; }
         li { margin: 10px 0; }
         li::marker { color: var(--accent); }
-
-        .checklist { list-style: none; margin-left: 0; }
-        .checklist li { padding-left: 5px; }
-        .checklist li::before { content: '☐ '; color: var(--accent-gold); font-size: 1.1em; }
 
         a { color: var(--accent-gold); text-decoration: none; transition: all 0.2s; }
         a:hover { color: var(--bone); text-shadow: 0 0 10px var(--shadow-gold); }
@@ -410,114 +440,267 @@
             <p class="subtitle">The Gauntlet 5 — 17 May 2026</p>
         </header>
 
-        <!-- Pending Banner -->
-        <div class="pending-banner">
-            ++ Engagement Pending — Awaiting Resolution ++
+        <!-- Result Banner -->
+        <div class="result-banner draw">
+            Draw — The Bulwark Does Not Fall
         </div>
 
-        <!-- Matchup -->
+        <!-- Matchup with Score -->
         <div class="matchup">
             <div class="combatant">
                 <span class="role-tag attacker">Attacker</span>
                 <div class="combatant-alliance guardians">Guardians</div>
                 <div class="combatant-name">The Crusade of Binding Chains</div>
-                <div class="combatant-faction">Black Templars</div>
+                <div class="combatant-faction">Black Templars (1470pts)</div>
             </div>
-            <div class="versus">vs</div>
+            <div class="versus">11 — 11</div>
             <div class="combatant">
                 <span class="role-tag defender">Defender</span>
                 <div class="combatant-alliance despoilers">Despoilers</div>
                 <div class="combatant-name">The Sons of Decay</div>
-                <div class="combatant-faction">Death Guard</div>
+                <div class="combatant-faction">Death Guard (1585pts)</div>
             </div>
         </div>
 
-        <!-- Pre-Battle VOX Transmission -->
+        <!-- After-Action VOX Transmission -->
         <div class="vox-transmission">
             <div class="vox-header">
-                <span class="vox-priority">++ Priority: Vermillion ++</span>
+                <span class="vox-priority">++ Priority: Amber ++</span>
                 <span>++ Source: Aeterna Noctis Sensorium ++</span>
-                <span>++ Timestamp: 839.M42 — PRE-ENGAGEMENT ++</span>
+                <span>++ Timestamp: 839.M42 — AFTER-ACTION ++</span>
             </div>
             <div class="vox-body">
-                <p>ENGAGEMENT IMMINENT: Space Hulk Aeterna Noctis — Sub-sector Malakor. Astartes assault column advancing on entrenched Despoiler position. Designation: THE CRUSADE OF BINDING CHAINS. Affiliation: Guardians. Threat classification: Extreme.</p>
-                <p>The Black Templars do not deliberate. They do not calculate odds or weigh probability. When the High Marshal's vow is given, the Chapter advances — and the Crusade of Binding Chains has sworn to break whatever stands before them in this wretched hulk. The corridors ahead are choked with plague and rot, a gauntlet of Nurgle's making, and the sons of Sigismund answer with chain blades and unbroken faith. They have run worse gauntlets than this.</p>
-                <p>The Sons of Decay have had time to prepare. Where another army might fortify with sandbags and wire, Mortarion's sons fortify with rot. The passages reek of Nurgle's blessings — layered defences of bloated flesh and corroded iron that have held against the best the hulk's other warbands could muster. Against the Black Templars, however, there is no such precedent. These warriors do not stop. They do not retreat. They only die or prevail.</p>
+                <p>AFTER-ACTION REPORT: The Gauntlet engagement concluded. Outcome: INCONCLUSIVE. The Rusted Bulwark stands. Neither the faith of the Templars nor the rot of Nurgle proved sufficient to claim dominion.</p>
+                <p>The Crusade of Binding Chains drove hard into the centre, the Emperor's Champion carving through the Lord of Virulence before being slain by the Foul Blightspawn in the third round. High Marshal Helbrecht led from the front throughout, his Smite-like presence calling down Mortal Wounds — but the Death Guard's recovery protocols and reinforcement waves absorbed every assault. The Crusader Squad ran the gauntlet further than any other, accounting for four kills across Deathshroud, Plague Marines, and the Plague Lord Sepharox, before the Foetid Bloat-Drone ended them in the fifth round.</p>
+                <p>That same Bloat-Drone — three kills to its name — was finally silenced by a lone Invader ATV in the dying moments of the battle. The Tallyman recorded everything from the backfield: untouched, patient, a scholar of attrition. Eleven dead on each side. The score immovable.</p>
             </div>
             <div class="vox-footer">
-                <em>"No oath sworn before the Emperor shall go unfulfilled. Not here. Not against these."</em><br>
-                — Marshal's address to the Crusade of Binding Chains, intercepted 839.M42
+                <em>"I have memorised the face of every soul that fell today. Their names will be recited at the next liturgy."</em><br>
+                — The Tallyman, 839.M42
             </div>
         </div>
 
-        <!-- Mission Overview -->
+        <!-- Marked for Greatness -->
         <section>
-            <h2>Mission Overview</h2>
+            <h2>Marked for Greatness</h2>
             <div class="card">
-                <p><strong>Mission:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#The-Gauntlet" target="_blank">The Gauntlet 5</a> — Nachmund Gauntlet Crusade Mission</p>
-                <p style="margin-top: 12px; color: var(--text-muted); font-style: italic;">Whether driving home an attack against a loyalist strongpoint or seeking to eliminate an exposed heretic base, many offensives see attackers run a gauntlet of potent enemy defences.</p>
+                <h3>Death Guard — Tallyman</h3>
+                <p>0 kills, 4 XP. Positioned in the backfield throughout the engagement, the Tallyman catalogued every death with meticulous devotion — emerging from the battle entirely unscathed. His record-keeping proved invaluable to the Sons of Decay's strategic awareness.</p>
 
-                <h3>Mission Rules</h3>
-
-                <div class="mission-obj">
-                    <h4>Strategic Offensive</h4>
-                    <p>The <strong>Attacker decides</strong> which player has the first turn.</p>
-                </div>
-
-                <div class="mission-obj">
-                    <h4>Punch Through Their Defences</h4>
-                    <p>At the end of the <strong>Attacker's turn</strong>, after scoring VP, any objective markers controlled by the Attacker are <strong>removed from the battlefield</strong>.</p>
-                </div>
-
-                <div class="mission-obj">
-                    <h4>Up the Middle</h4>
-                    <p>Units from the Attacker's army arriving from <strong>Tactical Reserves</strong> cannot be set up within the <strong>Defender's deployment zone</strong>.</p>
-                </div>
-
-                <h3 style="margin-top: 25px;">Deployment</h3>
-                <img src="https://wahapedia.ru/wh40k10ed/img/maps/ng/TheGauntlet.png" alt="The Gauntlet deployment map" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border: 2px solid var(--border);">
-                <p style="font-size: 0.9em; color: var(--text-muted);">Five objective markers arranged across three zones: <strong>Alpha Zone</strong> (Attacker's side), <strong>Beta Zone</strong> (centre), and <strong>Gamma Zone</strong> (Defender's side).</p>
+                <h3 style="margin-top: 20px;">Black Templars — Venerable Battle-Brother [Crucible]</h3>
+                <p>0 kills, 4 XP. The ancient Dreadnought anchored the Templars' advance across every round, drawing fire and absorbing punishment that would have shattered lesser warriors. Destroyed in the final stages, its legacy endures in the Crusade's honour rolls.</p>
             </div>
         </section>
 
-        <!-- Mission Objectives -->
+        <!-- Death Guard Casualties -->
         <section>
-            <h2>Mission Objectives</h2>
+            <h2>Death Guard — The Sons of Decay</h2>
             <div class="card">
-                <h3>Layered Defence <span style="color: var(--text-muted); font-size: 0.85em; font-family: 'Crimson Text';">— Progressive (Defender)</span></h3>
-                <p>Defence in depth sees the attacking forces strung out.</p>
-                <ul style="margin-top: 10px;">
-                    <li>At the end of the <strong>Defender's turn</strong>, if they control <strong>3 or more objective markers</strong>, they score <strong>1VP</strong>.</li>
-                    <li>At the end of the <strong>Defender's turn</strong>, if there are <strong>no enemy units within the Gamma Zone</strong>, the Defender scores <strong>1VP</strong>.</li>
-                    <li>At the end of the <strong>Defender's turn</strong>, if <strong>one or more enemy units were destroyed</strong> that turn, the Defender scores <strong>1VP</strong>.</li>
-                </ul>
-
-                <h3 style="margin-top: 25px;">Run the Gauntlet <span style="color: var(--text-muted); font-size: 0.85em; font-family: 'Crimson Text';">— Progressive (Attacker)</span></h3>
-                <p>The attackers drive their spear into the heart of the foe.</p>
-                <ul style="margin-top: 10px;">
-                    <li>At the end of the <strong>Attacker's turn</strong>, for each <strong>objective marker they control</strong>, they score <strong>1VP</strong>.</li>
-                    <li>At the end of the <strong>Attacker's turn</strong>, they score VP if one or more units from their <strong>Primary Wave</strong> are wholly within:
-                        <ul style="margin-top: 5px;">
-                            <li>the <strong>Alpha Zone</strong> — <strong>1VP</strong></li>
-                            <li>the <strong>Beta Zone</strong> — <strong>2VP</strong></li>
-                            <li>the <strong>Gamma Zone</strong> — <strong>3VP</strong></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3 style="margin-top: 25px;">Victor Bonus</h3>
-                <p>The victor's Crusade force gains <strong>1RP</strong> and <strong>1SAP</strong>.</p>
+                <table>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>Tallyman</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td class="marked">Marked for Greatness</td>
+                    </tr>
+                    <tr>
+                        <td>Myphitic Blight-Hauler</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Lord [Crucible] — Spurt</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Foul Blightspawn</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Surgeon</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Marines</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Marines</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Poxwalkers</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Chaos Spawn</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td class="battle-scar">Battle Scar</td>
+                    </tr>
+                    <tr>
+                        <td>Blightlord Terminators</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Death Guard Cultists</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Deathshroud Terminators</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Foetid Bloat-Drone (Heavy Blight Launcher)</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Lord of Poxes</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Lord of Virulence</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Lord</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Plague Marines</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 15px;"><strong>Total:</strong> 11 kills | 38 XP earned | 7 units destroyed | 1 battle scar</p>
             </div>
         </section>
 
-        <!-- Tactical Reserves -->
+        <!-- Black Templars Casualties -->
         <section>
-            <h2>Tactical Reserves</h2>
+            <h2>Black Templars — The Crusade of Binding Chains</h2>
             <div class="card">
-                <div class="note">
-                    <strong>Up the Middle:</strong> Attacker's Tactical Reserves cannot arrive in the Defender's deployment zone. Plan your Reserve drops accordingly.
-                </div>
-                <p>Both commanders should declare their Tactical Reserve units before the battle begins.</p>
+                <table>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Kills</th>
+                        <th>XP</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>Venerable Battle-Brother [Crucible]</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td class="marked">Marked for Greatness / Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Crusader Squad (Battle-Ready)</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Captain in Gravis Armour (Battle-Ready)</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Agressors</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Apothecary (Battle-Ready)</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Assault Intercessor Squad (Battle-Ready)</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Emperor's Champion (Anointed)</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>High Marshal Helbrecht</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Inceptor Squad (Battle-Ready)</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Intercessor Squad (Battle-Ready)</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Vindicator</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="destroyed">Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Infiltrator Squad</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>Survived</td>
+                    </tr>
+                    <tr>
+                        <td>Invader ATV (Battle-Ready)</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>Survived</td>
+                    </tr>
+                </table>
+                <p style="margin-top: 15px;"><strong>Total:</strong> 7 kills | 21 XP earned | 11 units destroyed | 0 battle scars</p>
             </div>
         </section>
 
@@ -525,40 +708,58 @@
         <section>
             <h2>Agendas</h2>
             <div class="card">
-                <p>Each commander selects their agendas before the battle.</p>
+                <h3>Black Templars — First-Hand Experience</h3>
+                <p>Each time an enemy unit is destroyed by a Crusader Squad, that unit gains 1XP (max 3XP). +2 Honour if a unit gained 2+ XP.</p>
+                <ul style="margin-top: 10px;">
+                    <li>Crusader Squad — +3XP</li>
+                    <li><strong>+2 Honour Points</strong></li>
+                </ul>
 
-                <h3 style="margin-top: 20px;">Black Templars — The Crusade of Binding Chains</h3>
-                <p><a href="https://wahapedia.ru/wh40k10ed/factions/space-marines/black-templars#Agendas-2" target="_blank">Black Templars Agendas &rarr;</a></p>
-                <p style="margin-top: 8px; color: var(--text-muted); font-style: italic;">Agendas to be recorded here before engagement begins.</p>
+                <h3 style="margin-top: 25px;">Black Templars — Fulfil Your Vows</h3>
+                <p>Select up to 3 units (with Accept Any Challenge vow) that destroyed a CHARACTER, MONSTER or VEHICLE. Each gains 1XP; +2 Honour if 2+ selected.</p>
+                <ul style="margin-top: 10px;">
+                    <li>Captain in Gravis Armour — +1XP</li>
+                    <li>Crusader Squad — +1XP</li>
+                    <li>Invader ATV — +1XP</li>
+                    <li><strong>+2 Honour Points</strong></li>
+                </ul>
 
-                <h3 style="margin-top: 25px;">Death Guard — The Sons of Decay</h3>
-                <p><a href="https://wahapedia.ru/wh40k10ed/factions/death-guard#Agendas" target="_blank">Death Guard Agendas &rarr;</a></p>
-                <p style="margin-top: 8px; color: var(--text-muted); font-style: italic;">Agendas to be recorded here before engagement begins.</p>
+                <h3 style="margin-top: 25px;">Black Templars — Oaths of Crusade</h3>
+                <ul style="margin-top: 10px;">
+                    <li>Bring Glory to His Name — <span style="color: var(--accent-bright);">Failed</span> (draw)</li>
+                    <li>Lay Low the Mightiest Tyrants — <span style="color: #4a9956;">Achieved</span> (+2 Honour, +1 Relic Fragment)</li>
+                    <li>Ere Our Blades Strike at Their Heart — <span style="color: var(--accent-bright);">Failed</span></li>
+                </ul>
 
-                <div class="note" style="margin-top: 20px;">
-                    <strong>Nachmund Campaign Agendas:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas" target="_blank">Wahapedia</a>
-                </div>
+                <h3 style="margin-top: 25px;">Death Guard — Viral Harvest &amp; Repel the Foe</h3>
+                <p style="color: var(--text-muted); font-style: italic;">Outcomes not recorded.</p>
             </div>
         </section>
 
-        <!-- Post-Battle Checklist -->
+        <!-- Mission Reference -->
         <section>
-            <h2>Post-Battle Checklist</h2>
+            <h2>Mission Reference</h2>
             <div class="card">
-                <ul class="checklist">
-                    <li>Record final score and victor</li>
-                    <li>Record all agenda results (achieved / failed)</li>
-                    <li>Record XP for every unit (kills, agenda bonuses, participation)</li>
-                    <li>Apply Victor Bonus — victor gains 1RP and 1SAP</li>
-                    <li>Note any units Destroyed, Battle Scarred, or Marked for Greatness</li>
-                    <li>Update Administratum tracker</li>
-                    <li>Run <code>/finalize-battle 025</code> to complete this report</li>
-                </ul>
+                <p><strong>Mission:</strong> <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#The-Gauntlet" target="_blank">The Gauntlet 5</a> — Nachmund Gauntlet</p>
+                <img src="https://wahapedia.ru/wh40k10ed/img/maps/ng/TheGauntlet.png" alt="The Gauntlet deployment map" style="max-width: 100%; height: auto; display: block; margin: 15px 0; border: 2px solid var(--border);">
+
+                <div class="mission-obj">
+                    <h4>Layered Defence (Defender)</h4>
+                    <p>End of Defender's turn: +1VP for 3+ objectives controlled; +1VP if no enemies in Gamma Zone; +1VP if an enemy unit was destroyed that turn.</p>
+                </div>
+
+                <div class="mission-obj">
+                    <h4>Run the Gauntlet (Attacker)</h4>
+                    <p>End of Attacker's turn: +1VP per objective controlled; +1/2/3VP if Primary Wave units are wholly in Alpha/Beta/Gamma Zone. Controlled objectives are then removed.</p>
+                </div>
+
+                <h3 style="margin-top: 20px;">Victor Bonus</h3>
+                <p>Victor gains <strong>2 Requisition Points</strong>. Draw — no bonus awarded.</p>
             </div>
         </section>
 
         <footer>
-            <p>Every corridor reeks of the plague. The machines do not care. They advance.</p>
+            <p>Every corridor reeks of the plague. The Crusade advances. Neither side yields. The bulwark remains.</p>
         </footer>
     </div>
 </body>
