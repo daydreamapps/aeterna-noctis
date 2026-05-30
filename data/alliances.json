@@ -78,6 +78,12 @@
           "faction": "leagues-of-votann",
           "army_name": "The Trans-Eternians Alliance",
           "home_world": null
+        },
+        {
+          "player": null,
+          "faction": "orks",
+          "army_name": "Da Green Tide",
+          "home_world": null
         }
       ]
     }

@@ -546,6 +546,21 @@
         "score": { "attacker": 12, "defender": 7 }
       }
     },
+    "027": {
+      "title": "The Sacred Dismantling",
+      "mission": "Saboteurs 2",
+      "type": "hulk",
+      "file": "battle_027_the_sacred_dismantling.html",
+      "status": "pending",
+      "date_m42": 841,
+      "date_real": "2026-05-30",
+      "combatants": {
+        "attacker": "adeptus-mechanicus",
+        "defender": "orks"
+      },
+      "agendas": null,
+      "result": null
+    },
     "017": {
       "title": "Rust and Ruin",
       "mission": "Front-line Warfare 5",

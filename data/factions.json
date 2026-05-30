@@ -55,6 +55,13 @@
       "alliance": "guardians",
       "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus#Agendas",
       "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/adeptus-mechanicus#Crusade-Rules"
+    },
+    "orks": {
+      "name": "Orks",
+      "parent_faction": null,
+      "alliance": "marauders",
+      "agendas_url": "https://wahapedia.ru/wh40k10ed/factions/orks#Agendas",
+      "crusade_rules_url": "https://wahapedia.ru/wh40k10ed/factions/orks#Crusade-Rules"
     }
   },
   "nachmund_agendas_url": "https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/#Agendas"
