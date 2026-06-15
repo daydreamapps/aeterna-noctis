@@ -1,6 +1,6 @@
 {
   "current_phase": 1,
-  "m42_date": 838,
+  "m42_date": 858,
   "battles": {
     "001": {
       "title": "Breach of Sector Theta-9",
@@ -44,7 +44,10 @@
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": null, "defender": null }
+        "score": {
+          "attacker": null,
+          "defender": null
+        }
       }
     },
     "004": {
@@ -61,7 +64,10 @@
       },
       "result": {
         "victor": "guardians",
-        "score": { "attacker": 10, "defender": 0 }
+        "score": {
+          "attacker": 10,
+          "defender": 0
+        }
       }
     },
     "005": {
@@ -78,7 +84,10 @@
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 5, "defender": 4 }
+        "score": {
+          "attacker": 5,
+          "defender": 4
+        }
       }
     },
     "006": {
@@ -106,7 +115,10 @@
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 12, "defender": 14 }
+        "score": {
+          "attacker": 12,
+          "defender": 14
+        }
       }
     },
     "007": {
@@ -133,7 +145,10 @@
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 4, "defender": 16 }
+        "score": {
+          "attacker": 4,
+          "defender": 16
+        }
       }
     },
     "008": {
@@ -162,7 +177,10 @@
       },
       "result": {
         "victor": "marauders",
-        "score": { "attacker": 8, "defender": 12 }
+        "score": {
+          "attacker": 8,
+          "defender": 12
+        }
       }
     },
     "009": {
@@ -180,7 +198,10 @@
       "agendas": null,
       "result": {
         "victor": "draw",
-        "score": { "attacker": 6, "defender": 6 }
+        "score": {
+          "attacker": 6,
+          "defender": 6
+        }
       }
     },
     "010": {
@@ -207,7 +228,10 @@
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 7, "defender": 11 }
+        "score": {
+          "attacker": 7,
+          "defender": 11
+        }
       }
     },
     "011": {
@@ -234,7 +258,10 @@
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 10, "defender": 8 }
+        "score": {
+          "attacker": 10,
+          "defender": 8
+        }
       }
     },
     "012": {
@@ -274,7 +301,10 @@
       },
       "result": {
         "victor": "guardians",
-        "score": { "attacker": 8, "defender": 4 }
+        "score": {
+          "attacker": 8,
+          "defender": 4
+        }
       }
     },
     "014": {
@@ -301,7 +331,10 @@
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 11, "defender": 5 }
+        "score": {
+          "attacker": 11,
+          "defender": 5
+        }
       }
     },
     "015": {
@@ -325,7 +358,10 @@
       },
       "result": {
         "victor": "guardians",
-        "score": { "attacker": 14, "defender": 8 }
+        "score": {
+          "attacker": 14,
+          "defender": 8
+        }
       }
     },
     "016": {
@@ -353,7 +389,10 @@
       },
       "result": {
         "victor": "draw",
-        "score": { "attacker": 11, "defender": 11 }
+        "score": {
+          "attacker": 11,
+          "defender": 11
+        }
       }
     },
     "018": {
@@ -371,7 +410,10 @@
       "agendas": null,
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 0, "defender": 16 }
+        "score": {
+          "attacker": 0,
+          "defender": 16
+        }
       }
     },
     "019": {
@@ -399,7 +441,10 @@
       },
       "result": {
         "victor": "guardians",
-        "score": { "attacker": 4, "defender": 3 }
+        "score": {
+          "attacker": 4,
+          "defender": 3
+        }
       }
     },
     "020": {
@@ -416,11 +461,17 @@
       },
       "agendas": {
         "death-guard": [],
-        "adeptus-mechanicus": ["Tech Scavengers", "Search Drop Site"]
+        "adeptus-mechanicus": [
+          "Tech Scavengers",
+          "Search Drop Site"
+        ]
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 6, "defender": 4 }
+        "score": {
+          "attacker": 6,
+          "defender": 4
+        }
       }
     },
     "022": {
@@ -436,12 +487,21 @@
         "defender": "death-guard"
       },
       "agendas": {
-        "death-guard": ["Repel the Foe", "Viral Harvest"],
-        "aeldari": ["None Survive", "Evasive"]
+        "death-guard": [
+          "Repel the Foe",
+          "Viral Harvest"
+        ],
+        "aeldari": [
+          "None Survive",
+          "Evasive"
+        ]
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 3, "defender": 12 }
+        "score": {
+          "attacker": 3,
+          "defender": 12
+        }
       }
     },
     "021": {
@@ -458,18 +518,24 @@
       },
       "agendas": {
         "chaos-space-marines": [],
-        "adeptus-mechanicus": ["Tech Scavengers", "Search Drop Site"]
+        "adeptus-mechanicus": [
+          "Tech Scavengers",
+          "Search Drop Site"
+        ]
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 11, "defender": 9 }
+        "score": {
+          "attacker": 11,
+          "defender": 9
+        }
       }
     },
     "023": {
-      "title": "The Iron Shore",
+      "title": "The Dying Light",
       "mission": "Beachhead Offensive 4",
       "type": "hulk",
-      "file": "battle_023_the_iron_shore.html",
+      "file": "battle_023_the_dying_light.html",
       "status": "completed",
       "date_m42": 837,
       "date_real": "2026-05-12",
@@ -478,34 +544,53 @@
         "defender": "aeldari"
       },
       "agendas": {
-        "adeptus-mechanicus": ["Tech Scavengers", "Search Drop Site", "Cut Off the Head"],
+        "adeptus-mechanicus": [
+          "Tech Scavengers",
+          "Search Drop Site",
+          "Cut Off the Head"
+        ],
         "aeldari": []
       },
       "result": {
         "victor": "guardians",
-        "score": { "attacker": 11, "defender": 8 }
-      }
+        "score": {
+          "attacker": 11,
+          "defender": 8
+        }
+      },
+      "sync_note": "Retitled from 'The Iron Shore' per Administratum source of truth"
     },
     "025": {
-      "title": "The Rusted Bulwark",
+      "title": "Rothold Assault",
       "mission": "The Gauntlet 5",
       "type": "hulk",
-      "file": "battle_025_the_rusted_bulwark.html",
-      "status": "completed",
+      "file": "battle_025_rothold_assault.html",
+      "status": "pending_approval",
       "date_m42": 839,
       "date_real": "2026-05-17",
       "combatants": {
-        "attacker": "black-templars",
-        "defender": "death-guard"
+        "attacker": "death-guard",
+        "defender": "black-templars"
       },
       "agendas": {
-        "black-templars": ["First-Hand Experience", "Fulfil Your Vows", "Oaths of Crusade"],
-        "death-guard": ["Viral Harvest", "Repel the Foe"]
+        "black-templars": [
+          "First-Hand Experience",
+          "Fulfil Your Vows",
+          "Oaths of Crusade"
+        ],
+        "death-guard": [
+          "Viral Harvest",
+          "Repel the Foe"
+        ]
       },
       "result": {
         "victor": "draw",
-        "score": { "attacker": 11, "defender": 11 }
-      }
+        "score": {
+          "attacker": 11,
+          "defender": 11
+        }
+      },
+      "sync_note": "Retitled from 'The Rusted Bulwark' per Administratum source of truth; pending approval on Goonhammer; attacker/defender ordering aligned to Administratum"
     },
     "026": {
       "title": "The Vanishing Protocol",
@@ -520,12 +605,18 @@
         "defender": "necrons"
       },
       "agendas": {
-        "adeptus-mechanicus": ["Cut Off the Head", "Tech Scavengers"],
+        "adeptus-mechanicus": [
+          "Cut Off the Head",
+          "Tech Scavengers"
+        ],
         "necrons": []
       },
       "result": {
         "victor": "draw",
-        "score": { "attacker": 5, "defender": 5 }
+        "score": {
+          "attacker": 5,
+          "defender": 5
+        }
       }
     },
     "024": {
@@ -542,16 +633,20 @@
       },
       "agendas": null,
       "result": {
-        "victor": "marauders",
-        "score": { "attacker": 12, "defender": 7 }
-      }
+        "victor": "guardians",
+        "score": {
+          "attacker": 7,
+          "defender": 11
+        }
+      },
+      "sync_note": "Corrected per Administratum source of truth; prior local result (12-7 Marauders) overturned"
     },
     "027": {
       "title": "The Sacred Dismantling",
       "mission": "Saboteurs 2",
       "type": "hulk",
       "file": "battle_027_the_sacred_dismantling.html",
-      "status": "pending",
+      "status": "completed",
       "date_m42": 841,
       "date_real": "2026-05-30",
       "combatants": {
@@ -559,7 +654,123 @@
         "defender": "orks"
       },
       "agendas": null,
-      "result": null
+      "result": {
+        "victor": "guardians",
+        "score": {
+          "attacker": 9,
+          "defender": 0
+        }
+      }
+    },
+    "030": {
+      "title": "Death Bladewind Incursion",
+      "mission": "The Gauntlet",
+      "type": "hulk",
+      "file": "battle_030_death_bladewind_incursion.html",
+      "status": "completed",
+      "date_m42": 840,
+      "date_real": "2026-05-18",
+      "combatants": {
+        "attacker": "aeldari",
+        "defender": "chaos-space-marines"
+      },
+      "agendas": null,
+      "result": {
+        "victor": "marauders",
+        "score": {
+          "attacker": 12,
+          "defender": 7
+        }
+      },
+      "sync_note": "Administratum-synced; no battle page generated yet"
+    },
+    "031": {
+      "title": "Green Scourging",
+      "mission": "Beachhead Offensive",
+      "type": "hulk",
+      "file": "battle_031_green_scourging.html",
+      "status": "completed",
+      "date_m42": 842,
+      "date_real": "2026-05-23",
+      "combatants": {
+        "attacker": "orks",
+        "defender": "aeldari"
+      },
+      "agendas": null,
+      "result": {
+        "victor": "marauders",
+        "score": {
+          "attacker": 14,
+          "defender": 8
+        }
+      },
+      "sync_note": "Administratum-synced; Marauders mirror match; no battle page generated yet"
+    },
+    "032": {
+      "title": "Chaos Brutalities",
+      "mission": "Final Stand",
+      "type": "hulk",
+      "file": "battle_032_chaos_brutalities.html",
+      "status": "completed",
+      "date_m42": 843,
+      "date_real": "2026-05-24",
+      "combatants": {
+        "attacker": "death-guard",
+        "defender": "chaos-space-marines"
+      },
+      "agendas": null,
+      "result": {
+        "victor": "despoilers",
+        "score": {
+          "attacker": 19,
+          "defender": 18
+        }
+      },
+      "sync_note": "Administratum-synced; Despoilers mirror match; no battle page generated yet"
+    },
+    "033": {
+      "title": "Blood Bowl Gauntlet",
+      "mission": "The Gauntlet",
+      "type": "hulk",
+      "file": "battle_033_blood_bowl_gauntlet.html",
+      "status": "completed",
+      "date_m42": 855,
+      "date_real": "2026-06-06",
+      "combatants": {
+        "attacker": "necrons",
+        "defender": "orks"
+      },
+      "agendas": null,
+      "result": {
+        "victor": "marauders",
+        "score": {
+          "attacker": 13,
+          "defender": 10
+        }
+      },
+      "sync_note": "Administratum-synced; Marauders mirror match; no battle page generated yet"
+    },
+    "034": {
+      "title": "Old Grudges Resumed",
+      "mission": "The Gauntlet",
+      "type": "hulk",
+      "file": "battle_034_old_grudges_resumed.html",
+      "status": "pending_approval",
+      "date_m42": 858,
+      "date_real": "2026-06-10",
+      "combatants": {
+        "attacker": "dark-angels",
+        "defender": "leagues-of-votann"
+      },
+      "agendas": null,
+      "result": {
+        "victor": "guardians",
+        "score": {
+          "attacker": 14,
+          "defender": 6
+        }
+      },
+      "sync_note": "Administratum-synced; pending approval on Goonhammer; no battle page generated"
     },
     "017": {
       "title": "Rust and Ruin",
@@ -584,7 +795,10 @@
       },
       "result": {
         "victor": "despoilers",
-        "score": { "attacker": 5, "defender": 9 }
+        "score": {
+          "attacker": 5,
+          "defender": 9
+        }
       }
     }
   }

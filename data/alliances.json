@@ -5,7 +5,7 @@
       "tagline": "Those who seek to save the sector—or claim its protection for themselves.",
       "color": "#4a9956",
       "cvp": 0,
-      "sap": 7,
+      "sap": 9,
       "warmaster": null,
       "requisition_pool": 0,
       "members": [
@@ -34,7 +34,7 @@
       "tagline": "Those who would see the sector burn, if only to warm themselves by the flames.",
       "color": "#9b4d96",
       "cvp": 4,
-      "sap": 4,
+      "sap": 5,
       "warmaster": null,
       "requisition_pool": 0,
       "members": [
@@ -57,7 +57,7 @@
       "tagline": "Those who care nothing for worlds or hulks—only plunder.",
       "color": "#c9a227",
       "cvp": 1,
-      "sap": 7,
+      "sap": 9,
       "warmaster": null,
       "requisition_pool": 0,
       "members": [
