@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase III — Aeterna Noctis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1612;
+            --bg-highlight: #241a14;
+            --accent: #8b0000;
+            --accent-bright: #c41e3a;
+            --accent-gold: #c9a227;
+            --accent-bronze: #8b6914;
+            --text: #e8dcc4;
+            --text-muted: #9a8b7a;
+            --bone: #d4c4a8;
+            --border: #3d3225;
+            --shadow-red: rgba(139, 0, 0, 0.4);
+            --shadow-gold: rgba(201, 162, 39, 0.3);
+            --guardians: #2a4a2a;
+            --guardians-text: #7ec87e;
+            --despoilers: #4a1a1a;
+            --despoilers-text: #c87e7e;
+            --marauders: #1a1a4a;
+            --marauders-text: #7e7ec8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            background-image:
+                radial-gradient(ellipse at top, #1a0a0a 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, #0a0a1a 0%, transparent 50%);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 70px 20px 20px 20px;
+            min-height: 100vh;
+        }
+
+        .toolbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: linear-gradient(180deg, #0d0a08 0%, #1a1210 100%);
+            border-bottom: 2px solid var(--border);
+            padding: 0 20px;
+            z-index: 999;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.8);
+        }
+
+        .toolbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        .toolbar-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .toolbar-brand:hover {
+            color: var(--accent-gold);
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        .toolbar-links { display: flex; gap: 5px; align-items: center; }
+
+        .toolbar-links a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75em;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 8px 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .toolbar-links a:hover {
+            color: var(--accent-gold);
+            border-color: var(--border);
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        .toolbar-links a.external::after { content: ' ↗'; font-size: 0.8em; opacity: 0.6; }
+        .toolbar-divider { width: 1px; height: 20px; background: var(--border); margin: 0 5px; }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; position: relative; }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 20%, var(--accent-gold) 80%, transparent 100%);
+        }
+
+        .phase-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            color: var(--accent-bright);
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--shadow-red), 0 0 30px var(--shadow-red), 2px 2px 0 #000;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 1.1em;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--shadow-gold);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            margin: 50px 0 25px 0;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--shadow-gold);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--bone);
+            margin: 30px 0 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 2px solid var(--border);
+            padding: 30px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .card::before, .card::after {
+            content: '';
+            position: absolute;
+            width: 20px; height: 20px;
+            border-color: var(--accent-gold);
+            border-style: solid;
+        }
+        .card::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+        .card::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+        .vox-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-bronze);
+            display: inline-block;
+            padding: 3px 10px;
+            margin-bottom: 15px;
+        }
+
+        .vox-text {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: var(--text);
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border: 2px solid var(--accent-bronze);
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        td:first-child {
+            text-align: left;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+            color: var(--bone);
+        }
+
+        th {
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #2a1f1a 0%, #1a1210 100%);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-bronze);
+        }
+
+        th.guardians { color: var(--guardians-text); }
+        th.despoilers { color: var(--despoilers-text); }
+        th.marauders { color: var(--marauders-text); }
+
+        td.guardians { background: rgba(42, 74, 42, 0.25); color: var(--guardians-text); font-weight: 600; }
+        td.despoilers { background: rgba(74, 26, 26, 0.25); color: var(--despoilers-text); font-weight: 600; }
+        td.marauders { background: rgba(26, 26, 74, 0.25); color: var(--marauders-text); font-weight: 600; }
+
+        td.gain-positive { font-weight: 700; font-size: 1.1em; }
+        td.none { color: var(--text-muted); font-size: 0.85em; }
+        td.pending { color: var(--text-muted); font-style: italic; font-size: 0.85em; }
+
+        tr:hover td { background-color: rgba(255,255,255,0.02); }
+        tr:hover td.guardians { background: rgba(42, 74, 42, 0.35); }
+        tr:hover td.despoilers { background: rgba(74, 26, 26, 0.35); }
+        tr:hover td.marauders { background: rgba(26, 26, 74, 0.35); }
+
+        .table-note {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        @media (max-width: 700px) { .rules-grid { grid-template-columns: 1fr; } }
+
+        .rules-block {
+            background: linear-gradient(145deg, var(--bg-card) 0%, #12100d 100%);
+            border: 1px solid var(--border);
+            padding: 20px 24px;
+            position: relative;
+        }
+
+        .rules-block h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-gold);
+            font-size: 0.95em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .rules-block ul { list-style: none; padding: 0; }
+        .rules-block li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 18px;
+        }
+        .rules-block li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-bronze);
+        }
+        .rules-block li strong { color: var(--bone); }
+
+        .cvp-table td:first-child { font-family: 'Crimson Text', Georgia, serif; letter-spacing: normal; color: var(--text); }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+        }
+
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+        footer a:hover { color: var(--accent-bright); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 4px; }
+            .toolbar-links a { font-size: 0.65em; padding: 6px 8px; }
+            .toolbar-divider { display: none; }
+            th, td { padding: 10px 8px; font-size: 0.85em; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="toolbar">
+        <div class="toolbar-inner">
+            <a href="../../index.html" class="toolbar-brand">Aeterna Noctis</a>
+            <div class="toolbar-links">
+                <a href="../../battles/index.html">Battles</a>
+                <a href="../../rules/index.html">Rules</a>
+                <a href="../../players/index.html">Rosters</a>
+                <a href="../phase_1/index.html">Chronicles</a>
+                <span class="toolbar-divider"></span>
+                <a href="https://administratum.goonhammer.com/campaigns/019ccdaf-2230-78be-ae32-5440e44659b7" target="_blank" class="external">Tracker</a>
+                <a href="https://wahapedia.ru/wh40k10ed/the-rules/nachmund-gauntlet/" target="_blank" class="external hide-mobile">Wahapedia</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <p class="phase-label">Campaign Chronicle</p>
+            <h1>Phase III</h1>
+            <p class="subtitle">The Closing Labyrinth</p>
+        </header>
+
+        <h2>Vox-Intercept // Priority Omega</h2>
+
+        <div class="card">
+            <span class="vox-label">Transmitted: Phase III Commences</span>
+            <p class="vox-text">
+                It began without warning. At zero-four-hundred shipboard, the <em>Aeterna Noctis</em> <strong>accelerated</strong> — not by void-engine, for none function; not by Warp-tide, for the augurs sang no such song. The Hulk simply moved, as if remembering a course set ten thousand years ago. And as it moved, it began to <strong>close</strong>.
+                <br><br>
+                Bulkheads twenty metres thick slammed shut along corridors that had stood open since the Heresy. Whole transit shafts collapsed inward. Whole decks folded. Companies that marched as one were cleaved in two by descending blast-doors. Cohorts that held a junction at dusk woke at dawn to find that junction no longer existed — only a wall of black iron, humming with current that had no source.
+                <br><br>
+                <strong>The Hulk is herding us.</strong> Every sealed door, every collapsed gallery, every redirected vent of toxic vapour drives the survivors core-ward. Toward a chamber none of our charts marked. Toward an aperture that opened — <em>opened</em>, as if waiting — at the precise moment the outer exits sealed.
+                <br><br>
+                The core is exposed. The core is waiting. And the corridors between are now narrow enough that we may only meet each other.
+                <br><br>
+                Your forces are cut off. The units that were not at your side when the bulkheads fell are <em>gone</em> — pinned behind sealed iron, crushed beneath collapsing decks, lost to the dark. Their experience lives on in those who remain. Their banners do not.
+                <br><br>
+                Two cycles. Six battles. Three alliances. One opened heart. Bring only what you can carry. Bring only those who answered the muster. The Hulk is closing. Make the final blows count.
+            </p>
+        </div>
+
+        <h2>Phase III Rules</h2>
+
+        <div class="rules-grid">
+            <div class="rules-block">
+                <h4>Format</h4>
+                <ul>
+                    <li><strong>Duration:</strong> 2 weeks.</li>
+                    <li><strong>6 battles</strong> + 1 optional Grand Finale.</li>
+                    <li>Alliance vs Alliance round-robin. Each pairing plays 2 battles.</li>
+                    <li>Each alliance nominates <strong>two different players</strong> across the two battles of a given pairing.</li>
+                    <li>Teams self-coordinate scheduling within the 2-week window.</li>
+                    <li>No-show = battle recorded as <strong>missed</strong> (0 CVP).</li>
+                </ul>
+            </div>
+            <div class="rules-block">
+                <h4>Game</h4>
+                <ul>
+                    <li>10th Edition tournament rules.</li>
+                    <li><strong>2,000 pts</strong> per side. <strong>500 pt</strong> reserves cap.</li>
+                    <li>Mission: <strong>Purge the Foe</strong> — primary scoring only, no secondaries.</li>
+                    <li>No campaign waves, no Crusade sub-rules — clean tournament game.</li>
+                    <li>Unit upgrades, traits, battle honours, Hulk bonuses, and Crusade Blessings (CP-difference based) all carry over.</li>
+                </ul>
+            </div>
+            <div class="rules-block">
+                <h4>Army Lists</h4>
+                <ul>
+                    <li>Build up to 2,000 pts from your <strong>current Crusade roster</strong>.</li>
+                    <li>Units not selected are <strong>destroyed in-narrative</strong>. Their XP may be reallocated onto surviving units (XP only — not traits/honours).</li>
+                    <li>New units may be added as fresh additions.</li>
+                    <li><strong>Thematic upgrades</strong> permitted (e.g. Gravis → Terminators, transport → battle tank). Carry XP, pay new points cost. Keep it thematic.</li>
+                    <li>Sacrifice + reallocate XP to debut or level up a chosen unit.</li>
+                </ul>
+            </div>
+            <div class="rules-block">
+                <h4>CVP &amp; Finale</h4>
+                <ul>
+                    <li><strong>Win:</strong> 4 CVP &nbsp; <strong>Draw:</strong> 2 CVP</li>
+                    <li><strong>Loss:</strong> 1 CVP &nbsp; <strong>Missed:</strong> 0 CVP</li>
+                    <li>Track <strong>survivors</strong> after each battle.</li>
+                    <li><strong>Grand Finale:</strong> three-way battle of surviving units. Narrative-first, optional.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Battle Tracker</h2>
+
+        <h3>Pairing Schedule</h3>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Pairing</th>
+                <th class="guardians">Guardians</th>
+                <th class="despoilers">Despoilers</th>
+                <th class="marauders">Marauders</th>
+                <th>Date</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Guardians vs Despoilers</td>
+                <td class="pending">—</td>
+                <td class="pending">—</td>
+                <td class="none">—</td>
+                <td class="pending">TBD</td>
+                <td class="pending">Pending</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Guardians vs Despoilers</td>
+                <td class="pending">—</td>
+                <td class="pending">—</td>
+                <td class="none">—</td>
+                <td class="pending">TBD</td>
+                <td class="pending">Pending</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Guardians vs Marauders</td>
+                <td class="pending">—</td>
+                <td class="none">—</td>
+                <td class="pending">—</td>
+                <td class="pending">TBD</td>
+                <td class="pending">Pending</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Guardians vs Marauders</td>
+                <td class="pending">—</td>
+                <td class="none">—</td>
+                <td class="pending">—</td>
+                <td class="pending">TBD</td>
+                <td class="pending">Pending</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Despoilers vs Marauders</td>
+                <td class="none">—</td>
+                <td class="pending">—</td>
+                <td class="pending">—</td>
+                <td class="pending">TBD</td>
+                <td class="pending">Pending</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Despoilers vs Marauders</td>
+                <td class="none">—</td>
+                <td class="pending">—</td>
+                <td class="pending">—</td>
+                <td class="pending">TBD</td>
+                <td class="pending">Pending</td>
+            </tr>
+        </table>
+        <p class="table-note">Pairing seats will be filled in as each alliance nominates its players. Each alliance must field <strong>two different players</strong> across the two battles of a given pairing.</p>
+
+        <h3>Surviving Forces</h3>
+        <table>
+            <tr>
+                <th>Battle</th>
+                <th>Side</th>
+                <th>Player</th>
+                <th>Survivors</th>
+            </tr>
+            <tr>
+                <td colspan="4" class="pending">No battles fought yet. Survivor entries will be added as battles conclude.</td>
+            </tr>
+        </table>
+
+        <h2>Campaign Victory Points</h2>
+
+        <h3>Entering Phase III</h3>
+        <table class="cvp-table">
+            <tr>
+                <th>Alliance</th>
+                <th>CVP at Start</th>
+            </tr>
+            <tr>
+                <td class="despoilers">Despoilers</td>
+                <td class="despoilers gain-positive">7</td>
+            </tr>
+            <tr>
+                <td class="guardians">Guardians</td>
+                <td class="guardians gain-positive">3</td>
+            </tr>
+            <tr>
+                <td class="marauders">Marauders</td>
+                <td class="marauders gain-positive">2</td>
+            </tr>
+        </table>
+
+        <h3>Phase III CVP Gained</h3>
+        <table class="cvp-table">
+            <tr>
+                <th>Source</th>
+                <th class="guardians">Guardians</th>
+                <th class="despoilers">Despoilers</th>
+                <th class="marauders">Marauders</th>
+            </tr>
+            <tr>
+                <td>Battle 1</td>
+                <td class="pending">—</td>
+                <td class="pending">—</td>
+                <td class="none">—</td>
+            </tr>
+            <tr>
+                <td>Battle 2</td>
+                <td class="pending">—</td>
+                <td class="pending">—</td>
+                <td class="none">—</td>
+            </tr>
+            <tr>
+                <td>Battle 3</td>
+                <td class="pending">—</td>
+                <td class="none">—</td>
+                <td class="pending">—</td>
+            </tr>
+            <tr>
+                <td>Battle 4</td>
+                <td class="pending">—</td>
+                <td class="none">—</td>
+                <td class="pending">—</td>
+            </tr>
+            <tr>
+                <td>Battle 5</td>
+                <td class="none">—</td>
+                <td class="pending">—</td>
+                <td class="pending">—</td>
+            </tr>
+            <tr>
+                <td>Battle 6</td>
+                <td class="none">—</td>
+                <td class="pending">—</td>
+                <td class="pending">—</td>
+            </tr>
+            <tr>
+                <td><strong>Phase III Total</strong></td>
+                <td class="guardians">0</td>
+                <td class="despoilers">0</td>
+                <td class="marauders">0</td>
+            </tr>
+        </table>
+
+        <h3>Running Campaign Total</h3>
+        <table class="cvp-table">
+            <tr>
+                <th>Alliance</th>
+                <th>Phase I + II</th>
+                <th>Phase III</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td class="despoilers">Despoilers</td>
+                <td class="despoilers">7</td>
+                <td class="despoilers">0</td>
+                <td class="despoilers gain-positive">7</td>
+            </tr>
+            <tr>
+                <td class="guardians">Guardians</td>
+                <td class="guardians">3</td>
+                <td class="guardians">0</td>
+                <td class="guardians gain-positive">3</td>
+            </tr>
+            <tr>
+                <td class="marauders">Marauders</td>
+                <td class="marauders">2</td>
+                <td class="marauders">0</td>
+                <td class="marauders gain-positive">2</td>
+            </tr>
+        </table>
+
+        <footer>
+            <p><a href="../../index.html">&larr; Return to Campaign Home</a></p>
+            <p style="margin-top: 20px; font-size: 0.9em;">The Hulk is closing. Make the final blows count.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
