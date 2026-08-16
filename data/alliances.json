@@ -4,7 +4,7 @@
       "name": "The Guardians",
       "tagline": "Those who seek to save the sector—or claim its protection for themselves.",
       "color": "#4a9956",
-      "cvp": 1,
+      "cvp": 2,
       "sap": 9,
       "warmaster": null,
       "requisition_pool": 0,
@@ -33,9 +33,9 @@
       "name": "The Despoilers",
       "tagline": "Those who would see the sector burn, if only to warm themselves by the flames.",
       "color": "#9b4d96",
-      "cvp": 4,
+      "cvp": 8,
       "sap": 5,
-      "warmaster": null,
+      "warmaster": "Kris",
       "requisition_pool": 0,
       "members": [
         {

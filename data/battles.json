@@ -764,12 +764,39 @@
       },
       "agendas": null,
       "result": null,
-      "cancellation_reason": "The Hulk sealed the corridor before the engagement could be resolved — both forces cut off from each other, lost to the closing labyrinth. Recorded as the final battle of Phase III.",
+      "cancellation_reason": "The Hulk sealed the corridor before the engagement could be resolved — both forces cut off from each other, lost to the closing labyrinth.",
       "cvp_awarded": {
         "guardians": 1,
         "marauders": 1
       },
-      "sync_note": "Cancelled in-narrative; battle page and standings updated locally; Phase III closes on this record"
+      "sync_note": "Cancelled in-narrative; battle page and standings updated locally. Superseded as the campaign's final record by Battle 035."
+    },
+    "035": {
+      "title": "The Machine-God's Silence",
+      "mission": "Purge the Foe",
+      "type": "hulk",
+      "file": "battle_035_the_machine_gods_silence.html",
+      "status": "completed",
+      "date_m42": 865,
+      "date_real": "2026-07-10",
+      "combatants": {
+        "attacker": "adeptus-mechanicus",
+        "defender": "death-guard"
+      },
+      "agendas": null,
+      "result": {
+        "victor": "despoilers",
+        "score": {
+          "attacker": null,
+          "defender": null
+        },
+        "score_note": "No score recorded — Adeptus Mechanicus opened strong but were tabled by the Death Guard's Terminator cadre before the game's end."
+      },
+      "cvp_awarded": {
+        "despoilers": 4,
+        "guardians": 1
+      },
+      "sync_note": "No source record found; reconstructed from player recollection and a Discord scheduling thread dated 10/07/2026. Recorded as the true and final battle of the Aeterna Noctis Crusade, fought after Battle 034's cancellation. Despoilers win the campaign."
     },
     "017": {
       "title": "Rust and Ruin",
