@@ -755,7 +755,7 @@
       "mission": "The Gauntlet",
       "type": "hulk",
       "file": "battle_034_old_grudges_resumed.html",
-      "status": "pending_approval",
+      "status": "cancelled",
       "date_m42": 858,
       "date_real": "2026-06-10",
       "combatants": {
@@ -763,14 +763,13 @@
         "defender": "leagues-of-votann"
       },
       "agendas": null,
-      "result": {
-        "victor": "guardians",
-        "score": {
-          "attacker": 14,
-          "defender": 6
-        }
+      "result": null,
+      "cancellation_reason": "The Hulk sealed the corridor before the engagement could be resolved — both forces cut off from each other, lost to the closing labyrinth. Recorded as the final battle of Phase III.",
+      "cvp_awarded": {
+        "guardians": 1,
+        "marauders": 1
       },
-      "sync_note": "Administratum-synced; pending approval on Goonhammer; no battle page generated"
+      "sync_note": "Cancelled in-narrative; battle page and standings updated locally; Phase III closes on this record"
     },
     "017": {
       "title": "Rust and Ruin",
