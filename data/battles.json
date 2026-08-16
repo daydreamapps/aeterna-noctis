@@ -755,7 +755,7 @@
       "mission": "The Gauntlet",
       "type": "hulk",
       "file": "battle_034_old_grudges_resumed.html",
-      "status": "cancelled",
+      "status": "completed",
       "date_m42": 858,
       "date_real": "2026-06-10",
       "combatants": {
@@ -763,13 +763,22 @@
         "defender": "leagues-of-votann"
       },
       "agendas": null,
-      "result": null,
-      "cancellation_reason": "The Hulk sealed the corridor before the engagement could be resolved — both forces cut off from each other, lost to the closing labyrinth.",
+      "result": {
+        "victor": "guardians",
+        "score": {
+          "attacker": 74,
+          "defender": 30
+        }
+      },
+      "casualties": {
+        "guardians": ["Lion El'Jonson (Primarch character — slain by an Einhyr Champion's mass driver)", "Vanguard Veterans (unit destroyed)"],
+        "marauders": ["Total wipe — Leagues of Votann force destroyed in full, incl. Steel Warriors and Hekaton Land Fortress"]
+      },
       "cvp_awarded": {
-        "guardians": 1,
+        "guardians": 4,
         "marauders": 1
       },
-      "sync_note": "Cancelled in-narrative; battle page and standings updated locally. Superseded as the campaign's final record by Battle 035."
+      "sync_note": "Full battle report provided by the Guardians player 2026-08-16, correcting an earlier draft that had mistakenly recorded this battle as cancelled/lost to the Hulk."
     },
     "035": {
       "title": "The Machine-God's Silence",
